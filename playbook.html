@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Build My AI Movie Cohort - Week 1 Day 2 Session Homework and Skill Check">
+<title>Build My AI Movie Cohort AI Playbook | Week 1 Day 2</title>
+<style>
+:root{
+  --bg:#090909;
+  --bg2:#101010;
+  --panel:#141414;
+  --panel2:#191919;
+  --text:#f4f1ea;
+  --muted:#aaa69d;
+  --line:rgba(255,255,255,.11);
+  --accent:#d9a86c;
+  --accent2:#f0c58e;
+  --good:#8fd3a8;
+  --danger:#ef8e8e;
+  --shadow:0 24px 70px rgba(0,0,0,.38);
+  --radius:20px;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 78% 8%, rgba(217,168,108,.13), transparent 28%),
+    radial-gradient(circle at 10% 32%, rgba(255,255,255,.035), transparent 24%),
+    var(--bg);
+  color:var(--text);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.55;
+}
+body:before{
+  content:"";
+  position:fixed; inset:0; pointer-events:none; opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+  z-index:10;
+}
+a{color:inherit}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+.topbar{
+  position:sticky;top:0;z-index:20;
+  border-bottom:1px solid var(--line);
+  background:rgba(9,9,9,.78);
+  backdrop-filter:blur(18px);
+}
+.nav{height:66px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:800;letter-spacing:.03em;font-size:14px}
+.brand span{color:var(--accent)}
+.nav-link{font-size:13px;color:var(--muted);text-decoration:none}
+.hero{min-height:78vh;display:grid;align-items:center;padding:90px 0 80px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:60px;align-items:center}
+.eyebrow,.kicker{
+  color:var(--accent2);text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:800;
+}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.02;margin:0}
+h1{font-size:clamp(58px,9vw,120px);letter-spacing:-.055em;max-width:760px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-copy{font-size:19px;color:#c6c1b8;max-width:570px;margin:26px 0}
+.instructor{display:flex;gap:14px;align-items:center;margin-top:28px}
+.avatar{width:42px;height:42px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--accent);font-weight:800}
+.instructor strong{display:block;font-size:14px}.instructor small{color:var(--muted)}
+.hero-art{
+  min-height:450px;border:1px solid var(--line);border-radius:28px;background:
+  linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.015)),
+  radial-gradient(circle at 65% 28%,rgba(217,168,108,.34),transparent 24%),
+  #0d0d0d;box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.hero-art:before{
+  content:"";position:absolute;inset:12%;border:1px solid rgba(217,168,108,.28);
+  transform:rotate(-7deg);border-radius:12px;
+}
+.film-frame{
+  position:absolute;left:14%;right:14%;top:22%;bottom:18%;border:1px solid rgba(255,255,255,.18);
+  background:linear-gradient(135deg,#151515,#24201a);display:grid;place-items:center;
+}
+.film-frame:before{content:"";position:absolute;inset:15px;border:1px solid rgba(255,255,255,.08)}
+.film-label{position:absolute;top:18px;left:20px;font-size:10px;letter-spacing:.16em;color:var(--muted)}
+.lens{width:130px;height:130px;border-radius:50%;border:1px solid rgba(240,197,142,.55);box-shadow:0 0 0 16px rgba(217,168,108,.04),0 0 80px rgba(217,168,108,.15);display:grid;place-items:center}
+.lens:after{content:"";width:42px;height:42px;border-radius:50%;background:rgba(217,168,108,.8);box-shadow:0 0 30px rgba(217,168,108,.45)}
+.session-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0e0e0e}
+.session-info{display:grid;grid-template-columns:150px 1fr repeat(3,170px);gap:24px;align-items:center;padding:24px 0}
+.badge{display:inline-flex;width:max-content;padding:9px 12px;border:1px solid rgba(217,168,108,.45);color:var(--accent2);font-size:11px;letter-spacing:.16em;font-weight:800}
+.info strong{display:block;font-size:13px}.info small{display:block;color:var(--muted);margin-top:3px}
+section{padding:105px 0}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:45px}
+h2{font-size:clamp(42px,6vw,72px);letter-spacing:-.04em}
+.lead{max-width:500px;color:var(--muted)}
+.objectives{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.objective{padding:28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:190px}
+.num{font-size:11px;color:var(--accent);letter-spacing:.14em}.objective h3{font-size:24px;margin:22px 0 10px}.objective p{color:var(--muted);font-size:14px}
+.mission{background:linear-gradient(180deg,#0e0e0e,#0a0a0a);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;gap:14px}
+.step{
+  display:grid;grid-template-columns:90px 1fr;gap:20px;padding:30px;border:1px solid var(--line);background:rgba(255,255,255,.025);
+  transition:.25s transform,.25s border-color,.25s background;
+}
+.step:hover{transform:translateY(-2px);border-color:rgba(217,168,108,.35);background:rgba(255,255,255,.04)}
+.step-num{font-size:12px;letter-spacing:.16em;color:var(--accent);font-weight:800}
+.step h3{font-size:28px;margin-bottom:9px}.step p{color:#c0bbb2;margin:0 0 12px}.step ul{margin:0;padding-left:20px;color:var(--muted)}
+.callout{margin-top:12px;padding:14px 16px;border-left:2px solid var(--accent);background:rgba(217,168,108,.06);color:#ddd3c6;font-size:14px}
+.check-wrap{display:grid;grid-template-columns:1fr 300px;gap:30px}
+.checklist,.progress-card,.workspace-card,.quiz-card,.result-card{border:1px solid var(--line);background:var(--panel);box-shadow:var(--shadow)}
+.checklist{padding:28px}
+.check-item{display:flex;gap:14px;align-items:flex-start;padding:17px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.check-item:last-child{border-bottom:0}
+.check-item input{appearance:none;width:21px;height:21px;border:1px solid #777;border-radius:5px;flex:0 0 auto;margin-top:2px;position:relative}
+.check-item input:checked{border-color:var(--accent);background:var(--accent)}
+.check-item input:checked:after{content:"✓";color:#111;position:absolute;left:4px;top:-1px;font-weight:900}
+.check-item span{font-size:15px}.check-item input:checked + span{color:#8e8a82;text-decoration:line-through}
+.progress-card{padding:28px;height:max-content;position:sticky;top:90px}
+.progress-number{font:700 48px Georgia,serif;margin:10px 0}.progress-track{height:7px;background:#292929;overflow:hidden}.progress-fill{height:100%;width:0;background:var(--accent);transition:width .35s}
+.progress-label{font-size:12px;color:var(--muted);margin-top:12px}
+.workspace{background:#0d0d0d}
+.workspace-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{padding:20px;border:1px solid var(--line);background:#121212}.field.full{grid-column:1/-1}
+label{display:block;font-size:13px;font-weight:700;margin-bottom:9px}.field small{display:block;color:var(--muted);margin-top:7px}
+textarea{
+  width:100%;min-height:130px;resize:vertical;border:1px solid var(--line);background:#0b0b0b;color:var(--text);padding:14px;outline:none;
+}
+textarea:focus{border-color:rgba(217,168,108,.6);box-shadow:0 0 0 3px rgba(217,168,108,.08)}
+.note{color:var(--muted);font-size:12px;margin-top:18px}
+.journey{display:flex;align-items:center;gap:8px;overflow:auto;padding-bottom:8px}.journey-item{min-width:120px;padding:15px;border:1px solid var(--line);text-align:center;font-size:12px;color:var(--muted)}.journey-item.active{color:var(--accent2);border-color:rgba(217,168,108,.55);background:rgba(217,168,108,.07)}.arrow{color:#555}
+.quiz-section{background:linear-gradient(180deg,#0b0b0b,#101010);border-top:1px solid var(--line)}
+.quiz-card{max-width:820px;margin:auto;padding:38px}
+.quiz-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-bottom:30px}.quiz-progress{height:3px;background:#2a2a2a;margin-bottom:38px}.quiz-progress div{height:100%;background:var(--accent);transition:width .3s}
+.question{font:500 32px/1.15 Georgia,serif;letter-spacing:-.025em;margin-bottom:26px}
+.options{display:grid;gap:10px}.option{
+  width:100%;text-align:left;padding:17px 18px;border:1px solid var(--line);background:#101010;color:var(--text);display:flex;gap:15px;align-items:flex-start;
+  transition:.2s;
+}.option:hover,.option:focus-visible{border-color:rgba(217,168,108,.6);background:#171511;outline:none}.option .letter{color:var(--accent);font-weight:800}.option.selected{border-color:var(--accent);background:rgba(217,168,108,.09)}
+.quiz-hint{color:var(--muted);font-size:12px;margin-top:18px}
+.hidden{display:none!important}
+.result-card{max-width:820px;margin:28px auto 0;padding:40px;text-align:center}
+.score-big{font:700 clamp(70px,12vw,120px)/.9 Georgia,serif;color:var(--accent2);margin:15px 0}
+.category{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:800}.result-copy{color:var(--muted);max-width:560px;margin:12px auto 25px}
+.review{margin-top:30px;text-align:left;border-top:1px solid var(--line);padding-top:25px}
+.review-item{padding:20px 0;border-bottom:1px solid var(--line)}.review-q{font-weight:700}.review-line{font-size:13px;margin-top:8px;color:var(--muted)}.correct{color:var(--good)}.incorrect{color:var(--danger)}
+.btn{
+  border:1px solid var(--accent);background:var(--accent);color:#12100c;padding:13px 19px;font-weight:800;letter-spacing:.03em;
+  transition:.2s;
+}.btn:hover{transform:translateY(-1px);filter:brightness(1.06)}.btn.secondary{background:transparent;color:var(--accent2);border-color:rgba(217,168,108,.45)}
+.final{padding-top:60px}.complete{
+  border:1px solid var(--line);padding:50px;background:
+  radial-gradient(circle at 80% 20%,rgba(217,168,108,.12),transparent 30%),var(--panel);
+  text-align:center
+}
+.status-grid{display:grid;grid-template-columns:repeat(3,1fr);max-width:700px;margin:30px auto;gap:10px}.status{padding:16px;border:1px solid var(--line);background:#101010}.status small{display:block;color:var(--muted);font-size:11px}.status strong{display:block;margin-top:5px}
+footer{border-top:1px solid var(--line);padding:32px 0;margin-top:70px}.footer-inner{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr}.hero-art{min-height:350px}.session-info{grid-template-columns:1fr 1fr}.session-info .info:first-of-type{grid-column:1/-1}.objectives{grid-template-columns:1fr 1fr}.check-wrap{grid-template-columns:1fr}.progress-card{position:static}.workspace-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
+}
+@media(max-width:600px){
+  .container{overflow:visible}
+  .container{width:min(var(--max),calc(100% - 24px))}.nav{height:58px}.nav-link{display:none}.hero{padding:65px 0}.hero-art{min-height:280px}.film-frame{left:9%;right:9%;top:18%;bottom:14%}
+  section{padding:75px 0}.section-head{display:block}.section-head .lead{margin-top:18px}.objectives{grid-template-columns:1fr}.objective{min-height:auto}.step{grid-template-columns:1fr;gap:10px}.quiz-card{padding:24px}.question{font-size:26px}.status-grid{grid-template-columns:1fr}.footer-inner{display:block}.footer-inner div+div{margin-top:8px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.step,.btn{transition:none}.progress-fill,.quiz-progress div{transition:none}
+}
+
+/* Interactive learning cards */
+.learning-card-wrap{display:grid;grid-template-columns:52px minmax(0,760px) 52px;gap:18px;align-items:center;justify-content:center;margin:34px auto 18px}
+.learning-card{width:100%;height:390px;border:0;background:transparent;padding:0;cursor:pointer;perspective:1400px;text-align:left;color:inherit}
+.card-inner{position:relative;width:100%;height:100%;transition:transform .65s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d}
+.learning-card.flipped .card-inner{transform:rotateY(180deg)}
+.card-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid rgba(255,255,255,.13);border-radius:24px;padding:46px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.card-front{background:radial-gradient(circle at 80% 20%,rgba(196,154,75,.16),transparent 34%),linear-gradient(145deg,#181818,#0d0d0d)}
+.card-back{transform:rotateY(180deg);background:radial-gradient(circle at 20% 80%,rgba(196,154,75,.13),transparent 35%),linear-gradient(145deg,#151515,#0a0a0a)}
+.card-kicker{font-size:11px;letter-spacing:.18em;color:#bda36c;font-weight:700;margin-bottom:20px}
+.card-number{font-size:13px;letter-spacing:.14em;opacity:.55;margin-bottom:10px}
+.card-face h3{font-size:clamp(28px,4vw,48px);line-height:1.04;margin:0 0 18px;max-width:650px}
+.card-front p{font-size:13px;opacity:.5;margin-top:auto}
+.card-back p{font-size:18px;line-height:1.65;max-width:650px;color:rgba(255,255,255,.8)}
+.card-tip{margin-top:20px;padding:14px 16px;border-left:2px solid #bda36c;background:rgba(255,255,255,.04);font-size:13px;line-height:1.5;max-width:650px}
+.card-arrow{width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.03);color:#fff;font-size:22px;cursor:pointer;transition:.2s}
+.card-arrow:hover{transform:scale(1.05);border-color:rgba(255,255,255,.35)}
+.card-counter{text-align:right;font-size:12px;letter-spacing:.16em;opacity:.55}
+.card-dots{display:flex;justify-content:center;gap:7px;margin:20px 0}
+.card-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);border:0;padding:0;cursor:pointer}
+.card-dot.active{background:#bda36c;transform:scale(1.4)}
+.card-actions{display:flex;justify-content:center;gap:12px;margin:18px 0 34px}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.16)}
+.mini-challenge{max-width:760px;margin:0 auto;padding:22px 24px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.025);border-radius:16px}
+.challenge-label{display:block;font-size:10px;letter-spacing:.18em;color:#bda36c;font-weight:700;margin-bottom:9px}
+.mini-challenge strong{display:block;font-size:16px;line-height:1.5;margin-bottom:12px}
+.mini-challenge button{background:none;border:0;color:#bda36c;padding:0;font:inherit;font-size:12px;letter-spacing:.08em;cursor:pointer;text-transform:uppercase}
+.mini-challenge p{margin:12px 0 0;font-size:13px;line-height:1.55;opacity:.7}
+@media(max-width:700px){
+  .learning-card-wrap{grid-template-columns:40px minmax(0,1fr) 40px;gap:8px}
+  .learning-card{height:430px}
+  .card-face{padding:28px}
+  .card-face h3{font-size:30px}
+  .card-back p{font-size:16px}
+  .card-arrow{width:40px;height:40px;font-size:18px}
+}
+
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <div class="brand">BUILD MY AI MOVIE COHORT <span>AI PLAYWORK</span></div>
+    <a class="nav-link" href="index.html">Cohort Hub ↗</a>
+  </div>
+</header>
+
+<main>
+<section class="section reveal" style="padding-bottom:35px">
+  <div class="container">
+    <div class="kicker">BUILD MY AI MOVIE COHORT</div>
+    <h1 style="font-size:clamp(34px,5.8vw,82px);letter-spacing:-.05em;margin-top:12px;white-space:nowrap">
+      Build My AI Movie Cohort <em style="font-style:normal;color:var(--accent)">AI Playwork</em>
+    </h1>
+  </div>
+</section>
+
+<section class="section reveal" id="learn-cards">
+  <div class="section-label"><span>03 / REVISE</span><span>LEARNING CARDS</span></div>
+  <div class="section-head">
+    <div>
+      <h2>Build the Blueprint <em>Before You Build the Movie.</em></h2>
+      <p>Flip through these quick cards to lock in the decisions that make an idea production-ready.</p>
+    </div>
+    <div class="card-counter" id="cardCounter">01 / 08</div>
+  </div>
+
+  <div class="learning-card-wrap">
+    <button type="button" class="card-arrow" id="prevCard" aria-label="Previous learning card">←</button>
+
+    <button type="button" class="learning-card" id="learningCard" aria-label="Flip learning card">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <div class="card-kicker">DAY 2 / QUICK THINK</div>
+          <div class="card-number" id="cardNumber">01</div>
+          <h3 id="cardFront">What makes a movie idea usable?</h3>
+          <p>Tap to reveal</p>
+        </div>
+        <div class="card-face card-back">
+          <div class="card-kicker">THE ANSWER</div>
+          <h3 id="cardBackTitle">Clarity</h3>
+          <p id="cardBack">You should be able to explain the core idea clearly and simply before adding production detail.</p>
+          <span class="card-tip" id="cardTip">Think: Can someone understand the idea in about 10 seconds?</span>
+        </div>
+      </div>
+    </button>
+
+    <button type="button" class="card-arrow" id="nextCard" aria-label="Next learning card">→</button>
+  </div>
+
+  <div class="card-dots" id="cardDots" aria-label="Learning card progress"></div>
+
+  <div class="card-actions">
+    <button type="button" class="btn btn-ghost" id="flipCard">FLIP CARD</button>
+    <button type="button" class="btn" id="nextCardText">NEXT CARD →</button>
+  </div>
+
+  <div class="mini-challenge" id="miniChallenge">
+    <span class="challenge-label">MINI CHALLENGE</span>
+    <strong id="challengeText">Before you move on, name one thing your main character wants.</strong>
+    <button type="button" id="challengeReveal">REVEAL A GOOD ANSWER</button>
+    <p id="challengeAnswer" hidden>A strong answer is specific enough to create a clear direction for the story.</p>
+  </div>
+</section>
+<section class="workspace">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="kicker">04 / Practice</div><h2>Your Homework Document</h2></div>
+      <p class="lead">Complete the structured Week 1 Day 2 worksheet, save your own Google Doc copy, and share the finished document in the cohort WhatsApp group.</p>
+    </div>
+    <div class="workspace-card" style="padding:32px;margin-bottom:22px">
+      <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+        <a class="btn" href="https://docs.google.com/document/d/1ElXCXzfTup1HubGb0KDTIzqCkbPUBWxXwqm3_HDxFmw/edit?usp=sharing" target="_blank" rel="noopener">OPEN WEEK 1 DAY 2 HOMEWORK DOC</a>
+      </div>
+      <p class="note" style="margin-bottom:0">
+        <strong>How students use it:</strong> Open the Google Doc → make your own copy → complete the homework → set the sharing permission you want → copy your Google Doc link → share it in the cohort WhatsApp group.
+      </p>
+      <div class="callout" style="margin-top:18px">
+        This site does not collect or store student answers. Your Google Doc is your official Week 1 Day 2 homework workspace.
+      </div>
+    </div>
+    <div class="workspace-card" style="padding:24px;margin-bottom:16px">
+      <div class="kicker">OFFICIAL HOMEWORK</div>
+      <h3 style="font-family:Georgia,serif;font-size:28px;margin:10px 0">Week 1 Day 2 Homework Worksheet</h3>
+      <p style="color:var(--muted);margin:0">Movie idea → main character → conflict → world → visual direction → production-ready blueprint.</p>
+    </div>
+    <p class="note"> The Google Doc is your actual homework workspace. Nothing needs to be copied from this page.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="kicker">05 / Journey</div><h2>The Road Ahead</h2></div>
+      <p class="lead">A visual roadmap for the broader Build My AI Movie journey.</p>
+    </div>
+    <div class="journey">
+      <div class="journey-item">01<br><strong>Idea</strong></div><div class="arrow">→</div>
+      <div class="journey-item active">02<br><strong>Story</strong></div><div class="arrow">→</div>
+      <div class="journey-item">03<br><strong>Characters</strong></div><div class="arrow">→</div>
+      <div class="journey-item">04<br><strong>Visual World</strong></div><div class="arrow">→</div>
+      <div class="journey-item">05<br><strong>Shots</strong></div><div class="arrow">→</div>
+      <div class="journey-item">06<br><strong>Production</strong></div><div class="arrow">→</div>
+      <div class="journey-item">07<br><strong>Edit</strong></div><div class="arrow">→</div>
+      <div class="journey-item">08<br><strong>Final Movie</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="quiz-section" id="skill-check">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="kicker">06 / Test</div><h2>Skill Check</h2></div>
+      <p class="lead">Think you got it? Let's find out. Seven practical questions from Week 1 Day 2.</p>
+    </div>
+
+    <div class="quiz-card" id="quizCard">
+      <div class="quiz-meta"><span id="qCount">QUESTION 01 / 07</span><span id="qScore">0 correct</span></div>
+      <div class="quiz-progress"><div id="quizProgress" style="width:14.28%"></div></div>
+      <div id="questionText" class="question"></div>
+      <div id="options" class="options"></div>
+      <div class="quiz-hint">Select one answer. The next question appears automatically.</div>
+    </div>
+
+    <div class="result-card hidden" id="resultCard">
+      <div class="kicker">YOUR RESULT</div>
+      <div class="score-big" id="scoreBig">0 / 7</div>
+      <div class="category" id="category"></div>
+      <p class="result-copy" id="resultCopy"></p>
+      <button type="button" class="btn secondary" id="retake">RETAKE QUIZ</button>
+      <div class="review" id="review"></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="container">
+    <div class="complete reveal">
+      <div class="kicker">Session Complete</div>
+      <h2>Learn → Build → Test → Improve</h2>
+      <p class="lead" style="margin:20px auto">You've completed the homework and skill check for Week 1 Day 2.</p>
+      <div class="status-grid">
+        <div class="status"><small>HOMEWORK</small><strong id="homeworkStatus">In progress</strong></div>
+        <div class="status"><small>SKILL CHECK</small><strong id="quizStatus">Not started</strong></div>
+        <div class="status"><small>SCORE</small><strong id="finalScore">Not available</strong></div>
+      </div>
+      <button class="btn secondary" onclick="document.getElementById('learn-cards').scrollIntoView({behavior:'smooth'})">REVIEW SESSION</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div><strong>BUILD MY AI MOVIE</strong> · Build My AI Moviemaking</div>
+    <div>Alexx Roy, Founder</div>
+  </div>
+</footer>
+
+<script>
+/*
+  BUILD MY AI MOVIE
+  Session configuration is intentionally kept near the top so future sessions
+  can reuse the same page structure with new content.
+*/
+const sessionData = {
+  number: 2,
+  title: "From Idea to Movie Blueprint",
+  estimatedTime: "45 min",
+  difficulty: "Beginner",
+  objective: "Turn an initial movie idea into a structured visual concept ready for production."
+};
+
+const questions = [
+  {
+    q: "You have a visually beautiful movie concept, but the main character has no clear goal. What should you work on first?",
+    options: ["Add more visual effects", "Define the character's goal", "Change the camera lens", "Add background music"],
+    answer: 1,
+    explanation: "The character's goal gives the story direction. Visual polish cannot replace a clear objective."
+  },
+  {
+    q: "What is the best way to communicate your movie idea quickly?",
+    options: ["Write a ten-page treatment", "Explain it in one clear sentence", "List every camera setting", "Start generating random clips"],
+    answer: 1,
+    explanation: "The session asks you to make the core idea clear enough to explain in about 10 seconds."
+  },
+  {
+    q: "Which set of questions is most useful when defining the main character?",
+    options: ["What camera, lens and frame rate?", "Who are they, what do they want, what are they afraid of, and what makes them interesting?", "What software will edit the movie?", "What thumbnail will get the most clicks?"],
+    answer: 1,
+    explanation: "The character definition focuses on identity, desire, fear and what makes the character interesting."
+  },
+  {
+    q: "What is the purpose of defining the conflict?",
+    options: ["To choose a background color", "To identify what prevents the character from getting what they want", "To decide the upload schedule", "To select a music library"],
+    answer: 1,
+    explanation: "Conflict is the obstacle or force that stands between the character and their goal."
+  },
+  {
+    q: "Which list best describes what you should define for the world of the movie?",
+    options: ["Location, time period, environment, atmosphere and visual identity", "Only the character's clothing", "Only the dialogue", "Only the title and thumbnail"],
+    answer: 0,
+    explanation: "The world establishes where and when the story exists and the atmosphere and visual identity around it."
+  },
+  {
+    q: "Which group belongs to visual direction?",
+    options: ["Camera, lighting, color, mood, composition and style", "Email, pricing, sales and invoices", "Subscribers, views, likes and comments", "Title, description, tags and upload time"],
+    answer: 0,
+    explanation: "Visual direction translates the story concept into concrete cinematic choices."
+  },
+  {
+    q: "What is the main outcome of the Day 2 homework?",
+    options: ["A finished long movie", "A production-ready visual blueprint for your movie", "A completed YouTube monetization application", "A social media content calendar"],
+    answer: 1,
+    explanation: "Day 2 is about building the structured concept and visual foundation that can later guide production."
+  }
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+const userAnswers = [];
+
+const questionText = document.getElementById("questionText");
+const optionsEl = document.getElementById("options");
+const qCount = document.getElementById("qCount");
+const qScore = document.getElementById("qScore");
+const quizProgress = document.getElementById("quizProgress");
+const quizCard = document.getElementById("quizCard");
+const resultCard = document.getElementById("resultCard");
+
+function renderQuestion(){
+  answered = false;
+  const item = questions[currentQuestion];
+  qCount.textContent = `QUESTION ${String(currentQuestion + 1).padStart(2,"0")} / ${questions.length}`;
+  qScore.textContent = `${score} correct`;
+  quizProgress.style.width = `${((currentQuestion + 1) / questions.length) * 100}%`;
+  questionText.textContent = item.q;
+  optionsEl.innerHTML = "";
+  item.options.forEach((option,index)=>{
+    const btn = document.createElement("button");
+    btn.className = "option";
+    btn.type = "button";
+    btn.innerHTML = `<span class="letter">${String.fromCharCode(65+index)}</span><span>${option}</span>`;
+    btn.addEventListener("click",()=>selectAnswer(index,btn));
+    optionsEl.appendChild(btn);
+  });
+}
+
+function selectAnswer(index, button){
+  if(answered) return;
+  answered = true;
+  const item = questions[currentQuestion];
+  userAnswers[currentQuestion] = index;
+  button.classList.add("selected");
+  if(index === item.answer) score++;
+  qScore.textContent = `${score} correct`;
+  setTimeout(()=>{
+    currentQuestion++;
+    if(currentQuestion < questions.length) renderQuestion();
+    else showResults();
+  },420);
+}
+
+function showResults(){
+  quizCard.classList.add("hidden");
+  resultCard.classList.remove("hidden");
+  const pct = Math.round((score / questions.length) * 100);
+  let title,copy;
+  if(pct >= 90){
+    title="MOVIE ARCHITECT";
+    copy="You've got a strong grasp of the concepts. Now focus on execution.";
+  }else if(pct >= 75){
+    title="STRONG FOUNDATION";
+    copy="You understand the fundamentals. A little more practice will sharpen your decisions.";
+  }else if(pct >= 50){
+    title="KEEP BUILDING";
+    copy="You understand parts of the framework. Revisit the key concepts before moving ahead.";
+  }else{
+    title="BACK TO THE BLUEPRINT";
+    copy="Take another look at the session concepts and try the quiz again.";
+  }
+  document.getElementById("scoreBig").textContent = `${score} / ${questions.length}`;
+  document.getElementById("category").textContent = title;
+  document.getElementById("resultCopy").textContent = copy;
+  document.getElementById("quizStatus").textContent = "Complete";
+  document.getElementById("finalScore").textContent = `${pct}%`;
+  renderReview();
+}
+
+function renderReview(){
+  const review = document.getElementById("review");
+  review.innerHTML = `<h3 style="font-family:Georgia,serif;font-size:25px;margin:0 0 10px">Review Your Answers</h3>`;
+  questions.forEach((item,i)=>{
+    const student = userAnswers[i];
+    const correct = student === item.answer;
+    const div = document.createElement("div");
+    div.className = "review-item";
+    div.innerHTML = `
+      <div class="review-q">${i+1}. ${item.q}</div>
+      <div class="review-line ${correct ? "correct" : "incorrect"}"><strong>Your answer:</strong> ${item.options[student]}</div>
+      ${correct ? "" : `<div class="review-line correct"><strong>Correct answer:</strong> ${item.options[item.answer]}</div>`}
+      <div class="review-line">${item.explanation}</div>
+    `;
+    review.appendChild(div);
+  });
+}
+
+document.getElementById("retake").addEventListener("click",()=>{
+  currentQuestion=0; score=0; userAnswers.length=0;
+  resultCard.classList.add("hidden");
+  quizCard.classList.remove("hidden");
+  document.getElementById("quizStatus").textContent="In progress";
+  document.getElementById("finalScore").textContent="Not available";
+  renderQuestion();
+  document.getElementById("skill-check").scrollIntoView({behavior:"smooth"});
+});
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{if(entry.isIntersecting) entry.target.classList.add("visible")});
+},{threshold:.08});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+renderQuestion();
+
+/* Interactive learning cards */
+const learningCards = [
+  {
+    front:"What makes a movie idea usable?",
+    title:"Clarity",
+    back:"You should be able to explain the core idea clearly and simply before adding production detail.",
+    tip:"Think: Can someone understand the idea in about 10 seconds?",
+    challenge:"Before you move on, name one thing your main character wants.",
+    answer:"A strong answer is specific enough to create a clear direction for the story."
+  },
+  {
+    front:"What should you define about the main character?",
+    title:"Desire + Identity",
+    back:"Know who they are, what they want, what they fear, and what makes them interesting.",
+    tip:"A character becomes easier to visualize when their motivation is clear.",
+    challenge:"What is one fear that could make your character more interesting?",
+    answer:"Choose a fear that creates tension or complicates what the character wants."
+  },
+  {
+    front:"Why does conflict matter?",
+    title:"Something Must Stand in the Way",
+    back:"Conflict is what prevents the character from getting what they want. It creates tension and movement.",
+    tip:"Goal + obstacle = a story with somewhere to go.",
+    challenge:"Name one obstacle that could stop your character.",
+    answer:"The best obstacle is meaningful enough to make the character work, choose, or change."
+  },
+  {
+    front:"What belongs in the movie world?",
+    title:"The World Around the Story",
+    back:"Define location, time period, environment, atmosphere, and visual identity.",
+    tip:"The world should feel specific, not like a generic backdrop.",
+    challenge:"Describe your movie world in three words.",
+    answer:"Try three visual words that immediately suggest a place and atmosphere."
+  },
+  {
+    front:"What is visual direction?",
+    title:"How the Story Looks and Feels",
+    back:"It covers camera, lighting, color, mood, composition, and style.",
+    tip:"You are turning an idea into a visual language.",
+    challenge:"Pick one mood word for your movie.",
+    answer:"Words like tense, intimate, mysterious, joyful, lonely, epic, or eerie can guide visual choices."
+  },
+  {
+    front:"Should you start with every production detail?",
+    title:"No. Start With the Blueprint.",
+    back:"First make the idea, character, conflict, world, and visual direction clear. Then production becomes easier.",
+    tip:"Clarity first. Production second.",
+    challenge:"What decision would be hardest to make if your story was still unclear?",
+    answer:"Any visual decision becomes easier when you know what the story is trying to communicate."
+  },
+  {
+    front:"What is the goal of this session?",
+    title:"A Production-Ready Foundation",
+    back:"Turn an initial idea into a structured visual concept that can guide your future AI Movie production.",
+    tip:"You are not trying to finish the movie today.",
+    challenge:"What part of your blueprint feels least clear right now?",
+    answer:"That is the part worth spending extra time on before moving into production."
+  },
+  {
+    front:"What should you have when you finish?",
+    title:"Your Movie Blueprint",
+    back:"A clear idea, character, conflict, world, and visual direction, captured in your homework document.",
+    tip:"The Google Doc is where the actual homework gets completed.",
+    challenge:"Could someone else understand your movie from your blueprint?",
+    answer:"If yes, you have a strong foundation. If not, simplify and clarify before moving ahead."
+  }
+];
+
+let learningCardIndex = 0;
+let learningFlipped = false;
+
+function renderLearningCard(){
+  const c = learningCards[learningCardIndex];
+  document.getElementById("cardCounter").textContent = String(learningCardIndex+1).padStart(2,"0") + " / " + String(learningCards.length).padStart(2,"0");
+  document.getElementById("cardNumber").textContent = String(learningCardIndex+1).padStart(2,"0");
+  document.getElementById("cardFront").textContent = c.front;
+  document.getElementById("cardBackTitle").textContent = c.title;
+  document.getElementById("cardBack").textContent = c.back;
+  document.getElementById("cardTip").textContent = c.tip;
+  document.getElementById("challengeText").textContent = c.challenge;
+  document.getElementById("challengeAnswer").textContent = c.answer;
+  document.getElementById("challengeAnswer").hidden = true;
+  learningFlipped = false;
+  document.getElementById("learningCard").classList.remove("flipped");
+  document.querySelectorAll(".card-dot").forEach((dot,i)=>dot.classList.toggle("active",i===learningCardIndex));
+}
+
+function nextLearningCard(){
+  learningCardIndex=(learningCardIndex+1)%learningCards.length;
+  renderLearningCard();
+}
+function prevLearningCard(){
+  learningCardIndex=(learningCardIndex-1+learningCards.length)%learningCards.length;
+  renderLearningCard();
+}
+function flipLearningCard(){
+  learningFlipped=!learningFlipped;
+  document.getElementById("learningCard").classList.toggle("flipped",learningFlipped);
+}
+
+const cardDots=document.getElementById("cardDots");
+learningCards.forEach((_,i)=>{
+  const dot=document.createElement("button");
+  dot.className="card-dot"+(i===0?" active":"");
+  dot.setAttribute("aria-label","Go to learning card "+(i+1));
+  dot.addEventListener("click",()=>{learningCardIndex=i;renderLearningCard();});
+  cardDots.appendChild(dot);
+});
+document.getElementById("nextCard").addEventListener("click",nextLearningCard);
+document.getElementById("prevCard").addEventListener("click",prevLearningCard);
+document.getElementById("nextCardText").addEventListener("click",nextLearningCard);
+document.getElementById("flipCard").addEventListener("click",flipLearningCard);
+document.getElementById("learningCard").addEventListener("click",flipLearningCard);
+document.getElementById("challengeReveal").addEventListener("click",()=>{
+  const answer=document.getElementById("challengeAnswer");
+  answer.hidden=!answer.hidden;
+});
+renderLearningCard();
+
+</script>
+</body>
+</html>
