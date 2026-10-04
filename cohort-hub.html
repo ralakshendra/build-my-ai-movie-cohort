@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Build My AI Movie Cohort Student Hub">
+<title>Build My AI Movie Cohort | Student Hub</title>
+<style>
+:root{--bg:#090909;--panel:#141414;--text:#f4f1ea;--muted:#aaa69d;--line:rgba(255,255,255,.11);--accent:#d9a86c;--accent2:#f0c58e;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 78% 8%,rgba(217,168,108,.13),transparent 28%),var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.55}a{color:inherit}.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+.topbar{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:rgba(9,9,9,.82);backdrop-filter:blur(18px)}.nav{height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:800;font-size:14px;letter-spacing:.03em}.brand span{color:var(--accent)}.nav-links{display:flex;gap:20px}.nav-links a{font-size:13px;color:var(--muted);text-decoration:none}.nav-links a:hover{color:var(--text)}
+.hero{padding:100px 0 70px}.kicker{color:var(--accent2);text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:800}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.02;margin:0}h1{font-size:clamp(50px,8vw,100px);letter-spacing:-.055em;margin-top:14px}h1 em{font-style:normal;color:var(--accent)}h2{font-size:clamp(40px,5vw,64px);letter-spacing:-.04em}.lead{color:var(--muted);max-width:680px;font-size:18px;margin:24px 0 0}
+.hub-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:32px}.hub-nav a{padding:11px 15px;border:1px solid var(--line);background:rgba(255,255,255,.025);text-decoration:none;font-size:12px;letter-spacing:.04em}.hub-nav a:hover{border-color:rgba(217,168,108,.5);color:var(--accent2)}
+section{padding:70px 0;border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:30px}.section-head p{max-width:500px;color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{border:1px solid var(--line);background:var(--panel);padding:28px;min-height:225px;display:flex;flex-direction:column}.card.featured{background:radial-gradient(circle at 80% 10%,rgba(217,168,108,.12),transparent 32%),var(--panel)}.tag{font-size:10px;letter-spacing:.16em;color:var(--accent);font-weight:800}.card h3{font-size:28px;margin:18px 0 10px}.card p{color:var(--muted);font-size:14px;margin:0}.actions{margin-top:auto;padding-top:25px;display:flex;gap:9px;flex-wrap:wrap}.btn{display:inline-block;padding:11px 15px;background:var(--accent);color:#12100c;border:1px solid var(--accent);font-weight:800;font-size:12px;text-decoration:none}.btn.secondary{background:transparent;color:var(--accent2);border-color:rgba(217,168,108,.4)}
+.sessions{display:grid;gap:10px}.session{display:grid;grid-template-columns:100px 1fr auto;gap:20px;align-items:center;padding:22px 24px;border:1px solid var(--line);background:rgba(255,255,255,.025)}.session-number{color:var(--accent);font-size:11px;letter-spacing:.16em;font-weight:800}.session h3{font-size:24px}.session p{margin:5px 0 0;color:var(--muted);font-size:13px}.status{font-size:10px;letter-spacing:.13em;color:var(--muted);text-transform:uppercase}.callout{margin-top:20px;padding:18px 20px;border-left:2px solid var(--accent);background:rgba(217,168,108,.06);color:#ddd3c6;font-size:14px}
+footer{border-top:1px solid var(--line);padding:30px 0;margin-top:30px;color:var(--muted);font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:850px){.grid{grid-template-columns:1fr 1fr}.session{grid-template-columns:80px 1fr}.session .btn{grid-column:2;width:max-content}}
+@media(max-width:600px){.container{width:min(var(--max),calc(100% - 24px))}.nav{height:58px}.nav-links a:not(:last-child){display:none}.hero{padding:70px 0 55px}.grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:15px}.session{grid-template-columns:1fr;gap:8px}.session .btn{grid-column:auto}.footer-inner{display:block}.footer-inner div+div{margin-top:8px}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="container nav">
+<div class="brand">BUILD MY AI MOVIE COHORT <span>HUB</span></div>
+<div class="nav-links"><a href="index.html">AI Playbook</a><a href="#masterclass">YouTube Masterclass</a><a href="#homework">Homework</a><a href="#resources">Resources</a></div>
+</div></header>
+<main>
+<section class="hero"><div class="container">
+<div class="kicker">BUILD MY AI MOVIE COHORT</div>
+<h1>Your <em>Student Hub.</em></h1>
+<p class="lead">One place for masterclasses, playbooks, homework and the resources you need throughout the cohort.</p>
+<nav class="hub-nav"><a href="#masterclass">YOUTUBE MASTERCLASS</a><a href="#homework">HOMEWORK</a><a href="#resources">RESOURCE LIBRARY</a></nav>
+</div></section>
+
+<section id="masterclass"><div class="container">
+<div class="section-head"><div><div class="kicker">01 / LEARN</div><h2>YouTube Masterclass</h2></div><p>A single home for every YouTube Masterclass session. Add the recording, playbook, homework and supporting resources to each session as it is released.</p></div>
+<div class="sessions">
+<article class="session"><div class="session-number">SESSION 01</div><div><h3>YouTube Masterclass</h3><p>Session materials can be added here as the masterclass library is built.</p></div><span class="status">COMING SOON</span></article>
+<article class="session"><div class="session-number">SESSION 02</div><div><h3>YouTube Masterclass</h3><p>Keep every recording, lesson and supporting material inside the same student hub.</p></div><span class="status">COMING SOON</span></article>
+</div>
+<div class="callout"><strong>Recommended student flow:</strong> Watch → Playbook → Homework → Resources.</div>
+</div></section>
+
+<section id="homework"><div class="container">
+<div class="section-head"><div><div class="kicker">02 / BUILD</div><h2>Homework & Playbooks</h2></div><p>Assignments stay beside the lesson they belong to, so students never have to search WhatsApp for the right document.</p></div>
+<div class="grid">
+<article class="card featured"><div class="tag">WEEK 1 / DAY 2</div><h3>From Idea to Movie Blueprint</h3><p>Interactive playbook, learning cards, homework document and skill check.</p><div class="actions"><a class="btn" href="index.html">OPEN PLAYBOOK</a><a class="btn secondary" href="https://docs.google.com/document/d/1ElXCXzfTup1HubGb0KDTIzqCkbPUBWxXwqm3_HDxFmw/edit?usp=sharing" target="_blank" rel="noopener">OPEN HOMEWORK</a></div></article>
+<article class="card"><div class="tag">FUTURE SESSIONS</div><h3>Session Library</h3><p>New session playbooks can be added here without changing the structure of the hub.</p></article>
+<article class="card"><div class="tag">STUDENT FLOW</div><h3>Learn → Play → Build → Submit</h3><p>Watch the lesson, use the playbook, complete the homework and share the finished work where instructed.</p></article>
+</div></div></section>
+
+<section id="resources"><div class="container">
+<div class="section-head"><div><div class="kicker">03 / EQUIP</div><h2>Resource Library</h2></div><p>Keep useful tools, prompts, templates and references together instead of scattering them across separate pages.</p></div>
+<div class="grid">
+<article class="card"><div class="tag">TOOLS</div><h3>AI Tools</h3><p>Tools used across the cohort, organized by what they help you create.</p></article>
+<article class="card"><div class="tag">PROMPTS</div><h3>Prompt Library</h3><p>Reusable prompts for ideation, visual development, characters, shots and production.</p></article>
+<article class="card"><div class="tag">TEMPLATES</div><h3>Templates</h3><p>Worksheets, checklists and other reusable student resources.</p></article>
+</div></div></section>
+</main>
+<footer><div class="container footer-inner"><div><strong>BUILD MY AI MOVIE COHORT</strong> · Student Hub</div><div>Alexx Roy, Founder</div></div></footer>
+</body>
+</html>
