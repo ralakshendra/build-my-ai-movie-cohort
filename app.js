@@ -131,7 +131,7 @@ function ready(){
 if(lockPage())return;
 if(page==="index.html"||page===""){homepage();setInterval(homepage,1000)}
 try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
-chrome();progress();enhanceNextButton();
+chrome();progress();enhanceNextButton();siteUtilities();
 document.querySelectorAll("a").forEach(a=>{if(a.href===location.href)a.setAttribute("aria-current","page")})
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ready);else ready();
