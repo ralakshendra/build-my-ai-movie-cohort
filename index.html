@@ -18,13 +18,17 @@ footer{border-top:1px solid var(--line);padding:30px 0;margin-top:30px;color:var
 @media(max-width:850px){.grid{grid-template-columns:1fr 1fr}.session{grid-template-columns:80px 1fr}.session .btn{grid-column:2;width:max-content}}
 @media(max-width:600px){.container{width:min(var(--max),calc(100% - 24px))}.nav{height:58px}.nav-links a:not(:last-child){display:none}.hero{padding:70px 0 55px}.grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:15px}.session{grid-template-columns:1fr;gap:8px}.session .btn{grid-column:auto}.footer-inner{display:block}.footer-inner div+div{margin-top:8px}}
 </style>
-<meta name="build-version" content="2026-10-05-hub-v10"><meta http-equiv="Cache-Control" content="no-cache"><link rel="stylesheet" href="brand.css?v=20261005-brand-v3"><!-- Build My AI Movie shared brand system -->
+<meta name="build-version" content="2026-10-05-hub-v11"><meta http-equiv="Cache-Control" content="no-cache"><link rel="stylesheet" href="brand.css?v=20261005-brand-v3"><!-- Build My AI Movie shared brand system -->
 <style>
-.bmai-art{position:relative;min-height:260px;border:1px solid var(--bm-line);border-radius:20px;overflow:hidden;background:radial-gradient(circle at 76% 34%,rgba(255,106,0,.35),transparent 18%),radial-gradient(circle at 70% 55%,rgba(255,154,61,.13),transparent 30%),linear-gradient(145deg,#171717,#050505 72%)}.bmai-art:before{content:"";position:absolute;inset:14%;border:1px solid rgba(255,106,0,.35);transform:skewY(-8deg)}.bmai-art .lens{position:absolute;width:120px;height:120px;right:12%;top:20%;border-radius:50%;border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 0 0 18px rgba(255,255,255,.025),0 0 70px rgba(255,106,0,.18)}.bmai-art .beam{position:absolute;width:72%;height:45%;left:0;top:27%;background:linear-gradient(90deg,rgba(255,106,0,.18),transparent);clip-path:polygon(0 35%,100% 0,100% 100%,0 65%);filter:blur(3px)}.bmai-art .label{position:absolute;left:22px;bottom:20px;color:#fff;font-size:10px;letter-spacing:.16em;font-weight:900}.bmai-art .label small{display:block;margin-top:6px;color:var(--bm-muted);font-size:8px;letter-spacing:.08em}.stage{padding:11px 6px;background:#0b0b0b;text-align:center;font-size:8px;line-height:1.6;letter-spacing:.08em;font-weight:900;color:#666}.stage.active{background:rgba(255,106,0,.12);color:#fff;box-shadow:inset 0 -2px 0 var(--bm-orange)}@media(max-width:900px){.bmai-studio-card{grid-template-columns:1fr!important}.bmai-studio-card aside{border-left:0!important;border-top:1px solid var(--bm-line)}}@media(max-width:620px){.stage:nth-child(n+7){display:none}}
-</style><script src="app.js?v=20261005-app-v2"></script><style>
+.bmai-art{position:relative;min-height:260px;border:1px solid var(--bm-line);border-radius:20px;overflow:hidden;background:radial-gradient(circle at 76% 34%,rgba(255,106,0,.35),transparent 18%),radial-gradient(circle at 70% 55%,rgba(255,154,61,.13),transparent 30%),linear-gradient(145deg,#171717,#050505 72%)}.bmai-art:before{content:"";position:absolute;inset:14%;border:1px solid rgba(255,106,0,.35);transform:skewY(-8deg)}.bmai-art .lens{position:absolute;width:120px;height:120px;right:12%;top:20%;border-radius:50%;border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 0 0 18px rgba(255,255,255,.025),0 0 70px rgba(255,106,0,.18)}.bmai-art .beam{position:absolute;width:72%;height:45%;left:0;top:27%;background:linear-gradient(90deg,rgba(255,106,0,.18),transparent);clip-path:polygon(0 35%,100% 0,100% 100%,0 65%);filter:blur(3px)}.bmai-art .label{position:absolute;left:22px;bottom:20px;color:#fff;font-size:10px;letter-spacing:.16em;font-weight:900}.bmai-art .label small{display:block;margin-top:6px;color:var(--bm-muted);font-size:8px;letter-spacing:.08em}.stage{padding:11px 6px;background:#0b0b0b;text-align:center;font-size:8px;line-height:1.6;letter-spacing:.08em;font-weight:900;color:#666}.stage.active{background:rgba(255,106,0,.12);color:#fff;box-shadow:inset 0 -2px 0 var(--bm-orange)}@media(max-width:900px){.bmai-studio-card{grid-template-columns:1fr!important}.bmai-studio-card aside{border-left:0!important;border-top:1px solid var(--bm-line)}}
+</style><script src="app.js?v=20261005-app-v3"></script><style>
 .session.upcoming{opacity:.68}.session.upcoming:hover{opacity:.9}.lock-label{display:inline-flex;align-items:center;padding:11px 14px;border:1px solid var(--bm-line);border-radius:4px;color:#777;font-size:10px;font-weight:900;letter-spacing:.08em}.session.upcoming .session-number{color:#777!important}
 </style><style>
 #nextUnlock{border-top:1px solid var(--bm-line);padding-top:14px}.bmai-chip.active{box-shadow:0 0 18px rgba(255,106,0,.08)}
+</style><style>
+.bmai-current-wrap{position:relative}.bmai-production-pipeline .stage{min-width:76px}.bmai-next-session{margin-top:14px;padding:14px 16px;border:1px solid var(--bm-line);border-radius:12px;background:rgba(255,255,255,.025);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.bmai-next-session span{color:var(--bm-orange);font-size:9px;font-weight:900;letter-spacing:.16em}.bmai-next-session strong{color:#fff;font-size:12px}.bmai-next-session small{color:var(--bm-muted);font-size:11px}.session-rail{align-self:start}.session-status{color:var(--bm-orange);font-size:9px;letter-spacing:.14em;font-weight:900;text-transform:uppercase;margin-bottom:7px}.schedule-row h3{margin:0}.schedule-row .actions{align-self:center}.bmai-homework-link{margin-left:auto!important;color:var(--bm-orange)!important;font-weight:800}.bmai-lock-date{margin-top:20px;color:#fff;font-size:11px;font-weight:800;letter-spacing:.04em}.bmai-lock-card h1{margin-top:14px}.bmai-lock-card .btn{text-decoration:none;display:inline-block;padding:12px 16px}.bmai-locked-page{min-height:100vh!important}
+@media(max-width:900px){.nav-links{overflow-x:auto;max-width:55vw;gap:14px;scrollbar-width:none}.nav-links::-webkit-scrollbar{display:none}.nav-links a{white-space:nowrap}.bmai-studio-card{grid-template-columns:1fr!important}.bmai-studio-card aside{border-left:0!important;border-top:1px solid var(--bm-line)}} 
+@media(max-width:700px){.nav-links{max-width:48vw}.session{grid-template-columns:1fr}.session-rail{align-self:auto}.schedule-row .actions{justify-content:flex-start}.bmai-production-pipeline{grid-template-columns:repeat(10,76px)!important}.bmai-next-session{align-items:flex-start;flex-direction:column;gap:5px}}
 </style></head>
 <body>
 <header class="topbar"><div class="container nav">
@@ -38,43 +42,31 @@ footer{border-top:1px solid var(--line);padding:30px 0;margin-top:30px;color:var
 <p class="lead">Every session, playbook, homework workspace and production reference in one cinematic studio built around your next shot.</p>
 <nav class="hub-nav"><a href="#sessions">SESSIONS</a><a href="#homework">HOMEWORK</a><a href="#playbooks">PLAYBOOKS</a><a href="#resources">RESOURCE LIBRARY</a></nav>
 <div class="bmai-art" aria-label="Cinematic production studio visual"><div class="beam"></div><div class="lens"></div><div class="label">BUILD MY AI MOVIE<small>YOUR NEXT FRAME STARTS HERE</small></div></div></div></div></section>
-
-
-
-
-</section>
-<section class="container" style="padding-top:30px;padding-bottom:40px;border-top:0">
+<section class="container bmai-current-wrap" style="padding-top:30px;padding-bottom:40px;border-top:0">
 <div class="bmai-studio-card" style="display:grid;grid-template-columns:1.2fr .8fr;gap:0;overflow:hidden">
 <div style="padding:30px">
 <div class="bmai-eyebrow">CURRENT SESSION</div>
-<h2 style="font-size:clamp(36px,4vw,58px);margin:10px 0">Week 1 · Day 2<br><span style="color:var(--bm-orange)">YouTube Masterclass</span></h2>
-<p class="muted" style="max-width:650px">Build the foundation for your AI creator business: choose the channel direction, understand the content model, and set up the system you will use throughout the cohort.</p>
+<h2 style="font-size:clamp(36px,4vw,58px);margin:10px 0">CURRENT SESSION</h2>
+<p class="muted" style="max-width:650px">Your current cohort session will appear here automatically.</p>
 <div style="display:flex;gap:8px;flex-wrap:wrap;margin:18px 0">
-<span class="bmai-chip active">AVAILABLE NOW</span><span class="bmai-chip">FOUNDATION</span><span class="bmai-chip">SESSION 02</span>
+<span class="bmai-chip active">CURRENT SESSION</span><span class="bmai-chip" data-session-stage>PRODUCTION</span><span class="bmai-chip" data-session-number>SESSION</span>
 </div>
-<a class="btn" href="resources/ai-faceless-youtube-masterclass.html">CONTINUE SESSION →</a>
-<a class="btn secondary" href="playbook.html">OPEN PLAYBOOK</a>
+<a class="btn" href="#">CONTINUE SESSION →</a>
+<a class="btn secondary" href="#">OPEN PLAYBOOK</a>
 </div>
 <aside style="padding:28px;border-left:1px solid var(--bm-line);display:flex;flex-direction:column;justify-content:space-between">
-<div><div style="font-size:9px;color:#777;letter-spacing:.14em;font-weight:900">CURRENT PRODUCTION STAGE</div><div style="font-size:30px;font-weight:900;margin-top:8px">BLUEPRINT → MOVIE</div></div>
-<div class="bmai-art" style="min-height:150px;margin-top:20px"><div class="beam"></div><div class="lens"></div><div class="label">IDEA → BLUEPRINT<small>START WITH THE FOUNDATION</small></div></div>
+<div><div style="font-size:9px;color:#777;letter-spacing:.14em;font-weight:900">CURRENT PRODUCTION STAGE</div><div style="font-size:30px;font-weight:900;margin-top:8px" id="bmaiCurrentStage">PRODUCTION</div></div>
+<div class="bmai-art" style="min-height:150px;margin-top:20px"><div class="beam"></div><div class="lens"></div><div class="label">IDEA → MOVIE<small>BUILD THE NEXT FRAME</small></div></div>
 </aside>
 </div>
-<div style="display:grid;grid-template-columns:repeat(9,1fr);gap:1px;margin-top:18px;background:var(--bm-line);border:1px solid var(--bm-line);border-radius:12px;overflow:hidden">
-<div class="stage">01<br>IDEA</div><div class="stage active" id="stageBlueprint">02<br>BLUEPRINT</div><div class="stage">03<br>CHARACTERS</div><div class="stage">04<br>STORY</div><div class="stage">05<br>SHOTS</div><div class="stage">06<br>MOTION</div><div class="stage">07<br>EDIT</div><div class="stage">08<br>REVIEW</div><div class="stage">09<br>MOVIE</div>
-</div>
+<div class="bmai-production-pipeline" style="display:grid;grid-template-columns:repeat(10,minmax(76px,1fr));gap:1px;margin-top:18px;background:var(--bm-line);border:1px solid var(--bm-line);border-radius:12px;overflow-x:auto"></div>
+<div id="bmaiNextSession" class="bmai-next-session"></div>
 </section>
-
 <section id="sessions"><div class="container">
-<div class="section-head"><div><div class="kicker">01 / LEARN</div><h2>Session Library</h2></div><p>Sessions are ordered by the actual cohort sequence. Your current session is highlighted below. Future sessions remain visible so you can see what is coming next.</p></div>
-<div class="sessions">
-<div class="session"><div><div class="session-number">WEEK 1 / DAY 2</div><div class="session-date">Sunday, October 4, 2026 · 8:00 PM IST</div></div><div><h3>Week 1 Day 2 Session · YouTube Masterclass</h3><p>AI Faceless YouTube Channel Masterclass. Completed foundation session.</p></div><div class="actions"><a class="btn" href="resources/ai-faceless-youtube-masterclass.html">OPEN SESSION</a></div></div>
-<div class="session upcoming" id="week2day1Card"><div><div class="session-number" id="week2day1Label">UPCOMING · WEEK 2 / DAY 1</div><div class="session-date">Saturday, October 10, 2026 · 8:00 PM IST</div></div><div><h3>Build Your First AI Movie Short</h3><p>Visual mastery, first short production, Filmora editing and channel launch.</p></div><div class="actions" id="week2day1Actions"><span class="lock-label">COMING NEXT</span></div></div><div class="session upcoming"><div><div class="session-number">UPCOMING · WEEK 2 / DAY 2</div><div class="session-date">Sunday, October 11, 2026 · 8:00 PM IST</div></div><div><h3>Photorealistic AI Advertisement</h3><p>Create photorealistic product frames, build continuity and turn images into video.</p></div><div class="actions"><span class="lock-label">UPCOMING</span></div></div><div class="session upcoming"><div><div class="session-number">UPCOMING · WEEK 3 / DAY 1</div><div class="session-date">Saturday, October 17, 2026 · 8:00 PM IST</div></div><div><h3>Structured Brand Story Pipeline</h3><p>Build the character sheet, visual direction, screenplay and structured shot shortlist before deeper generation.</p></div><div class="actions"><span class="lock-label">UPCOMING</span></div></div>
-</div>
-<div class="callout">Week 1 Day 1 was cohort orientation and has no standalone page. Future sessions will unlock as the cohort reaches them.</div>
+<div class="section-head"><div><div class="kicker">01 / LEARN</div><h2>Session Library</h2></div><p>Every cohort session lives in one timeline. Dates, duration, availability, countdowns and content links update automatically from the official cohort schedule.</p></div>
+<div id="bmaiSchedule" class="sessions"></div>
+<div class="callout">Week 1 Day 1 was cohort orientation and has no standalone page. Future sessions appear here immediately and unlock automatically at their scheduled cohort start time.</div>
 </div></section>
-
-<section id="cohort-schedule"><div class="container"><div class="section-head"><div><div class="kicker">COHORT TIMELINE</div><h2>Unlock Schedule</h2></div><p>Each session becomes available automatically at its scheduled cohort start time. Times are shown in India Standard Time.</p></div><div id="bmaiSchedule" class="sessions"></div><div class="callout">Session content will appear here as it is released. The schedule stays visible so you always know what is coming next.</div></div></section>
 
 <section id="playbooks"><div class="container">
 <div class="section-head"><div><div class="kicker">02 / PLAY</div><h2>Playbook Library</h2></div><p>Playbooks point to the learning material for the exact session they belong to. A session page is not automatically a playbook.</p></div>
@@ -101,34 +93,5 @@ footer{border-top:1px solid var(--line);padding:30px 0;margin-top:30px;color:var
 </div></div></section>
 </main>
 <footer><div class="container footer-inner"><div><strong>BUILD MY AI MOVIE COHORT</strong> · Student Hub</div><div>Alexx Roy, Founder</div></div></footer>
-<script>
-(function(){
-
-const countdown=document.getElementById("unlockCountdown");
-const status=document.getElementById("currentStatus");
-const timerBox=document.getElementById("nextUnlock");
-function tick(){
- if(!countdown)return;
- const diff=unlock-new Date();
- if(diff<=0){
-   countdown.textContent="Week 2 · Day 1 is available now.";
-   if(status){status.textContent="CURRENT SESSION";status.classList.add("active")}
-   const title=document.getElementById("currentSessionTitle"),desc=document.getElementById("currentSessionDescription"),link=document.getElementById("currentSessionLink"),play=document.getElementById("currentPlaybookLink");
-   if(title)title.innerHTML=next.title+"<br><span style="color:var(--bm-orange)">'+next.name+"</span>";
-   if(desc)desc.textContent=next.description;
-   if(link){link.href=next.session;link.textContent="CONTINUE SESSION →"}
-   if(play)play.href=next.playbook;
-   const card=document.getElementById("week2day1Card"),label=document.getElementById("week2day1Label"),actions=document.getElementById("week2day1Actions");
-   if(card){card.classList.remove("upcoming");card.style.opacity="1"}
-   if(label){label.textContent="CURRENT · WEEK 2 / DAY 1";label.style.color="var(--bm-orange)"}
-   if(actions)actions.innerHTML='<a class="btn" href="'+next.session+'">OPEN SESSION</a>';
-   const sb=document.getElementById("stageBlueprint"),sc=document.getElementById("stageCharacters");if(sb)sb.classList.remove("active");if(sc)sc.classList.add("active")
-   return;
- }
- const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);
- countdown.textContent="Week 2 · Day 1 unlocks in "+d+"d "+String(h).padStart(2,"0")+"h "+String(m).padStart(2,"0")+"m "+String(s).padStart(2,"0")+"s";
-}
-tick();setInterval(tick,1000);
-})();
-</script></body>
+</body>
 </html>
