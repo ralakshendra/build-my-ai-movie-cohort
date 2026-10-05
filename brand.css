@@ -278,3 +278,80 @@ html[data-bmai-page="w2d1"] th,html[data-bmai-page="w2d1"] td,html[data-bmai-pag
   header .nav,.topbar .nav,.top .nav{padding-left:11px!important;padding-right:11px!important}
   header .nav>.bmai-mobile-menu,.topbar .nav>.bmai-mobile-menu,.top .nav>.bmai-mobile-menu{width:40px;height:40px}
 }
+
+
+/* v15 visual system normalization */
+html[data-bmai-page="playbook"]{
+ --accent:#FF6A00!important;--accent2:#FF9A3D!important;
+}
+html[data-bmai-page="playbook"] body{
+ background:var(--bmai-bg)!important;color:var(--bmai-text)!important;
+}
+html[data-bmai-page="playbook"] .eyebrow,
+html[data-bmai-page="playbook"] .mono{color:var(--bmai-orange)!important}
+html[data-bmai-page="playbook"] .pill{
+ border-color:rgba(255,106,0,.35)!important;color:var(--bmai-orange-light)!important;
+}
+html[data-bmai-page="playbook"] .visual,
+html[data-bmai-page="playbook"] .card,
+html[data-bmai-page="playbook"] .step,
+html[data-bmai-page="playbook"] .checklist,
+html[data-bmai-page="playbook"] .next,
+html[data-bmai-page="playbook"] .callout{
+ border-color:var(--bmai-line)!important;background:var(--bmai-panel)!important;
+}
+html[data-bmai-page="playbook"] .btn,
+html[data-bmai-page="playbook"] .tab.on,
+html[data-bmai-page="playbook"] button[aria-pressed="true"]{
+ background:var(--bmai-orange)!important;border-color:var(--bmai-orange)!important;color:#050505!important;
+}
+html[data-bmai-page="playbook"] .btn.alt,
+html[data-bmai-page="playbook"] .tab{
+ background:transparent!important;color:var(--bmai-orange-light)!important;border-color:rgba(255,106,0,.35)!important;
+}
+
+html[data-bmai-page="w2d2"] .hero .pill,
+html[data-bmai-page="w2d2"] .flow span,
+html[data-bmai-page="w2d2"] .chip,
+html[data-bmai-page="w2d2"] .tabs button,
+html[data-bmai-page="w3d1"] .tab,
+html[data-bmai-page="w3d1"] .chip{
+ border-color:rgba(255,106,0,.3)!important;
+ color:var(--bmai-orange-light)!important;
+}
+html[data-bmai-page="w2d2"] .hero .pill,
+html[data-bmai-page="w2d2"] .chip[aria-pressed="true"],
+html[data-bmai-page="w2d2"] .tabs button[aria-selected="true"],
+html[data-bmai-page="w3d1"] .tab.on{
+ background:var(--bmai-orange)!important;color:#050505!important;border-color:var(--bmai-orange)!important;
+}
+html[data-bmai-page="w2d2"] .hero,
+html[data-bmai-page="w3d1"] .hero{
+ background-image:none!important;
+}
+html[data-bmai-page="w2d2"] h2,
+html[data-bmai-page="w2d2"] h3,
+html[data-bmai-page="w3d1"] h2,
+html[data-bmai-page="w3d1"] h3{
+ color:var(--bmai-text)!important;
+}
+html[data-bmai-page="w2d2"] .card,
+html[data-bmai-page="w3d1"] .card{
+ box-shadow:0 14px 45px rgba(0,0,0,.2);
+}
+html[data-bmai-page="w2d2"] .callout,
+html[data-bmai-page="w3d1"] .rule{
+ box-shadow:inset 3px 0 0 var(--bmai-orange);
+}
+html[data-bmai-page="w2d2"] .bar i,
+html[data-bmai-page="w3d1"] .bar{
+ background:var(--bmai-orange)!important;
+}
+
+/* Homework stays an execution workbook, but belongs to the same studio system. */
+html[data-bmai-page="w2d2"] body{
+ color:var(--bmai-text)!important;
+}
+html[data-bmai-page="w2d2"] .mission{
+ background:rgba(255,106,0,.07)!important;border-color:rgba(255,106,0,.28)!important;
+}
