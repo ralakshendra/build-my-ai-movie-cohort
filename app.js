@@ -186,6 +186,14 @@ if(nextBox){
  }
 }
 }
+function enhanceAvatarFallbacks(){
+ const imgs=[...document.querySelectorAll('.bmai-character-card img')];
+ imgs.forEach(img=>{
+   const fail=()=>{img.style.display='none';img.parentElement.classList.add('is-fallback')};
+   img.addEventListener('error',fail,{once:true});
+   if(img.complete&&img.naturalWidth===0)fail();
+ });
+}
 function injectInstructorIdentity(){
  if(document.querySelector(".bmai-instructor-card"))return;
  const target=document.querySelector(".hero-copy .hero-meta")||document.querySelector("main .hero")||document.querySelector("header");
@@ -240,7 +248,7 @@ if(page==="index.html"||page===""){
  },1000)
 }
 try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
-chrome();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();injectInstructorIdentity();setupScrollControls();
+chrome();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();injectInstructorIdentity();enhanceAvatarFallbacks();setupScrollControls();
 document.querySelectorAll("a").forEach(a=>{if(a.href===location.href)a.setAttribute("aria-current","page")})
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ready);else ready();
