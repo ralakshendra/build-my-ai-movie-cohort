@@ -12,7 +12,8 @@ const pages = [
   ['w2d2-playbook', 'sessions/week-2-day-2/playbook.html'],
   ['w2d2-homework', 'sessions/week-2-day-2/homework.html'],
   ['w3d1', 'sessions/week-3-day-1/index.html'],
-  ['w3d1-playbook', 'sessions/week-3-day-1/playbook.html']
+  ['w3d1-playbook', 'sessions/week-3-day-1/playbook.html'],
+  ['w3d1-homework', 'sessions/week-3-day-1/homework.html']
 ];
 
 async function auditPage(page, label, viewportWidth) {
@@ -28,15 +29,30 @@ async function auditPage(page, label, viewportWidth) {
       return {tag: el.tagName, cls: typeof el.className === 'string' ? el.className.slice(0,100) : '', left: Math.round(r.left), right: Math.round(r.right), width: Math.round(r.width)};
     });
     const menu = document.querySelector('.bmai-mobile-menu');
+    const main = document.querySelector('main');
+    const skip = document.querySelector('.bmai-skip-link');
+    const localLinks = [...document.querySelectorAll('a[href]')].map(a => a.href).filter(href => href.startsWith(location.origin) && !href.includes('#') && !href.endsWith('/build-my-ai-movie-cohort/')).slice(0, 60);
+    const emDash = document.body.innerText.includes('—');
     return {
       viewport: vw,
       scrollWidth: Math.max(document.documentElement.scrollWidth, document.body.scrollWidth),
       pageOverflow: Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - vw,
       offenders,
-      mobileMenuVisible: menu ? getComputedStyle(menu).display !== 'none' : null
+      mobileMenuVisible: menu ? getComputedStyle(menu).display !== 'none' : null,
+      hasMain: !!main,
+      hasSkipLink: !!skip,
+      emDash,
+      localLinks
     };
   });
   if (audit.pageOverflow > 2) throw new Error(label + ': horizontal page overflow ' + audit.pageOverflow + 'px');
+  if (!audit.hasMain) throw new Error(label + ': missing main landmark');
+  if (!audit.hasSkipLink) throw new Error(label + ': missing skip link');
+  if (audit.emDash) throw new Error(label + ': em dash found in rendered copy');
+  for (const href of audit.localLinks) {
+    const response = await page.request.get(href);
+    if (!response.ok()) throw new Error(label + ': broken local link ' + href + ' (' + response.status() + ')');
+  }
   if (viewportWidth <= 700 && audit.mobileMenuVisible !== null && !audit.mobileMenuVisible) throw new Error(label + ': mobile menu unavailable');
   if (viewportWidth <= 700) {
     const menu = page.locator('.bmai-mobile-menu').first();
