@@ -34,6 +34,10 @@ async function auditPage(page, label, viewportWidth) {
     const localLinks = [...document.querySelectorAll('a[href]')].map(a => a.href).filter(href => href.startsWith(location.origin) && !href.includes('#') && !href.endsWith('/build-my-ai-movie-cohort/')).slice(0, 60);
     const emDash = document.body.innerText.includes('—');
     const shell = document.querySelector('.bmai-global-header');
+    const pageType = document.body.dataset.pageType || null;
+    const pageId = document.body.dataset.pageId || null;
+    const sessionId = document.body.dataset.sessionId || null;
+    const pageIdentity = document.documentElement.dataset.bmaiPage || null;
     const home = shell?.querySelector('.bmai-header-home');
     const brand = shell?.querySelector('.bmai-session-brand');
     const media = [...document.querySelectorAll('img')].filter(img => /hero|avatar|alexx|homepage/i.test(img.getAttribute('src') || ''));
@@ -47,6 +51,10 @@ async function auditPage(page, label, viewportWidth) {
       mobileMenuVisible: menu ? getComputedStyle(menu).display !== 'none' : null,
       hasMain: !!main,
       hasSkipLink: !!skip,
+      pageType,
+      pageId,
+      sessionId,
+      pageIdentity,
       hasSharedShell: !!shell,
       shellVisible: shell ? getComputedStyle(shell).display !== 'none' : false,
       hasHomeControl: !!home,
@@ -59,6 +67,9 @@ async function auditPage(page, label, viewportWidth) {
     };
   });
   if (audit.pageOverflow > 2) throw new Error(label + ': horizontal page overflow ' + audit.pageOverflow + 'px');
+  if (!audit.pageType || !audit.pageId) throw new Error(label + ': missing static page metadata');
+  if (audit.pageIdentity !== audit.pageId) throw new Error(label + ': page identity metadata is inconsistent');
+  if (label !== 'home' && !audit.sessionId) throw new Error(label + ': session page has no static session id');
   if (!audit.hasMain) throw new Error(label + ': missing main landmark');
   if (!audit.hasSkipLink) throw new Error(label + ': missing skip link');
   if (label !== 'home') {
