@@ -884,3 +884,80 @@ html,body{overflow-x:hidden!important;max-width:100%}
     object-position:center!important;
   }
 }
+
+
+/* v26: visible Home control and consistent session header */
+.bmai-header-home{
+  width:auto!important;
+  min-width:112px!important;
+  height:38px!important;
+  padding:0 14px!important;
+  border-radius:999px!important;
+  gap:7px!important;
+  font-size:10px!important;
+  font-weight:900!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+  white-space:nowrap!important;
+  color:#fff!important;
+  border-color:rgba(255,106,0,.38)!important;
+  background:rgba(255,106,0,.055)!important;
+}
+.bmai-header-home:hover{
+  border-color:var(--bm-orange)!important;
+  background:rgba(255,106,0,.12)!important;
+  color:var(--bm-orange-light)!important;
+  box-shadow:0 0 24px rgba(255,106,0,.14)!important;
+}
+.bmai-session-topbar{
+  position:relative;
+  z-index:50;
+  width:100%;
+  border-bottom:1px solid var(--bm-line);
+  background:rgba(7,7,7,.96);
+  backdrop-filter:blur(16px);
+}
+.bmai-session-topbar-inner{
+  min-height:68px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+.bmai-session-brand{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:.04em;
+  white-space:nowrap;
+}
+.bmai-session-brand img{width:32px;height:32px;object-fit:contain;flex:0 0 32px}
+.bmai-session-brand b{color:var(--bm-orange)}
+.bmai-session-top-actions{margin-left:auto;display:flex;gap:8px}
+.bmai-session-top-actions a{
+  display:inline-flex;
+  align-items:center;
+  padding:9px 13px;
+  border:1px solid rgba(255,106,0,.3);
+  border-radius:999px;
+  color:var(--bm-orange-light);
+  text-decoration:none;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+@media(max-width:700px){
+ .bmai-session-topbar-inner{min-height:58px;padding-left:12px;padding-right:12px;gap:8px}
+ .bmai-header-home{min-width:96px!important;height:34px!important;padding:0 10px!important;font-size:9px!important}
+ .bmai-session-brand{font-size:11px;gap:7px;overflow:hidden;text-overflow:ellipsis}
+ .bmai-session-brand img{width:27px;height:27px;flex-basis:27px}
+ .bmai-session-top-actions{display:none}
+ header .nav>.bmai-header-home,.topbar .nav>.bmai-header-home,.top .nav>.bmai-header-home{flex:0 0 auto!important}
+ header .nav>.brand,.topbar .nav>.brand,.top .nav>.brand{flex:0 1 auto!important}
+}
