@@ -93,7 +93,7 @@ if(cur&&title){
 title.innerHTML=esc(cur.week)+"<br><span>"+esc(cur.title)+"</span>";
 if(desc)desc.textContent=cur.session?"Your current cohort session. Build the next part of your movie in sequence, then complete the associated homework workspace.":"This session is now on the cohort schedule. Session materials will appear here as they are released.";
 const status=document.querySelector(".bmai-studio-card .bmai-chip.active");if(status)status.textContent=cur.session?"CURRENT SESSION":"CURRENT · CONTENT COMING SOON";
-const stageChip=document.querySelector(".bmai-studio-card .bmai-chip[data-session-stage]");if(stageChip)stageChip.textContent=cur.stage||"PRODUCTION";
+const stageChip=document.querySelector(".bmai-studio-card .bmai-chip[data-session-stage]");if(stageChip)stageChip.textContent=cur.stage||"PRODUCTION";const stageTitle=document.getElementById("bmaiCurrentStage");if(stageTitle)stageTitle.textContent=cur.stage||"PRODUCTION";
 const numberChip=document.querySelector(".bmai-studio-card .bmai-chip[data-session-number]");if(numberChip)numberChip.textContent="SESSION "+String(cur.number).padStart(2,"0");
 if(links[0]){if(cur.session){links[0].href=sessionUrl(cur);links[0].textContent="CONTINUE SESSION →";links[0].style.display="inline-block";links[0].classList.remove("secondary")}else{links[0].removeAttribute("href");links[0].textContent="SESSION CONTENT COMING SOON";links[0].style.display="inline-block";links[0].classList.add("secondary")}}
 if(links[1]){if(cur.playbook){links[1].href=basePath()+cur.playbook;links[1].style.display="inline-block"}else links[1].style.display="none"}
