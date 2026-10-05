@@ -691,3 +691,63 @@ body:has(.header-badge) .bmai-homework-panel{
 .bmai-character-card.avatar-cutout .character-copy{position:relative!important;grid-column:1!important;grid-row:1!important;align-self:end!important;padding:0 10px 24px 22px!important;left:auto!important;bottom:auto!important;max-width:none!important;z-index:3!important}
 @media(max-width:700px){.bmai-character-card.avatar-cutout{grid-template-columns:minmax(0,44%) minmax(0,56%)!important;min-height:270px!important}.bmai-character-card.avatar-cutout img{min-height:270px!important}.bmai-character-card.avatar-cutout .character-copy{padding:0 7px 20px 18px!important}.bmai-character-card.avatar-cutout .character-title{font-size:18px!important}}
 @media(max-width:480px){.bmai-character-card.avatar-cutout{grid-template-columns:minmax(0,43%) minmax(0,57%)!important;min-height:250px!important}.bmai-character-card.avatar-cutout img{min-height:250px!important}.bmai-character-card.avatar-cutout .character-copy{padding-left:15px!important}.bmai-character-card.avatar-cutout .character-note{font-size:9px!important}}
+
+
+/* v22 reading-room spacing and side gutters */
+:where(.container,.wrap,.hw-wrap){
+  width:min(1120px,calc(100% - 72px)) !important;
+  max-width:1120px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+:where(.hero,.section){
+  min-width:0;
+}
+:where(.hero-sub,.lead,.section-head p,.section .head>p,.card p,.mission p,.hw-hero p){
+  max-width:68ch;
+  line-height:1.72;
+}
+:where(.card,.session,.check,.progress-card,.quiz,.results,.flow-card,.share,.complete,.workspace){
+  padding-left:clamp(22px,2.2vw,30px);
+  padding-right:clamp(22px,2.2vw,30px);
+}
+.bmai-lock-card{
+  max-width:760px;
+}
+@media(max-width:900px){
+  :where(.container,.wrap,.hw-wrap){
+    width:calc(100% - 56px) !important;
+    max-width:none !important;
+  }
+  :where(.bar div,.bmai-breadcrumb,.bmai-stage){
+    padding-left:28px;
+    padding-right:28px;
+  }
+}
+@media(max-width:700px){
+  :where(.container,.wrap,.hw-wrap){
+    width:calc(100% - 40px) !important;
+    max-width:none !important;
+  }
+  :where(.bar div,.bmai-breadcrumb,.bmai-stage){
+    padding-left:20px !important;
+    padding-right:20px !important;
+  }
+  :where(.hero,.section){
+    padding-left:0;
+    padding-right:0;
+  }
+  :where(.card,.session,.check,.progress-card,.quiz,.results,.flow-card,.share,.complete,.workspace){
+    padding-left:20px;
+    padding-right:20px;
+  }
+}
+@media(max-width:480px){
+  :where(.container,.wrap,.hw-wrap){
+    width:calc(100% - 32px) !important;
+  }
+  :where(.bar div,.bmai-breadcrumb,.bmai-stage){
+    padding-left:16px !important;
+    padding-right:16px !important;
+  }
+}
