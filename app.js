@@ -1,7 +1,7 @@
 (function(){'use strict';
 const marker="/build-my-ai-movie-cohort/";
 const path=location.pathname;
-const page=path.indexOf(marker)>=0?path.split(marker)[1]:"index.html";
+const page=path.indexOf(marker)>=0?path.split(marker)[1]:(path.replace(/^\/+/, "")||"index.html");
 
 const S=[
 {id:"week-1-day-2",week:"WEEK 1 · DAY 2",title:"YouTube Masterclass",number:2,start:"2026-10-04T20:00:00+05:30",end:null,stage:"BLUEPRINT",session:"resources/ai-faceless-youtube-masterclass.html",playbook:"playbook.html",homework:"https://docs.google.com/document/d/1ElXCXzfTup1HubGb0KDTIzqCkbPUBWxXwqm3_HDxFmw/edit?usp=sharing",description:"AI Faceless YouTube Channel Masterclass. Completed foundation session."},
