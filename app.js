@@ -56,7 +56,7 @@ tick();setInterval(tick,1000);return true
 }
 function chrome(){
 const x=pageSession();if(!x||document.querySelector(".bmai-breadcrumb"))return;
-const base=basePath(),host=document.createElement("div"),crumb=document.createElement("div");
+const base=basePath(),host=document.createElement("div"),crumb=document.createElement("div");const nav=document.querySelector("header .nav");if(nav&&!document.querySelector(".bmai-header-home")){const a=document.createElement("a");a.className="bmai-header-home";a.href=base+"index.html";a.setAttribute("aria-label","Back to Homepage");a.title="Back to Homepage";a.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5.5 9.5V21h13V9.5"></path><path d="M9.5 21v-6h5v6"></path></svg>';const brand=nav.querySelector(".brand");if(brand)brand.insertAdjacentElement("afterend",a);}
 crumb.className="bmai-breadcrumb";
 const hub=document.createElement("a");hub.href=base+"index.html";hub.textContent="HUB";
 const sep1=document.createElement("span");sep1.textContent="›";
@@ -107,9 +107,8 @@ const nextBox=document.getElementById("bmaiNextSession");
 if(nextBox){if(nxt){nextBox.innerHTML="<span>NEXT SESSION</span><strong>"+esc(nxt.week)+" · "+esc(nxt.title)+"</strong><small>"+esc(dateRange(nxt))+" · Unlocks in "+esc(countdown(nxt.start))+"</small>"}else nextBox.innerHTML="<span>COHORT COMPLETE</span><strong>All scheduled sessions are available.</strong>"}}
 function siteUtilities(){
 const old=document.getElementById("bmai-site-utilities");if(old)old.remove();
-const wrap=document.createElement("div");wrap.id="bmai-site-utilities";wrap.innerHTML='<a class="bmai-float-btn bmai-home-btn" href="'+basePath()+'index.html" aria-label="Back to Homepage" title="Back to Homepage"><span class="bmai-icon" aria-hidden="true">⌂</span><span>HOMEPAGE</span></a><button class="bmai-float-btn bmai-top-btn" type="button" aria-label="Scroll to top" title="Scroll to top"><span class="bmai-icon" aria-hidden="true">↑</span><span>TOP</span></button>';
+const wrap=document.createElement("div");wrap.id="bmai-site-utilities";wrap.innerHTML='<button class="bmai-float-btn bmai-top-btn" type="button" aria-label="Scroll to top" title="Scroll to top"><span class="bmai-icon" aria-hidden="true">↑</span><span>TOP</span></button>';
 document.body.appendChild(wrap);
-const home=wrap.querySelector(".bmai-home-btn");if(page==="index.html"||page==="")home.remove();
 const top=wrap.querySelector(".bmai-top-btn");
 const toggle=()=>top.classList.toggle("is-visible",window.scrollY>500);
 window.addEventListener("scroll",toggle,{passive:true});toggle();
