@@ -174,6 +174,7 @@ if(sched)sched.innerHTML=S.map(renderCard).join("");
 const cd=[...document.querySelectorAll(".countdown")];cd.forEach(el=>el.textContent=countdown(el.dataset.unlock));
 const nextBox=document.getElementById("bmaiNextSession");
 if(nextBox){if(nxt){nextBox.innerHTML="<span>NEXT SESSION</span><strong>"+esc(nxt.week)+" · "+esc(nxt.title)+"</strong><small>"+esc(dateRange(nxt))+" · Unlocks in "+esc(countdown(nxt.start))+"</small>"}else nextBox.innerHTML="<span>COHORT COMPLETE</span><strong>All scheduled sessions are available.</strong>"}}
+let homepageStateId=null;
 function updateHomepageCountdowns(){
 document.querySelectorAll(".countdown[data-unlock]").forEach(el=>el.textContent=countdown(el.dataset.unlock));
 const nextBox=document.getElementById("bmaiNextSession");
@@ -229,7 +230,15 @@ function ready(){
 if(lockPage())return;
 applyBrandMark();
 accessibility();
-if(page==="index.html"||page===""){homepage();setInterval(updateHomepageCountdowns,1000)}
+if(page==="index.html"||page===""){
+ homepage();
+ homepageStateId=current()?.id||null;
+ setInterval(()=>{
+  const id=current()?.id||null;
+  if(id!==homepageStateId){homepage();homepageStateId=id}
+  updateHomepageCountdowns();
+ },1000)
+}
 try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
 chrome();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();injectInstructorIdentity();setupScrollControls();
 document.querySelectorAll("a").forEach(a=>{if(a.href===location.href)a.setAttribute("aria-current","page")})
