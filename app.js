@@ -174,6 +174,27 @@ if(sched)sched.innerHTML=S.map(renderCard).join("");
 const cd=[...document.querySelectorAll(".countdown")];cd.forEach(el=>el.textContent=countdown(el.dataset.unlock));
 const nextBox=document.getElementById("bmaiNextSession");
 if(nextBox){if(nxt){nextBox.innerHTML="<span>NEXT SESSION</span><strong>"+esc(nxt.week)+" · "+esc(nxt.title)+"</strong><small>"+esc(dateRange(nxt))+" · Unlocks in "+esc(countdown(nxt.start))+"</small>"}else nextBox.innerHTML="<span>COHORT COMPLETE</span><strong>All scheduled sessions are available.</strong>"}}
+function updateHomepageCountdowns(){
+document.querySelectorAll(".countdown[data-unlock]").forEach(el=>el.textContent=countdown(el.dataset.unlock));
+const nextBox=document.getElementById("bmaiNextSession");
+if(nextBox){
+ const nxt=next();
+ if(nxt){
+  const small=nextBox.querySelector("small");
+  if(small)small.textContent=dateRange(nxt)+" · Unlocks in "+countdown(nxt.start);
+ }
+}
+}
+function injectInstructorIdentity(){
+ if(document.querySelector(".bmai-instructor-card"))return;
+ const target=document.querySelector(".hero-copy .hero-meta")||document.querySelector("main .hero")||document.querySelector("header");
+ if(!target)return;
+ const card=document.createElement("div");
+ card.className="bmai-instructor-card";
+ card.innerHTML='<div class="bmai-instructor-avatar"><img src="'+basePath()+'assets/homepage-hero.jpg" alt="Alexx Roy, instructor for Build My AI Movie" loading="lazy"></div><div class="bmai-instructor-copy"><span>INSTRUCTOR</span><strong>Alexx Roy</strong><small>Build My AI Movie · Studio Lead</small></div>';
+ if(target.classList.contains("hero-meta"))target.insertAdjacentElement("afterend",card);
+ else target.insertAdjacentElement("afterend",card);
+}
 function siteUtilities(){
 const old=document.getElementById("bmai-site-utilities");if(old)old.remove();
 const wrap=document.createElement("div");wrap.id="bmai-site-utilities";wrap.innerHTML='<button class="bmai-float-btn bmai-top-btn" type="button" aria-label="Scroll to top" title="Scroll to top"><span class="bmai-icon" aria-hidden="true">↑</span><span>TOP</span></button>';
@@ -208,9 +229,9 @@ function ready(){
 if(lockPage())return;
 applyBrandMark();
 accessibility();
-if(page==="index.html"||page===""){homepage();setInterval(homepage,1000)}
+if(page==="index.html"||page===""){homepage();setInterval(updateHomepageCountdowns,1000)}
 try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
-chrome();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();setupScrollControls();
+chrome();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();injectInstructorIdentity();setupScrollControls();
 document.querySelectorAll("a").forEach(a=>{if(a.href===location.href)a.setAttribute("aria-current","page")})
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ready);else ready();
