@@ -38,6 +38,17 @@ async function auditPage(page, label, viewportWidth) {
   });
   if (audit.pageOverflow > 2) throw new Error(label + ': horizontal page overflow ' + audit.pageOverflow + 'px');
   if (viewportWidth <= 700 && audit.mobileMenuVisible !== null && !audit.mobileMenuVisible) throw new Error(label + ': mobile menu unavailable');
+  if (viewportWidth <= 700) {
+    const menu = page.locator('.bmai-mobile-menu').first();
+    if (await menu.count()) {
+      await menu.click();
+      const expanded = await menu.getAttribute('aria-expanded');
+      if (expanded !== 'true') throw new Error(label + ': mobile menu did not open');
+      const visibleLinks = await page.locator('.nav.mobile-nav-open a, .top .nav.mobile-nav-open a').count();
+      if (!visibleLinks) throw new Error(label + ': mobile menu opened without navigation links');
+      await menu.click();
+    }
+  }
   await page.screenshot({path: 'qa/artifacts/' + label + '-' + viewportWidth + '.png', fullPage: true});
   return audit;
 }
