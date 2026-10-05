@@ -71,6 +71,16 @@ stages.forEach(s=>{const el=document.createElement("span");el.textContent=s;if(s
 const slate=document.createElement("div");slate.className="bmai-scene-strip";slate.innerHTML="<div><div class='bmai-scene-kicker'>"+esc(x.week)+" · "+esc(labels[page]||"SESSION")+"</div><div class='bmai-scene-title'>"+esc(x.title)+"</div><div class='bmai-scene-meta'>"+esc(dateRange(x))+" · Build with intent. Generate with discipline. Keep the story consistent.</div></div><div class='bmai-scene-art' aria-hidden='true'><div class='bmai-scene-orb'></div></div>";
 host.append(crumb,stage,slate);const header=document.querySelector("header");if(header)header.insertAdjacentElement("afterend",host);else document.body.prepend(host)
 }
+function setupMobileHeader(){
+document.querySelectorAll(".nav").forEach(nav=>{
+ const links=nav.querySelector(".nav-links"); if(!links||nav.querySelector(".bmai-mobile-menu"))return;
+ const btn=document.createElement("button");btn.type="button";btn.className="bmai-mobile-menu";btn.setAttribute("aria-label","Open navigation");btn.setAttribute("aria-expanded","false");btn.innerHTML='<span></span><span></span><span></span>';
+ btn.addEventListener("click",()=>{
+   const open=nav.classList.toggle("mobile-nav-open");btn.setAttribute("aria-expanded",String(open));btn.setAttribute("aria-label",open?"Close navigation":"Open navigation");
+ });
+ nav.appendChild(btn);
+});
+}
 function setupScrollControls(){
 const targets=[...document.querySelectorAll(".bmai-production-pipeline,.sc,.scroll,.flow,[data-horizontal-scroll],table")];
 targets.forEach(el=>{
@@ -149,7 +159,7 @@ if(lockPage())return;
 applyBrandMark();
 if(page==="index.html"||page===""){homepage();setInterval(homepage,1000)}
 try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
-chrome();progress();enhanceNextButton();siteUtilities();setupScrollControls();
+chrome();progress();enhanceNextButton();siteUtilities();setupMobileHeader();setupScrollControls();
 document.querySelectorAll("a").forEach(a=>{if(a.href===location.href)a.setAttribute("aria-current","page")})
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ready);else ready();
