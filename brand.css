@@ -469,7 +469,7 @@ html[data-bmai-page="w2d2"] .mission{
 .bmai-character-card.avatar-cutout:after{content:"";position:absolute;inset:auto 10% 0;height:42%;background:linear-gradient(180deg,transparent,rgba(0,0,0,.48));z-index:1;pointer-events:none}
 .bmai-character-card.avatar-cutout img{object-fit:contain;object-position:center bottom;transform:none;filter:drop-shadow(0 24px 28px rgba(0,0,0,.48));z-index:0}
 .bmai-character-card.avatar-cutout .character-copy{z-index:3}
-.bmai-instructor-avatar img{content:url("assets/alexx-avatar.webp?v=20261005-avatar-v1");object-fit:contain;object-position:center bottom}
+/* v25: instructor avatar source is set by app.js so nested pages resolve assets correctly */
 .bmai-character-card .character-kicker{font-size:9px;letter-spacing:.18em;font-weight:900;color:var(--bm-orange);text-transform:uppercase}
 .bmai-character-card .character-title{margin-top:7px;color:#fff;font-size:22px;line-height:1.05;font-weight:900;letter-spacing:-.035em}
 .bmai-character-card .character-note{margin-top:7px;color:#aaa;font-size:10px;line-height:1.5}
