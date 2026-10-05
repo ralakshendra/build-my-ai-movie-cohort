@@ -192,7 +192,7 @@ function injectInstructorIdentity(){
  if(!target)return;
  const card=document.createElement("div");
  card.className="bmai-instructor-card";
- card.innerHTML='<div class="bmai-instructor-avatar"><img src="'+basePath()+'assets/homepage-hero.jpg" alt="Alexx Roy, instructor for Build My AI Movie" loading="lazy"></div><div class="bmai-instructor-copy"><span>INSTRUCTOR</span><strong>Alexx Roy</strong><small>Build My AI Movie · Studio Lead</small></div>';
+ card.innerHTML='<div class="bmai-instructor-avatar"><img src="'+basePath()+'assets/homepage-hero.jpg?v=20261005-hero-v3" alt="Alexx Roy, instructor for Build My AI Movie" loading="lazy" onerror="this.style.display=\'none\';this.parentElement.classList.add(\'is-fallback\')"></div><div class="bmai-instructor-copy"><span>INSTRUCTOR</span><strong>Alexx Roy</strong><small>Build My AI Movie · Studio Lead</small></div>';
  if(target.classList.contains("hero-meta"))target.insertAdjacentElement("afterend",card);
  else target.insertAdjacentElement("afterend",card);
 }
