@@ -479,6 +479,15 @@ html[data-bmai-page="w2d2"] .mission{
 .bmai-avatar-note p{margin:9px 0 0;color:var(--bm-muted);font-size:12px;line-height:1.6}
 @media(max-width:700px){.bmai-character-card{min-height:260px}.bmai-avatar-rail{grid-template-columns:1fr}.bmai-avatar-note{padding:20px}.bmai-character-card img{object-position:72% 48%}}
 
+/* v23: graceful avatar fallback while the final transparent mentor artwork is unavailable */
+.bmai-character-card.avatar-cutout{min-height:360px}
+.bmai-character-card.avatar-cutout img{min-height:0}
+.bmai-character-card.avatar-cutout.is-fallback{display:grid!important;grid-template-columns:1fr!important;align-items:end!important;background:radial-gradient(circle at 72% 28%,rgba(255,106,0,.20),transparent 30%),linear-gradient(145deg,#151515,#050505)!important}
+.bmai-character-card.avatar-cutout.is-fallback:before{content:"AR";position:absolute;inset:16% 12% auto auto;width:150px;height:150px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 38% 32%,rgba(255,154,61,.26),rgba(255,106,0,.08) 52%,rgba(0,0,0,.18) 74%);border:1px solid rgba(255,106,0,.24);box-shadow:0 0 70px rgba(255,106,0,.16);font-size:44px;font-weight:900;letter-spacing:-.04em;color:rgba(255,255,255,.9);z-index:2}
+.bmai-character-card.avatar-cutout.is-fallback .character-copy{position:relative;grid-column:1;grid-row:1;align-self:end;max-width:300px;padding:0 22px 24px;z-index:3}
+@media(max-width:700px){.bmai-character-card.avatar-cutout{min-height:300px}.bmai-character-card.avatar-cutout.is-fallback:before{width:112px;height:112px;font-size:34px;inset:14% 10% auto auto}.bmai-character-card.avatar-cutout.is-fallback .character-copy{padding:0 18px 20px;max-width:250px}}
+
+
 
 /* v21 resource page normalization: bring the legacy Week 1 Day 2 guide into the studio system */
 body:has(.header-badge){
