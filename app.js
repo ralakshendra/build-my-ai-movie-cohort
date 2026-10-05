@@ -82,8 +82,10 @@ function applyPageIdentity(){
  document.documentElement.dataset.bmaiPage=id;
 }
 function setupMobileHeader(){
-document.querySelectorAll(".nav").forEach(nav=>{
- const links=nav.querySelector(".nav-links"); if(!links||nav.querySelector(".bmai-mobile-menu"))return;
+document.querySelectorAll("header .nav,.topbar .nav,.top .nav").forEach(nav=>{
+ const links=nav.querySelector(".nav-links")||nav.querySelector(":scope>div:last-child");
+ if(!links||links.classList.contains("brand")||nav.querySelector(".bmai-mobile-menu"))return;
+ if(links.querySelector("a")===null)return;
  const btn=document.createElement("button");btn.type="button";btn.className="bmai-mobile-menu";btn.setAttribute("aria-label","Open navigation");btn.setAttribute("aria-expanded","false");btn.innerHTML='<span></span><span></span><span></span>';
  btn.addEventListener("click",()=>{
    const open=nav.classList.toggle("mobile-nav-open");btn.setAttribute("aria-expanded",String(open));btn.setAttribute("aria-label",open?"Close navigation":"Open navigation");
