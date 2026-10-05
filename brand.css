@@ -145,3 +145,19 @@ main,header,footer,section,.wrap,.container,.hero,.section{min-width:0}
 @media(max-width:480px){
   header .nav>.brand,.topbar .nav>.brand,.top .nav>.brand{font-size:11px!important}
 }
+
+
+/* v10 mobile QA: legacy header variants + additional wide content */
+@media(max-width:700px){
+  .top .nav{width:100%;min-width:0;gap:8px;overflow:hidden}
+  .top .nav>div:last-child{min-width:0;flex:0 1 auto;display:flex;align-items:center;gap:10px;overflow-x:auto;scrollbar-width:none}
+  .top .nav>div:last-child::-webkit-scrollbar{display:none}
+  .top .nav>div:last-child a{flex:0 0 auto;white-space:nowrap;margin-left:0}
+  .top .nav>.bmai-header-home{order:2}
+  .top .nav>div:last-child{order:3}
+  .top .nav>.brand{order:1}
+  .flow{min-width:0;max-width:100%}
+  .flow>div,.flow>span{min-width:0}
+  .bmai-production-pipeline{min-width:760px}
+  table{min-width:560px}
+}
