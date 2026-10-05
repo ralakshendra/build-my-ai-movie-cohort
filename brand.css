@@ -234,3 +234,25 @@ html[data-bmai-page="w2d1"] th,html[data-bmai-page="w2d1"] td,html[data-bmai-pag
  html[data-bmai-page="w3d1"] .hero-visual{min-height:300px}
  html[data-bmai-page="w3d1"] .hero-visual img{min-height:300px}
 }
+
+
+/* v13 session hero artwork */
+.bmai-session-hero{
+ display:grid!important;grid-template-columns:minmax(0,1fr) minmax(300px,.72fr)!important;
+ gap:28px!important;align-items:stretch!important;max-width:1180px!important;margin:0 auto!important;
+ padding:44px 20px 34px!important;background:var(--bmai-bg)!important;
+}
+.bmai-session-hero-copy{min-width:0;display:flex;flex-direction:column;justify-content:center}
+.bmai-session-hero-visual{min-width:0;position:relative;overflow:hidden;border:1px solid rgba(255,106,0,.24);background:#090909;box-shadow:0 25px 70px rgba(0,0,0,.42);min-height:340px}
+.bmai-session-hero-visual img{display:block;width:100%;height:100%;min-height:340px;object-fit:cover}
+.bmai-session-hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,106,0,.03),rgba(0,0,0,.2));pointer-events:none}
+@media(max-width:820px){
+ .bmai-session-hero{grid-template-columns:1fr!important;padding:30px 16px 26px!important;gap:20px!important}
+ .bmai-session-hero-visual{min-height:270px}
+ .bmai-session-hero-visual img{min-height:270px}
+}
+@media(max-width:480px){
+ .bmai-session-hero{padding:24px 12px 20px!important}
+ .bmai-session-hero-visual{min-height:220px}
+ .bmai-session-hero-visual img{min-height:220px}
+}
