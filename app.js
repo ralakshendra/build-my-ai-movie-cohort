@@ -72,10 +72,10 @@ const slate=document.createElement("div");slate.className="bmai-scene-strip";sla
 host.append(crumb,stage,slate);const header=document.querySelector("header");if(header)header.insertAdjacentElement("afterend",host);else document.body.prepend(host)
 }
 function setupScrollControls(){
-const targets=[...document.querySelectorAll(".bmai-production-pipeline,.sc,.scroll,[data-horizontal-scroll]")];
+const targets=[...document.querySelectorAll(".bmai-production-pipeline,.sc,.scroll,.flow,[data-horizontal-scroll],table")];
 targets.forEach(el=>{
- if(el.closest(".bmai-scroll-shell"))return;
- const shell=document.createElement("div");shell.className="bmai-scroll-shell";
+ if(el.closest(".bmai-scroll-shell")||el.dataset.scrollEnhanced==="true")return;
+ const shell=document.createElement("div");shell.className="bmai-scroll-shell";shell.dataset.scrollEnhanced="true";
  const viewport=document.createElement("div");viewport.className="bmai-scroll-viewport";
  el.parentNode.insertBefore(shell,el);viewport.appendChild(el);shell.appendChild(viewport);
  const prev=document.createElement("button"),next=document.createElement("button");
