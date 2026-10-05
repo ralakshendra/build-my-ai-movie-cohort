@@ -77,6 +77,11 @@ for (const [label, path] of pages) {
     await auditPage(page, label, 390);
     await context.close();
   });
+  test(label + ' tablet 820px', async ({page}) => {
+    await page.setViewportSize({width:820,height:1180});
+    await page.goto(new URL(path, BASE).href, {waitUntil:'domcontentloaded'});
+    await auditPage(page, label, 820);
+  });
   test(label + ' desktop 1440px', async ({page}) => {
     await page.setViewportSize({width:1440,height:900});
     await page.goto(new URL(path, BASE).href, {waitUntil:'domcontentloaded'});
