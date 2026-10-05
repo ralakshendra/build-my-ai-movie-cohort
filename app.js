@@ -71,6 +71,23 @@ stages.forEach(s=>{const el=document.createElement("span");el.textContent=s;if(s
 const slate=document.createElement("div");slate.className="bmai-scene-strip";slate.innerHTML="<div><div class='bmai-scene-kicker'>"+esc(x.week)+" · "+esc(labels[page]||"SESSION")+"</div><div class='bmai-scene-title'>"+esc(x.title)+"</div><div class='bmai-scene-meta'>"+esc(dateRange(x))+" · Build with intent. Generate with discipline. Keep the story consistent.</div></div><div class='bmai-scene-art' aria-hidden='true'><div class='bmai-scene-orb'></div></div>";
 host.append(crumb,stage,slate);const header=document.querySelector("header");if(header)header.insertAdjacentElement("afterend",host);else document.body.prepend(host)
 }
+function setupScrollControls(){
+const targets=[...document.querySelectorAll(".bmai-production-pipeline,.sc,.scroll,[data-horizontal-scroll]")];
+targets.forEach(el=>{
+ if(el.closest(".bmai-scroll-shell"))return;
+ const shell=document.createElement("div");shell.className="bmai-scroll-shell";
+ const viewport=document.createElement("div");viewport.className="bmai-scroll-viewport";
+ el.parentNode.insertBefore(shell,el);viewport.appendChild(el);shell.appendChild(viewport);
+ const prev=document.createElement("button"),next=document.createElement("button");
+ prev.type="button";next.type="button";prev.className="bmai-scroll-control prev";next.className="bmai-scroll-control next";
+ prev.setAttribute("aria-label","Scroll left");next.setAttribute("aria-label","Scroll right");prev.innerHTML="‹";next.innerHTML="›";
+ shell.append(prev,next);
+ const sync=()=>{const max=Math.max(0,viewport.scrollWidth-viewport.clientWidth);shell.classList.toggle("has-overflow",max>4);shell.classList.toggle("at-start",viewport.scrollLeft<=4);shell.classList.toggle("at-end",viewport.scrollLeft>=max-4)};
+ prev.addEventListener("click",()=>viewport.scrollBy({left:-Math.max(220,viewport.clientWidth*.72),behavior:"smooth"}));
+ next.addEventListener("click",()=>viewport.scrollBy({left:Math.max(220,viewport.clientWidth*.72),behavior:"smooth"}));
+ viewport.addEventListener("scroll",sync,{passive:true});window.addEventListener("resize",sync);sync();
+});
+}
 function progress(){
 const boxes=[...document.querySelectorAll('.checklist input[type="checkbox"], input[type="checkbox"][data-index]')];if(!boxes.length)return;
 const key="bmai-progress:"+page;let saved=[];try{saved=JSON.parse(localStorage.getItem(key)||"[]")}catch(e){}
@@ -132,7 +149,7 @@ if(lockPage())return;
 applyBrandMark();
 if(page==="index.html"||page===""){homepage();setInterval(homepage,1000)}
 try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
-chrome();progress();enhanceNextButton();siteUtilities();
+chrome();progress();enhanceNextButton();siteUtilities();setupScrollControls();
 document.querySelectorAll("a").forEach(a=>{if(a.href===location.href)a.setAttribute("aria-current","page")})
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ready);else ready();
