@@ -64,15 +64,15 @@ details>div{padding:0 0 14px}
 footer{text-align:center;color:var(--mute);padding:24px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
 </style>
-<link rel="stylesheet" href="../../brand.css?v=20261005-brand-v12"><!-- Build My AI Movie shared brand system -->
+<link rel="stylesheet" href="../../brand.css?v=20261005-brand-v13"><!-- Build My AI Movie shared brand system -->
 </head>
 <body>
-<header class="hero"><div>
+<header class="hero bmai-session-hero"><div class="bmai-session-hero-copy">
 <span class="pill">Build My AI Movie Cohort · Week 2 · Day 2</span>
 <h1>Make a photoreal AI ad in one session</h1>
 <p>Case study: a coconut drink spec ad for an investor pitch. You build images first, turn them into video with start frame animation, then move into the editing stage. Tick each step as you go. Your progress saves in this browser.</p>
 <p class="by"><b>Instructor: Alexx Roy</b><br>Founder, Build My AI Movie</p><div class="flow"><span>1. Hero image</span><span>2. Matching frames</span><span>3. Image to video</span><span>4. Edit (tomorrow)</span></div>
-</div></header>
+</div><div class="bmai-session-hero-visual"><img src="../../assets/week-2-day-2-hero.svg" alt="Cinematic photorealistic product advertisement setup for Build My AI Movie Week 2 Day 2"></div></header>
 <nav><div class="in" id="nav"><a href="../../index.html">Hub</a><a href="playbook.html">Playbook</a><a href="https://docs.google.com/document/d/1jbIb9krXCTVpHprI3tqm9V6tHL-L5Sr1NCFYQ5WHNBA" target="_blank" rel="noopener">Google Doc Homework</a> 
 <a href="#glance">Overview</a><a href="#concepts">Concepts</a><a href="#setup">Setup</a><a href="#images">Images</a><a href="#video">Video</a><a href="#rules">Rules</a><a href="#fix">Fixes</a><a href="#hw">Homework</a><a href="#faq">Q&amp;A</a>
 </div><div class="bar"><i id="prog"></i></div></nav>
@@ -299,6 +299,6 @@ const links=[...document.querySelectorAll('#nav a')];
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')=='#'+e.target.id))}),{rootMargin:'-30% 0px -60% 0px'});
 document.querySelectorAll('section').forEach(s=>io.observe(s));
 </script>
-<script src="../../app.js?v=20261005-app-v12"></script>
+<script src="../../app.js?v=20261005-app-v13"></script>
 </body>
 </html>
