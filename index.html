@@ -47,21 +47,21 @@ footer{border-top:1px solid var(--line);padding:30px 0;margin-top:30px;color:var
 <div class="bmai-studio-card" style="display:grid;grid-template-columns:1.2fr .8fr;gap:0;overflow:hidden">
 <div style="padding:30px">
 <div class="bmai-eyebrow">CURRENT SESSION</div>
-<h2 id="currentSessionTitle" style="font-size:clamp(36px,4vw,58px);margin:10px 0">Week 1 · Day 2<br><span style="color:var(--bm-orange)">YouTube Masterclass</span></h2>
-<p id="currentSessionDescription" class="muted" style="max-width:650px">Build the foundation for your AI creator business: choose the channel direction, understand the content model, and set up the system you will use throughout the cohort.</p>
+<h2 style="font-size:clamp(36px,4vw,58px);margin:10px 0">Week 1 · Day 2<br><span style="color:var(--bm-orange)">YouTube Masterclass</span></h2>
+<p class="muted" style="max-width:650px">Build the foundation for your AI creator business: choose the channel direction, understand the content model, and set up the system you will use throughout the cohort.</p>
 <div style="display:flex;gap:8px;flex-wrap:wrap;margin:18px 0">
 <span class="bmai-chip active">AVAILABLE NOW</span><span class="bmai-chip">FOUNDATION</span><span class="bmai-chip">SESSION 02</span>
 </div>
-<a class="btn" id="currentSessionLink" href="resources/ai-faceless-youtube-masterclass.html">CONTINUE SESSION →</a>
-<a class="btn secondary" id="currentPlaybookLink" href="playbook.html">OPEN PLAYBOOK</a>
+<a class="btn" href="resources/ai-faceless-youtube-masterclass.html">CONTINUE SESSION →</a>
+<a class="btn secondary" href="playbook.html">OPEN PLAYBOOK</a>
 </div>
 <aside style="padding:28px;border-left:1px solid var(--bm-line);display:flex;flex-direction:column;justify-content:space-between">
-<div><div style="font-size:9px;color:#777;letter-spacing:.14em;font-weight:900">CURRENT PRODUCTION STAGE</div><div style="font-size:30px;font-weight:900;margin-top:8px">BLUEPRINT → MOVIE</div><div id="nextUnlock" style="margin-top:16px;font-size:11px;color:#a7a7a7;line-height:1.5"><strong style="color:#fff">NEXT SESSION UNLOCK</strong><br><span id="unlockCountdown">Loading schedule…</span></div></div>
+<div><div style="font-size:9px;color:#777;letter-spacing:.14em;font-weight:900">CURRENT PRODUCTION STAGE</div><div style="font-size:30px;font-weight:900;margin-top:8px">BLUEPRINT → MOVIE</div></div>
 <div class="bmai-art" style="min-height:150px;margin-top:20px"><div class="beam"></div><div class="lens"></div><div class="label">IDEA → BLUEPRINT<small>START WITH THE FOUNDATION</small></div></div>
 </aside>
 </div>
 <div style="display:grid;grid-template-columns:repeat(9,1fr);gap:1px;margin-top:18px;background:var(--bm-line);border:1px solid var(--bm-line);border-radius:12px;overflow:hidden">
-<div class="stage">01<br>IDEA</div><div class="stage active" id="stageBlueprint">02<br>BLUEPRINT</div><div class="stage" id="stageCharacters">03<br>CHARACTERS</div><div class="stage">04<br>STORY</div><div class="stage">05<br>SHOTS</div><div class="stage">06<br>MOTION</div><div class="stage">07<br>EDIT</div><div class="stage">08<br>REVIEW</div><div class="stage">09<br>MOVIE</div>
+<div class="stage">01<br>IDEA</div><div class="stage active" id="stageBlueprint">02<br>BLUEPRINT</div><div class="stage">03<br>CHARACTERS</div><div class="stage">04<br>STORY</div><div class="stage">05<br>SHOTS</div><div class="stage">06<br>MOTION</div><div class="stage">07<br>EDIT</div><div class="stage">08<br>REVIEW</div><div class="stage">09<br>MOVIE</div>
 </div>
 </section>
 
@@ -101,8 +101,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;margin-top:30px;color:var
 <footer><div class="container footer-inner"><div><strong>BUILD MY AI MOVIE COHORT</strong> · Student Hub</div><div>Alexx Roy, Founder</div></div></footer>
 <script>
 (function(){
-const unlock=new Date("2026-10-10T10:00:00+05:30");
-const next={title:"Week 2 · Day 1",name:"Build Your First AI Movie Short",description:"Build your first AI movie short, edit it in Filmora, and launch the YouTube channel.",session:"sessions/week-2-day-1/index.html",playbook:"sessions/week-2-day-1/playbook.html"};
+
 const countdown=document.getElementById("unlockCountdown");
 const status=document.getElementById("currentStatus");
 const timerBox=document.getElementById("nextUnlock");
