@@ -61,7 +61,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;margin-top:30px;color:var
 </aside>
 </div>
 <div style="display:grid;grid-template-columns:repeat(9,1fr);gap:1px;margin-top:18px;background:var(--bm-line);border:1px solid var(--bm-line);border-radius:12px;overflow:hidden">
-<div class="stage">01<br>IDEA</div><div class="stage active" id="stageBlueprint">02<br>BLUEPRINT</div><div class="stage">03<br>CHARACTERS</div><div class="stage">04<br>STORY</div><div class="stage">05<br>SHOTS</div><div class="stage">06<br>MOTION</div><div class="stage">07<br>EDIT</div><div class="stage">08<br>REVIEW</div><div class="stage">09<br>MOVIE</div>
+<div class="stage">01<br>IDEA</div><div class="stage active" id="stageBlueprint">02<br>BLUEPRINT</div><div class="stage" id="stageCharacters">03<br>CHARACTERS</div><div class="stage">04<br>STORY</div><div class="stage">05<br>SHOTS</div><div class="stage">06<br>MOTION</div><div class="stage">07<br>EDIT</div><div class="stage">08<br>REVIEW</div><div class="stage">09<br>MOVIE</div>
 </div>
 </section>
 
@@ -121,8 +121,7 @@ function tick(){
    if(card){card.classList.remove("upcoming");card.style.opacity="1"}
    if(label){label.textContent="CURRENT · WEEK 2 / DAY 1";label.style.color="var(--bm-orange)"}
    if(actions)actions.innerHTML='<a class="btn" href="'+next.session+'">OPEN SESSION</a>';
-   const sb=document.getElementById("stageBlueprint");if(sb)sb.classList.remove("active");
-   const vw=document.createElement("div");vw.className="stage active";vw.id="stageVisualWorld";vw.innerHTML="03<br>CHARACTERS";if(sb&&sb.parentNode){sb.parentNode.insertBefore(vw,sb.nextSibling)}
+   const sb=document.getElementById("stageBlueprint"),sc=document.getElementById("stageCharacters");if(sb)sb.classList.remove("active");if(sc)sc.classList.add("active")
    return;
  }
  const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);
