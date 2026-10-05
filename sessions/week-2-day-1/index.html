@@ -49,12 +49,14 @@ input[type=number],select{font:inherit;padding:6px 8px;border:1px solid var(--li
 footer{max-width:1080px;margin:auto;padding:10px 20px 50px;color:var(--mut);font-size:14px}
 @media(max-width:820px){.wrap{display:block}nav{position:static;flex-direction:row;flex-wrap:wrap;border:0;gap:4px;margin-bottom:20px}nav a{border:1px solid var(--line);border-radius:20px;margin:0;padding:5px 10px}nav a.on{background:var(--soft)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.prog i{transition:none}}
-</style><link rel="stylesheet" href="../../brand.css?v=20261005-brand-v12"><!-- Build My AI Movie shared brand system -->
+</style><link rel="stylesheet" href="../../brand.css?v=20261005-brand-v13"><!-- Build My AI Movie shared brand system -->
 </head><body>
-<header>
+<header class="bmai-session-hero">
+<div class="bmai-session-hero-copy">
 <h1>Week 2 Day 1: Build Your First AI Movie Short, Edit It, Launch the Channel</h1>
 <p class="sub">A step-by-step guide to the full session, written so you can follow it without the recording. Build My AI Movie Cohort.</p>
 <div class="who"><b>Instructor: Alexx Roy</b>Founder, Build My AI Movie</div>
+</div><div class="bmai-session-hero-visual"><img src="../../assets/week-2-day-1-hero.svg" alt="Cinematic visual production workflow for Build My AI Movie Week 2 Day 1"></div>
 </header>
 <div class="bar"><div class="ui"><button id="all">Expand all</button><button id="none">Collapse all</button><span class="prog" aria-hidden="true"><i id="pb"></i></span><span id="pt">0 of 0 tasks done</span></div></div>
 <div class="wrap"><nav id="nav" aria-label="Sections"></nav><main>
@@ -105,5 +107,5 @@ var cn=D.getElementById('cn'),cx=D.getElementById('cx'),cm=D.getElementById('cm'
 function calc(){var c=(+cn.value||0)*(+cx.value)*(+cm.value);cr.textContent=c+' credits (about ₹'+c+')'}
 [cn,cx,cm].forEach(function(e){e.oninput=calc;e.onchange=calc});calc();
 })();
-</script><script src="../../app.js?v=20261005-app-v12"></script>
+</script><script src="../../app.js?v=20261005-app-v13"></script>
 </body></html>
