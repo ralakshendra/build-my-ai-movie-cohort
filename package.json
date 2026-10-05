@@ -1,0 +1,6 @@
+{
+  "name":"build-my-ai-movie-cohort",
+  "private":true,
+  "scripts":{"qa:visual":"playwright test -c qa/playwright.config.js"},
+  "devDependencies":{"@playwright/test":"^1.55.0"}
+}
