@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="t d">
+<title id="t">Build My AI Movie visual production workflow</title>
+<desc id="d">A cinematic production desk with storyboard frames, a laptop and an orange-lit visual workflow.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#050505"/><stop offset=".55" stop-color="#17100a"/><stop offset="1" stop-color="#050505"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#ff6a00" stop-opacity=".72"/><stop offset="1" stop-color="#ff6a00" stop-opacity="0"/></radialGradient>
+ <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#28160a"/><stop offset="1" stop-color="#090909"/></linearGradient>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<circle cx="1250" cy="250" r="430" fill="url(#glow)" opacity=".28"/>
+<g transform="translate(130 115) rotate(-4)">
+ <rect width="610" height="390" rx="18" fill="#0d0d0d" stroke="#ff6a00" stroke-opacity=".55" stroke-width="3"/>
+ <g transform="translate(28 28)">
+  <rect width="170" height="140" fill="#18120d" stroke="#8f4b19"/><rect x="188" width="170" height="140" fill="#151515" stroke="#8f4b19"/><rect x="376" width="170" height="140" fill="#18120d" stroke="#8f4b19"/>
+  <path d="M18 122 L70 66 L118 98 L158 40" fill="none" stroke="#ff6a00" stroke-width="6"/>
+  <circle cx="92" cy="72" r="20" fill="#ff9a3d" opacity=".65"/>
+  <path d="M206 118 L245 48 L288 82 L336 36" fill="none" stroke="#ff6a00" stroke-width="6"/>
+  <path d="M394 118 L435 62 L480 94 L530 42" fill="none" stroke="#ff6a00" stroke-width="6"/>
+  <rect y="166" width="546" height="8" fill="#2a2a2a"/><rect y="166" width="355" height="8" fill="#ff6a00"/>
+  <rect y="200" width="250" height="12" fill="#333"/><rect y="228" width="420" height="12" fill="#262626"/><rect y="256" width="350" height="12" fill="#262626"/>
+ </g>
+</g>
+<g transform="translate(760 355)">
+ <polygon points="0,80 620,20 780,470 155,535" fill="#0b0b0b" stroke="#292929" stroke-width="5"/>
+ <polygon points="40,100 590,47 680,398 170,455" fill="url(#screen)"/>
+ <path d="M105 310 L250 205 L390 265 L540 120" fill="none" stroke="#ff6a00" stroke-width="14"/>
+ <circle cx="250" cy="205" r="24" fill="#ff9a3d"/><circle cx="540" cy="120" r="24" fill="#ff6a00"/>
+ <text x="72" y="145" fill="#fff" font-family="Arial, sans-serif" font-size="28" font-weight="700">SHOT → GENERATE → EDIT</text>
+ <polygon points="0,80 155,535 100,570 -55,120" fill="#151515"/>
+ <polygon points="620,20 780,470 740,485 590,47" fill="#111"/>
+</g>
+<g fill="#fff" font-family="Arial, sans-serif"><text x="115" y="760" font-size="24" fill="#ff6a00" font-weight="700" letter-spacing="5">BUILD MY AI MOVIE</text><text x="115" y="805" font-size="54" font-weight="800">BUILD THE SHOT.</text></g>
+</svg>
