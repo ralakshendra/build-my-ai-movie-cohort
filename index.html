@@ -275,19 +275,146 @@ html,body{max-width:100%;overflow-x:hidden}
     grid-template-columns:none!important;
   }
 }
-</style><style>/* Homepage hero image integration */.bmai-hero-image{min-height:0!important;aspect-ratio:16/9;background:#050505!important}.bmai-hero-image:before,.bmai-hero-image:after{pointer-events:none}.bmai-hero-image img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center center}.bmai-hero-image:before{z-index:2;inset:0!important;border:0!important;transform:none!important;background:linear-gradient(90deg,rgba(5,5,5,.08),transparent 48%)}.bmai-hero-image:after{z-index:3;left:7%;right:7%;bottom:8%;background:linear-gradient(90deg,transparent,rgba(255,106,0,.8),transparent)}</style></head>
+</style><style>/* Homepage hero image integration */.bmai-hero-image{min-height:0!important;aspect-ratio:16/9;background:#050505!important}.bmai-hero-image:before,.bmai-hero-image:after{pointer-events:none}.bmai-hero-image img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center center}.bmai-hero-image:before{z-index:2;inset:0!important;border:0!important;transform:none!important;background:linear-gradient(90deg,rgba(5,5,5,.08),transparent 48%)}.bmai-hero-image:after{z-index:3;left:7%;right:7%;bottom:8%;background:linear-gradient(90deg,transparent,rgba(255,106,0,.8),transparent)}</style><style>
+/* v19: unified cinematic homepage hero */
+.hero{
+  padding:34px 0 34px;
+  border-top:0!important;
+}
+.hero-stage{
+  position:relative;
+  min-height:660px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:26px;
+  background:#050505;
+  box-shadow:0 28px 90px rgba(0,0,0,.42);
+}
+.hero-stage:after{
+  content:"";
+  position:absolute;
+  left:6%;
+  right:6%;
+  bottom:18px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,106,0,.78),transparent);
+  box-shadow:0 0 24px rgba(255,106,0,.28);
+  z-index:4;
+}
+.bmai-hero-image{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  min-height:0!important;
+  aspect-ratio:auto!important;
+  border:0!important;
+  border-radius:0!important;
+  background:#050505!important;
+  z-index:0;
+}
+.bmai-hero-image img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center center;
+  image-rendering:auto;
+}
+.hero-image-shade{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(90deg,rgba(5,5,5,.97) 0%,rgba(5,5,5,.84) 28%,rgba(5,5,5,.38) 52%,rgba(5,5,5,.06) 76%),
+    linear-gradient(180deg,rgba(5,5,5,.18),transparent 32%,rgba(5,5,5,.42) 100%);
+}
+.hero-copy{
+  position:relative;
+  z-index:3;
+  width:min(650px,58%);
+  padding:72px 0 80px 58px;
+}
+.hero-copy h1{
+  font-size:clamp(54px,7vw,96px);
+  margin-top:14px;
+  text-shadow:0 8px 30px rgba(0,0,0,.3);
+}
+.hero-copy .lead{
+  max-width:600px;
+  font-size:18px;
+  line-height:1.55;
+  margin-top:26px;
+  color:#c2beb7!important;
+}
+.hero-copy .hub-nav{
+  margin-top:30px;
+  gap:8px;
+}
+.hero-copy .hub-nav a{
+  background:rgba(5,5,5,.52)!important;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+.bmai-current-wrap{
+  padding-top:24px!important;
+}
+.bmai-current-wrap .bmai-studio-card{
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:22px;
+  background:
+    radial-gradient(circle at 88% 0%,rgba(255,106,0,.10),transparent 32%),
+    linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
+  box-shadow:0 22px 70px rgba(0,0,0,.28);
+}
+@media(max-width:850px){
+  .hero{padding:24px 0 26px}
+  .hero-stage{min-height:620px}
+  .hero-copy{width:70%;padding:60px 0 64px 38px}
+}
+@media(max-width:600px){
+  .hero{padding:16px 0 20px}
+  .hero-stage{min-height:610px;border-radius:20px;align-items:flex-start}
+  .hero-image-shade{
+    background:
+      linear-gradient(180deg,rgba(5,5,5,.94) 0%,rgba(5,5,5,.80) 38%,rgba(5,5,5,.20) 72%,rgba(5,5,5,.55) 100%);
+  }
+  .hero-copy{width:100%;padding:44px 22px 40px}
+  .hero-copy h1{font-size:clamp(48px,15vw,68px)}
+  .hero-copy .lead{font-size:16px;max-width:520px}
+  .hero-copy .hub-nav a{padding:10px 12px;font-size:10px}
+  .bmai-current-wrap{padding-top:18px!important}
+}
+</style></head>
 <body>
 <header class="topbar"><div class="container nav">
 <div class="brand">BUILD MY AI MOVIE COHORT <span>HUB</span></div>
 <div class="nav-links"><a href="#sessions">Sessions</a><a href="#homework">Homework</a><a href="#playbooks">Playbooks</a><a href="#resources">Resources</a></div>
 </div></header>
 <main>
-<section class="hero"><div class="container">
+<section class="hero">
+<div class="container hero-stage">
+<div class="bmai-hero-image" aria-label="Build My AI Movie cinematic production studio">
+<img src="assets/homepage-hero.jpg?v=20261005-hero-v1" alt="Cinematic Build My AI Movie production studio with Alexx Roy reviewing a visual storyboard">
+<div class="hero-image-shade"></div>
+</div>
+<div class="hero-copy">
 <div class="kicker">BUILD MY AI MOVIE COHORT</div>
 <h1>Build the movie.<br><em>Not the chaos.</em></h1>
 <p class="lead">Every session, playbook, homework workspace and production reference in one cinematic studio built around your next shot.</p>
-<nav class="hub-nav"><a href="#sessions">SESSIONS</a><a href="#homework">HOMEWORK</a><a href="#playbooks">PLAYBOOKS</a><a href="#resources">RESOURCE LIBRARY</a></nav>
-<div class="bmai-art bmai-hero-image" aria-label="Build My AI Movie cinematic production studio"><img src="assets/homepage-hero.jpg?v=20261005-hero-v1" alt="Cinematic Build My AI Movie production studio with Alexx Roy reviewing a visual storyboard"></div></div></div></section>
+<nav class="hub-nav">
+<a href="#sessions">SESSIONS</a>
+<a href="#homework">HOMEWORK</a>
+<a href="#playbooks">PLAYBOOKS</a>
+<a href="#resources">RESOURCE LIBRARY</a>
+</nav>
+</div>
+</div>
+</section>
 <section class="container bmai-current-wrap" style="padding-top:30px;padding-bottom:40px;border-top:0">
 <div class="bmai-studio-card" style="display:grid;grid-template-columns:1.2fr .8fr;gap:0;overflow:hidden">
 <div style="padding:30px">
