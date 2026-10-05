@@ -28,6 +28,19 @@ const routeMap={
 "sessions/week-3-day-1/index.html":"week-3-day-1","sessions/week-3-day-1/playbook.html":"week-3-day-1","sessions/week-3-day-1/homework.html":"week-3-day-1"
 };
 const labels={};
+function isUnlocked(x){return !!x&&new Date(x.start).getTime()<=now()}
+function sessionIdFromHref(href){
+ try{
+  const u=new URL(href,location.href);
+  const markerIndex=u.pathname.indexOf(marker);
+  if(markerIndex<0)return null;
+  const rel=u.pathname.slice(markerIndex+marker.length);
+  if(routeMap[rel])return routeMap[rel];
+  const m=rel.match(/^sessions\/(week-\d+-day-\d+)(?:\/|$)/);
+  return m?m[1]:null;
+ }catch(e){return null}
+}
+
 Object.keys(routeMap).forEach(p=>{labels[p]=p.endsWith("/homework.html")?"HOMEWORK":p.endsWith("/playbook.html")?"PLAYBOOK":"SESSION GUIDE"});
 const stages=["IDEA","BLUEPRINT","CHARACTERS","VISUAL WORLD","STORY","SHOTS","MOTION","EDIT","REVIEW","MOVIE"];
 
@@ -46,7 +59,7 @@ function countdown(iso){let d=new Date(iso).getTime()-now();if(d<=0)return"AVAIL
 function sessionUrl(x){return x.session?basePath()+x.session:null}
 function lockPage(){
 const x=pageSession();if(!x)return false;
-if(new Date(x.start).getTime()<=now())return false;
+if(isUnlocked(x))return false;
 const hub=basePath()+"index.html";
 document.documentElement.classList.add("bmai-locking");
 document.body.className="bmai-locked-page";
@@ -213,6 +226,21 @@ const toggle=()=>top.classList.toggle("is-visible",window.scrollY>500);
 window.addEventListener("scroll",toggle,{passive:true});toggle();
 top.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
 }
+function guardLockedLinks(){
+ document.querySelectorAll("a[href]").forEach(a=>{
+  if(a.dataset.bmaiLockGuard==="true")return;
+  const targetId=sessionIdFromHref(a.href);
+  if(!targetId)return;
+  const target=byId(targetId);
+  if(!target||isUnlocked(target))return;
+  a.dataset.bmaiLockGuard="true";
+  a.addEventListener("click",e=>{
+   if(e.defaultPrevented)return;
+   e.preventDefault();
+   location.href=a.href;
+  });
+ });
+}
 function enhanceNextButton(){
 const x=pageSession();if(!x)return;
 const index=S.findIndex(s=>s.id===x.id);const nxt=index>=0?S[index+1]:null;
@@ -248,7 +276,7 @@ if(page==="index.html"||page===""){
  },1000)
 }
 try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
-chrome();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();injectInstructorIdentity();enhanceAvatarFallbacks();setupScrollControls();
+chrome();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();injectInstructorIdentity();enhanceAvatarFallbacks();setupScrollControls();guardLockedLinks();
 document.querySelectorAll("a").forEach(a=>{if(a.href===location.href)a.setAttribute("aria-current","page")})
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ready);else ready();
