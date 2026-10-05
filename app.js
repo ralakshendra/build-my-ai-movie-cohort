@@ -122,7 +122,7 @@ document.body.insertBefore(crumb,top.nextSibling);
 document.body.insertBefore(stage,crumb.nextSibling);
 document.body.insertBefore(slate,stage.nextSibling);
 }
-function enhanceLongText()function enhanceLongText(){
+function enhanceLongText(){
  document.querySelectorAll('.code-block,pre').forEach((el,i)=>{
    if(el.closest('details')||el.dataset.bmaiLongText==='true')return;
    const text=(el.innerText||'').trim();
@@ -275,7 +275,7 @@ function guardLockedLinks(){
   });
  });
 }
-function enhanceNextButton()function enhanceNextButton(){
+function enhanceNextButton(){
 const x=pageSession();if(!x)return;
 const index=S.findIndex(s=>s.id===x.id);const nxt=index>=0?S[index+1]:null;
 document.querySelectorAll('button').forEach(btn=>{
