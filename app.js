@@ -291,7 +291,7 @@ if(page==="index.html"||page===""){
  },1000)
 }
 try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
-chrome();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();injectInstructorIdentity();enhanceAvatarFallbacks();setupScrollControls();guardLockedLinks();
+chrome();enhanceLongText();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();injectInstructorIdentity();enhanceAvatarFallbacks();setupScrollControls();guardLockedLinks();
 document.querySelectorAll("a").forEach(a=>{if(a.href===location.href)a.setAttribute("aria-current","page")})
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ready);else ready();
