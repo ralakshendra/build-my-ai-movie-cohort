@@ -256,3 +256,25 @@ html[data-bmai-page="w2d1"] th,html[data-bmai-page="w2d1"] td,html[data-bmai-pag
  .bmai-session-hero-visual{min-height:220px}
  .bmai-session-hero-visual img{min-height:220px}
 }
+
+
+/* v14 universal mobile header fix */
+@media(max-width:700px){
+  header .nav,.topbar .nav,.top .nav{height:58px!important;align-items:center!important}
+  header .nav>.bmai-mobile-menu,.topbar .nav>.bmai-mobile-menu,.top .nav>.bmai-mobile-menu{
+    order:4;position:relative;z-index:102;flex:0 0 42px!important;margin-left:auto
+  }
+  .top .nav>div:last-child{order:3}
+  .top .nav>.bmai-mobile-menu{order:4}
+  .top .nav.mobile-nav-open>div:last-child{
+    display:flex!important;position:absolute;left:0;right:0;top:calc(100% + 8px);z-index:101;
+    background:rgba(8,8,8,.98);border:1px solid var(--bm-line);border-radius:14px;
+    padding:8px;box-shadow:0 20px 50px rgba(0,0,0,.55);flex-direction:column;gap:2px;
+    max-width:none;overflow:visible
+  }
+  .top .nav.mobile-nav-open>div:last-child a{display:block!important;margin:0;padding:11px 12px;white-space:nowrap;border-radius:9px}
+}
+@media(max-width:480px){
+  header .nav,.topbar .nav,.top .nav{padding-left:11px!important;padding-right:11px!important}
+  header .nav>.bmai-mobile-menu,.topbar .nav>.bmai-mobile-menu,.top .nav>.bmai-mobile-menu{width:40px;height:40px}
+}
