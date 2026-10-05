@@ -25,7 +25,7 @@ const x=itemById(id);if(!x)return;
 if(new Date(x[3]).getTime()<=now())return;
 const hub=basePath()+"index.html";
 document.documentElement.classList.add("bmai-locking");
-document.body.innerHTML='<main class="bmai-lock-screen"><div class="bmai-lock-card"><div class="bmai-lock-kicker">BUILD MY AI MOVIE · SESSION LOCKED</div><div class="bmai-lock-week">'+esc(x[1])+'</div><h1>'+esc(x[2])+'</h1><p>This session is scheduled to unlock at the official cohort start time.</p><div class="bmai-lock-time">'+esc(formatDate(x[3]))+' IST</div><div class="bmai-lock-count" id="bmaiLockCount">'+esc(countdown(x[3]))+'</div><div class="bmai-lock-note">The page will unlock automatically when the countdown reaches zero. You do not need to refresh.</div><a class="btn btn-primary" href="'+hub+'">RETURN TO STUDENT HUB</a></div></main>';
+document.body.className="bmai-locked-page";document.body.innerHTML='<main class="bmai-lock-screen"><div class="bmai-lock-card"><div class="bmai-lock-kicker">BUILD MY AI MOVIE · SESSION LOCKED</div><div class="bmai-lock-week">'+esc(x[1])+'</div><h1>'+esc(x[2])+'</h1><p>This session is scheduled to unlock at the official cohort start time.</p><div class="bmai-lock-time">'+esc(formatDate(x[3]))+' IST</div><div class="bmai-lock-count" id="bmaiLockCount">'+esc(countdown(x[3]))+'</div><div class="bmai-lock-note">The page will unlock automatically when the countdown reaches zero. You do not need to refresh.</div><a class="btn btn-primary" href="'+hub+'">RETURN TO STUDENT HUB</a></div></main>';
 function tick(){const el=document.getElementById("bmaiLockCount");if(!el)return;el.textContent=countdown(x[3]);if(new Date(x[3]).getTime()<=now())location.reload()}tick();setInterval(tick,1000);
 }
 function chrome(){
