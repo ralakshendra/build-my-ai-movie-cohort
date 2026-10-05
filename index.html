@@ -47,13 +47,13 @@ footer{border-top:1px solid var(--line);padding:30px 0;margin-top:30px;color:var
 <div class="bmai-studio-card" style="display:grid;grid-template-columns:1.2fr .8fr;gap:0;overflow:hidden">
 <div style="padding:30px">
 <div class="bmai-eyebrow">CURRENT SESSION</div>
-<h2 style="font-size:clamp(36px,4vw,58px);margin:10px 0">Week 1 · Day 2<br><span style="color:var(--bm-orange)">YouTube Masterclass</span></h2>
-<p class="muted" style="max-width:650px">Build the foundation for your AI creator business: choose the channel direction, understand the content model, and set up the system you will use throughout the cohort.</p>
+<h2 id="currentSessionTitle" style="font-size:clamp(36px,4vw,58px);margin:10px 0">Week 1 · Day 2<br><span style="color:var(--bm-orange)">YouTube Masterclass</span></h2>
+<p id="currentSessionDescription" class="muted" style="max-width:650px">Build the foundation for your AI creator business: choose the channel direction, understand the content model, and set up the system you will use throughout the cohort.</p>
 <div style="display:flex;gap:8px;flex-wrap:wrap;margin:18px 0">
 <span class="bmai-chip active">AVAILABLE NOW</span><span class="bmai-chip">FOUNDATION</span><span class="bmai-chip">SESSION 02</span>
 </div>
-<a class="btn" href="resources/ai-faceless-youtube-masterclass.html">CONTINUE SESSION →</a>
-<a class="btn secondary" href="playbook.html">OPEN PLAYBOOK</a>
+<a class="btn" id="currentSessionLink" href="resources/ai-faceless-youtube-masterclass.html">CONTINUE SESSION →</a>
+<a class="btn secondary" id="currentPlaybookLink" href="playbook.html">OPEN PLAYBOOK</a>
 </div>
 <aside style="padding:28px;border-left:1px solid var(--bm-line);display:flex;flex-direction:column;justify-content:space-between">
 <div><div style="font-size:9px;color:#777;letter-spacing:.14em;font-weight:900">CURRENT PRODUCTION STAGE</div><div style="font-size:30px;font-weight:900;margin-top:8px">BLUEPRINT → MOVIE</div><div id="nextUnlock" style="margin-top:16px;font-size:11px;color:#a7a7a7;line-height:1.5"><strong style="color:#fff">NEXT SESSION UNLOCK</strong><br><span id="unlockCountdown">Loading schedule…</span></div></div>
@@ -61,7 +61,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;margin-top:30px;color:var
 </aside>
 </div>
 <div style="display:grid;grid-template-columns:repeat(9,1fr);gap:1px;margin-top:18px;background:var(--bm-line);border:1px solid var(--bm-line);border-radius:12px;overflow:hidden">
-<div class="stage">01<br>IDEA</div><div class="stage active">02<br>BLUEPRINT</div><div class="stage">03<br>CHARACTERS</div><div class="stage">04<br>STORY</div><div class="stage">05<br>SHOTS</div><div class="stage">06<br>MOTION</div><div class="stage">07<br>EDIT</div><div class="stage">08<br>REVIEW</div><div class="stage">09<br>MOVIE</div>
+<div class="stage">01<br>IDEA</div><div class="stage active" id="stageBlueprint">02<br>BLUEPRINT</div><div class="stage">03<br>CHARACTERS</div><div class="stage">04<br>STORY</div><div class="stage">05<br>SHOTS</div><div class="stage">06<br>MOTION</div><div class="stage">07<br>EDIT</div><div class="stage">08<br>REVIEW</div><div class="stage">09<br>MOVIE</div>
 </div>
 </section>
 
@@ -69,7 +69,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;margin-top:30px;color:var
 <div class="section-head"><div><div class="kicker">01 / LEARN</div><h2>Session Library</h2></div><p>Sessions are ordered by the actual cohort sequence. Your current session is highlighted below. Future sessions remain visible so you can see what is coming next.</p></div>
 <div class="sessions">
 <div class="session"><div class="session-number">WEEK 1 / DAY 2</div><div><h3>Week 1 Day 2 Session · YouTube Masterclass</h3><p>AI Faceless YouTube Channel Masterclass. Completed foundation session.</p></div><div class="actions"><a class="btn" href="resources/ai-faceless-youtube-masterclass.html">OPEN SESSION</a></div></div>
-<div class="session upcoming"><div class="session-number">UPCOMING · WEEK 2 / DAY 1</div><div><h3>Build Your First AI Movie Short</h3><p>Visual mastery, first short production, Filmora editing and channel launch.</p></div><div class="actions"><span class="lock-label">COMING NEXT</span></div></div><div class="session upcoming"><div class="session-number">UPCOMING · WEEK 2 / DAY 2</div><div><h3>Photorealistic AI Advertisement</h3><p>Create photorealistic product frames, build continuity and turn images into video.</p></div><div class="actions"><span class="lock-label">UPCOMING</span></div></div><div class="session upcoming"><div class="session-number">UPCOMING · WEEK 3 / DAY 1</div><div><h3>Structured Brand Story Pipeline</h3><p>Build the character sheet, visual direction, screenplay and structured shot shortlist before deeper generation.</p></div><div class="actions"><span class="lock-label">UPCOMING</span></div></div>
+<div class="session upcoming" id="week2day1Card"><div class="session-number" id="week2day1Label">UPCOMING · WEEK 2 / DAY 1</div><div><h3>Build Your First AI Movie Short</h3><p>Visual mastery, first short production, Filmora editing and channel launch.</p></div><div class="actions" id="week2day1Actions"><span class="lock-label">COMING NEXT</span></div></div><div class="session upcoming"><div class="session-number">UPCOMING · WEEK 2 / DAY 2</div><div><h3>Photorealistic AI Advertisement</h3><p>Create photorealistic product frames, build continuity and turn images into video.</p></div><div class="actions"><span class="lock-label">UPCOMING</span></div></div><div class="session upcoming"><div class="session-number">UPCOMING · WEEK 3 / DAY 1</div><div><h3>Structured Brand Story Pipeline</h3><p>Build the character sheet, visual direction, screenplay and structured shot shortlist before deeper generation.</p></div><div class="actions"><span class="lock-label">UPCOMING</span></div></div>
 </div>
 <div class="callout">Week 1 Day 1 was cohort orientation and has no standalone page. Future sessions will unlock as the cohort reaches them.</div>
 </div></section>
@@ -102,6 +102,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;margin-top:30px;color:var
 <script>
 (function(){
 const unlock=new Date("2026-10-10T10:00:00+05:30");
+const next={title:"Week 2 · Day 1",name:"Build Your First AI Movie Short",description:"Build your first AI movie short, edit it in Filmora, and launch the YouTube channel.",session:"sessions/week-2-day-1/index.html",playbook:"sessions/week-2-day-1/playbook.html"};
 const countdown=document.getElementById("unlockCountdown");
 const status=document.getElementById("currentStatus");
 const timerBox=document.getElementById("nextUnlock");
@@ -110,7 +111,18 @@ function tick(){
  const diff=unlock-new Date();
  if(diff<=0){
    countdown.textContent="Week 2 · Day 1 is available now.";
-   if(status){status.textContent="NEXT SESSION AVAILABLE";status.classList.add("active")}
+   if(status){status.textContent="CURRENT SESSION";status.classList.add("active")}
+   const title=document.getElementById("currentSessionTitle"),desc=document.getElementById("currentSessionDescription"),link=document.getElementById("currentSessionLink"),play=document.getElementById("currentPlaybookLink");
+   if(title)title.innerHTML=next.title+"<br><span style="color:var(--bm-orange)">'+next.name+"</span>";
+   if(desc)desc.textContent=next.description;
+   if(link){link.href=next.session;link.textContent="CONTINUE SESSION →"}
+   if(play)play.href=next.playbook;
+   const card=document.getElementById("week2day1Card"),label=document.getElementById("week2day1Label"),actions=document.getElementById("week2day1Actions");
+   if(card){card.classList.remove("upcoming");card.style.opacity="1"}
+   if(label){label.textContent="CURRENT · WEEK 2 / DAY 1";label.style.color="var(--bm-orange)"}
+   if(actions)actions.innerHTML='<a class="btn" href="'+next.session+'">OPEN SESSION</a>';
+   const sb=document.getElementById("stageBlueprint");if(sb)sb.classList.remove("active");
+   const vw=document.createElement("div");vw.className="stage active";vw.id="stageVisualWorld";vw.innerHTML="03<br>CHARACTERS";if(sb&&sb.parentNode){sb.parentNode.insertBefore(vw,sb.nextSibling)}
    return;
  }
  const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);
