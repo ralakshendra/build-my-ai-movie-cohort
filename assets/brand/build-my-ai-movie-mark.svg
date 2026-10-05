@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+<title id="title">Build My AI Movie mark</title>
+<desc id="desc">Orange cinematic hexagonal Build My AI Movie mark</desc>
+<rect x="8" y="8" width="144" height="144" rx="32" fill="#050505"/>
+<path d="M80 24 126 51v58l-46 27-46-27V51L80 24Z" fill="none" stroke="#FF6A00" stroke-width="9"/>
+<path d="M58 67 80 54l22 13v26l-22 13-22-13V67Z" fill="#FF6A00"/>
+<path d="M70 74 80 68l10 6v12l-10 6-10-6V74Z" fill="#050505"/>
+</svg>
