@@ -4,3 +4,14 @@
 /* v4 cleanup: unified production pipeline and mobile-safe navigation */
 .bmai-stage{overflow-x:auto;scrollbar-width:none}.bmai-stage::-webkit-scrollbar{display:none}.bmai-stage span{flex:0 0 auto}.bmai-homework-link{white-space:nowrap}.bmai-lock-card .btn{text-decoration:none;display:inline-block;padding:12px 16px}
 @media(max-width:700px){.bmai-breadcrumb{gap:7px}.bmai-breadcrumb .bmai-homework-link{width:100%;margin-left:0!important}.bmai-stage{padding-left:14px;padding-right:14px}.bmai-scene-strip{width:calc(100% - 24px)}.bmai-lock-card{padding:30px 24px}.bmai-lock-card h1{font-size:clamp(36px,12vw,58px)}}
+
+/* v5 shared floating navigation */
+#bmai-site-utilities{position:fixed;right:22px;bottom:22px;z-index:1000;display:flex;flex-direction:column;align-items:flex-end;gap:9px}
+.bmai-float-btn{width:48px;height:48px;display:flex;align-items:center;justify-content:center;gap:7px;padding:0;border:1px solid rgba(255,255,255,.16);border-radius:50%;background:rgba(10,10,10,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#fff;text-decoration:none;box-shadow:0 12px 35px rgba(0,0,0,.42);cursor:pointer;font:800 9px/1 Inter,Manrope,system-ui,sans-serif;letter-spacing:.08em;transition:all .2s ease}
+.bmai-float-btn span:not(.bmai-icon){display:none}
+.bmai-float-btn:hover{width:112px;border-color:var(--bm-orange);border-radius:24px;background:rgba(255,106,0,.12);color:var(--bm-orange-light);box-shadow:0 14px 40px rgba(255,106,0,.18);transform:translateY(-2px)}
+.bmai-float-btn:hover span:not(.bmai-icon){display:inline}
+.bmai-icon{font-size:20px;line-height:1;font-weight:500}
+.bmai-top-btn{opacity:0;visibility:hidden;transform:translateY(8px);pointer-events:none}
+.bmai-top-btn.is-visible{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+@media(max-width:600px){#bmai-site-utilities{right:14px;bottom:14px;gap:7px}.bmai-float-btn{width:44px;height:44px}.bmai-float-btn:hover{width:44px;border-radius:50%}.bmai-float-btn:hover span:not(.bmai-icon){display:none}.bmai-icon{font-size:19px}}
