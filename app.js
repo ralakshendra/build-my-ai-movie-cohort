@@ -6,8 +6,8 @@ const page=path.indexOf(marker)>=0?path.split(marker)[1]:"index.html";
 const S=[
 {id:"week-1-day-2",week:"WEEK 1 · DAY 2",title:"YouTube Masterclass",number:2,start:"2026-10-04T20:00:00+05:30",end:null,stage:"BLUEPRINT",session:"resources/ai-faceless-youtube-masterclass.html",playbook:"playbook.html",homework:"https://docs.google.com/document/d/1ElXCXzfTup1HubGb0KDTIzqCkbPUBWxXwqm3_HDxFmw/edit?usp=sharing",description:"AI Faceless YouTube Channel Masterclass. Completed foundation session."},
 {id:"week-2-day-1",week:"WEEK 2 · DAY 1",title:"Build Your First AI Movie Short",number:3,start:"2026-10-10T20:00:00+05:30",end:"2026-10-10T22:00:00+05:30",stage:"VISUAL WORLD",session:"sessions/week-2-day-1/index.html",playbook:"sessions/week-2-day-1/playbook.html",homework:"https://docs.google.com/document/d/1zdEzgOX22ghpxgmNN5yQeYLprWsAUX3R7zNxuMmJQwI",description:"Visual mastery, first short production, Filmora editing and channel launch."},
-{id:"week-2-day-2",week:"WEEK 2 · DAY 2",title:"Photorealistic AI Advertisement",number:4,start:"2026-10-11T20:00:00+05:30",end:"2026-10-11T22:00:00+05:30",stage:"MOTION",session:"sessions/week-2-day-2/index.html",playbook:"sessions/week-2-day-2/playbook.html",homework:"https://docs.google.com/document/d/1jbIb9krXCTVpHprI3tqm9V6tHL-L5Sr1NCFYQ5WHNBA",description:"Create photorealistic product frames, build continuity and turn images into video."},
-{id:"week-3-day-1",week:"WEEK 3 · DAY 1",title:"Structured Brand Story Pipeline",number:5,start:"2026-10-17T20:00:00+05:30",end:"2026-10-17T22:00:00+05:30",stage:"STORY",session:"sessions/week-3-day-1/index.html",playbook:"sessions/week-3-day-1/playbook.html",homework:"https://docs.google.com/document/d/1C9Txnwd_Fi2gqeHLZnfkGq5lEoqtA6WzqI4aGBCWFL4/edit?usp=sharing",description:"Build the character sheet, visual direction, screenplay and structured shot shortlist before deeper generation."},
+{id:"week-2-day-2",week:"WEEK 2 · DAY 2",title:"Photorealistic AI Advertisement",number:4,start:"2026-10-11T20:00:00+05:30",end:"2026-10-11T22:00:00+05:30",stage:"MOTION",session:"sessions/week-2-day-2/index.html",playbook:"sessions/week-2-day-2/playbook.html",homeworkPage:"sessions/week-2-day-2/homework.html",homework:"https://docs.google.com/document/d/1jbIb9krXCTVpHprI3tqm9V6tHL-L5Sr1NCFYQ5WHNBA",description:"Create photorealistic product frames, build continuity and turn images into video."},
+{id:"week-3-day-1",week:"WEEK 3 · DAY 1",title:"Structured Brand Story Pipeline",number:5,start:"2026-10-17T20:00:00+05:30",end:"2026-10-17T22:00:00+05:30",stage:"STORY",session:"sessions/week-3-day-1/index.html",playbook:"sessions/week-3-day-1/playbook.html",homeworkPage:"sessions/week-3-day-1/homework.html",homework:"https://docs.google.com/document/d/1C9Txnwd_Fi2gqeHLZnfkGq5lEoqtA6WzqI4aGBCWFL4/edit?usp=sharing",description:"Build the character sheet, visual direction, screenplay and structured shot shortlist before deeper generation."},
 {id:"week-3-day-2",week:"WEEK 3 · DAY 2",title:"Week 3 Day 2 Session",number:6,start:"2026-10-18T20:00:00+05:30",end:"2026-10-18T22:00:00+05:30",stage:"SHOTS",session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
 {id:"week-4-day-1",week:"WEEK 4 · DAY 1",title:"Week 4 Day 1 Session",number:7,start:"2026-10-24T20:00:00+05:30",end:"2026-10-24T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
 {id:"week-4-day-2",week:"WEEK 4 · DAY 2",title:"Week 4 Day 2 Session",number:8,start:"2026-10-25T20:00:00+05:30",end:"2026-10-25T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
@@ -25,7 +25,7 @@ const routeMap={
 "resources/ai-faceless-youtube-masterclass.html":"week-1-day-2","playbook.html":"week-1-day-2",
 "sessions/week-2-day-1/index.html":"week-2-day-1","sessions/week-2-day-1/playbook.html":"week-2-day-1",
 "sessions/week-2-day-2/index.html":"week-2-day-2","sessions/week-2-day-2/playbook.html":"week-2-day-2","sessions/week-2-day-2/homework.html":"week-2-day-2",
-"sessions/week-3-day-1/index.html":"week-3-day-1","sessions/week-3-day-1/playbook.html":"week-3-day-1"
+"sessions/week-3-day-1/index.html":"week-3-day-1","sessions/week-3-day-1/playbook.html":"week-3-day-1","sessions/week-3-day-1/homework.html":"week-3-day-1"
 };
 const labels={};
 Object.keys(routeMap).forEach(p=>{labels[p]=p.endsWith("/homework.html")?"HOMEWORK":p.endsWith("/playbook.html")?"PLAYBOOK":"SESSION GUIDE"});
@@ -57,18 +57,40 @@ tick();setInterval(tick,1000);return true
 function applyBrandMark(){const iconHref=basePath()+"assets/brand/build-my-ai-movie-mark.svg";if(!document.querySelector("link[data-bmai-favicon]")){const icon=document.createElement("link");icon.rel="icon";icon.type="image/svg+xml";icon.href=iconHref;icon.setAttribute("data-bmai-favicon","true");document.head.appendChild(icon)}const brand=document.querySelector("header .brand");if(!brand||brand.querySelector(".bmai-brand-mark"))return;const mark=document.createElement("img");mark.className="bmai-brand-mark";mark.src=basePath()+"assets/brand/build-my-ai-movie-mark.svg";mark.alt="";mark.setAttribute("aria-hidden","true");brand.insertBefore(mark,brand.firstChild)}
 function chrome(){
 const x=pageSession();if(!x||document.querySelector(".bmai-breadcrumb"))return;
-const base=basePath(),host=document.createElement("div"),crumb=document.createElement("div");const nav=document.querySelector("header .nav");if(nav&&!document.querySelector(".bmai-header-home")){const a=document.createElement("a");a.className="bmai-header-home";a.href=base+"index.html";a.setAttribute("aria-label","Back to Homepage");a.title="Back to Homepage";a.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5.5 9.5V21h13V9.5"></path><path d="M9.5 21v-6h5v6"></path></svg>';const brand=nav.querySelector(".brand");if(brand)brand.insertAdjacentElement("afterend",a);}
+const base=basePath(),host=document.createElement("div"),crumb=document.createElement("div");
+const nav=document.querySelector("header .nav");
+if(nav&&!document.querySelector(".bmai-header-home")){
+ const a=document.createElement("a");a.className="bmai-header-home";a.href=base+"index.html";a.setAttribute("aria-label","Back to Student Hub");a.title="Back to Student Hub";
+ a.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5.5 9.5V21h13V9.5"></path><path d="M9.5 21v-6h5v6"></path></svg>';
+ const brand=nav.querySelector(".brand");if(brand)brand.insertAdjacentElement("afterend",a);
+}
 crumb.className="bmai-breadcrumb";
-const hub=document.createElement("a");hub.href=base+"index.html";hub.textContent="HUB";
-const sep1=document.createElement("span");sep1.textContent="›";
+const hub=document.createElement("a");hub.href=base+"index.html";hub.textContent="HUB";hub.setAttribute("aria-label","Student Hub");
+const sep1=document.createElement("span");sep1.textContent="›";sep1.setAttribute("aria-hidden","true");
 const w=document.createElement("span");w.textContent=x.week;w.className="crumb-week";
-const sep2=sep1.cloneNode(true),cur=document.createElement("span");cur.className="current";cur.textContent=labels[page]||"SESSION";
+const sep2=sep1.cloneNode(true),cur=document.createElement("span");cur.className="current";cur.textContent=labels[page]||"SESSION";cur.setAttribute("aria-current","page");
 crumb.append(hub,sep1,w,sep2,cur);
-const docUrl=x.homework;
-if(docUrl){const a=document.createElement("a");a.href=docUrl;a.target="_blank";a.rel="noopener noreferrer";a.textContent="HOMEWORK DOC ↗";a.className="bmai-homework-link";crumb.append(a)}
+
+const links=document.createElement("div");links.className="bmai-chrome-actions";
+const addLink=(label,href,external=false)=>{
+ const a=document.createElement("a");a.textContent=label;a.href=href;
+ if(external){a.target="_blank";a.rel="noopener noreferrer"}
+ links.append(a);
+};
+const sessionHref=x.session?base+x.session:null;
+const playbookHref=x.playbook?base+x.playbook:null;
+const homeworkPageHref=x.homeworkPage?base+x.homeworkPage:null;
+if(sessionHref && page!==x.session)addLink("SESSION GUIDE",sessionHref);
+if(playbookHref && page!==x.playbook)addLink("PLAYBOOK",playbookHref);
+if(homeworkPageHref && page!==x.homeworkPage)addLink("HOMEWORK WORKSPACE",homeworkPageHref);
+else if(x.homework)addLink("HOMEWORK DOC ↗",x.homework,true);
+crumb.append(links);
+
 const stage=document.createElement("div");stage.className="bmai-stage";
-stages.forEach(s=>{const el=document.createElement("span");el.textContent=s;if(s===x.stage)el.className="active";stage.append(el)});
-const slate=document.createElement("div");slate.className="bmai-scene-strip";slate.innerHTML="<div><div class='bmai-scene-kicker'>"+esc(x.week)+" · "+esc(labels[page]||"SESSION")+"</div><div class='bmai-scene-title'>"+esc(x.title)+"</div><div class='bmai-scene-meta'>"+esc(dateRange(x))+" · Build with intent. Generate with discipline. Keep the story consistent.</div></div><div class='bmai-scene-art' aria-hidden='true'><div class='bmai-scene-orb'></div></div>";
+const activeIndex=stages.indexOf(x.stage),nextStage=activeIndex>=0&&activeIndex<stages.length-1?stages[activeIndex+1]:null;
+stages.forEach((s,i)=>{const el=document.createElement("span");el.textContent=s;if(s===x.stage)el.className="active";if(nextStage===s)el.classList.add("next");stage.append(el)});
+const slate=document.createElement("div");slate.className="bmai-scene-strip";
+slate.innerHTML="<div><div class='bmai-scene-kicker'>"+esc(x.week)+" · "+esc(labels[page]||"SESSION")+"</div><div class='bmai-scene-title'>"+esc(x.title)+"</div><div class='bmai-scene-meta'>"+esc(dateRange(x))+" · "+(nextStage?"NEXT PRODUCTION STAGE: "+esc(nextStage):"FINAL PRODUCTION STAGE")+" · Build with intent. Generate with discipline. Keep the story consistent.</div></div><div class='bmai-scene-art' aria-hidden='true'><div class='bmai-scene-orb'></div></div>";
 host.append(crumb,stage,slate);const header=document.querySelector("header");if(header)header.insertAdjacentElement("afterend",host);else document.body.prepend(host)
 }
 function applyPageIdentity(){
@@ -82,14 +104,21 @@ function applyPageIdentity(){
  document.documentElement.dataset.bmaiPage=id;
 }
 function setupMobileHeader(){
-document.querySelectorAll("header .nav,.topbar .nav,.top .nav").forEach(nav=>{
+document.querySelectorAll("header .nav,.topbar .nav,.top .nav").forEach((nav,index)=>{
  const links=nav.querySelector(".nav-links")||nav.querySelector(":scope>div:last-child");
  if(!links||links.classList.contains("brand")||nav.querySelector(".bmai-mobile-menu"))return;
  if(links.querySelector("a")===null)return;
- const btn=document.createElement("button");btn.type="button";btn.className="bmai-mobile-menu";btn.setAttribute("aria-label","Open navigation");btn.setAttribute("aria-expanded","false");btn.innerHTML='<span></span><span></span><span></span>';
+ if(!links.id)links.id="bmai-mobile-nav-"+index;
+ const btn=document.createElement("button");btn.type="button";btn.className="bmai-mobile-menu";btn.setAttribute("aria-label","Open navigation");btn.setAttribute("aria-expanded","false");btn.setAttribute("aria-controls",links.id);
+ btn.innerHTML='<span></span><span></span><span></span>';
+ const close=()=>{nav.classList.remove("mobile-nav-open");btn.setAttribute("aria-expanded","false");btn.setAttribute("aria-label","Open navigation")};
  btn.addEventListener("click",()=>{
    const open=nav.classList.toggle("mobile-nav-open");btn.setAttribute("aria-expanded",String(open));btn.setAttribute("aria-label",open?"Close navigation":"Open navigation");
+   if(open){const first=links.querySelector("a");if(first)setTimeout(()=>first.focus(),0)}
  });
+ links.querySelectorAll("a").forEach(a=>a.addEventListener("click",close));
+ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&nav.classList.contains("mobile-nav-open")){close();btn.focus()}});
+ document.addEventListener("click",e=>{if(nav.classList.contains("mobile-nav-open")&&!nav.contains(e.target))close()});
  nav.appendChild(btn);
 });
 }
@@ -166,9 +195,19 @@ if(!nxt.session)a.classList.add("secondary");
 btn.replaceWith(a);
 })
 }
+function accessibility(){
+ const main=document.querySelector("main");
+ if(main&&!main.id)main.id="main-content";
+ if(main&&!document.querySelector(".bmai-skip-link")){
+   const a=document.createElement("a");a.className="bmai-skip-link";a.href="#main-content";a.textContent="Skip to main content";document.body.insertBefore(a,document.body.firstChild);
+ }
+ document.querySelectorAll('a[target="_blank"]').forEach(a=>{if(!a.rel.includes("noopener"))a.rel=(a.rel+" noopener").trim();if(!a.rel.includes("noreferrer"))a.rel=(a.rel+" noreferrer").trim()});
+ document.querySelectorAll("button").forEach(b=>{if(!b.hasAttribute("type"))b.type="button"});
+}
 function ready(){
 if(lockPage())return;
 applyBrandMark();
+accessibility();
 if(page==="index.html"||page===""){homepage();setInterval(homepage,1000)}
 try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
 chrome();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();setupScrollControls();
