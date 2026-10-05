@@ -665,3 +665,11 @@ body:has(.header-badge) .bmai-homework-panel{
 @media(max-width:430px){
   body:has(.header-badge) .stat-grid{grid-template-columns:1fr!important}
 }
+
+/* v17 playbook opening visuals */
+.bmai-playbook-hero-image{position:relative;overflow:hidden!important;background:#050505!important}
+.bmai-playbook-hero-image:before{z-index:1!important;inset:0!important;border:0!important;transform:none!important;background:linear-gradient(90deg,rgba(5,5,5,.08),transparent 55%),linear-gradient(180deg,rgba(5,5,5,.06),transparent 60%,rgba(5,5,5,.34))!important}
+.bmai-playbook-hero-image:after{z-index:2!important;left:8%!important;right:8%!important;bottom:6%!important;height:1px!important;background:linear-gradient(90deg,transparent,rgba(255,106,0,.78),transparent)!important}
+.bmai-playbook-hero-image>img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center!important;z-index:0;filter:saturate(.9) contrast(1.03)}
+@media(max-width:900px){.bmai-playbook-hero-image{min-height:360px!important}}
+@media(max-width:650px){.bmai-playbook-hero-image{min-height:300px!important}}
