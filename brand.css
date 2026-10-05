@@ -25,3 +25,98 @@ header .nav{display:flex;align-items:center;gap:18px}
 
 /* v7 shared compact brand mark */
 .brand{display:inline-flex!important;align-items:center!important;gap:10px!important;white-space:nowrap!important}.bmai-brand-mark{width:30px;height:30px;display:block;flex:0 0 30px;object-fit:contain;border-radius:8px}.brand .bmai-brand-mark{filter:drop-shadow(0 0 10px rgba(255,106,0,.14))}@media(max-width:700px){.brand{gap:8px!important;font-size:12px!important}.bmai-brand-mark{width:27px;height:27px;flex-basis:27px}}
+
+
+/* v8 responsive foundation: mobile-first safety layer
+   Keeps existing session content intact while fixing overflow, density, controls and media behavior. */
+html{overflow-x:hidden}
+body{overflow-x:hidden;max-width:100%}
+img,video,iframe,svg,canvas{max-width:100%;height:auto}
+pre,code{max-width:100%;overflow-x:auto}
+table{max-width:100%}
+input,textarea,select,button{max-width:100%}
+button,a{touch-action:manipulation}
+main,header,footer,section,.wrap,.container,.hero,.section{min-width:0}
+.sc,.scroll,[class*="scroll"],.table-wrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.bmai-scene-strip,.bmai-studio-card,.bmai-lock-card,.bmai-art,.card,.session,.check,.progress-card,.quiz,.results,.flow-card,.share,.mission,.visual,.complete{min-width:0}
+@media(max-width:900px){
+  .hero{gap:28px}
+  .section{padding:72px 0}
+  .section-head{align-items:flex-start;flex-direction:column;gap:14px}
+  .check-wrap{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .objectives{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:700px){
+  .container,.wrap{width:calc(100% - 28px);max-width:none}
+  header{max-width:none}
+  .nav{height:auto;min-height:58px;padding:9px 0;gap:10px}
+  .nav-right{gap:6px;flex-wrap:wrap;justify-content:flex-end}
+  .pill{font-size:9px;padding:6px 8px}
+  .brand{max-width:calc(100vw - 90px);overflow:hidden;text-overflow:ellipsis}
+  h1{font-size:clamp(38px,12vw,64px)!important;line-height:.96!important}
+  h2{font-size:clamp(30px,9vw,48px)!important}
+  h3{font-size:20px!important}
+  .hero{min-height:auto!important;grid-template-columns:1fr!important;padding:44px 0 48px!important;gap:26px!important}
+  .hero-copy{min-width:0}
+  .hero-sub,.lead{font-size:16px!important;line-height:1.55}
+  .hero-meta{gap:12px}
+  .hero-meta-strip{grid-template-columns:1fr!important}
+  .visual,.hero-visual{min-height:330px!important;max-height:62vh}
+  .visual img,.hero-visual img{min-height:330px!important;height:100%;object-fit:cover}
+  .grid,.objectives,.steps{grid-template-columns:1fr!important}
+  .grid .card,.card{padding:19px}
+  .section{padding:58px 0}
+  .section-head{margin-bottom:24px}
+  .mission{display:block;padding:20px 0}
+  .mission strong{font-size:18px}
+  .step{grid-template-columns:48px 1fr;min-height:0;padding:18px 0}
+  .check-wrap{grid-template-columns:1fr}
+  .check{padding:14px}
+  .tabs,.tools,.flow,.calc{gap:6px}
+  .flow{display:grid!important;grid-template-columns:1fr 1fr!important}
+  .flow span{font-size:12px;padding:7px 9px}
+  .btn,.btn-primary,.btn-secondary{min-height:44px;padding:11px 14px}
+  .bmai-scene-strip{margin-top:12px}
+  .bmai-scene-title{font-size:24px}
+  .bmai-lock-screen{padding:16px}
+  .bmai-lock-card{padding:26px 20px;border-radius:18px}
+  .bmai-lock-card p{font-size:14px}
+  #bmai-site-utilities{right:12px;bottom:12px}
+}
+@media(max-width:480px){
+  .container,.wrap{width:calc(100% - 22px)}
+  .nav{align-items:flex-start}
+  .brand{font-size:11px!important}
+  .nav-right{max-width:46%;justify-content:flex-end}
+  .nav-right .pill{display:none}
+  .hero{padding-top:34px!important}
+  .visual,.hero-visual{min-height:280px!important}
+  .visual img,.hero-visual img{min-height:280px!important}
+  .hero-meta{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .flow{grid-template-columns:1fr!important}
+  .tabs button,.chip,.bmai-chip{min-height:42px;padding:9px 11px}
+  .bmai-breadcrumb{font-size:9px}
+  .bmai-stage{gap:0}
+  .bmai-stage span{font-size:8px}
+}
+@media(max-width:700px){
+  /* Long-form instructional sessions */
+  .bar{padding-left:12px!important;padding-right:12px!important}
+  .bar div{gap:7px}
+  .bar button{min-height:40px;padding:7px 10px}
+  .prog{min-width:80px}
+  .wrap{padding-left:0!important;padding-right:0!important}
+  nav{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  nav a{flex:0 0 auto}
+  table{font-size:13px}
+  th,td{padding:7px 8px}
+  details{max-width:100%}
+  summary{padding:12px 13px;font-size:15px}
+  .in{padding-left:13px!important;padding-right:13px!important}
+  .calc input[type=number],.calc select{width:100%;min-height:42px}
+  footer{padding-left:12px!important;padding-right:12px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important}
+}
