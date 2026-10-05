@@ -18,7 +18,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;margin-top:30px;color:var
 @media(max-width:850px){.grid{grid-template-columns:1fr 1fr}.session{grid-template-columns:80px 1fr}.session .btn{grid-column:2;width:max-content}}
 @media(max-width:600px){.container{width:min(var(--max),calc(100% - 24px))}.nav{height:58px}.nav-links a:not(:last-child){display:none}.hero{padding:70px 0 55px}.grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:15px}.session{grid-template-columns:1fr;gap:8px}.session .btn{grid-column:auto}.footer-inner{display:block}.footer-inner div+div{margin-top:8px}}
 </style>
-<meta name="build-version" content="2026-10-05-hub-v11"><meta http-equiv="Cache-Control" content="no-cache"><link rel="stylesheet" href="brand.css?v=20261005-brand-v4"><!-- Build My AI Movie shared brand system -->
+<meta name="build-version" content="2026-10-05-hub-v12"><meta http-equiv="Cache-Control" content="no-cache"><link rel="stylesheet" href="brand.css?v=20261005-brand-v4"><!-- Build My AI Movie shared brand system -->
 <style>
 .bmai-art{position:relative;min-height:260px;border:1px solid var(--bm-line);border-radius:20px;overflow:hidden;background:radial-gradient(circle at 76% 34%,rgba(255,106,0,.35),transparent 18%),radial-gradient(circle at 70% 55%,rgba(255,154,61,.13),transparent 30%),linear-gradient(145deg,#171717,#050505 72%)}.bmai-art:before{content:"";position:absolute;inset:14%;border:1px solid rgba(255,106,0,.35);transform:skewY(-8deg)}.bmai-art .lens{position:absolute;width:120px;height:120px;right:12%;top:20%;border-radius:50%;border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 0 0 18px rgba(255,255,255,.025),0 0 70px rgba(255,106,0,.18)}.bmai-art .beam{position:absolute;width:72%;height:45%;left:0;top:27%;background:linear-gradient(90deg,rgba(255,106,0,.18),transparent);clip-path:polygon(0 35%,100% 0,100% 100%,0 65%);filter:blur(3px)}.bmai-art .label{position:absolute;left:22px;bottom:20px;color:#fff;font-size:10px;letter-spacing:.16em;font-weight:900}.bmai-art .label small{display:block;margin-top:6px;color:var(--bm-muted);font-size:8px;letter-spacing:.08em}.stage{padding:11px 6px;background:#0b0b0b;text-align:center;font-size:8px;line-height:1.6;letter-spacing:.08em;font-weight:900;color:#666}.stage.active{background:rgba(255,106,0,.12);color:#fff;box-shadow:inset 0 -2px 0 var(--bm-orange)}@media(max-width:900px){.bmai-studio-card{grid-template-columns:1fr!important}.bmai-studio-card aside{border-left:0!important;border-top:1px solid var(--bm-line)}}
 </style><script src="app.js?v=20261005-app-v3"></script><style>
@@ -29,7 +29,143 @@ footer{border-top:1px solid var(--line);padding:30px 0;margin-top:30px;color:var
 .bmai-current-wrap{position:relative}.bmai-production-pipeline .stage{min-width:76px}.bmai-next-session{margin-top:14px;padding:14px 16px;border:1px solid var(--bm-line);border-radius:12px;background:rgba(255,255,255,.025);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.bmai-next-session span{color:var(--bm-orange);font-size:9px;font-weight:900;letter-spacing:.16em}.bmai-next-session strong{color:#fff;font-size:12px}.bmai-next-session small{color:var(--bm-muted);font-size:11px}.session-rail{align-self:start}.session-status{color:var(--bm-orange);font-size:9px;letter-spacing:.14em;font-weight:900;text-transform:uppercase;margin-bottom:7px}.schedule-row h3{margin:0}.schedule-row .actions{align-self:center}.bmai-homework-link{margin-left:auto!important;color:var(--bm-orange)!important;font-weight:800}.bmai-lock-date{margin-top:20px;color:#fff;font-size:11px;font-weight:800;letter-spacing:.04em}.bmai-lock-card h1{margin-top:14px}.bmai-lock-card .btn{text-decoration:none;display:inline-block;padding:12px 16px}.bmai-locked-page{min-height:100vh!important}
 @media(max-width:900px){.nav-links{overflow-x:auto;max-width:55vw;gap:14px;scrollbar-width:none}.nav-links::-webkit-scrollbar{display:none}.nav-links a{white-space:nowrap}.bmai-studio-card{grid-template-columns:1fr!important}.bmai-studio-card aside{border-left:0!important;border-top:1px solid var(--bm-line)}} 
 @media(max-width:700px){.nav-links{max-width:48vw}.session{grid-template-columns:1fr}.session-rail{align-self:auto}.schedule-row .actions{justify-content:flex-start}.bmai-production-pipeline{grid-template-columns:repeat(10,76px)!important}.bmai-next-session{align-items:flex-start;flex-direction:column;gap:5px}}
-</style><style>.resource-placeholder{opacity:.55}.resource-placeholder .tag{color:#777!important}.resource-placeholder:hover{opacity:.8}</style></head>
+</style><style>.resource-placeholder{opacity:.55}.resource-placeholder .tag{color:#777!important}.resource-placeholder:hover{opacity:.8}</style><style>
+/* v12 homepage session library readability */
+#sessions .sessions{gap:14px}
+#sessions .session.schedule-row{
+  grid-template-columns:minmax(170px,190px) minmax(0,1fr) minmax(220px,250px);
+  gap:24px;
+  align-items:stretch;
+  min-height:154px;
+  padding:24px 26px;
+  opacity:1!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012))!important;
+}
+#sessions .session.schedule-row .session-rail{
+  align-self:stretch;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-right:20px;
+  border-right:1px solid var(--bm-line-soft);
+}
+#sessions .schedule-row .session-number{
+  color:#d8d8d8!important;
+  font-size:11px;
+  line-height:1.45;
+  letter-spacing:.14em;
+}
+#sessions .schedule-row.is-current .session-number{color:var(--bm-orange)!important}
+#sessions .schedule-row .session-date{
+  margin-top:10px;
+  color:#a7a7a7!important;
+  font-size:10px;
+  line-height:1.65;
+  letter-spacing:.09em;
+}
+#sessions .schedule-row>div:nth-child(2){
+  min-width:0;
+  align-self:center;
+}
+#sessions .schedule-row .session-status{
+  margin-bottom:8px;
+  color:var(--bm-orange)!important;
+  font-size:10px;
+  line-height:1.4;
+  letter-spacing:.14em;
+  font-weight:900;
+}
+#sessions .schedule-row h3{
+  color:#f4f4f4!important;
+  font-size:clamp(24px,2.35vw,34px);
+  line-height:1.08;
+  letter-spacing:-.035em;
+}
+#sessions .schedule-row.upcoming h3{color:#e0e0e0!important}
+#sessions .schedule-row p{
+  color:#9f9f9f!important;
+  font-size:13px;
+  line-height:1.55;
+  max-width:720px;
+}
+#sessions .schedule-row .actions{
+  align-self:center;
+  justify-self:end;
+  width:100%;
+  min-width:0;
+  margin-top:0;
+  padding-top:0;
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:center;
+  gap:10px;
+}
+#sessions .schedule-row .actions .btn,
+#sessions .schedule-row .actions .lock-label{
+  width:100%;
+  min-width:0;
+  min-height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+#sessions .schedule-row .actions .btn.secondary{
+  color:#d8d8d8!important;
+  border-color:rgba(255,255,255,.22)!important;
+  background:rgba(255,255,255,.035)!important;
+}
+#sessions .schedule-row .actions .btn.secondary:hover{
+  color:#fff!important;
+  border-color:var(--bm-orange)!important;
+  background:rgba(255,106,0,.08)!important;
+}
+#sessions .schedule-row .countdown{
+  margin:0;
+  text-align:center;
+  color:var(--bm-orange-light)!important;
+  font-size:11px;
+  line-height:1.4;
+  letter-spacing:.05em;
+  font-weight:900;
+}
+#sessions .schedule-row.is-current{
+  border-color:rgba(255,106,0,.52)!important;
+  box-shadow:0 20px 70px rgba(0,0,0,.28),0 0 38px rgba(255,106,0,.055)!important;
+}
+#sessions .schedule-row.upcoming{
+  opacity:1!important;
+}
+@media(max-width:900px){
+  #sessions .session.schedule-row{
+    grid-template-columns:150px minmax(0,1fr);
+    gap:20px;
+  }
+  #sessions .schedule-row .actions{
+    grid-column:2;
+    justify-self:start;
+    width:min(260px,100%);
+  }
+}
+@media(max-width:600px){
+  #sessions .session.schedule-row{
+    grid-template-columns:1fr;
+    gap:14px;
+    padding:20px;
+  }
+  #sessions .schedule-row .session-rail{
+    padding:0 0 14px;
+    border-right:0;
+    border-bottom:1px solid var(--bm-line-soft);
+  }
+  #sessions .schedule-row .actions{
+    grid-column:auto;
+    width:100%;
+  }
+  #sessions .schedule-row h3{font-size:25px}
+}
+</style></head>
 <body>
 <header class="topbar"><div class="container nav">
 <div class="brand">BUILD MY AI MOVIE COHORT <span>HUB</span></div>
