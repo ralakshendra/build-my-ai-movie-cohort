@@ -105,6 +105,16 @@ if(sched)sched.innerHTML=S.map(renderCard).join("");
 const cd=[...document.querySelectorAll(".countdown")];cd.forEach(el=>el.textContent=countdown(el.dataset.unlock));
 const nextBox=document.getElementById("bmaiNextSession");
 if(nextBox){if(nxt){nextBox.innerHTML="<span>NEXT SESSION</span><strong>"+esc(nxt.week)+" · "+esc(nxt.title)+"</strong><small>"+esc(dateRange(nxt))+" · Unlocks in "+esc(countdown(nxt.start))+"</small>"}else nextBox.innerHTML="<span>COHORT COMPLETE</span><strong>All scheduled sessions are available.</strong>"}}
+function siteUtilities(){
+const old=document.getElementById("bmai-site-utilities");if(old)old.remove();
+const wrap=document.createElement("div");wrap.id="bmai-site-utilities";wrap.innerHTML='<a class="bmai-float-btn bmai-home-btn" href="'+basePath()+'index.html" aria-label="Back to Homepage" title="Back to Homepage"><span class="bmai-icon" aria-hidden="true">⌂</span><span>HOMEPAGE</span></a><button class="bmai-float-btn bmai-top-btn" type="button" aria-label="Scroll to top" title="Scroll to top"><span class="bmai-icon" aria-hidden="true">↑</span><span>TOP</span></button>';
+document.body.appendChild(wrap);
+const home=wrap.querySelector(".bmai-home-btn");if(page==="index.html"||page==="")home.remove();
+const top=wrap.querySelector(".bmai-top-btn");
+const toggle=()=>top.classList.toggle("is-visible",window.scrollY>500);
+window.addEventListener("scroll",toggle,{passive:true});toggle();
+top.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+}
 function enhanceNextButton(){
 const x=pageSession();if(!x)return;
 const index=S.findIndex(s=>s.id===x.id);const nxt=index>=0?S[index+1]:null;
