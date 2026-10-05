@@ -22,3 +22,6 @@ header .nav{display:flex;align-items:center;gap:18px}
 .bmai-header-home svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .bmai-header-home:hover{border-color:var(--bm-orange);background:rgba(255,106,0,.10);color:var(--bm-orange-light);box-shadow:0 0 24px rgba(255,106,0,.14);transform:translateY(-1px)}
 @media(max-width:700px){.bmai-header-home{width:42px;height:42px}.bmai-header-home svg{width:20px;height:20px}}
+
+/* v7 shared compact brand mark */
+.brand{display:inline-flex!important;align-items:center!important;gap:10px!important;white-space:nowrap!important}.bmai-brand-mark{width:30px;height:30px;display:block;flex:0 0 30px;object-fit:contain;border-radius:8px}.brand .bmai-brand-mark{filter:drop-shadow(0 0 10px rgba(255,106,0,.14))}@media(max-width:700px){.brand{gap:8px!important;font-size:12px!important}.bmai-brand-mark{width:27px;height:27px;flex-basis:27px}}
