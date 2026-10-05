@@ -56,14 +56,14 @@ footer{max-width:1080px;margin:auto;padding:10px 20px 50px;color:var(--mut);font
 <p class="sub">A step-by-step guide to the full session, written so you can follow it without the recording. Build My AI Movie Cohort.</p>
 <div class="who"><b>Instructor: Alexx Roy</b>Founder, Build My AI Movie</div>
 </header>
-<div class="bar"><div class="ui"><button id="all">Expand all</button><button id="none">Collapse all</button><button id="th">Switch theme</button><span class="prog" aria-hidden="true"><i id="pb"></i></span><span id="pt">0 of 0 tasks done</span></div></div>
+<div class="bar"><div class="ui"><button id="all">Expand all</button><button id="none">Collapse all</button><span class="prog" aria-hidden="true"><i id="pb"></i></span><span id="pt">0 of 0 tasks done</span></div></div>
 <div class="wrap"><nav id="nav" aria-label="Sections"></nav><main>
 <section id="s0" data-t="Overview"><h2>Session overview</h2><p class="lead">Alexx Roy walks you through the whole AI Moviemaking production loop in one sitting: show, then you do, then you work alone.</p>
 <h3>The strategy behind everything</h3>
 <ul><li><b>80/20 rule:</b> focus on the 20% of work that gives 80% of the result.</li><li><b>That 20% is:</b> copy a viral video format closely, using the research and prompts from the previous session.</li><li><b>Volume plan:</b> post 100 videos that replicate viral formats. About 80 will fail and about 20 will win.</li><li><b>Replicate the winners:</b> find the 20 that work, check their topic and script, then change the hooks and stories and make the next 100 like them.</li><li>These are <b>low-effort videos</b>. Small mistakes are fine. Speed and volume are the point.</li></ul>
 <h3>Today's agenda, in order</h3>
 <ol><li>Visual mastery with Google Flow (Veo 3.1) and its settings</li><li>Types of videos you can animate</li><li>Script generation quick hack</li><li>Image generation hack</li><li>Voiceovers with ElevenLabs</li><li>Basic editing in Filmora (music is covered as part of this stage)</li><li>Creating and launching your YouTube channel</li><li>Homework, then Q&amp;A</li></ol>
-<div class="tip"><b>How the day runs:</b> Alexx shows each step, then gives timed practice slots (about 3 to 5 minutes). Ask only relevant questions in chat. Advanced questions go to the Wednesday feedback call.</div></section>
+<div class="tip"><b>How the day runs:</b> Alexx shows each step, then gives timed practice slots (about 3 to 5 minutes). Ask only relevant questions in chat. Advanced questions can go to the dedicated feedback call.</div></section>
 <section id="s1" data-t="Recap check"><h2>Before you start: recap check</h2><p class="lead">Confirm you have these from the previous session. Missing items are fine, just finish them today.</p>
 <div class="chk" id="c1"><label><input type="checkbox"> YouTube channel created (today's guide shows how if not)</label><label><input type="checkbox"> Mother Blueprint ready (built with Kimi). It holds your plan, which video goes where, and your keywords.</label><label><input type="checkbox"> JSON prompts created for your scenes</label><label><input type="checkbox"> Viral content researched and your first image and video clips ready</label></div>
 <div class="tip"><b>Take it seriously:</b> Alexx has seen that people who treat week one lightly tend to treat all eight weeks lightly. Even if you never run the channel, finish the exercise.</div></section>
@@ -95,7 +95,7 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 $('main section').forEach(function(s){io.observe(s)});
 D.getElementById('all').onclick=function(){$('details').forEach(function(d){d.open=true})};
 D.getElementById('none').onclick=function(){$('details').forEach(function(d){d.open=false})};
-D.getElementById('th').onclick=function(){var r=D.documentElement,dark=getComputedStyle(r).getPropertyValue('--bg').trim()==='#0d1620';r.dataset.theme=dark?'light':'dark'};
+
 $('.tabs button').forEach(function(b){b.onclick=function(){$('.tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b)});$('.pane').forEach(function(p){p.classList.toggle('on',p.id===b.dataset.p)})}});
 var boxes=$('.chk input'),pb=D.getElementById('pb'),pt=D.getElementById('pt'),key='w2d1-session';
 var saved={};try{saved=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}
