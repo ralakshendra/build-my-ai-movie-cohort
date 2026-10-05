@@ -20,7 +20,7 @@ function basePath(){return "../".repeat(page.split("/").length-1)}
 function formatDate(iso){return new Intl.DateTimeFormat("en-IN",{weekday:"long",day:"numeric",month:"long",year:"numeric",hour:"numeric",minute:"2-digit",hour12:true,timeZone:"Asia/Kolkata"}).format(new Date(iso))}
 function countdown(iso){let d=new Date(iso).getTime()-now();if(d<=0)return"AVAILABLE NOW";const days=Math.floor(d/86400000);d%=86400000;const h=Math.floor(d/3600000);d%=3600000;const m=Math.floor(d/60000);d%=60000;const s=Math.floor(d/1000);return(days?days+"d ":"")+String(h).padStart(2,"0")+"h "+String(m).padStart(2,"0")+"m "+String(s).padStart(2,"0")+"s"}
 function lockPage(){
-const id=existing[page];if(!id)return;
+const id=existing[page]||((page.match(/^sessions\/(week-\d+-day-\d+)\//)||[])[1]);if(!id)return;
 const x=itemById(id);if(!x)return;
 if(new Date(x[3]).getTime()<=now())return;
 const hub=basePath()+"index.html";
