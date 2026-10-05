@@ -88,3 +88,41 @@ for (const [label, path] of pages) {
     await auditPage(page, label, 1440);
   });
 }
+
+
+test('future session materials stay locked before release', async ({browser}) => {
+  const futurePaths = [
+    'sessions/week-2-day-1/index.html',
+    'sessions/week-2-day-1/playbook.html',
+    'sessions/week-2-day-2/index.html',
+    'sessions/week-2-day-2/playbook.html',
+    'sessions/week-2-day-2/homework.html',
+    'sessions/week-3-day-1/index.html',
+    'sessions/week-3-day-1/playbook.html',
+    'sessions/week-3-day-1/homework.html'
+  ];
+  const context = await browser.newContext();
+  for (const path of futurePaths) {
+    const page = await context.newPage();
+    await page.addInitScript(() => {
+      const fixed = new Date('2026-10-05T21:00:00+05:30').getTime();
+      const RealDate = Date;
+      class FrozenDate extends RealDate {
+        constructor(...args) {
+          if (!args.length) super(fixed);
+          else super(...args);
+        }
+        static now() { return fixed; }
+      }
+      window.Date = FrozenDate;
+    });
+    await page.goto(new URL(path, BASE).href, {waitUntil:'domcontentloaded'});
+    await page.waitForTimeout(150);
+    const lock = await page.locator('.bmai-lock-screen').count();
+    if (!lock) throw new Error(path + ': future page is not locked');
+    const bodyText = await page.locator('body').innerText();
+    if (!bodyText.includes('SESSION LOCKED')) throw new Error(path + ': lock state is missing');
+    await page.close();
+  }
+  await context.close();
+});
