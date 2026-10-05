@@ -1,0 +1,48 @@
+name: Build My AI Movie Visual QA
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  visual-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Start local site
+        run: |
+          python3 -m http.server 4173 --directory . >/tmp/bmai-server.log 2>&1 &
+          echo $! > /tmp/bmai-server.pid
+          sleep 2
+
+      - name: Run visual QA
+        env:
+          BMAI_BASE_URL: http://127.0.0.1:4173/
+        run: npm run qa:visual
+
+      - name: Upload screenshots and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-my-ai-movie-visual-qa
+          path: |
+            qa/artifacts/
+            qa/report/
+            test-results/
+            /tmp/bmai-server.log
+          if-no-files-found: ignore
