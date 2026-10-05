@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+<title id="title">Build My AI Movie</title>
+<desc id="desc">Build My AI Movie cinematic orange and white logo</desc>
+<rect width="1200" height="300" fill="#050505"/>
+<g transform="translate(70 55)">
+  <path d="M96 0 184 58v105l-88 58-88-58V58L96 0Z" fill="none" stroke="#FF6A00" stroke-width="14"/>
+  <path d="M52 76 96 48l44 28v52l-44 29-44-29V76Z" fill="#FF6A00"/>
+  <path d="M73 91 96 76l23 15v27l-23 15-23-15V91Z" fill="#050505"/>
+</g>
+<text x="300" y="125" fill="#FFFFFF" font-family="Inter,Arial,sans-serif" font-size="58" font-weight="800" letter-spacing="3">BUILD MY</text>
+<text x="300" y="202" fill="#FF6A00" font-family="Inter,Arial,sans-serif" font-size="72" font-weight="900" letter-spacing="2">AI MOVIE</text>
+</svg>
