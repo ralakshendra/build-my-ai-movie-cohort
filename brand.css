@@ -755,3 +755,8 @@ body:has(.header-badge) .bmai-homework-panel{
 
 /* v23 final overflow guard */
 html,body{overflow-x:hidden!important;max-width:100%}
+
+
+/* v24 mobile lock-screen containment */
+.bmai-lock-screen{width:100%;max-width:100%;overflow:hidden;box-sizing:border-box}
+.bmai-lock-card{max-width:100%;box-sizing:border-box}
