@@ -78,7 +78,7 @@ if(nav&&!document.querySelector(".bmai-header-home")){
  const brand=nav.querySelector(".brand");if(brand)brand.insertAdjacentElement("afterend",a);
 }
 crumb.className="bmai-breadcrumb";
-const hub=document.createElement("a");hub.href=base+"index.html";hub.textContent="HUB";hub.setAttribute("aria-label","Student Hub");
+const hub=document.createElement("a");hub.href=base+"index.html";hub.textContent="← BACK TO HOME";hub.className="bmai-back-home";hub.setAttribute("aria-label","Back to Student Hub");
 const sep1=document.createElement("span");sep1.textContent="›";sep1.setAttribute("aria-hidden","true");
 const w=document.createElement("span");w.textContent=x.week;w.className="crumb-week";
 const sep2=sep1.cloneNode(true),cur=document.createElement("span");cur.className="current";cur.textContent=labels[page]||"SESSION";cur.setAttribute("aria-current","page");
@@ -105,6 +105,21 @@ stages.forEach((s,i)=>{const el=document.createElement("span");el.textContent=s;
 const slate=document.createElement("div");slate.className="bmai-scene-strip";
 slate.innerHTML="<div><div class='bmai-scene-kicker'>"+esc(x.week)+" · "+esc(labels[page]||"SESSION")+"</div><div class='bmai-scene-title'>"+esc(x.title)+"</div><div class='bmai-scene-meta'>"+esc(dateRange(x))+" · "+(nextStage?"NEXT PRODUCTION STAGE: "+esc(nextStage):"FINAL PRODUCTION STAGE")+" · Build with intent. Generate with discipline. Keep the story consistent.</div></div><div class='bmai-scene-art' aria-hidden='true'><div class='bmai-scene-orb'></div></div>";
 host.append(crumb,stage,slate);const header=document.querySelector("header");if(header)header.insertAdjacentElement("afterend",host);else document.body.prepend(host)
+}
+function enhanceLongText(){
+ document.querySelectorAll('.code-block,pre').forEach((el,i)=>{
+   if(el.closest('details')||el.dataset.bmaiLongText==='true')return;
+   const text=(el.innerText||'').trim();
+   if(text.length<500)return;
+   const d=document.createElement('details');
+   d.className='bmai-long-text';
+   const s=document.createElement('summary');
+   s.textContent=text.length>3000?'Open full prompt / text':'Open full text';
+   el.parentNode.insertBefore(d,el);
+   d.appendChild(s);
+   d.appendChild(el);
+   el.dataset.bmaiLongText='true';
+ });
 }
 function applyPageIdentity(){
  const p=location.pathname;
