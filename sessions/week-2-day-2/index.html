@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Build My AI Movie Cohort: Week 2 Day 2 Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f7f3;--card:#fff;--ink:#12261f;--mute:#506058;--line:#d5dfd7;--pal:#14503f;--sun:#e8a317;--sunbg:#fff3d1;--warn:#a5321f;--warnbg:#fde9e4;--ok:#1d7a4f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1a15;--card:#13261f;--ink:#e8f1ec;--mute:#9db1a6;--line:#27423a;--pal:#5fc79f;--sun:#f2b73a;--sunbg:#3a2f10;--warn:#ff9b86;--warnbg:#3b1b15;--ok:#6fd8a4}}
+:root[data-theme="dark"]{--bg:#0c1a15;--card:#13261f;--ink:#e8f1ec;--mute:#9db1a6;--line:#27423a;--pal:#5fc79f;--sun:#f2b73a;--sunbg:#3a2f10;--warn:#ff9b86;--warnbg:#3b1b15;--ok:#6fd8a4}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;line-height:1.15;margin:0}
+.hero{background:var(--pal);color:#fff;padding:48px 20px 40px;background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.07) 0 28px,transparent 28px 56px)}
+.hero>div{max-width:980px;margin:auto}
+.hero h1{font-size:clamp(2rem,6vw,3.6rem);font-weight:800;max-width:15em}
+.hero p{max-width:40em;margin:14px 0 0;color:#dcefe6}
+.by{margin:18px 0 0;color:#fff;font-size:1.05rem;border-left:4px solid var(--sun);padding-left:12px}.pill{display:inline-block;background:var(--sun);color:#1b1500;font-weight:600;border-radius:99px;padding:3px 14px;font-size:.9rem;margin-bottom:14px}
+.flow{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.flow span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);padding:6px 14px;border-radius:8px;font-weight:500}
+nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav .in{max-width:980px;margin:auto;display:flex;gap:4px;overflow-x:auto;padding:8px 14px;align-items:center}
+nav a{white-space:nowrap;color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:8px;font-size:.92rem}
+nav a:hover,nav a.on{background:var(--sunbg);color:var(--ink)}
+.bar{height:4px;background:var(--line)}.bar i{display:block;height:100%;width:0;background:var(--sun);transition:width .3s}
+main{max-width:980px;margin:auto;padding:12px 16px 80px}
+section{margin-top:44px}
+h2{font-size:clamp(1.5rem,3.5vw,2.1rem);color:var(--pal);margin-bottom:6px}
+h3{font-size:1.2rem;margin:22px 0 8px}
+.lead{color:var(--mute);margin:0 0 16px;max-width:46em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:12px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.grid .card{margin:0}
+ul{margin:6px 0 6px;padding-left:1.2em}li{margin:4px 0}
+.callout{border-left:5px solid var(--sun);background:var(--sunbg);padding:12px 16px;border-radius:0 10px 10px 0;margin:14px 0}
+.callout.bad{border-color:var(--warn);background:var(--warnbg)}
+.callout b:first-child{display:block}
+.step{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.step:first-of-type{border-top:0}
+.step label{display:flex;gap:14px;cursor:pointer;width:100%}
+.step input{width:22px;height:22px;margin-top:3px;accent-color:var(--ok);flex:none}
+.step input:checked+div{opacity:.6}
+.step input:focus-visible,button:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.step strong{display:block}
+code,.k{background:var(--sunbg);padding:1px 7px;border-radius:5px;font-size:.92em;font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--pal)}
+.scroll{overflow-x:auto}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.tabs button,.chip{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 14px;border-radius:99px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--pal);color:#fff;border-color:var(--pal)}
+:root:not([data-theme="light"]) .tabs button[aria-selected="true"]{color:#04140d}
+.panel[hidden]{display:none}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:8px 0;padding:0 16px}
+summary{cursor:pointer;padding:13px 0;font-weight:600}
+details[open] summary{color:var(--pal)}
+details>div{padding:0 0 14px}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.chip[aria-pressed="true"]{background:var(--sun);color:#1b1500;border-color:var(--sun)}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;color:var(--mute);font-size:.92rem}
+footer{text-align:center;color:var(--mute);padding:24px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
+</style>
+</head>
+<body>
+<header class="hero"><div>
+<span class="pill">Build My AI Movie Cohort · Week 2 · Day 2</span>
+<h1>Make a photoreal AI ad in one session</h1>
+<p>Case study: a coconut drink spec ad for an investor pitch. You build images first, turn them into video with start frame animation, then edit tomorrow. Tick each step as you go. Your progress saves in this browser.</p>
+<p class="by"><b>Instructor: Alexx Roy</b><br>Founder, AI FilmCraft</p><div class="flow"><span>1. Hero image</span><span>2. Matching frames</span><span>3. Image to video</span><span>4. Edit (tomorrow)</span></div>
+</div></header>
+<nav><div class="in" id="nav">
+<a href="#glance">Overview</a><a href="#concepts">Concepts</a><a href="#setup">Setup</a><a href="#images">Images</a><a href="#video">Video</a><a href="#rules">Rules</a><a href="#fix">Fixes</a><a href="#hw">Homework</a><a href="#faq">Q&amp;A</a>
+</div><div class="bar"><i id="prog"></i></div></nav>
+
+<main>
+<section id="glance">
+<h2>Session at a glance</h2>
+<p class="lead">Week 1 covered basic videos and YouTube. From this week on, you learn realistic AI ads, commercials and films through AI Moviemaking, in a beginner to expert order. Leave week 1 habits aside and follow only today's workflow.</p>
+<div class="grid">
+<div class="card"><h3>The use case</h3><ul><li>Client is launching a sub product and meets a new investor.</li><li>They need a short, clean video fast. This is called a micro ad or spec ad.</li><li>Goal: quality that competes with node based workflows, in very little time.</li><li>Output style: no supers, no heavy text, simple video with background music.</li></ul></div>
+<div class="card"><h3>Tools used</h3><ul><li><b>OpenArt</b> (openart.ai): all generation. The cohort login shows 12,000 credits.</li><li><b>Nano Banana Pro</b>: image model.</li><li><b>Kling 3.0</b> and <b>Kling 2.6</b>: video models.</li><li><b>Canva deck</b>: image prompts (slide 4 and onward).</li><li><b>WhatsApp group</b>: video prompts and sharing results.</li></ul></div>
+<div class="card"><h3>What is delivered later</h3><ul><li>Workflow document and fast track recordings (1 to 2.5 minutes each) after about 2 days, once the new LMS is ready.</li><li>Video prompt bank in the WhatsApp group and the mother sheet within about 30 minutes of the session.</li><li>Full recording on the mother sheet.</li></ul></div>
+</div>
+</section>
+
+<section id="concepts">
+<h2>Core concepts</h2>
+<p class="lead">Understand these five ideas and the rest of the session makes sense.</p>
+<div class="card"><h3>1. The workflow</h3><ul><li>Create images first, then animate them into video.</li><li>Animation methods: start frame plus end frame, start frame only, or end frame only (sometimes).</li></ul></div>
+<div class="card"><h3>2. Why start and end frame is most reliable</h3><ul><li>The model only has to interpolate between two given frames.</li><li>Image to video hallucinates less than text to video.</li><li>It only works well when the two frames are related. A prompt cannot fix unrelated frames.</li></ul></div>
+<div class="card"><h3>3. Hero image</h3><ul><li>The first product image you make. Every later frame uses it as a reference.</li><li>It keeps the bottle, colour palette and lighting consistent across all shots.</li></ul></div>
+<div class="card"><h3>4. Reference images</h3><ul><li>The prompt leans toward attached references, so they are crucial.</li><li>Use high quality images. Screenshots can be pixelated and hurt output quality.</li><li>Finding references yourself is a skill you will need for your own projects.</li></ul></div>
+<div class="card"><h3>5. Multi-shot continuity</h3><ul><li>Move inward like real cinematography: aerial or wide, then mid shot, close up, extreme close up.</li><li>For each new angle, attach the previous frame and the hero image.</li></ul></div>
+<div class="callout"><b>Text with reference (not today)</b>Used for Seedance style operations, when you want a full video built from scratch without following your generated image. Today stays on start and end frame only.</div>
+</section>
+
+<section id="setup">
+<h2>Setup in OpenArt</h2>
+<p class="lead">Do this once before generating. Ticks save automatically.</p>
+<div class="card" data-steps>
+<div class="step"><label><input type="checkbox"><div><strong>Log in with the account the cohort team gave you</strong>Correct login shows 12,000 credits. No OpenArt access yet? Check your email and WhatsApp for the cohort team's message, then contact the support team. 17 people were missing access at the poll.</div></label></div>
+<div class="step"><label><input type="checkbox"><div><strong>Tour the Video tab (left toolbar)</strong>Select <span class="k">Start and end frame animation</span>. The model list sits below it. Options change per model, so a start frame only model hides the end frame box.</div></label></div>
+<div class="step"><label><input type="checkbox"><div><strong>Open the Image tab (under Create, below Video)</strong>Choose <span class="k">Create image</span> (the other option is Image variations). Pick <span class="k">Nano Banana Pro</span> from the model list. Can't find it? You are probably still on the Video tab.</div></label></div>
+<div class="step"><label><input type="checkbox"><div><strong>Open the Canva deck from the WhatsApp group</strong>Slide 4 holds the hero image prompt. Copy only the first prompt, not the whole slide.</div></label></div>
+</div>
+<div class="callout"><b>Credits</b>No credits or credits taken back? Contact the cohort support team after the session. OpenArt changed some allocations and the team is raising it with them. GPT Image 2 is also used in recent projects but needs credits.</div>
+</section>
+
+<section id="images">
+<h2>Step by step: image generation</h2>
+<p class="lead">Open a shot below. Each one lists what to paste, what to attach and what to change.</p>
+<div class="tabs" role="tablist" id="shots"></div>
+<div id="shotpanels"></div>
+
+<h3>Output settings (every image)</h3>
+<div class="card scroll"><table>
+<tr><th>Setting</th><th>Value</th><th>Why</th></tr>
+<tr><td>Aspect ratio</td><td>16:9</td><td>Video ready. 4:3 needs rescaling later.</td></tr>
+<tr><td>Resolution</td><td>2K</td><td>4K burns credits. Generate low, upscale winners.</td></tr>
+<tr><td>Variations</td><td>3</td><td>Pick the best of several.</td></tr>
+<tr><td>Drifting a lot?</td><td>Drop to 1K</td><td>Saves credits while you retry.</td></tr>
+<tr><td>Enhance prompt vs Auto polish</td><td>Both free</td><td>Auto polish fixes grammar. Enhance prompt redrafts fully.</td></tr>
+</table></div>
+</section>
+
+<section id="video">
+<h2>Step by step: video generation</h2>
+<p class="lead">Video prompts are different from image prompts. They are shared in WhatsApp, not in Canva.</p>
+<div class="tabs" role="tablist" id="vtabs"></div>
+<div id="vpanels"></div>
+<div class="callout"><b>A prompt has a small job</b>In start and end frame mode the prompt only guides camera and character movement. Unrelated frames cause hallucination, for example the aerial coconut farm to a mid shot added extra trees.</div>
+</section>
+
+<section id="rules">
+<h2>Rules and best practices</h2>
+<div class="tools" id="filters"></div>
+<div class="grid" id="rulegrid"></div>
+</section>
+
+<section id="fix">
+<h2>Troubleshooting</h2>
+<p class="lead">These problems showed up live. Tap one to see the fix.</p>
+<div id="fixes"></div>
+</section>
+
+<section id="hw">
+<h2>Homework and what comes next</h2>
+<div class="card" data-steps>
+<div class="step"><label><input type="checkbox"><div><strong>Finish every remaining image</strong>Aerial coconut farm, bunch close ups, falling coconut, and the rest of the Canva slides. Practice gives you an edge. If you skip, use the shared drive images.</div></label></div>
+<div class="step"><label><input type="checkbox"><div><strong>Generate the videos from the video prompt bank</strong>Use start frame only. Generate low, then upscale. Share results in the WhatsApp group.</div></label></div>
+<div class="step"><label><input type="checkbox"><div><strong>Know editing? Compile your video</strong>Don't? Keep the footage aside. Tomorrow's Filmora session shows editing.</div></label></div>
+<div class="step"><label><input type="checkbox"><div><strong>Upload last week's seven videos to your YouTube channel</strong>Share the link in the group or bring it to the review session.</div></label></div>
+</div>
+<div class="callout"><b>Tomorrow</b>Editing in Filmora, plus audio. Videos have no audio, so you add a background score. Heavy SFX comes in later weeks.</div>
+</section>
+
+<section id="faq">
+<h2>Questions answered in class</h2>
+<details><summary>Kids content setting on YouTube</summary><div>Most kids watch from a parent account. Turning the kids option on hides the video from adult accounts, so leave it off for reach.</div></details>
+<details><summary>How will I get paid from YouTube?</summary><div>Open studio.youtube.com and check Earnings on the left to see the eligibility criteria. Once met, you add payment details. YouTube emails you. You upload nothing.</div></details>
+<details><summary>Can I use my own product or brand?</summary><div>Yes. Change the brand name inside the prompt (it sits in annotation) and swap references. If problems appear, help may be limited right away, but you can ask later.</div></details>
+<details><summary>How do I write my own prompts?</summary><div>Use the prompt bank and study the structure. Modern models rewrite weak prompts internally, so you can type what you want or press Enhance prompt. Each project prompt in this course uses a different style, so read them all.</div></details>
+<details><summary>Can I edit an old prompt?</summary><div>Yes. Open the earlier generation, copy its prompt and paste it into the configuration tab. You cannot edit within the same generation.</div></details>
+<details><summary>Can I use other image tools?</summary><div>Yes, but avoid Gemini for this. Paid GPT Image saves credits.</div></details>
+<details><summary>Why not Veo 3.1?</summary><div>Output quality follows training data. Google has more compliance layers, so you can't get this physics and realism, or some face replication, in Nano Banana Pro. Other models in OpenArt have lighter compliance. Newer models can reach it.</div></details>
+<details><summary>Wide shot to close up in one clip?</summary><div>One prompt is enough, but Kling 3.0 struggles with big zoom effects. Omni models handle it. Covered in a future session. Save credits for now.</div></details>
+<details><summary>Class timing and recordings</summary><div>Sessions often run an extra hour. If you're short on time, rely on the recording. Feedback sessions are not recorded, unless new techniques are shown. Find recordings through the WhatsApp group description, then Mother Sheet.</div></details>
+<details><summary>Can I compare with the original video?</summary><div>Yes. The original ad will be shared with the video prompt reference.</div></details>
+<details><summary>Is week 8 content available early?</summary><div>No. The syllabus is sequenced so complete beginners reach expert level step by step.</div></details>
+</section>
+</main>
+<footer>Build My AI Movie Cohort · Week 2 Day 2 · Taught by Alexx Roy, Founder, AI FilmCraft</footer>
+
+<script>
+const SHOTS=[
+{n:"Hero image",slide:"Slide 4",steps:[
+"Image tab, Create image, model Nano Banana Pro.",
+"Paste the slide 4 prompt. Check it copied fully and has no mistakes.",
+"Scroll up, open <b>Add visual references</b>, then <b>Images</b>, then <b>Upload images</b>. Add the brand logo image (shared in chat and WhatsApp) and a tender coconut photo with one whole coconut and one finely chopped.",
+"In the prompt, find the line <code>attached in reference</code>. Put the cursor after it, add a space, type <code>@</code>, then pick each uploaded image.",
+"Set output: 16:9, 2K, 3 variations. Click Generate."],
+note:"Your bottle will look different from the demo. That is fine. Any format works (web, JPEG, PNG). 'Image too small' means swap the image. A floating bottle is okay. Too many people logged in can slow generation."},
+{n:"Characters in a boat",slide:"Next slide",steps:[
+"Copy the prompt. Clear the old prompt and old references. Keep model and output settings.",
+"Attach two references: your <b>hero image</b> and a character reference (the demo used a Kathakali artist pair sitting in a boat).",
+"No @ tagging needed here. It is a generic reference.",
+"Generate. Output may be similar to the sample, with small variation."],
+note:"Different art form? Remove all costume and character keywords from the prompt (male and female character, costume) and attach your own reference instead. Leftover keywords pull the model back to the old look. Own prompt too different? Drop Enhance prompt on it."},
+{n:"Drum players",slide:"Next slide",steps:[
+"Copy the prompt, clear references, paste.",
+"Attach a group reference image plus the product bottle (the bottle gives colour and lighting match).",
+"Add as a common reference. No @ tags, as the prompt has no square brackets.",
+"Generate."],
+note:"You can change the art form if you find a good reference. Add the product reference in every generation."},
+{n:"Close-up",slide:"Next slide",steps:[
+"Paste the close-up prompt.",
+"Attach the bottle (or your drink) as reference.",
+"Generate. One generation is enough, you can skip the two shot version."],
+note:"Product match drifting? Add an <code>@</code> reference after the 'tip' line."},
+{n:"Bus shot",slide:"Next slide",steps:[
+"Paste the prompt. Attach the bottle, a bus image, and the brand logo.",
+"The prompt is built for a Kerala state bus. Using another vehicle? Remove the old bus keywords and attach your own bus. Billboards and other media work the same way.",
+"Regional text on the bus: replace it with your language in its own script (Hindi, Telugu, Tamil, Malayalam). Give English text for English.",
+"Generate. Text errors are common, so regenerate."],
+note:"Mixed scripts appeared when the text was not specified. Not every language is supported, but most Indian languages generate well."},
+{n:"Farm, bunch, falling coconut",slide:"Remaining slides",steps:[
+"Aerial or wide shot of the coconut farm first.",
+"Mid shot of the bunch: attach the previous frame plus the hero image.",
+"Close up and extreme close up: attach the last frame plus the hero image, not every earlier frame.",
+"Falling coconut: use only the correct previous frame and hero image. Over-attaching confuses the model."],
+note:"The falling coconut prompt was pasted wrongly in class (a duplicated slide). Use the corrected prompt in Canva and WhatsApp."}
+];
+const VIDS=[
+{n:"Kling 3.0 (people shot)",steps:[
+"Video tab, Start and end frame, model <b>Kling 3.0</b> (not the Omni version).",
+"Start frame: upload from your device or pick from history. <b>Do not give an end frame.</b>",
+"Paste the video prompt from WhatsApp (not the image prompt).",
+"Output: audio off, duration 5 to 7 seconds, variations 1, quality 720p. Expect about 175 credits.",
+"Generate a first version low, then upscale a keeper."],
+note:"Don't use the hero image as a start frame. Duration science: too short means 2x or 3x speed motion, too long means slow motion. Match the action's real time."},
+{n:"Kling 2.6 (bus tracking)",steps:[
+"Switch the model to <b>Kling 2.6</b>. It costs less and suits simple tracking motion.",
+"Start frame: the bus image you generated.",
+"Paste the bus video prompt. Audio off.",
+"Output: 1080p is fine here at about 100 credits."],
+note:"Jittering text and a missing driver are acceptable in a fast project. Prompt too long? Click Polish prompt or Enhance prompt."},
+{n:"Other shots",steps:[
+"Same method: image to start frame, prompt from the bank, audio off, low quality first.",
+"Wide to close up is hard in Kling 3.0. Use start frame animation and fix in edit.",
+"Generate several versions. The demo's final took multiple tries."],
+note:"Different start and end images hallucinate unless the scene is related (one angle of a person, then another)."}
+];
+const RULES=[
+["Images","Always attach a reference image in every generation."],
+["Images","Hero image first. It sets lighting, colour and the product."],
+["Images","Generate at 2K. Upscale winners instead of starting at 4K."],
+["Images","Check your pasted prompt fully copied. Partial copies are a common error."],
+["Images","Only use @ tags where the prompt has square brackets."],
+["Images","Remove old character or vehicle keywords when you swap references."],
+["Images","Use sharp, high quality references, not screenshots."],
+["Images","Avoid too much anamorphic lens flare. Erase that line in the prompt."],
+["Video","Start frame only unless the two frames are closely related."],
+["Video","Audio off, or you waste credits."],
+["Video","5 to 7 seconds. Match duration to the action."],
+["Video","Generate at 720p, then upscale. Use Kling 2.6 for simple tracking shots."],
+["Video","Prefer 16:9. A 4:3 clip needs rescaling."],
+["Video","Use word 'moving' instead of 'riding forward' if a vehicle reverses."],
+["Style","Add imperfection on purpose: camera shake, handheld feel. Not AI face errors."],
+["Style","Too perfect, steady side-angle shots look fake."],
+["Style","Play smart with credits. Spend profits, not guesses."],
+["Style","Fast project, not a perfectionist one. Fix problems in editing."]
+];
+const FIXES=[
+["Coconut or object goes against physics","Reverse the clip in the editor. The demo reversed the falling coconut so it fell properly."],
+["Bad section in a good clip","Cut around it. The demo jump cut to a leaf covering the bunch, so the cut felt seamless."],
+["Walking people move in uniform motion","Model limitation. Change approach: switch model, make a closer shot, then speed ramp in Filmora."],
+["Characters will not remove the bottle cap","Don't force it. Create an alternate image from slide 5 where they are already drinking, and use it as the start frame. Or cut that part."],
+["Bottle drifts from your product","Regenerate. Add an @ reference after the 'tip' line. Drop to 1K to save credits."],
+["Bottle too big or wrong","Generation problem. Regenerate, or add the reference tag."],
+["Bus drives in reverse","Common bug. Change 'riding' to 'moving' in the prompt, regenerate, or reverse the clip in post."],
+["Driver waves hands or leaves the bus","Regenerate. Common bug. Hallucination around wheels also needs a retry."],
+["Weird activity behind bushes or in the frame","Check you gave only a start frame. Regenerate."],
+["Aerial to mid shot adds extra trees","Unrelated frames. Use start frame only and edit the clip."],
+["Flow glitches (week 1 tool)","Flow is being upgraded. Don't worry for now."],
+["Prompt too long (Kling 2.6)","Press Polish prompt or Enhance prompt."],
+["Reference upload 'image too small'","Use a larger image."],
+["Can't type @ tag","Leave a space before the @ so the image list appears."]
+];
+function tabs(tabsId,panId,data){
+ const T=document.getElementById(tabsId),P=document.getElementById(panId);
+ data.forEach((d,i)=>{
+  const b=document.createElement('button');b.role='tab';b.textContent=d.n;b.setAttribute('aria-selected',i==0);
+  const p=document.createElement('div');p.className='panel card';p.hidden=i!=0;
+  let h='<div class="meta"><b>'+(d.slide?d.slide:'')+'</b></div><div data-steps>';
+  d.steps.forEach(s=>{h+='<div class="step"><label><input type="checkbox"><div>'+s+'</div></label></div>'});
+  h+='</div><div class="callout"><b>Note</b>'+d.note+'</div>';p.innerHTML=h;
+  b.onclick=()=>{[...T.children].forEach(x=>x.setAttribute('aria-selected',x===b));[...P.children].forEach(x=>x.hidden=x!==p)};
+  T.appendChild(b);P.appendChild(p);
+ });
+}
+tabs('shots','shotpanels',SHOTS);tabs('vtabs','vpanels',VIDS);
+const cats=["All","Images","Video","Style"];let cur="All";
+const F=document.getElementById('filters'),G=document.getElementById('rulegrid');
+function draw(){G.innerHTML='';RULES.filter(r=>cur=="All"||r[0]==cur).forEach(r=>{const c=document.createElement('div');c.className='card';c.textContent=r[1];G.appendChild(c)});[...F.children].forEach(b=>b.setAttribute('aria-pressed',b.textContent==cur))}
+cats.forEach(c=>{const b=document.createElement('button');b.className='chip';b.textContent=c;b.onclick=()=>{cur=c;draw()};F.appendChild(b)});draw();
+document.getElementById('fixes').innerHTML=FIXES.map(f=>'<details><summary>'+f[0]+'</summary><div>'+f[1]+'</div></details>').join('');
+/* progress */
+const boxes=[...document.querySelectorAll('input[type=checkbox]')];
+let saved={};try{saved=JSON.parse(localStorage.getItem('w2d2')||'{}')}catch(e){}
+boxes.forEach((b,i)=>{b.checked=!!saved[i];b.onchange=()=>{saved[i]=b.checked;try{localStorage.setItem('w2d2',JSON.stringify(saved))}catch(e){}upd()}});
+function upd(){const n=boxes.filter(b=>b.checked).length;document.getElementById('prog').style.width=(boxes.length?n/boxes.length*100:0)+'%'}
+upd();
+/* nav highlight */
+const links=[...document.querySelectorAll('#nav a')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')=='#'+e.target.id))}),{rootMargin:'-30% 0px -60% 0px'});
+document.querySelectorAll('section').forEach(s=>io.observe(s));
+</script>
+</body>
+</html>
