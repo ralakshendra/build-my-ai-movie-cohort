@@ -2,8 +2,12 @@ name: Build My AI Movie Visual QA
 
 on:
   push:
-    branches: [main]
+    branches: [main, 'fix/**']
   workflow_dispatch:
+
+concurrency:
+  group: visual-qa-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   visual-qa:
