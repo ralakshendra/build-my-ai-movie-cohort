@@ -73,9 +73,13 @@ const x=pageSession();if(!x||document.querySelector(".bmai-breadcrumb"))return;
 const base=basePath(),host=document.createElement("div"),crumb=document.createElement("div");
 const nav=document.querySelector("header .nav");
 if(nav&&!document.querySelector(".bmai-header-home")){
- const a=document.createElement("a");a.className="bmai-header-home";a.href=base+"index.html";a.setAttribute("aria-label","Back to Student Hub");a.title="Back to Student Hub";
- a.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5.5 9.5V21h13V9.5"></path><path d="M9.5 21v-6h5v6"></path></svg>';
- const brand=nav.querySelector(".brand");if(brand)brand.insertAdjacentElement("afterend",a);
+ const a=document.createElement("a");a.className="bmai-header-home";a.href=base+"index.html";a.setAttribute("aria-label","Back to Home");a.title="Back to Home";a.textContent="← BACK TO HOME";
+ const brand=nav.querySelector(".brand");if(brand)brand.insertAdjacentElement("beforebegin",a);
+}
+if(!nav&&!document.querySelector(".bmai-session-topbar")){
+ const top=document.createElement("header");top.className="bmai-session-topbar";
+ top.innerHTML='<div class="container bmai-session-topbar-inner"><a class="bmai-header-home" href="'+base+'index.html">← BACK TO HOME</a><a class="bmai-session-brand" href="'+base+'index.html"><img src="'+base+'assets/brand/build-my-ai-movie-mark.svg" alt="" aria-hidden="true"><span>BUILD MY <b>AI MOVIE</b></span></a><div class="bmai-session-top-actions"><a href="'+(x.playbook?base+x.playbook:'#')+'">PLAYBOOK</a></div></div>';
+ document.body.insertBefore(top,document.body.firstChild);
 }
 crumb.className="bmai-breadcrumb";
 const hub=document.createElement("a");hub.href=base+"index.html";hub.textContent="← BACK TO HOME";hub.className="bmai-back-home";hub.setAttribute("aria-label","Back to Student Hub");
