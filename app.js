@@ -71,7 +71,7 @@ function applyBrandMark(){const iconHref=basePath()+"assets/brand/build-my-ai-mo
 function chrome(){
 const x=pageSession();if(!x||document.querySelector(".bmai-breadcrumb"))return;
 const base=basePath(),host=document.createElement("div"),crumb=document.createElement("div");
-const nav=document.querySelector("header .nav");
+const nav=document.querySelector("header .nav, .top .nav");
 if(nav&&!document.querySelector(".bmai-header-home")){
  const a=document.createElement("a");a.className="bmai-header-home";a.href=base+"index.html";a.setAttribute("aria-label","Back to Home");a.title="Back to Home";a.textContent="← BACK TO HOME";
  const brand=nav.querySelector(".brand");if(brand)brand.insertAdjacentElement("beforebegin",a);
