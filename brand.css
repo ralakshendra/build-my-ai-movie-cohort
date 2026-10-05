@@ -15,3 +15,10 @@
 .bmai-top-btn{opacity:0;visibility:hidden;transform:translateY(8px);pointer-events:none}
 .bmai-top-btn.is-visible{opacity:1;visibility:visible;transform:none;pointer-events:auto}
 @media(max-width:600px){#bmai-site-utilities{right:14px;bottom:14px;gap:7px}.bmai-float-btn{width:44px;height:44px}.bmai-float-btn:hover{width:44px;border-radius:50%}.bmai-float-btn:hover span:not(.bmai-icon){display:none}.bmai-icon{font-size:19px}}
+
+/* v6 header homepage control */
+header .nav{display:flex;align-items:center;gap:18px}
+.bmai-header-home{width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;border:1px solid rgba(255,255,255,.16);border-radius:50%;background:rgba(10,10,10,.72);color:#fff;text-decoration:none;transition:all .2s ease}
+.bmai-header-home svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bmai-header-home:hover{border-color:var(--bm-orange);background:rgba(255,106,0,.10);color:var(--bm-orange-light);box-shadow:0 0 24px rgba(255,106,0,.14);transform:translateY(-1px)}
+@media(max-width:700px){.bmai-header-home{width:42px;height:42px}.bmai-header-home svg{width:20px;height:20px}}
