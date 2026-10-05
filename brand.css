@@ -751,3 +751,7 @@ body:has(.header-badge) .bmai-homework-panel{
     padding-right:16px !important;
   }
 }
+
+
+/* v23 final overflow guard */
+html,body{overflow-x:hidden!important;max-width:100%}
