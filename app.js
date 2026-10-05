@@ -54,6 +54,7 @@ document.body.innerHTML='<main class="bmai-lock-screen"><div class="bmai-lock-ca
 function tick(){const el=document.getElementById("bmaiLockCount");if(!el)return;el.textContent=countdown(x.start);if(new Date(x.start).getTime()<=now())location.reload()}
 tick();setInterval(tick,1000);return true
 }
+function applyBrandMark(){const brand=document.querySelector("header .brand");if(!brand||brand.querySelector(".bmai-brand-mark"))return;const mark=document.createElement("img");mark.className="bmai-brand-mark";mark.src=basePath()+"assets/brand/build-my-ai-movie-mark.svg";mark.alt="";mark.setAttribute("aria-hidden","true");brand.insertBefore(mark,brand.firstChild)}
 function chrome(){
 const x=pageSession();if(!x||document.querySelector(".bmai-breadcrumb"))return;
 const base=basePath(),host=document.createElement("div"),crumb=document.createElement("div");const nav=document.querySelector("header .nav");if(nav&&!document.querySelector(".bmai-header-home")){const a=document.createElement("a");a.className="bmai-header-home";a.href=base+"index.html";a.setAttribute("aria-label","Back to Homepage");a.title="Back to Homepage";a.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5.5 9.5V21h13V9.5"></path><path d="M9.5 21v-6h5v6"></path></svg>';const brand=nav.querySelector(".brand");if(brand)brand.insertAdjacentElement("afterend",a);}
@@ -128,6 +129,7 @@ btn.replaceWith(a);
 }
 function ready(){
 if(lockPage())return;
+applyBrandMark();
 if(page==="index.html"||page===""){homepage();setInterval(homepage,1000)}
 try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
 chrome();progress();enhanceNextButton();siteUtilities();
