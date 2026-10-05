@@ -23,6 +23,8 @@ footer{border-top:1px solid var(--line);padding:30px 0;margin-top:30px;color:var
 .bmai-art{position:relative;min-height:260px;border:1px solid var(--bm-line);border-radius:20px;overflow:hidden;background:radial-gradient(circle at 76% 34%,rgba(255,106,0,.35),transparent 18%),radial-gradient(circle at 70% 55%,rgba(255,154,61,.13),transparent 30%),linear-gradient(145deg,#171717,#050505 72%)}.bmai-art:before{content:"";position:absolute;inset:14%;border:1px solid rgba(255,106,0,.35);transform:skewY(-8deg)}.bmai-art .lens{position:absolute;width:120px;height:120px;right:12%;top:20%;border-radius:50%;border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 0 0 18px rgba(255,255,255,.025),0 0 70px rgba(255,106,0,.18)}.bmai-art .beam{position:absolute;width:72%;height:45%;left:0;top:27%;background:linear-gradient(90deg,rgba(255,106,0,.18),transparent);clip-path:polygon(0 35%,100% 0,100% 100%,0 65%);filter:blur(3px)}.bmai-art .label{position:absolute;left:22px;bottom:20px;color:#fff;font-size:10px;letter-spacing:.16em;font-weight:900}.bmai-art .label small{display:block;margin-top:6px;color:var(--bm-muted);font-size:8px;letter-spacing:.08em}.stage{padding:11px 6px;background:#0b0b0b;text-align:center;font-size:8px;line-height:1.6;letter-spacing:.08em;font-weight:900;color:#666}.stage.active{background:rgba(255,106,0,.12);color:#fff;box-shadow:inset 0 -2px 0 var(--bm-orange)}@media(max-width:900px){.bmai-studio-card{grid-template-columns:1fr!important}.bmai-studio-card aside{border-left:0!important;border-top:1px solid var(--bm-line)}}@media(max-width:620px){.stage:nth-child(n+7){display:none}}
 </style><script src="app.js?v=20261005-app-v2"></script><style>
 .session.upcoming{opacity:.68}.session.upcoming:hover{opacity:.9}.lock-label{display:inline-flex;align-items:center;padding:11px 14px;border:1px solid var(--bm-line);border-radius:4px;color:#777;font-size:10px;font-weight:900;letter-spacing:.08em}.session.upcoming .session-number{color:#777!important}
+</style><style>
+#nextUnlock{border-top:1px solid var(--bm-line);padding-top:14px}.bmai-chip.active{box-shadow:0 0 18px rgba(255,106,0,.08)}
 </style></head>
 <body>
 <header class="topbar"><div class="container nav">
@@ -54,7 +56,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;margin-top:30px;color:var
 <a class="btn secondary" href="playbook.html">OPEN PLAYBOOK</a>
 </div>
 <aside style="padding:28px;border-left:1px solid var(--bm-line);display:flex;flex-direction:column;justify-content:space-between">
-<div><div style="font-size:9px;color:#777;letter-spacing:.14em;font-weight:900">CURRENT PRODUCTION STAGE</div><div style="font-size:30px;font-weight:900;margin-top:8px">BLUEPRINT → MOVIE</div></div>
+<div><div style="font-size:9px;color:#777;letter-spacing:.14em;font-weight:900">CURRENT PRODUCTION STAGE</div><div style="font-size:30px;font-weight:900;margin-top:8px">BLUEPRINT → MOVIE</div><div id="nextUnlock" style="margin-top:16px;font-size:11px;color:#a7a7a7;line-height:1.5"><strong style="color:#fff">NEXT SESSION UNLOCK</strong><br><span id="unlockCountdown">Loading schedule…</span></div></div>
 <div class="bmai-art" style="min-height:150px;margin-top:20px"><div class="beam"></div><div class="lens"></div><div class="label">IDEA → BLUEPRINT<small>START WITH THE FOUNDATION</small></div></div>
 </aside>
 </div>
@@ -97,5 +99,24 @@ footer{border-top:1px solid var(--line);padding:30px 0;margin-top:30px;color:var
 </div></div></section>
 </main>
 <footer><div class="container footer-inner"><div><strong>BUILD MY AI MOVIE COHORT</strong> · Student Hub</div><div>Alexx Roy, Founder</div></div></footer>
-</body>
+<script>
+(function(){
+const unlock=new Date("2026-10-10T10:00:00+05:30");
+const countdown=document.getElementById("unlockCountdown");
+const status=document.getElementById("currentStatus");
+const timerBox=document.getElementById("nextUnlock");
+function tick(){
+ if(!countdown)return;
+ const diff=unlock-new Date();
+ if(diff<=0){
+   countdown.textContent="Week 2 · Day 1 is available now.";
+   if(status){status.textContent="NEXT SESSION AVAILABLE";status.classList.add("active")}
+   return;
+ }
+ const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);
+ countdown.textContent="Week 2 · Day 1 unlocks in "+d+"d "+String(h).padStart(2,"0")+"h "+String(m).padStart(2,"0")+"m "+String(s).padStart(2,"0")+"s";
+}
+tick();setInterval(tick,1000);
+})();
+</script></body>
 </html>
