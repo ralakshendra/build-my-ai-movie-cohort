@@ -71,6 +71,16 @@ stages.forEach(s=>{const el=document.createElement("span");el.textContent=s;if(s
 const slate=document.createElement("div");slate.className="bmai-scene-strip";slate.innerHTML="<div><div class='bmai-scene-kicker'>"+esc(x.week)+" · "+esc(labels[page]||"SESSION")+"</div><div class='bmai-scene-title'>"+esc(x.title)+"</div><div class='bmai-scene-meta'>"+esc(dateRange(x))+" · Build with intent. Generate with discipline. Keep the story consistent.</div></div><div class='bmai-scene-art' aria-hidden='true'><div class='bmai-scene-orb'></div></div>";
 host.append(crumb,stage,slate);const header=document.querySelector("header");if(header)header.insertAdjacentElement("afterend",host);else document.body.prepend(host)
 }
+function applyPageIdentity(){
+ const p=location.pathname;
+ let id="hub";
+ if(p.includes("week-2-day-1"))id="w2d1";
+ else if(p.includes("week-2-day-2"))id="w2d2";
+ else if(p.includes("week-3-day-1"))id="w3d1";
+ else if(p.includes("playbook"))id="playbook";
+ else if(p.includes("resources"))id="resource";
+ document.documentElement.dataset.bmaiPage=id;
+}
 function setupMobileHeader(){
 document.querySelectorAll(".nav").forEach(nav=>{
  const links=nav.querySelector(".nav-links"); if(!links||nav.querySelector(".bmai-mobile-menu"))return;
@@ -159,7 +169,7 @@ if(lockPage())return;
 applyBrandMark();
 if(page==="index.html"||page===""){homepage();setInterval(homepage,1000)}
 try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
-chrome();progress();enhanceNextButton();siteUtilities();setupMobileHeader();setupScrollControls();
+chrome();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();setupScrollControls();
 document.querySelectorAll("a").forEach(a=>{if(a.href===location.href)a.setAttribute("aria-current","page")})
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ready);else ready();
