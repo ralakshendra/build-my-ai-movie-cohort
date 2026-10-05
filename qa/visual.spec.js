@@ -169,3 +169,34 @@ test('future materials are guarded from the student hub', async ({browser}) => {
   await page.close();
   await context.close();
 });
+
+
+for (const [label, path, frozenIso] of [
+  ['w2d1-unlocked', 'sessions/week-2-day-1/index.html', '2026-10-10T20:30:00+05:30'],
+  ['w3d1-unlocked', 'sessions/week-3-day-1/index.html', '2026-10-17T20:30:00+05:30']
+]) {
+  for (const [width, height] of [[390,844],[1440,900]]) {
+    test(label + ' ' + width + 'px unlocked visual', async ({browser}) => {
+      const context = await browser.newContext({viewport:{width,height}});
+      const page = await context.newPage();
+      await page.addInitScript((iso) => {
+        const fixed = new Date(iso).getTime();
+        const RealDate = Date;
+        class FrozenDate extends RealDate {
+          constructor(...args) { if (!args.length) super(fixed); else super(...args); }
+          static now() { return fixed; }
+        }
+        window.Date = FrozenDate;
+      }, frozenIso);
+      await page.goto(new URL(path, BASE).href, {waitUntil:'domcontentloaded'});
+      await page.waitForTimeout(500);
+      if (await page.locator('.bmai-lock-screen').count()) throw new Error(label + ': session remained locked at its scheduled start');
+      if (!(await page.locator('.bmai-global-header').count())) throw new Error(label + ': missing shared header');
+      if (!(await page.locator('.bmai-instructor-card').count())) throw new Error(label + ': missing instructor identity');
+      const broken = await page.evaluate(() => [...document.querySelectorAll('img')].filter(img => !img.complete || img.naturalWidth === 0).map(img => img.getAttribute('src')));
+      if (broken.length) throw new Error(label + ': broken images ' + broken.join(', '));
+      await page.screenshot({path:'qa/artifacts/' + label + '-' + width + '.png', fullPage:true});
+      await context.close();
+    });
+  }
+}
