@@ -64,5 +64,5 @@ const checks=[...document.querySelectorAll('#checks input')];function update(){l
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.pane').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.getElementById(b.dataset.tab).classList.add('on')});
 document.getElementById('quiz').onsubmit=e=>{e.preventDefault();const ans=[1,1,1,1,0];let s=0;ans.forEach((a,i)=>{const x=document.querySelector('input[name=q'+i+']:checked');if(x&&+x.value===a)s++});result.style.display='block';result.innerHTML='<strong>Score: '+s+'/'+ans.length+'</strong><br>'+(s===ans.length?'Complete. You have the core workflow.':'Review the session guide and try again.')};
 </script>
-<script src="../../app.js?v=20261005-app-v17"></script>
+<script src="../../app.js?v=20261005-app-v18"></script>
 </body></html>
