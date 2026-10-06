@@ -30,3 +30,10 @@ body[data-page-type=home] .studio-next-class{padding-top:0;padding-bottom:44px;b
  .studio-current-visual .studio-current-stage{position:static;inset:auto;order:1;width:100%;padding:20px 20px 12px;background:#111;border:0;box-sizing:border-box;text-align:center}
  .studio-current-visual .studio-current-stage #bmaiCurrentStage{font-size:26px;margin-top:6px}
 }
+
+/* Mobile current-session card leads with the visual, then all session details. */
+@media(max-width:700px){
+ body[data-page-type=home] .bmai-studio-card>.studio-current-visual{order:-1;border-top:0;border-bottom:1px solid #333}
+ body[data-page-type=home] .studio-current-visual>img{order:0}
+ body[data-page-type=home] .studio-current-visual>.studio-current-stage{order:1}
+}
