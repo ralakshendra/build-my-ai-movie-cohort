@@ -25,7 +25,8 @@ body[data-page-type=home] .studio-next-class{padding-top:0;padding-bottom:44px;b
 
 /* Keep the current stage below its artwork on phones. */
 @media(max-width:700px){
- body[data-page-type=home] .studio-current-visual{display:block!important;min-height:0}
- .studio-current-visual>img{position:static;height:auto;aspect-ratio:7/4;object-fit:contain}
- .studio-current-visual .studio-current-stage{position:static;inset:auto;padding:20px 24px 24px;background:#111;border-top:1px solid #333}
+ body[data-page-type=home] .studio-current-visual{display:flex!important;flex-direction:column;min-height:0}
+ .studio-current-visual>img{position:static;width:100%;height:150px;aspect-ratio:auto;object-fit:contain;order:2}
+ .studio-current-visual .studio-current-stage{position:static;inset:auto;order:1;width:100%;padding:20px 20px 12px;background:#111;border:0;box-sizing:border-box;text-align:center}
+ .studio-current-visual .studio-current-stage #bmaiCurrentStage{font-size:26px;margin-top:6px}
 }
