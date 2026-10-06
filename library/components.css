@@ -215,3 +215,11 @@ body[data-page-type=home] .session.schedule-row{grid-template-columns:200px minm
 .studio-current-visual>img[src*="illustrations/"]{object-fit:contain!important;object-position:center top}
 .studio-teaser-image img[src*="illustrations/"]{object-fit:contain!important;background:#11110f}
 @media(max-width:700px){body[data-page-type=home] .session.schedule-row{grid-template-columns:1fr}.session-rail>.studio-topic-figure{max-width:100%}.studio-topic-figure figcaption{padding:14px 16px}.studio-topic-hero-host{order:-1}.studio-topic-kind{right:12px;bottom:12px}.bmai-lock-card>.studio-topic-figure{margin-bottom:20px!important}}
+
+/* Desktop feature rows: explicitly alternate imagery while preserving mobile order. */
+@media(min-width:901px){
+ .studio-feature-split[data-desktop-image-side=left]>.studio-feature-visual{order:-1}
+ .studio-feature-split[data-desktop-image-side=right]>.studio-feature-visual{order:1}
+ body[data-page-type=home] .bmai-studio-card[data-desktop-image-side=left]{grid-template-columns:.95fr 1.05fr}
+ body[data-page-type=home] .bmai-studio-card[data-desktop-image-side=left]>.studio-current-visual{border-left:0;border-right:1px solid #333}
+}

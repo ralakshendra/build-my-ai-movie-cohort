@@ -31,3 +31,6 @@ Topic illustrations: library/visuals.js owns accessible resource-type variants a
 
 
 Hero preservation rule: Keep the authored character/cinematic hero artwork and its labels on session, playbook and homework pages. Topic vectors supplement library cards and locked previews; the shared renderer must never replace an existing hero panel.
+
+
+Desktop composition rule: Starting with hero text on the left and image on the right, alternate image sides across subsequent major text/image feature cards. Homepage order: hero image right, Current Session image left, next-session teaser image right, workflow guidance image left. Library grids and small companion strips are exempt. For shared feature rows use studio-feature-split with data-desktop-image-side="left" or "right", and direct child studio-feature-copy / studio-feature-visual classes. The shared order rule applies above 900px; preserve the approved mobile stacking and original character heroes.
