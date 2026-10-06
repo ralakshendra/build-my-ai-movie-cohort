@@ -1,57 +1,41 @@
 (function(){'use strict';
-const marker="/build-my-ai-movie-cohort/";
-const path=location.pathname;
-const page=path.indexOf(marker)>=0?path.split(marker)[1]:(path.replace(/^\/+/, "")||"index.html");
+const siteRoot=new URL('../',document.querySelector('script[src*="library/site.js"]').src);
+const page=location.pathname.startsWith(siteRoot.pathname)?location.pathname.slice(siteRoot.pathname.length)||'index.html':'index.html';
 
-const S=[
-{id:"week-1-day-2",week:"WEEK 1 · DAY 2",title:"YouTube Masterclass",number:2,start:"2026-10-04T20:00:00+05:30",end:null,stage:"BLUEPRINT",session:"resources/ai-faceless-youtube-masterclass.html",playbook:"playbook.html",homework:"https://docs.google.com/document/d/1ElXCXzfTup1HubGb0KDTIzqCkbPUBWxXwqm3_HDxFmw/edit?usp=sharing",description:"AI Faceless YouTube Channel Masterclass. Completed foundation session."},
-{id:"week-2-day-1",week:"WEEK 2 · DAY 1",title:"Build Your First AI Movie Short",number:3,start:"2026-10-10T20:00:00+05:30",end:"2026-10-10T22:00:00+05:30",stage:"VISUAL WORLD",session:"sessions/week-2-day-1/index.html",playbook:"sessions/week-2-day-1/playbook.html",homework:"https://docs.google.com/document/d/1zdEzgOX22ghpxgmNN5yQeYLprWsAUX3R7zNxuMmJQwI",description:"Visual mastery, first short production, Filmora editing and channel launch."},
-{id:"week-2-day-2",week:"WEEK 2 · DAY 2",title:"Photorealistic AI Advertisement",number:4,start:"2026-10-11T20:00:00+05:30",end:"2026-10-11T22:00:00+05:30",stage:"MOTION",session:"sessions/week-2-day-2/index.html",playbook:"sessions/week-2-day-2/playbook.html",homeworkPage:"sessions/week-2-day-2/homework.html",homework:"https://docs.google.com/document/d/1jbIb9krXCTVpHprI3tqm9V6tHL-L5Sr1NCFYQ5WHNBA",description:"Create photorealistic product frames, build continuity and turn images into video."},
-{id:"week-3-day-1",week:"WEEK 3 · DAY 1",title:"Structured Brand Story Pipeline",number:5,start:"2026-10-17T20:00:00+05:30",end:"2026-10-17T22:00:00+05:30",stage:"STORY",session:"sessions/week-3-day-1/index.html",playbook:"sessions/week-3-day-1/playbook.html",homeworkPage:"sessions/week-3-day-1/homework.html",homework:"https://docs.google.com/document/d/1C9Txnwd_Fi2gqeHLZnfkGq5lEoqtA6WzqI4aGBCWFL4/edit?usp=sharing",description:"Build the character sheet, visual direction, screenplay and structured shot shortlist before deeper generation."},
-{id:"week-3-day-2",week:"WEEK 3 · DAY 2",title:"Week 3 Day 2 Session",number:6,start:"2026-10-18T20:00:00+05:30",end:"2026-10-18T22:00:00+05:30",stage:"SHOTS",session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-4-day-1",week:"WEEK 4 · DAY 1",title:"Week 4 Day 1 Session",number:7,start:"2026-10-24T20:00:00+05:30",end:"2026-10-24T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-4-day-2",week:"WEEK 4 · DAY 2",title:"Week 4 Day 2 Session",number:8,start:"2026-10-25T20:00:00+05:30",end:"2026-10-25T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-5-day-1",week:"WEEK 5 · DAY 1",title:"Week 5 Day 1 Session",number:9,start:"2026-10-31T20:00:00+05:30",end:"2026-10-31T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-5-day-2",week:"WEEK 5 · DAY 2",title:"Week 5 Day 2 Session",number:10,start:"2026-11-01T20:00:00+05:30",end:"2026-11-01T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-6-day-1",week:"WEEK 6 · DAY 1",title:"Week 6 Day 1 Session",number:11,start:"2026-11-07T20:00:00+05:30",end:"2026-11-07T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-6-day-2",week:"WEEK 6 · DAY 2",title:"Week 6 Day 2 Session",number:12,start:"2026-11-08T20:00:00+05:30",end:"2026-11-08T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-7-day-1",week:"WEEK 7 · DAY 1",title:"Week 7 Day 1 Session",number:13,start:"2026-11-14T20:00:00+05:30",end:"2026-11-14T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-7-day-2",week:"WEEK 7 · DAY 2",title:"Week 7 Day 2 Session",number:14,start:"2026-11-15T20:00:00+05:30",end:"2026-11-15T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-8-day-1",week:"WEEK 8 · DAY 1",title:"Week 8 Day 1 Session",number:15,start:"2026-11-21T20:00:00+05:30",end:"2026-11-21T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-8-day-2",week:"WEEK 8 · DAY 2",title:"Week 8 Day 2 Session",number:16,start:"2026-11-22T20:00:00+05:30",end:"2026-11-22T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."}
-];
+const S=window.BMAI_SESSIONS;
 
-const routeMap={
-"resources/ai-faceless-youtube-masterclass.html":"week-1-day-2","playbook.html":"week-1-day-2",
-"sessions/week-2-day-1/index.html":"week-2-day-1","sessions/week-2-day-1/playbook.html":"week-2-day-1",
-"sessions/week-2-day-2/index.html":"week-2-day-2","sessions/week-2-day-2/playbook.html":"week-2-day-2","sessions/week-2-day-2/homework.html":"week-2-day-2",
-"sessions/week-3-day-1/index.html":"week-3-day-1","sessions/week-3-day-1/playbook.html":"week-3-day-1","sessions/week-3-day-1/homework.html":"week-3-day-1"
-};
-const labels={};
+
+
 function isUnlocked(x){return !!x&&new Date(x.start).getTime()<=now()}
 function sessionIdFromHref(href){
  try{
   const u=new URL(href,location.href);
-  const markerIndex=u.pathname.indexOf(marker);
-  if(markerIndex<0)return null;
-  const rel=u.pathname.slice(markerIndex+marker.length);
-  if(routeMap[rel])return routeMap[rel];
-  const m=rel.match(/^sessions\/(week-\d+-day-\d+)(?:\/|$)/);
-  return m?m[1]:null;
+  const markerIndex=u.pathname.startsWith(siteRoot.pathname)?0:-1;
+  if(u.origin===location.origin){
+   const rel=(markerIndex>=0?u.pathname.slice(siteRoot.pathname.length):u.pathname).replace(/^\/+|\/+$/g,"");
+   const matched=S.find(x=>[x.session,x.playbook,x.homeworkPage].filter(Boolean).includes(rel));
+   if(matched)return matched.id;
+   const sessionPath=rel.match(/^sessions\/(week-\d+-day-\d+)(?:\/|$)/);
+   if(sessionPath)return sessionPath[1];
+  }
+  const external=u.href.replace(/\/$/,"");
+  const docId=u.hostname==="docs.google.com"?u.pathname.match(/^\/document\/d\/([^/]+)/)?.[1]:null;
+  const matched=S.find(x=>x.homework&&(docId?new URL(x.homework).pathname.includes("/document/d/"+docId):x.homework.replace(/\/$/,"")===external));
+  return matched?matched.id:null
  }catch(e){return null}
 }
 
-Object.keys(routeMap).forEach(p=>{labels[p]=p.endsWith("/homework.html")?"HOMEWORK":p.endsWith("/playbook.html")?"PLAYBOOK":"SESSION GUIDE"});
 const stages=["IDEA","BLUEPRINT","CHARACTERS","VISUAL WORLD","STORY","SHOTS","MOTION","EDIT","REVIEW","MOVIE"];
 
 function now(){return Date.now()}
 function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
 function byId(id){return S.find(x=>x.id===id)}
-function pageId(){if(routeMap[page])return routeMap[page];const m=page.match(/^sessions\/(week-\d+-day-\d+)(?:\/|$)/);return m?m[1]:null}
+function pageId(){return document.body.dataset.sessionId||null}
 function pageSession(){const id=pageId();return id?byId(id):null}
+function pageLabel(){return ({session:"SESSION GUIDE",playbook:"PLAYBOOK",homework:"HOMEWORK",resource:"RESOURCE"})[document.body.dataset.pageType]||"SESSION GUIDE"}
 function current(){let found=null;for(const x of S)if(new Date(x.start).getTime()<=now())found=x;return found}
 function next(){return S.find(x=>new Date(x.start).getTime()>now())}
-function basePath(){return "../".repeat(Math.max(0,page.split("/").length-1))}
+function basePath(){return siteRoot.href}
 function dateParts(iso){return new Intl.DateTimeFormat("en-IN",{weekday:"long",day:"numeric",month:"long",year:"numeric",timeZone:"Asia/Kolkata"}).format(new Date(iso))}
 function timeParts(iso){return new Intl.DateTimeFormat("en-IN",{hour:"numeric",minute:"2-digit",hour12:true,timeZone:"Asia/Kolkata"}).format(new Date(iso))}
 function dateRange(x){const start=dateParts(x.start).replace(/ /g,"\u00a0"),time=timeParts(x.start),tz="\u00a0IST";return x.end?start+" · "+time+" to "+timeParts(x.end)+tz:start+" · "+time+tz}
@@ -62,54 +46,22 @@ const x=pageSession();if(!x)return false;
 if(isUnlocked(x))return false;
 const hub=basePath()+"index.html";
 document.documentElement.classList.add("bmai-locking");
+document.querySelectorAll("body > *").forEach(el=>{if(!el.classList.contains("bmai-global-header")&&!el.classList.contains("bmai-skip-link")&&!el.classList.contains("studio-site-footer"))el.remove()});
 document.body.className="bmai-locked-page";
-document.body.innerHTML='<a class="bmai-skip-link" href="#main-content">Skip to main content</a><main id="main-content" class="bmai-lock-screen"><div class="bmai-lock-card"><div class="bmai-lock-kicker">BUILD MY AI MOVIE · SESSION LOCKED</div><div class="bmai-lock-week">'+esc(x.week)+'</div><div class="bmai-lock-date">'+esc(dateRange(x))+'</div><h1>'+esc(x.title)+'</h1><p>This session is scheduled to unlock at the official cohort start time.</p><div class="bmai-lock-count" id="bmaiLockCount">'+esc(countdown(x.start))+'</div><div class="bmai-lock-note">The page will unlock automatically when the countdown reaches zero. You do not need to refresh.</div><a class="btn btn-primary" href="'+hub+'">RETURN TO STUDENT HUB</a></div></main>';
+const skip=document.querySelector(".bmai-skip-link")||document.createElement("a");
+skip.className="bmai-skip-link";
+skip.href="#main-content";
+skip.textContent="Skip to main content";
+if(!skip.isConnected)document.body.appendChild(skip);
+const main=document.createElement("main");
+main.id="main-content";
+main.className="bmai-lock-screen";
+main.innerHTML='<div class="bmai-lock-card"><div class="bmai-lock-kicker">BUILD MY AI MOVIE · SESSION LOCKED</div><div class="bmai-lock-week">'+esc(x.week)+'</div><div class="bmai-lock-date">'+esc(dateRange(x))+'</div><h1>'+esc(x.title)+'</h1><p>This session is scheduled to unlock at the official cohort start time.</p><div class="bmai-lock-count" id="bmaiLockCount">'+esc(countdown(x.start))+'</div><div class="bmai-lock-note">The page will unlock automatically when the countdown reaches zero. You do not need to refresh.</div><a class="btn btn-primary" href="'+hub+'">RETURN TO STUDENT HUB</a></div>';
+document.body.insertBefore(main,document.querySelector(".studio-site-footer"));
 function tick(){const el=document.getElementById("bmaiLockCount");if(!el)return;el.textContent=countdown(x.start);if(new Date(x.start).getTime()<=now())location.reload()}
 tick();setInterval(tick,1000);return true
 }
 function applyBrandMark(){const iconHref=basePath()+"assets/brand/build-my-ai-movie-mark.svg";if(!document.querySelector("link[data-bmai-favicon]")){const icon=document.createElement("link");icon.rel="icon";icon.type="image/svg+xml";icon.href=iconHref;icon.setAttribute("data-bmai-favicon","true");document.head.appendChild(icon)}const brand=document.querySelector("header .brand");if(!brand||brand.querySelector(".bmai-brand-mark"))return;const mark=document.createElement("img");mark.className="bmai-brand-mark";mark.src=basePath()+"assets/brand/build-my-ai-movie-mark.svg";mark.alt="";mark.setAttribute("aria-hidden","true");brand.insertBefore(mark,brand.firstChild)}
-function chrome(){
-const x=pageSession();if(!x||document.querySelector(".bmai-breadcrumb"))return;
-const base=basePath(),host=document.createElement("div"),crumb=document.createElement("div");
-const nav=document.querySelector("header .nav, .top .nav");
-if(nav&&!document.querySelector(".bmai-header-home")){
- const a=document.createElement("a");a.className="bmai-header-home";a.href=base+"index.html";a.setAttribute("aria-label","Back to Home");a.title="Back to Home";a.textContent="← BACK TO HOME";
- const brand=nav.querySelector(".brand");if(brand)brand.insertAdjacentElement("beforebegin",a);
-}
-if(!nav&&!document.querySelector(".bmai-session-topbar")){
- const top=document.createElement("header");top.className="bmai-session-topbar";
- top.innerHTML='<div class="container bmai-session-topbar-inner"><a class="bmai-header-home" href="'+base+'index.html">← BACK TO HOME</a><a class="bmai-session-brand" href="'+base+'index.html"><img src="'+base+'assets/brand/build-my-ai-movie-mark.svg" alt="" aria-hidden="true"><span>BUILD MY <b>AI MOVIE</b></span></a><div class="bmai-session-top-actions"><a href="'+(x.playbook?base+x.playbook:'#')+'">PLAYBOOK</a></div></div>';
- document.body.insertBefore(top,document.body.firstChild);
-}
-crumb.className="bmai-breadcrumb";
-const hub=document.createElement("a");hub.href=base+"index.html";hub.textContent="← BACK TO HOME";hub.className="bmai-back-home";hub.setAttribute("aria-label","Back to Student Hub");
-const sep1=document.createElement("span");sep1.textContent="›";sep1.setAttribute("aria-hidden","true");
-const w=document.createElement("span");w.textContent=x.week;w.className="crumb-week";
-const sep2=sep1.cloneNode(true),cur=document.createElement("span");cur.className="current";cur.textContent=labels[page]||"SESSION";cur.setAttribute("aria-current","page");
-crumb.append(hub,sep1,w,sep2,cur);
-
-const links=document.createElement("div");links.className="bmai-chrome-actions";
-const addLink=(label,href,external=false)=>{
- const a=document.createElement("a");a.textContent=label;a.href=href;
- if(external){a.target="_blank";a.rel="noopener noreferrer"}
- links.append(a);
-};
-const sessionHref=x.session?base+x.session:null;
-const playbookHref=x.playbook?base+x.playbook:null;
-const homeworkPageHref=x.homeworkPage?base+x.homeworkPage:null;
-if(sessionHref && page!==x.session)addLink("SESSION GUIDE",sessionHref);
-if(playbookHref && page!==x.playbook)addLink("PLAYBOOK",playbookHref);
-if(homeworkPageHref && page!==x.homeworkPage)addLink("HOMEWORK WORKSPACE",homeworkPageHref);
-else if(x.homework)addLink("HOMEWORK DOC ↗",x.homework,true);
-crumb.append(links);
-
-const stage=document.createElement("div");stage.className="bmai-stage";
-const activeIndex=stages.indexOf(x.stage),nextStage=activeIndex>=0&&activeIndex<stages.length-1?stages[activeIndex+1]:null;
-stages.forEach((s,i)=>{const el=document.createElement("span");el.textContent=s;if(s===x.stage)el.className="active";if(nextStage===s)el.classList.add("next");stage.append(el)});
-const slate=document.createElement("div");slate.className="bmai-scene-strip";
-slate.innerHTML="<div><div class='bmai-scene-kicker'>"+esc(x.week)+" · "+esc(labels[page]||"SESSION")+"</div><div class='bmai-scene-title'>"+esc(x.title)+"</div><div class='bmai-scene-meta'>"+esc(dateRange(x))+" · "+(nextStage?"NEXT PRODUCTION STAGE: "+esc(nextStage):"FINAL PRODUCTION STAGE")+" · Build with intent. Generate with discipline. Keep the story consistent.</div></div><div class='bmai-scene-art' aria-hidden='true'><div class='bmai-scene-orb'></div></div>";
-host.append(crumb,stage,slate);const header=document.querySelector("header");if(header)header.insertAdjacentElement("afterend",host);else document.body.prepend(host)
-}
 function enhanceLongText(){
  document.querySelectorAll('.code-block,pre').forEach((el,i)=>{
    if(el.closest('details')||el.dataset.bmaiLongText==='true')return;
@@ -126,18 +78,11 @@ function enhanceLongText(){
  });
 }
 function applyPageIdentity(){
- const p=location.pathname;
- let id="hub";
- if(p.includes("week-2-day-1"))id="w2d1";
- else if(p.includes("week-2-day-2"))id="w2d2";
- else if(p.includes("week-3-day-1"))id="w3d1";
- else if(p.includes("playbook"))id="playbook";
- else if(p.includes("resources"))id="resource";
- document.documentElement.dataset.bmaiPage=id;
+ document.documentElement.dataset.bmaiPage=document.body.dataset.pageId||"hub";
 }
 function setupMobileHeader(){
-document.querySelectorAll("header .nav,.topbar .nav,.top .nav").forEach((nav,index)=>{
- const links=nav.querySelector(".nav-links")||nav.querySelector(":scope>div:last-child");
+document.querySelectorAll("header .studio-nav,header .nav,.topbar .nav,.top .nav").forEach((nav,index)=>{
+ const links=nav.querySelector(".nav-links,.bmai-session-top-actions");
  if(!links||links.classList.contains("brand")||nav.querySelector(".bmai-mobile-menu"))return;
  if(links.querySelector("a")===null)return;
  if(!links.id)links.id="bmai-mobile-nav-"+index;
@@ -178,23 +123,24 @@ boxes.forEach((b,i)=>{b.checked=!!saved[i];b.addEventListener("change",()=>{try{
 function update(){const done=boxes.filter(x=>x.checked).length,pct=Math.round(done/boxes.length*100);document.querySelectorAll(".bmai-progress-value").forEach(x=>x.textContent=pct+"%");document.querySelectorAll(".bmai-progress-fill").forEach(x=>x.style.width=pct+"%")}update()
 }
 function renderCard(x){
-const cur=current(),unlocked=new Date(x.start).getTime()<=now(),isCurrent=cur&&cur.id===x.id,isNext=next()&&next().id===x.id;
+const cur=current(),unlocked=isUnlocked(x),isCurrent=cur&&cur.id===x.id,isNext=next()&&next().id===x.id;
 let action;
 if(x.session)action='<a class="btn '+(unlocked?"":"secondary")+'" href="'+esc(sessionUrl(x))+'">'+(unlocked?"OPEN SESSION":"VIEW LOCKED PAGE")+'</a>';
 else action='<span class="lock-label">'+(unlocked?"CONTENT COMING SOON":"CONTENT NOT RELEASED")+'</span>';
-const status=isCurrent?"CURRENT SESSION":unlocked?"AVAILABLE NOW":"UPCOMING";
-const extra=isNext&&!unlocked?'<span class="countdown" data-unlock="'+esc(x.start)+'">'+countdown(x.start)+'</span>':"";
+const status=isCurrent?"CURRENT SESSION":!x.session?"UNRELEASED":new Date(x.start).getTime()>now()?"UPCOMING":"AVAILABLE NOW";
+const extra=!unlocked?'<span class="countdown" data-unlock="'+esc(x.start)+'">'+countdown(x.start)+'</span>':"";
 return '<article class="session schedule-row '+(isCurrent?"is-current ":"")+(unlocked?"":"upcoming")+'"><div class="session-rail"><div class="session-number">'+esc(x.week)+'</div><div class="session-date">'+esc(dateRange(x))+'</div></div><div><div class="session-status">'+status+(isNext&&!isCurrent?" · NEXT":"")+'</div><h3>'+esc(x.title)+'</h3><p>'+esc(x.description)+'</p></div><div class="actions">'+action+extra+'</div></article>'
 }
 function homepage(){
-if(!(page==="index.html"||page===""))return;
+if(document.body.dataset.pageType!=="home")return;
 const cur=current(),nxt=next();
 const title=document.querySelector(".bmai-studio-card h2"),desc=document.querySelector(".bmai-studio-card p.muted"),links=document.querySelectorAll(".bmai-studio-card .btn");
 if(cur&&title){
 title.innerHTML=esc(cur.week)+"<br><span>"+esc(cur.title)+"</span>";
-if(desc)desc.textContent=cur.session?"Your current cohort session. Build the next part of your movie in sequence, then complete the associated homework workspace.":"This session is now on the cohort schedule. Session materials will appear here as they are released.";
+if(desc)desc.textContent=cur.session?"Ready to keep creating? Revisit the lesson, open your playbook, and turn the next step into a finished piece.":"This session is now on the cohort schedule. Session materials will appear here as they are released.";
 const status=document.querySelector(".bmai-studio-card .bmai-chip.active");if(status)status.textContent=cur.session?"CURRENT SESSION":"CURRENT · CONTENT COMING SOON";
 const stageChip=document.querySelector(".bmai-studio-card .bmai-chip[data-session-stage]");if(stageChip)stageChip.textContent=cur.stage||"PRODUCTION";const stageTitle=document.getElementById("bmaiCurrentStage");if(stageTitle)stageTitle.textContent=cur.stage||"PRODUCTION";
+const currentImage=document.getElementById("bmaiCurrentImage");if(currentImage){currentImage.hidden=!cur.hero;if(cur.hero){currentImage.src=basePath()+cur.hero;currentImage.alt=cur.title+" — session hero image";}}
 const numberChip=document.querySelector(".bmai-studio-card .bmai-chip[data-session-number]");if(numberChip)numberChip.textContent="SESSION "+String(cur.number).padStart(2,"0");
 if(links[0]){if(cur.session){links[0].href=sessionUrl(cur);links[0].textContent="CONTINUE SESSION →";links[0].style.display="inline-block";links[0].classList.remove("secondary")}else{links[0].removeAttribute("href");links[0].textContent="SESSION CONTENT COMING SOON";links[0].style.display="inline-block";links[0].classList.add("secondary")}}
 if(links[1]){if(cur.playbook){links[1].href=basePath()+cur.playbook;links[1].style.display="inline-block"}else links[1].style.display="none"}
@@ -202,10 +148,20 @@ if(links[1]){if(cur.playbook){links[1].href=basePath()+cur.playbook;links[1].sty
 const stageWrap=document.querySelector(".bmai-production-pipeline");
 if(stageWrap){stageWrap.innerHTML=stages.map((s,i)=>'<div class="stage '+(cur&&cur.stage===s?"active":"")+'">'+String(i+1).padStart(2,"0")+'<br>'+s+'</div>').join("")}
 const sched=document.getElementById("bmaiSchedule");
-if(sched)sched.innerHTML=S.map(renderCard).join("");
+const available=S.filter(x=>x.session&&new Date(x.start).getTime()<=now());
+const upcoming=S.filter(x=>new Date(x.start).getTime()>now()&&(x.session||x.id===nxt?.id));
+const unreleased=S.filter(x=>!x.session&&x.id!==nxt?.id);
+if(sched)sched.innerHTML=available.map(renderCard).join("");
+const upcomingList=document.getElementById("bmaiUpcomingList");if(upcomingList)upcomingList.innerHTML=upcoming.map(renderCard).join("");
+const upcomingFold=document.getElementById("bmaiUpcomingSessions");if(upcomingFold)upcomingFold.hidden=!upcoming.length;
+const upcomingCount=document.getElementById("bmaiUpcomingCount");if(upcomingCount)upcomingCount.textContent=upcoming.length+" sessions";
+const unreleasedList=document.getElementById("bmaiUnreleasedSessions");if(unreleasedList){const weeks=[...new Set(unreleased.map(x=>x.id.match(/week-(\d+)/)[1]))];unreleasedList.innerHTML=weeks.map(week=>'<article class="studio-unreleased-week"><div class="studio-unreleased-week-head"><h3>Week '+week+'</h3><span>Materials coming soon</span></div>'+unreleased.filter(x=>x.id.startsWith('week-'+week+'-')).map(x=>'<div class="studio-unreleased-day"><span>Day '+x.id.match(/day-(\d+)/)[1]+'</span><time datetime="'+esc(x.start)+'">'+esc(new Intl.DateTimeFormat('en-IN',{day:'numeric',month:'short',timeZone:'Asia/Kolkata'}).format(new Date(x.start)))+' · '+esc(timeParts(x.start))+' IST</time></div>').join('')+'</article>').join('');}
+const unreleasedCount=document.getElementById("bmaiUnreleasedCount");if(unreleasedCount)unreleasedCount.textContent=unreleased.length+" sessions";
+const upcomingDescription=document.querySelector('#bmaiUpcomingSessions summary small');if(upcomingDescription)upcomingDescription.textContent='Unlocks automatically at each scheduled start time.';
 const cd=[...document.querySelectorAll(".countdown")];cd.forEach(el=>el.textContent=countdown(el.dataset.unlock));
 const nextBox=document.getElementById("bmaiNextSession");
-if(nextBox){if(nxt){nextBox.innerHTML="<span>NEXT SESSION</span><strong>"+esc(nxt.week)+" · "+esc(nxt.title)+"</strong><small>"+esc(dateRange(nxt))+" · Unlocks in "+esc(countdown(nxt.start))+"</small>"}else nextBox.innerHTML="<span>COHORT COMPLETE</span><strong>All scheduled sessions are available.</strong>"}}
+if(nextBox){if(nxt){const outcomes={"week-2-day-1":"You have the idea. Next, bring it to life with your first AI movie short: generate a shot, build the sound, and make your first cut.","week-2-day-2":"Make an ad that feels real. Build a consistent product world, then turn your strongest frames into controlled motion.","week-3-day-1":"Think like a director. Build a character, a visual world, and a story blueprint before your next generation."};nextBox.className="studio-teaser-card";nextBox.innerHTML='<div class="studio-teaser-copy"><div class="kicker">NEXT UP / '+esc(nxt.week)+'</div><h2>'+esc(nxt.title)+'</h2><p>'+esc(outcomes[nxt.id]||"Your next creative challenge is on its way. Bring what you have built so far and get ready to take the next step.")+'</p><div class="studio-teaser-date">'+esc(dateRange(nxt))+'</div><div class="studio-teaser-lock"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>CLASS LOCKED · OPENS IN <b data-teaser-countdown>'+esc(countdown(nxt.start))+'</b></span></div><small>Your next chapter unlocks automatically. Get your current project ready.</small></div>'+(nxt.hero?'<div class="studio-teaser-image"><img src="'+basePath()+esc(nxt.hero)+'" alt="'+esc(nxt.title)+' — next class preview" loading="lazy"></div>':'');}else nextBox.closest('section').hidden=true;}}
+
 let homepageStateId=null;
 function updateHomepageCountdowns(){
 document.querySelectorAll(".countdown[data-unlock]").forEach(el=>el.textContent=countdown(el.dataset.unlock));
@@ -213,8 +169,7 @@ const nextBox=document.getElementById("bmaiNextSession");
 if(nextBox){
  const nxt=next();
  if(nxt){
-  const small=nextBox.querySelector("small");
-  if(small)small.textContent=dateRange(nxt)+" · Unlocks in "+countdown(nxt.start);
+  const count=nextBox.querySelector('[data-teaser-countdown]');if(count)count.textContent=countdown(nxt.start);
  }
 }
 }
@@ -246,6 +201,7 @@ window.addEventListener("scroll",toggle,{passive:true});toggle();
 top.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
 }
 function guardLockedLinks(){
+ document.querySelectorAll("a[data-bmai-lock-guard]").forEach(a=>{if(isUnlocked(byId(sessionIdFromHref(a.href)))){a.removeAttribute("aria-disabled");a.classList.remove("bmai-locked-link")}});
  document.querySelectorAll("a[href]").forEach(a=>{
   if(a.dataset.bmaiLockGuard==="true")return;
   const targetId=sessionIdFromHref(a.href);
@@ -253,10 +209,14 @@ function guardLockedLinks(){
   const target=byId(targetId);
   if(!target||isUnlocked(target))return;
   a.dataset.bmaiLockGuard="true";
+  a.setAttribute("aria-disabled","true");
+  a.classList.add("bmai-locked-link");
   a.addEventListener("click",e=>{
-   if(e.defaultPrevented)return;
+   if(isUnlocked(target))return;
    e.preventDefault();
-   location.href=a.href;
+   const targetUrl=target.session?basePath()+target.session:null;
+   if(targetUrl)location.href=targetUrl;
+   else alert("This cohort material is not released yet. Return to the Student Hub for the release time.");
   });
  });
 }
@@ -281,21 +241,29 @@ function accessibility(){
  document.querySelectorAll('a[target="_blank"]').forEach(a=>{if(!a.rel.includes("noopener"))a.rel=(a.rel+" noopener").trim();if(!a.rel.includes("noreferrer"))a.rel=(a.rel+" noreferrer").trim()});
  document.querySelectorAll("button").forEach(b=>{if(!b.hasAttribute("type"))b.type="button"});
 }
+function revealReferenceAnchor(){
+ if(!location.hash)return;
+ let id;try{id=decodeURIComponent(location.hash.slice(1))}catch{return}
+ const target=document.getElementById(id);if(!target)return;
+ let parent=target.parentElement;while(parent){if(parent.tagName==='DETAILS')parent.open=true;parent=parent.parentElement}
+ requestAnimationFrame(()=>target.scrollIntoView({block:'start',behavior:'instant'}));
+}
+window.addEventListener('hashchange',revealReferenceAnchor);
 function ready(){
-if(lockPage())return;
 applyBrandMark();
 accessibility();
-if(page==="index.html"||page===""){
+if(lockPage()){applyPageIdentity();setupMobileHeader();guardLockedLinks();return;}
+if(document.body.dataset.pageType==="home"){
  homepage();
  homepageStateId=current()?.id||null;
  setInterval(()=>{
   const id=current()?.id||null;
-  if(id!==homepageStateId){homepage();homepageStateId=id}
-  updateHomepageCountdowns();
+  if(id!==homepageStateId){homepage();homepageStateId=id;guardLockedLinks()}
+  updateHomepageCountdowns();guardLockedLinks();
  },1000)
 }
 try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
-chrome();enhanceLongText();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();injectInstructorIdentity();enhanceAvatarFallbacks();setupScrollControls();guardLockedLinks();
+enhanceLongText();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();enhanceAvatarFallbacks();setupScrollControls();guardLockedLinks();revealReferenceAnchor();
 document.querySelectorAll("a").forEach(a=>{if(a.href===location.href)a.setAttribute("aria-current","page")})
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ready);else ready();

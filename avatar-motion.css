@@ -1,0 +1,58 @@
+/* Brief, contextual motion; static pose remains the default. */
+.avatar-animated{transform-origin:50% 90%;animation-play-state:paused}
+.avatar-animated[data-avatar-visible="true"]{animation-play-state:running}
+.avatar-animated.avatar-entering{animation:avatar-arrive 2.6s ease-out 1;animation-play-state:paused}
+.avatar-animated.avatar-reacting{animation:avatar-nod 1.3s ease-in-out 1;animation-play-state:paused}
+.avatar-animated[data-avatar-visible="true"]{animation-play-state:running}
+.avatar-motion-paused .avatar-animated{animation-play-state:paused!important}
+@keyframes avatar-arrive{0%{transform:translateY(5px)}35%{transform:translateY(-2px)}100%{transform:translateY(0)}}
+@keyframes avatar-nod{0%,100%{transform:rotate(0)}40%{transform:rotate(-1deg) translateY(-3px)}70%{transform:rotate(.6deg)}}
+.studio-avatar.avatar-motion-wave,.studio-avatar.avatar-motion-celebrate{background-image:url('assets/avatars/alexx-motion-frames.webp');background-size:400% 200%;aspect-ratio:var(--avatar-frame-aspect,1);background-position:0% var(--avatar-row)}
+.studio-avatar.avatar-motion-wave{--avatar-row:0%}.studio-avatar.avatar-motion-celebrate{--avatar-row:100%}
+.studio-avatar.avatar-playing{animation:avatar-frames 1.6s step-end 2;animation-play-state:paused}
+.studio-avatar.avatar-playing[data-avatar-visible="true"]{animation-play-state:running}
+@keyframes avatar-frames{0%,24.99%{background-position:0% var(--avatar-row)}25%,49.99%{background-position:33.333333% var(--avatar-row)}50%,74.99%{background-position:66.666667% var(--avatar-row)}75%,100%{background-position:100% var(--avatar-row)}}
+body .studio-guidance.avatar-milestone{border-color:#ff6a00!important;box-shadow:0 0 24px rgba(255,106,0,.12)}
+@media(prefers-reduced-motion:reduce){.avatar-animated,.studio-avatar.avatar-playing{animation:none!important;transform:none!important}.studio-avatar.avatar-playing{background-position:0% var(--avatar-row)}body .studio-guidance.avatar-milestone{box-shadow:none!important}}
+
+:root{--avatar-frame-aspect:1.0;}
+
+.studio-avatar.avatar-motion-wave.avatar-playing{animation-name:avatar-wave-frames}
+@keyframes avatar-wave-frames{0%,34.99%{background-position:0% 0%}35%,39.99%{background-position:33.333333% 0%}40%,44.99%{background-position:66.666667% 0%}45%,100%{background-position:100% 0%}}
+
+/* Pose-specific motion runs only while the character is visible. */
+.avatar-animated{animation:avatar-breathe 5s ease-in-out infinite;animation-play-state:paused}
+.studio-avatar[data-avatar-pose=pointing]{animation-name:avatar-point}
+.studio-avatar[data-avatar-pose=storyboard],.studio-avatar[data-avatar-pose=laptop]{animation-name:avatar-focus}
+.studio-avatar[data-avatar-pose=camera],.studio-avatar[data-avatar-pose=microphone]{animation-name:avatar-present}
+.studio-avatar[data-avatar-pose=headphones]{animation-name:avatar-listen}
+.studio-avatar[data-avatar-pose=clapperboard]{animation-name:avatar-cue}
+.studio-avatar[data-avatar-pose=idea]{animation-name:avatar-think}
+.studio-avatar[data-avatar-pose=caution],.studio-avatar[data-avatar-pose=checklist]{animation-name:avatar-review}
+.avatar-animated.avatar-entering{animation:avatar-arrive-bold 1.1s ease-out 1}
+.avatar-animated.avatar-reacting{animation:avatar-react-bold .85s ease-in-out 1}
+.studio-avatar.avatar-playing{animation:avatar-frames 2.4s step-end infinite;animation-play-state:paused}
+.studio-avatar.avatar-motion-wave.avatar-playing{animation:avatar-wave-frames 3s step-end infinite;animation-play-state:paused}
+.avatar-animated[data-avatar-visible=true],.studio-avatar.avatar-playing[data-avatar-visible=true]{animation-play-state:running}
+.studio-guidance:has(.studio-avatar[aria-expanded=true]){border-color:#9c4b1b!important}
+.studio-guidance>.studio-avatar-tip{grid-column:1/-1}
+@keyframes avatar-breathe{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-5px) scale(1.025)}}
+@keyframes avatar-point{0%,100%{transform:translateX(0) rotate(0)}40%,60%{transform:translateX(7px) rotate(-2deg)}}
+@keyframes avatar-focus{0%,100%{transform:rotate(0)}40%{transform:rotate(2deg) translateY(-4px)}70%{transform:rotate(-1deg)}}
+@keyframes avatar-present{0%,100%{transform:translateY(0)}45%{transform:translateY(-7px) rotate(-2deg)}}
+@keyframes avatar-listen{0%,100%{transform:rotate(0)}25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
+@keyframes avatar-cue{0%,75%,100%{transform:rotate(0) translateY(0)}20%{transform:rotate(-4deg) translateY(-8px)}40%{transform:rotate(2deg) translateY(0)}}
+@keyframes avatar-think{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-8px) rotate(3deg)}}
+@keyframes avatar-review{0%,100%{transform:rotate(0)}35%{transform:rotate(3deg) translateY(-3px)}65%{transform:rotate(-2deg)}}
+@keyframes avatar-arrive-bold{0%{transform:translateY(22px) rotate(-5deg) scale(.92)}65%{transform:translateY(-8px) rotate(2deg) scale(1.04)}100%{transform:translateY(0) rotate(0) scale(1)}}
+@keyframes avatar-react-bold{0%,100%{transform:scale(1) rotate(0)}35%{transform:scale(1.09) rotate(-5deg) translateY(-9px)}70%{transform:scale(1.04) rotate(3deg)}}
+@media(prefers-reduced-motion:reduce){.avatar-animated,.studio-avatar.avatar-playing,.studio-avatar.avatar-motion-wave.avatar-playing{animation:none!important;transform:none!important}}
+
+/* Every static pose explicitly restores its texture layout after a reaction. */
+.studio-avatar.pointing{background-image:url('assets/avatars/alexx-hero-approved.webp');background-size:contain;background-position:center}
+.studio-avatar.storyboard,.studio-avatar.laptop{background-size:200% 200%}
+.studio-avatar.idea,.studio-avatar.checklist,.studio-avatar.caution{background-size:200% 200%}
+.studio-avatar.camera,.studio-avatar.headphones,.studio-avatar.microphone,.studio-avatar.clapperboard{background-size:200% 200%}
+.studio-avatar:not(.avatar-motion-wave):not(.avatar-motion-celebrate).avatar-playing{animation:avatar-breathe 5s ease-in-out infinite}
+.studio-avatar.avatar-motion-wave,.studio-avatar.avatar-motion-celebrate{background-size:400% 200%;background-position:0% var(--avatar-row)}
+.studio-avatar.avatar-motion-celebrate{mask-image:linear-gradient(to bottom,transparent 0%,transparent 3%,#000 3%,#000 100%)}

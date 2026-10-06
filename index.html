@@ -1,481 +1,836 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html data-bmai-page="hub" lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Build My AI Movie Cohort student command center for sessions, playbooks, homework and production resources."><meta name="theme-color" content="#050505"><meta property="og:title" content="Build My AI Movie Cohort | Student Hub"><meta property="og:description" content="Your production command center for the Build My AI Movie Cohort."><meta property="og:type" content="website"><meta property="og:url" content="https://ralakshendra.github.io/build-my-ai-movie-cohort/"><link rel="canonical" href="https://ralakshendra.github.io/build-my-ai-movie-cohort/"><link rel="icon" type="image/svg+xml" href="assets/brand/build-my-ai-movie-mark.svg">
-<title>Build My AI Movie Cohort | Student Hub</title>
-<style>
-:root{--bg:#090909;--panel:#141414;--text:#f4f1ea;--muted:#aaa69d;--line:rgba(255,255,255,.11);--accent:#ff6a00;--accent2:#ff9a3d;--max:1180px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 78% 8%,rgba(255,106,0,.13),transparent 28%),var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.55}a{color:inherit}.container{width:min(var(--max),calc(100% - 40px));margin:auto}
-.topbar{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:rgba(9,9,9,.82);backdrop-filter:blur(18px)}.nav{height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:800;font-size:14px;letter-spacing:.03em}.brand span{color:var(--accent)}.nav-links{display:flex;gap:20px}.nav-links a{font-size:13px;color:var(--muted);text-decoration:none}.nav-links a:hover{color:var(--text)}
-.hero{padding:100px 0 70px}.kicker{color:var(--accent2);text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:800}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.02;margin:0}h1{font-size:clamp(50px,8vw,100px);letter-spacing:-.055em;margin-top:14px}h1 em{font-style:normal;color:var(--accent)}h2{font-size:clamp(40px,5vw,64px);letter-spacing:-.04em}.lead{color:var(--muted);max-width:680px;font-size:18px;margin:24px 0 0}
-.hub-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:32px}.hub-nav a{padding:11px 15px;border:1px solid var(--line);background:rgba(255,255,255,.025);text-decoration:none;font-size:12px;letter-spacing:.04em}.hub-nav a:hover{border-color:rgba(255,106,0,.5);color:var(--accent2)}
-section{padding:70px 0;border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:30px}.section-head p{max-width:500px;color:var(--muted);margin:0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{border:1px solid var(--line);background:var(--panel);padding:28px;min-height:225px;display:flex;flex-direction:column}.card.featured{background:radial-gradient(circle at 80% 10%,rgba(255,106,0,.12),transparent 32%),var(--panel)}.tag{font-size:10px;letter-spacing:.16em;color:var(--accent);font-weight:800}.card h3{font-size:28px;margin:18px 0 10px}.card p{color:var(--muted);font-size:14px;margin:0}.actions{margin-top:auto;padding-top:25px;display:flex;gap:9px;flex-wrap:wrap}.btn{display:inline-block;padding:11px 15px;background:var(--accent);color:#12100c;border:1px solid var(--accent);font-weight:800;font-size:12px;text-decoration:none}.btn.secondary{background:transparent;color:var(--accent2);border-color:rgba(255,106,0,.4)}
-.sessions{display:grid;gap:10px}.session{display:grid;grid-template-columns:100px 1fr auto;gap:20px;align-items:center;padding:22px 24px;border:1px solid var(--line);background:rgba(255,255,255,.025)}.session-number{color:var(--accent);font-size:11px;letter-spacing:.16em;font-weight:800}.session-date{margin-top:7px;color:var(--bm-orange);font-size:10px;letter-spacing:.08em;font-weight:800;text-transform:uppercase}.session h3{font-size:24px}.session p{margin:5px 0 0;color:var(--muted);font-size:13px}.status{font-size:10px;letter-spacing:.13em;color:var(--muted);text-transform:uppercase}.callout{margin-top:20px;padding:18px 20px;border-left:2px solid var(--accent);background:rgba(255,106,0,.06);color:#ddd3c6;font-size:14px}
-footer{border-top:1px solid var(--line);padding:30px 0;margin-top:30px;color:var(--muted);font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:20px}
-@media(max-width:850px){.grid{grid-template-columns:1fr 1fr}.session{grid-template-columns:80px 1fr}.session .btn{grid-column:2;width:max-content}}
-@media(max-width:600px){.container{width:min(var(--max),calc(100% - 24px))}.nav{height:58px}.nav-links a:not(:last-child){display:none}.hero{padding:70px 0 55px}.grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:15px}.session{grid-template-columns:1fr;gap:8px}.session .btn{grid-column:auto}.footer-inner{display:block}.footer-inner div+div{margin-top:8px}}
-</style>
-<meta name="build-version" content="2026-10-05-hub-v20"><meta http-equiv="Cache-Control" content="no-cache"><link rel="stylesheet" href="brand.css?v=20261005-brand-v25"><!-- Build My AI Movie shared brand system -->
-<style>
-.bmai-art{position:relative;min-height:260px;border:1px solid var(--bm-line);border-radius:20px;overflow:hidden;background:radial-gradient(circle at 76% 34%,rgba(255,106,0,.35),transparent 18%),radial-gradient(circle at 70% 55%,rgba(255,154,61,.13),transparent 30%),linear-gradient(145deg,#171717,#050505 72%)}.bmai-art:before{content:"";position:absolute;inset:14%;border:1px solid rgba(255,106,0,.35);transform:skewY(-8deg)}.bmai-art .lens{position:absolute;width:120px;height:120px;right:12%;top:20%;border-radius:50%;border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 0 0 18px rgba(255,255,255,.025),0 0 70px rgba(255,106,0,.18)}.bmai-art .beam{position:absolute;width:72%;height:45%;left:0;top:27%;background:linear-gradient(90deg,rgba(255,106,0,.18),transparent);clip-path:polygon(0 35%,100% 0,100% 100%,0 65%);filter:blur(3px)}.bmai-art .label{position:absolute;left:22px;bottom:20px;color:#fff;font-size:10px;letter-spacing:.16em;font-weight:900}.bmai-art .label small{display:block;margin-top:6px;color:var(--bm-muted);font-size:8px;letter-spacing:.08em}.stage{padding:11px 6px;background:#0b0b0b;text-align:center;font-size:8px;line-height:1.6;letter-spacing:.08em;font-weight:900;color:#666}.stage.active{background:rgba(255,106,0,.12);color:#fff;box-shadow:inset 0 -2px 0 var(--bm-orange)}@media(max-width:900px){.bmai-studio-card{grid-template-columns:1fr!important}.bmai-studio-card aside{border-left:0!important;border-top:1px solid var(--bm-line)}}
-</style><script src="app.js?v=20261005-app-v22"></script><style>
-.session.upcoming{opacity:.68}.session.upcoming:hover{opacity:.9}.lock-label{display:inline-flex;align-items:center;padding:11px 14px;border:1px solid var(--bm-line);border-radius:4px;color:#777;font-size:10px;font-weight:900;letter-spacing:.08em}.session.upcoming .session-number{color:#777!important}
-</style><style>
-.bmai-chip.active{box-shadow:0 0 18px rgba(255,106,0,.08)}
-</style><style>
-.bmai-current-wrap{position:relative}.bmai-production-pipeline .stage{min-width:76px}.bmai-next-session{margin-top:14px;padding:14px 16px;border:1px solid var(--bm-line);border-radius:12px;background:rgba(255,255,255,.025);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.bmai-next-session span{color:var(--bm-orange);font-size:9px;font-weight:900;letter-spacing:.16em}.bmai-next-session strong{color:#fff;font-size:12px}.bmai-next-session small{color:var(--bm-muted);font-size:11px}.session-rail{align-self:start}.session-status{color:var(--bm-orange);font-size:9px;letter-spacing:.14em;font-weight:900;text-transform:uppercase;margin-bottom:7px}.schedule-row h3{margin:0}.schedule-row .actions{align-self:center}.bmai-homework-link{margin-left:auto!important;color:var(--bm-orange)!important;font-weight:800}.bmai-lock-date{margin-top:20px;color:#fff;font-size:11px;font-weight:800;letter-spacing:.04em}.bmai-lock-card h1{margin-top:14px}.bmai-lock-card .btn{text-decoration:none;display:inline-block;padding:12px 16px}.bmai-locked-page{min-height:100vh!important}
-@media(max-width:900px){.nav-links{overflow-x:auto;max-width:55vw;gap:14px;scrollbar-width:none}.nav-links::-webkit-scrollbar{display:none}.nav-links a{white-space:nowrap}.bmai-studio-card{grid-template-columns:1fr!important}.bmai-studio-card aside{border-left:0!important;border-top:1px solid var(--bm-line)}} 
-@media(max-width:700px){.nav-links{max-width:48vw}.session{grid-template-columns:1fr}.session-rail{align-self:auto}.schedule-row .actions{justify-content:flex-start}.bmai-production-pipeline{grid-template-columns:repeat(10,76px)!important}.bmai-next-session{align-items:flex-start;flex-direction:column;gap:5px}}
-</style><style>.resource-placeholder{opacity:.55}.resource-placeholder .tag{color:#777!important}.resource-placeholder:hover{opacity:.8}</style><style>
-/* v12 homepage session library readability */
-#sessions .sessions{gap:14px}
-#sessions .session.schedule-row{
-  grid-template-columns:minmax(170px,190px) minmax(0,1fr) minmax(220px,250px);
-  gap:24px;
-  align-items:stretch;
-  min-height:154px;
-  padding:24px 26px;
-  opacity:1!important;
-  background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012))!important;
-}
-#sessions .session.schedule-row .session-rail{
-  align-self:stretch;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding-right:20px;
-  border-right:1px solid var(--bm-line-soft);
-}
-#sessions .schedule-row .session-number{
-  color:#d8d8d8!important;
-  font-size:11px;
-  line-height:1.45;
-  letter-spacing:.14em;
-}
-#sessions .schedule-row.is-current .session-number{color:var(--bm-orange)!important}
-#sessions .schedule-row .session-date{
-  margin-top:10px;
-  color:#a7a7a7!important;
-  font-size:10px;
-  line-height:1.65;
-  letter-spacing:.09em;
-}
-#sessions .schedule-row>div:nth-child(2){
-  min-width:0;
-  align-self:center;
-}
-#sessions .schedule-row .session-status{
-  margin-bottom:8px;
-  color:var(--bm-orange)!important;
-  font-size:10px;
-  line-height:1.4;
-  letter-spacing:.14em;
-  font-weight:900;
-}
-#sessions .schedule-row h3{
-  color:#f4f4f4!important;
-  font-size:clamp(24px,2.35vw,34px);
-  line-height:1.08;
-  letter-spacing:-.035em;
-}
-#sessions .schedule-row.upcoming h3{color:#e0e0e0!important}
-#sessions .schedule-row p{
-  color:#9f9f9f!important;
-  font-size:13px;
-  line-height:1.55;
-  max-width:720px;
-}
-#sessions .schedule-row .actions{
-  align-self:center;
-  justify-self:end;
-  width:100%;
-  min-width:0;
-  margin-top:0;
-  padding-top:0;
-  display:flex;
-  flex-direction:column;
-  align-items:stretch;
-  justify-content:center;
-  gap:10px;
-}
-#sessions .schedule-row .actions .btn,
-#sessions .schedule-row .actions .lock-label{
-  width:100%;
-  min-width:0;
-  min-height:50px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-#sessions .schedule-row .actions .btn.secondary{
-  color:#d8d8d8!important;
-  border-color:rgba(255,255,255,.22)!important;
-  background:rgba(255,255,255,.035)!important;
-}
-#sessions .schedule-row .actions .btn.secondary:hover{
-  color:#fff!important;
-  border-color:var(--bm-orange)!important;
-  background:rgba(255,106,0,.08)!important;
-}
-#sessions .schedule-row .countdown{
-  margin:0;
-  text-align:center;
-  color:var(--bm-orange-light)!important;
-  font-size:11px;
-  line-height:1.4;
-  letter-spacing:.05em;
-  font-weight:900;
-}
-#sessions .schedule-row.is-current{
-  border-color:rgba(255,106,0,.52)!important;
-  box-shadow:0 20px 70px rgba(0,0,0,.28),0 0 38px rgba(255,106,0,.055)!important;
-}
-#sessions .schedule-row.upcoming{
-  opacity:1!important;
-}
-@media(max-width:900px){
-  #sessions .session.schedule-row{
-    grid-template-columns:150px minmax(0,1fr);
-    gap:20px;
-  }
-  #sessions .schedule-row .actions{
-    grid-column:2;
-    justify-self:start;
-    width:min(260px,100%);
-  }
-}
-@media(max-width:600px){
-  #sessions .session.schedule-row{
-    grid-template-columns:1fr;
-    gap:14px;
-    padding:20px;
-  }
-  #sessions .schedule-row .session-rail{
-    padding:0 0 14px;
-    border-right:0;
-    border-bottom:1px solid var(--bm-line-soft);
-  }
-  #sessions .schedule-row .actions{
-    grid-column:auto;
-    width:100%;
-  }
-  #sessions .schedule-row h3{font-size:25px}
-}
-</style><style>
-/* v13 mobile session cards: force true single-column layout */
-html,body{max-width:100%;overflow-x:hidden}
-@media(max-width:700px){
-  #sessions .container{width:calc(100% - 24px);max-width:none}
-  #sessions .sessions{width:100%;max-width:100%;overflow:visible}
-  #sessions .session.schedule-row,
-  #sessions .session.schedule-row.upcoming,
-  #sessions .session.schedule-row.is-current{
-    display:flex!important;
-    flex-direction:column!important;
-    width:100%!important;
-    max-width:100%!important;
-    min-width:0!important;
-    margin:0!important;
-    padding:20px!important;
-    gap:16px!important;
-    align-items:stretch!important;
-    overflow:hidden!important;
-  }
-  #sessions .schedule-row .session-rail{
-    width:100%!important;
-    min-width:0!important;
-    padding:0 0 14px!important;
-    border-right:0!important;
-    border-bottom:1px solid var(--bm-line-soft)!important;
-    display:block!important;
-  }
-  #sessions .schedule-row>div:nth-child(2){
-    width:100%!important;
-    min-width:0!important;
-    max-width:100%!important;
-    overflow-wrap:anywhere;
-  }
-  #sessions .schedule-row .session-status{
-    margin-bottom:7px!important;
-  }
-  #sessions .schedule-row h3{
-    max-width:100%!important;
-    overflow-wrap:anywhere;
-  }
-  #sessions .schedule-row p{
-    max-width:100%!important;
-    overflow-wrap:anywhere;
-  }
-  #sessions .schedule-row .actions{
-    width:100%!important;
-    min-width:0!important;
-    max-width:100%!important;
-    grid-column:auto!important;
-    justify-self:stretch!important;
-    align-self:stretch!important;
-    display:flex!important;
-    flex-direction:column!important;
-    align-items:stretch!important;
-    margin:0!important;
-    padding:0!important;
-  }
-  #sessions .schedule-row .actions .btn,
-  #sessions .schedule-row .actions .lock-label{
-    width:100%!important;
-    max-width:100%!important;
-  }
-  #sessions .schedule-row .countdown{
-    width:100%!important;
-    white-space:normal!important;
-  }
-}
-</style><style>
-/* v14: constrain Session Library to the viewport itself */
-#sessions{width:100%;max-width:100%;overflow:hidden}
-#sessions>.container{
-  width:min(1180px,calc(100vw - 40px))!important;
-  max-width:1180px!important;
-  min-width:0!important;
-  margin-left:auto!important;
-  margin-right:auto!important;
-}
-#sessions .sessions,
-#sessions .session.schedule-row{
-  width:100%!important;
-  max-width:100%!important;
-  min-width:0!important;
-}
-#sessions .session.schedule-row{
-  grid-template-columns:190px minmax(0,1fr) 190px!important;
-}
-#sessions .schedule-row>div:nth-child(2),
-#sessions .schedule-row h3,
-#sessions .schedule-row p{
-  min-width:0!important;
-  max-width:100%!important;
-}
-#sessions .schedule-row p{
-  overflow-wrap:anywhere;
-}
-@media(max-width:900px){
-  #sessions>.container{width:calc(100vw - 32px)!important}
-  #sessions .session.schedule-row{
-    grid-template-columns:150px minmax(0,1fr)!important;
-  }
-}
-@media(max-width:700px){
-  #sessions>.container{width:calc(100vw - 24px)!important}
-  #sessions .session.schedule-row{
-    display:flex!important;
-    flex-direction:column!important;
-    grid-template-columns:none!important;
-  }
-}
-</style><style>/* Homepage hero image integration */.bmai-hero-image{min-height:0!important;aspect-ratio:16/9;background:#050505!important}.bmai-hero-image:before,.bmai-hero-image:after{pointer-events:none}.bmai-hero-image img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center center}.bmai-hero-image:before{z-index:2;inset:0!important;border:0!important;transform:none!important;background:linear-gradient(90deg,rgba(5,5,5,.08),transparent 48%)}.bmai-hero-image:after{z-index:3;left:7%;right:7%;bottom:8%;background:linear-gradient(90deg,transparent,rgba(255,106,0,.8),transparent)}</style><style>
-/* v19: unified cinematic homepage hero */
-.hero{
-  padding:34px 0 34px;
-  border-top:0!important;
-}
-.hero-stage{
-  position:relative;
-  min-height:660px;
-  display:flex;
-  align-items:center;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:26px;
-  background:#050505;
-  box-shadow:0 28px 90px rgba(0,0,0,.42);
-}
-.hero-stage:after{
-  content:"";
-  position:absolute;
-  left:6%;
-  right:6%;
-  bottom:18px;
-  height:1px;
-  background:linear-gradient(90deg,transparent,rgba(255,106,0,.78),transparent);
-  box-shadow:0 0 24px rgba(255,106,0,.28);
-  z-index:4;
-}
-.bmai-hero-image{
-  position:absolute!important;
-  inset:0!important;
-  width:100%!important;
-  height:100%!important;
-  min-height:0!important;
-  aspect-ratio:auto!important;
-  border:0!important;
-  border-radius:0!important;
-  background:#050505!important;
-  z-index:0;
-}
-.bmai-hero-image img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
-  object-position:center center;
-  image-rendering:auto;
-}
-.hero-image-shade{
-  position:absolute;
-  inset:0;
-  z-index:1;
-  background:
-    linear-gradient(90deg,rgba(5,5,5,.97) 0%,rgba(5,5,5,.84) 28%,rgba(5,5,5,.38) 52%,rgba(5,5,5,.06) 76%),
-    linear-gradient(180deg,rgba(5,5,5,.18),transparent 32%,rgba(5,5,5,.42) 100%);
-}
-.hero-copy{
-  position:relative;
-  z-index:3;
-  width:min(650px,58%);
-  padding:72px 0 80px 58px;
-}
-.hero-copy h1{
-  font-size:clamp(54px,7vw,96px);
-  margin-top:14px;
-  text-shadow:0 8px 30px rgba(0,0,0,.3);
-}
-.hero-copy .lead{
-  max-width:600px;
-  font-size:18px;
-  line-height:1.55;
-  margin-top:26px;
-  color:#c2beb7!important;
-}
-.hero-copy .hub-nav{
-  margin-top:30px;
-  gap:8px;
-}
-.hero-copy .hub-nav a{
-  background:rgba(5,5,5,.52)!important;
-  backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
-}
-.bmai-current-wrap{
-  padding-top:24px!important;
-}
-.bmai-current-wrap .bmai-studio-card{
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:22px;
-  background:
-    radial-gradient(circle at 88% 0%,rgba(255,106,0,.10),transparent 32%),
-    linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
-  box-shadow:0 22px 70px rgba(0,0,0,.28);
-}
-@media(max-width:850px){
-  .hero{padding:24px 0 26px}
-  .hero-stage{min-height:620px}
-  .hero-copy{width:70%;padding:60px 0 64px 38px}
-}
-@media(max-width:600px){
-  .hero{padding:16px 0 20px}
-  .hero-stage{min-height:610px;border-radius:20px;align-items:flex-start}
-  .hero-image-shade{
-    background:
-      linear-gradient(180deg,rgba(5,5,5,.94) 0%,rgba(5,5,5,.80) 38%,rgba(5,5,5,.20) 72%,rgba(5,5,5,.55) 100%);
-  }
-  .hero-copy{width:100%;padding:44px 22px 40px}
-  .hero-copy h1{font-size:clamp(48px,15vw,68px)}
-  .hero-copy .lead{font-size:16px;max-width:520px}
-  .hero-copy .hub-nav a{padding:10px 12px;font-size:10px}
-  .bmai-current-wrap{padding-top:18px!important}
-}
-</style></head>
-<body>
-<header class="topbar"><div class="container nav">
-<div class="brand"><img class="bmai-brand-mark" src="assets/brand/build-my-ai-movie-mark.svg" alt="" aria-hidden="true">BUILD MY AI MOVIE <span>HUB</span></div>
-<div class="nav-links"><a href="#sessions">Sessions</a><a href="#homework">Homework</a><a href="#playbooks">Playbooks</a><a href="#resources">Resources</a></div>
-</div></header>
-<main>
-<section class="hero">
-<div class="container hero-stage">
-<div class="bmai-hero-image" aria-label="Build My AI Movie cinematic production studio">
-<img src="assets/homepage-hero.jpg?v=20261005-hero-v3" alt="Cinematic Build My AI Movie production studio with Alexx Roy reviewing a visual storyboard">
-<div class="hero-image-shade"></div>
-</div>
-<div class="hero-copy">
-<div class="kicker">BUILD MY AI MOVIE COHORT</div>
-<h1>Build the movie.<br><em>Not the chaos.</em></h1>
-<p class="lead">Every session, playbook, homework workspace and production reference in one cinematic studio built around your next shot.</p>
-<nav class="hub-nav">
-<a href="#sessions">SESSIONS</a>
-<a href="#homework">HOMEWORK</a>
-<a href="#playbooks">PLAYBOOKS</a>
-<a href="#resources">RESOURCE LIBRARY</a>
-</nav>
-</div>
-</div>
-</section>
-<section class="container bmai-current-wrap" style="padding-top:30px;padding-bottom:40px;border-top:0">
-<div class="bmai-studio-card" style="display:grid;grid-template-columns:1.05fr .95fr;gap:0;overflow:hidden">
-<div style="padding:30px">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Build My AI Movie Cohort student command center for sessions, playbooks, homework and production resources." name="description"/><meta content="#050505" name="theme-color"/><meta content="Build My AI Movie Cohort | Student Hub" property="og:title"/><meta content="Your production command center for the Build My AI Movie Cohort." property="og:description"/><meta content="website" property="og:type"/><meta content="https://ralakshendra.github.io/build-my-ai-movie-cohort/" property="og:url"/><link href="https://ralakshendra.github.io/build-my-ai-movie-cohort/" rel="canonical"/><link href="assets/brand/build-my-ai-movie-mark.svg" rel="icon" type="image/svg+xml"/>
+<title>Build My AI Movie Studio | Student Hub</title>
+<meta content="2026-10-05-hub-v20" name="build-version"/><meta content="no-cache" http-equiv="Cache-Control"/><link href="brand.css?v=20261005-brand-v25" rel="stylesheet"/><link data-page-styles="" href="styles/pages/home.css?v=preview2" rel="stylesheet"/><!-- Build My AI Movie shared brand system -->
+<link href="styles/homepage.css?v=hero-v2" rel="stylesheet"/><link rel="stylesheet" href="library/components.css?v=92ea426f6b11"><script defer src="library/site.js?v=c8fdb3322df0"></script></head>
+<body data-page-id="hub" data-page-key="home" data-page-type="home"><a class="bmai-skip-link" href="#main-content">Skip to main content</a>
+<header class="bmai-global-header"><div class="studio-nav"><a class="bmai-session-brand" href="index.html"><img alt="" src="assets/brand/build-my-ai-movie-mark.svg"/><span>BUILD MY <b>AI MOVIE STUDIO</b></span></a><a aria-label="Back to homepage" class="bmai-header-home" href="index.html" title="Home"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M3 10 12 3l9 7M5 9v12h5v-7h4v7h5V9"></path></svg></a><div class="nav-links"><a href="#sessions">Sessions</a><a href="#homework">Homework</a><a href="#playbooks">Playbooks</a><a href="#resources">Resources</a></div></div></header>
+<main id="main-content">
+<section class="hero"><div class="container studio-cinematic-hero"><img alt="Alexx Roy in a cinematic production studio, pointing toward your next movie idea" class="studio-home-scene" fetchpriority="high" src="assets/homepage-studio.webp"/><div aria-hidden="true" class="studio-home-shade"></div><div class="hero-copy"><div class="kicker">YOUR 2-MONTH TRANSFORMATION</div><h1>Master AI Moviemaking.<br/><em>Build. Get paid.</em></h1><p class="lead">Become a confident AI moviemaker in two months. Build movies, ads, and a portfolio to land high-paying clients.</p><div class="studio-home-actions"><a class="btn" href="#sessions">OPEN YOUR SESSIONS →</a><a class="btn secondary" href="#playbooks">VIEW PLAYBOOKS</a></div></div></div></section>
+<section class="layout-home-1 container bmai-current-wrap">
+<div class="layout-home-2 bmai-studio-card">
+<div class="layout-home-3">
 <div class="bmai-eyebrow">CURRENT SESSION</div>
-<h2 style="font-size:clamp(36px,4vw,58px);margin:10px 0">CURRENT SESSION</h2>
-<p class="muted" style="max-width:650px">Your current cohort session will appear here automatically.</p>
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin:18px 0">
-<span class="bmai-chip active">CURRENT SESSION</span><span class="bmai-chip" data-session-stage>PRODUCTION</span><span class="bmai-chip" data-session-number>SESSION</span>
+<h2 class="layout-home-4">CURRENT SESSION</h2>
+<p class="layout-home-5 muted">Your current cohort session will appear here automatically.</p>
+<div class="layout-home-6">
+<span class="bmai-chip active">CURRENT SESSION</span><span class="bmai-chip" data-session-stage="">PRODUCTION</span><span class="bmai-chip" data-session-number="">SESSION</span>
 </div>
 <a class="btn" href="#">CONTINUE SESSION →</a>
-<a class="btn secondary" href="#">OPEN PLAYBOOK</a><div class="bmai-device-note">Progress checkpoints are saved on this device.</div>
+<a class="btn secondary" href="#">OPEN PLAYBOOK</a><div class="bmai-device-note">Your progress stays saved on this device. Come back and keep creating.</div>
 </div>
-<aside style="padding:28px;border-left:1px solid var(--bm-line);display:flex;flex-direction:column;justify-content:space-between">
-<div><div style="font-size:9px;color:#777;letter-spacing:.14em;font-weight:900">CURRENT PRODUCTION STAGE</div><div style="font-size:30px;font-weight:900;margin-top:8px" id="bmaiCurrentStage">PRODUCTION</div></div>
-<div class="bmai-character-card avatar-cutout" style="min-height:210px;margin-top:20px"><img src="assets/avatars/alexx-point.webp?v=20261005-pose-point-v1" alt="Alexx Roy avatar"><div class="character-copy"><div class="character-kicker">YOUR CREATIVE GUIDE</div><div class="character-title">Build the next frame.</div><div class="character-note">A consistent visual mentor anchor across the cohort experience.</div></div></div>
-</aside>
+<aside class="studio-current-visual"><img alt="YouTube Masterclass — session hero image" id="bmaiCurrentImage" loading="lazy" src="assets/week-1-day-2-hero.jpg.webp"/><div class="studio-current-stage"><div class="kicker">CURRENT PRODUCTION STAGE</div><div id="bmaiCurrentStage">BLUEPRINT</div></div></aside>
 </div>
-<div class="bmai-production-pipeline" style="display:grid;grid-template-columns:repeat(10,minmax(76px,1fr));gap:1px;margin-top:18px;background:var(--bm-line);border:1px solid var(--bm-line);border-radius:12px;overflow-x:auto"></div>
-<div id="bmaiNextSession" class="bmai-next-session"></div>
-</section>
-<section class="container bmai-journey" aria-labelledby="journey-title">
-<div class="section-head"><div><div class="kicker">YOUR WORKFLOW</div><h2 id="journey-title">From Session to Movie</h2></div><p>Every session follows the same production loop. You always know what to open, what to build and what comes next.</p></div>
-<div class="bmai-journey-grid" aria-label="Student production workflow">
-<article class="bmai-journey-step"><div class="bmai-journey-num">01</div><strong>SESSION BRIEF</strong><span>Learn the stage and outcome.</span></article>
-<article class="bmai-journey-step"><div class="bmai-journey-num">02</div><strong>PLAYBOOK</strong><span>Use the detailed production reference.</span></article>
-<article class="bmai-journey-step"><div class="bmai-journey-num">03</div><strong>BUILD</strong><span>Execute the hands-on production work.</span></article>
-<article class="bmai-journey-step"><div class="bmai-journey-num">04</div><strong>HOMEWORK</strong><span>Complete the Google Doc workspace.</span></article>
-<article class="bmai-journey-step"><div class="bmai-journey-num">05</div><strong>PRODUCTION CHECK</strong><span>Review your work before moving on.</span></article>
-<article class="bmai-journey-step"><div class="bmai-journey-num">06</div><strong>NEXT STAGE</strong><span>Return to the Hub and keep the movie moving.</span></article>
+<aside class="studio-companion" data-companion="pipeline"><div aria-label="Alexx Roy: clapperboard" class="studio-avatar clapperboard" role="img"></div><p aria-live="polite" class="studio-companion-copy">Your production journey: one stage, one finished outcome at a time.</p></aside><div class="layout-home-7 bmai-production-pipeline"></div>
+
+</section><section class="container studio-next-class" id="next-class"><div class="bmai-next-session" id="bmaiNextSession"></div></section>
+<section aria-labelledby="journey-title" class="container bmai-journey">
+<div class="section-head"><div><div class="kicker">YOUR WORKFLOW</div><h2 id="journey-title">Your idea. Your movie. Your next move.</h2></div><p>Watch, try, build, repeat. Follow this path and turn each lesson into something you are proud to share.</p></div>
+<div aria-label="Student production workflow" class="bmai-journey-grid">
+<article class="bmai-journey-step"><div class="bmai-journey-num">01</div><strong>GET THE BRIEF</strong><span>See what you will bring to life.</span></article>
+<article class="bmai-journey-step"><div class="bmai-journey-num">02</div><strong>OPEN THE PLAYBOOK</strong><span>Your shortcut from lesson to action.</span></article>
+<article class="bmai-journey-step"><div class="bmai-journey-num">03</div><strong>MAKE SOMETHING</strong><span>Try the tools. Build the scene.</span></article>
+<article class="bmai-journey-step"><div class="bmai-journey-num">04</div><strong>TAKE THE CHALLENGE</strong><span>Put your new skills to work.</span></article>
+<article class="bmai-journey-step"><div class="bmai-journey-num">05</div><strong>CHECK YOUR CUT</strong><span>Spot the wins. Polish the rough edges.</span></article>
+<article class="bmai-journey-step"><div class="bmai-journey-num">06</div><strong>KEEP IT MOVING</strong><span>One finished step closer to your movie.</span></article>
 </div>
-</section>
+<aside class="studio-guidance idea"><div class="studio-guidance-visual"><div aria-label="Alexx Roy: idea" class="studio-avatar idea" role="img"></div></div><div class="studio-guidance-copy"><h3>Your idea needs a plan.</h3><p>Learn the stage, practice it, then build something you can show.</p></div></aside></section>
 <section id="sessions"><div class="container">
-<div class="section-head"><div><div class="kicker">01 / LEARN</div><h2>Session Library</h2></div><p>Every cohort session lives in one timeline. Dates, duration, availability, countdowns and content links update automatically from the official cohort schedule.</p></div>
-<div id="bmaiSchedule" class="sessions"></div>
-<div class="callout">Week 1 Day 1 was cohort orientation and has no standalone page. Future sessions appear here immediately and unlock automatically at their scheduled cohort start time.</div>
+<div class="section-head library-illustrated-head"><div class="library-heading-group"><span class="library-heading-art"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8" y="15" width="48" height="36" rx="7"/><path d="M8 25h48M18 15l7 10m7-10 7 10m7-10 7 10"/><path class="library-icon-accent" d="m28 32 12 7-12 7z"/></svg></span><div><div class="kicker">01 / LEARN</div><h2>Session Library</h2></div></div><p>Pick up where you left off, revisit a favourite lesson, or see what is coming next. Every session adds a new skill to your creative toolkit.</p></div>
+<div class="sessions" id="bmaiSchedule"></div><details class="studio-library-fold" id="bmaiUpcomingSessions"><summary><span aria-hidden="true" class="studio-fold-icon"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="20"><rect height="16" rx="3" width="16" x="4" y="5"></rect><path d="M8 3v4m8-4v4M4 11h16m-12 4h3"></path></svg></span><span><strong>Upcoming sessions</strong><small>Your next stages, scheduled and ready to preview.</small></span><span class="studio-fold-count" id="bmaiUpcomingCount"></span><span aria-hidden="true" class="studio-fold-chevron"></span></summary><div class="sessions studio-fold-body" id="bmaiUpcomingList"></div></details>
 </div></section>
-
 <section id="playbooks"><div class="container">
-<div class="section-head"><div><div class="kicker">02 / PLAY</div><h2>Playbook Library</h2></div><p>Playbooks point to the learning material for the exact session they belong to. A session page is not automatically a playbook.</p></div>
+<div class="section-head library-illustrated-head"><div class="library-heading-group"><span class="library-heading-art"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M32 18c-8-7-18-7-25-4v35c8-3 17-3 25 4 8-7 17-7 25-4V14c-7-3-17-3-25 4zM32 18v35"/><path class="library-icon-accent" d="M14 23h11m-11 8h11m14-8h11m-11 8h11"/></svg></span><div><div class="kicker">02 / PLAY</div><h2>Playbook Library</h2></div></div><p>Less guessing. More creating. Open your session playbook for the steps, practice, and homework that move your project forward.</p></div><aside class="studio-guidance storyboard"><div class="studio-guidance-visual"><div aria-label="Alexx Roy reviewing a storyboard" class="studio-avatar storyboard" role="img"></div></div><div class="studio-guidance-copy"><div class="kicker">YOUR CREATIVE GUIDE</div><h3>Plan the scene before you generate.</h3><p>Use the playbook for your session to keep the character, visual direction and shots consistent.</p></div></aside>
 <div class="grid">
-<article class="card featured"><div class="tag">WEEK 1 / DAY 2 · PLAYBOOK</div><h3>Week 1 Day 2 Playbook · YouTube Masterclass</h3><p>The original detailed AI Playbook associated with the completed Week 1 Day 2 YouTube Masterclass.</p><div class="actions"><a class="btn" href="playbook.html">OPEN PLAYBOOK</a></div></article>
-<article class="card"><div class="tag">WEEK 2 / DAY 1 · PLAYBOOK</div><h3>Week 2 Day 1 Playbook · Visual Mastery</h3><p>The interactive Visual Mastery learning experience supporting the Week 2 Day 1 session.</p><div class="actions"><a class="btn secondary" href="sessions/week-2-day-1/playbook.html">OPEN PLAYBOOK</a></div></article><article class="card"><div class="tag">WEEK 2 / DAY 2 · PLAYBOOK</div><h3>Week 2 Day 2 Playbook · Image to Video Production</h3><p>Practical reference for image generation, continuity, video settings and troubleshooting.</p><div class="actions"><a class="btn secondary" href="sessions/week-2-day-2/playbook.html">OPEN PLAYBOOK</a></div></article><article class="card"><div class="tag">WEEK 3 / DAY 1 · PLAYBOOK</div><h3>Week 3 Day 1 Playbook · Structured Brand Story Pipeline</h3><p>Practical reference for character sheets, mood boards, screenplay structure, shot lists, prompt discipline and generation troubleshooting.</p><div class="actions"><a class="btn secondary" href="sessions/week-3-day-1/playbook.html">OPEN PLAYBOOK</a></div></article>
+<article class="card featured"><span class="library-card-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M32 18c-8-7-18-7-25-4v35c8-3 17-3 25 4 8-7 17-7 25-4V14c-7-3-17-3-25 4zM32 18v35"/><path class="library-icon-accent" d="M14 23h11m-11 8h11m14-8h11m-11 8h11"/></svg></span><div class="tag">WEEK 1 / DAY 2 · PLAYBOOK</div><h3>Week 1 Day 2 Playbook · YouTube Masterclass</h3><p>The original detailed AI Playbook associated with the completed Week 1 Day 2 YouTube Masterclass.</p><div class="actions"><a class="btn" href="playbook.html">OPEN PLAYBOOK</a></div></article>
+<article class="card"><span class="library-card-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M32 18c-8-7-18-7-25-4v35c8-3 17-3 25 4 8-7 17-7 25-4V14c-7-3-17-3-25 4zM32 18v35"/><path class="library-icon-accent" d="M14 23h11m-11 8h11m14-8h11m-11 8h11"/></svg></span><div class="tag">WEEK 2 / DAY 1 · PLAYBOOK</div><h3>Week 2 Day 1 Playbook · Visual Mastery</h3><p>The interactive Visual Mastery learning experience supporting the Week 2 Day 1 session.</p><div class="actions"><a class="btn secondary" href="sessions/week-2-day-1/playbook.html">OPEN PLAYBOOK</a></div></article><article class="card"><span class="library-card-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M32 18c-8-7-18-7-25-4v35c8-3 17-3 25 4 8-7 17-7 25-4V14c-7-3-17-3-25 4zM32 18v35"/><path class="library-icon-accent" d="M14 23h11m-11 8h11m14-8h11m-11 8h11"/></svg></span><div class="tag">WEEK 2 / DAY 2 · PLAYBOOK</div><h3>Week 2 Day 2 Playbook · Image to Video Production</h3><p>Practical reference for image generation, continuity, video settings and troubleshooting.</p><div class="actions"><a class="btn secondary" href="sessions/week-2-day-2/playbook.html">OPEN PLAYBOOK</a></div></article><article class="card"><span class="library-card-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M32 18c-8-7-18-7-25-4v35c8-3 17-3 25 4 8-7 17-7 25-4V14c-7-3-17-3-25 4zM32 18v35"/><path class="library-icon-accent" d="M14 23h11m-11 8h11m14-8h11m-11 8h11"/></svg></span><div class="tag">WEEK 3 / DAY 1 · PLAYBOOK</div><h3>Week 3 Day 1 Playbook · Structured Brand Story Pipeline</h3><p>Practical reference for character sheets, mood boards, screenplay structure, shot lists, prompt discipline and generation troubleshooting.</p><div class="actions"><a class="btn secondary" href="sessions/week-3-day-1/playbook.html">OPEN PLAYBOOK</a></div></article>
 </div></div></section>
-
 <section id="homework"><div class="container">
-<div class="section-head"><div><div class="kicker">03 / BUILD</div><h2>Homework Library</h2></div><p>Homework is labeled by the exact Week and Day. The completed YouTube Masterclass work belongs to Week 1 Day 2, while Visual Mastery belongs to Week 2 Day 1.</p></div>
+<div class="section-head library-illustrated-head"><div class="library-heading-group"><span class="library-heading-art"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="14" y="13" width="36" height="43" rx="6"/><rect x="23" y="8" width="18" height="10" rx="3"/><path class="library-icon-accent" d="m22 29 3 3 6-7m-9 17 3 3 6-7"/><path d="M36 29h7m-7 13h7"/></svg></span><div><div class="kicker">03 / BUILD</div><h2>Homework Library</h2></div></div><p>This is where the lesson becomes yours. Open your assignment, take the challenge, and build something worth showing.</p></div><aside class="studio-guidance laptop"><div class="studio-guidance-visual"><div aria-label="Alexx Roy working at a laptop" class="studio-avatar laptop" role="img"></div></div><div class="studio-guidance-copy"><div class="kicker">YOUR CREATIVE GUIDE</div><h3>Make it real. Make it yours.</h3><p>Your next finished shot starts here. Work through the challenge and bring your own creative choices to it.</p></div></aside>
 <div class="grid">
-<article class="card featured"><div class="tag">WEEK 1 / DAY 2 · HOMEWORK</div><h3>Week 1 Day 2 Homework · YouTube Masterclass</h3><p>The homework associated with the completed YouTube Masterclass session.</p><div class="actions"><a class="btn secondary" href="https://docs.google.com/document/d/1ElXCXzfTup1HubGb0KDTIzqCkbPUBWxXwqm3_HDxFmw/edit?usp=sharing" target="_blank" rel="noopener">OPEN HOMEWORK DOC</a></div></article>
-<article class="card featured"><div class="tag">WEEK 2 / DAY 1 · HOMEWORK</div><h3>Week 2 Day 1 Homework · Visual Mastery</h3><p>Create seven shots, build the audio layer, assemble the first timeline and publish one shot every day for seven days.</p><div class="actions"><a class="btn" href="sessions/week-2-day-1/index.html">OPEN SESSION</a><a class="btn secondary" href="https://docs.google.com/document/d/1zdEzgOX22ghpxgmNN5yQeYLprWsAUX3R7zNxuMmJQwI" target="_blank" rel="noopener">OPEN HOMEWORK DOC</a></div></article><article class="card featured"><div class="tag">WEEK 2 / DAY 2 · HOMEWORK</div><h3>Week 2 Day 2 Homework · Photorealistic AI Advertisement</h3><p>Complete the frame practice, video generation, continuity check, final submission and reflection workbook.</p><div class="actions"><a class="btn" href="sessions/week-2-day-2/index.html">OPEN SESSION</a><a class="btn secondary" href="https://docs.google.com/document/d/1jbIb9krXCTVpHprI3tqm9V6tHL-L5Sr1NCFYQ5WHNBA" target="_blank" rel="noopener">OPEN GOOGLE DOC HOMEWORK</a></div></article><article class="card featured"><div class="tag">WEEK 3 / DAY 1 · HOMEWORK</div><h3>Week 3 Day 1 Homework · Structured Brand Story Pipeline</h3><p>Build your character reference, colour board, mood board, screenplay, shot shortlist and organized production base.</p><div class="actions"><a class="btn" href="sessions/week-3-day-1/index.html">OPEN SESSION GUIDE</a><a class="btn secondary" href="sessions/week-3-day-1/homework.html">OPEN HOMEWORK WORKSPACE</a><a class="btn secondary" href="https://docs.google.com/document/d/1C9Txnwd_Fi2gqeHLZnfkGq5lEoqtA6WzqI4aGBCWFL4/edit?usp=sharing" target="_blank" rel="noopener">OPEN GOOGLE DOC</a></div></article>
+<article class="card featured"><span class="library-card-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="14" y="13" width="36" height="43" rx="6"/><rect x="23" y="8" width="18" height="10" rx="3"/><path class="library-icon-accent" d="m22 29 3 3 6-7m-9 17 3 3 6-7"/><path d="M36 29h7m-7 13h7"/></svg></span><div class="tag">WEEK 1 / DAY 2 · HOMEWORK</div><h3>Week 1 Day 2 Homework · YouTube Masterclass</h3><p>Pick your channel direction and create its first brand assets.</p><div class="actions"><a class="btn" href="https://docs.google.com/document/d/1ElXCXzfTup1HubGb0KDTIzqCkbPUBWxXwqm3_HDxFmw/edit?usp=sharing" rel="noopener" target="_blank">OPEN HOMEWORK DOC</a></div></article>
+<article class="card featured"><span class="library-card-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="14" y="13" width="36" height="43" rx="6"/><rect x="23" y="8" width="18" height="10" rx="3"/><path class="library-icon-accent" d="m22 29 3 3 6-7m-9 17 3 3 6-7"/><path d="M36 29h7m-7 13h7"/></svg></span><div class="tag">WEEK 2 / DAY 1 · HOMEWORK</div><h3>Week 2 Day 1 Homework · Visual Mastery</h3><p>Create your first short, add sound, and publish one shot a day for seven days.</p><div class="actions"><a class="btn" href="https://docs.google.com/document/d/1zdEzgOX22ghpxgmNN5yQeYLprWsAUX3R7zNxuMmJQwI" rel="noopener" target="_blank">OPEN HOMEWORK DOC</a></div></article><article class="card featured"><span class="library-card-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="14" y="13" width="36" height="43" rx="6"/><rect x="23" y="8" width="18" height="10" rx="3"/><path class="library-icon-accent" d="m22 29 3 3 6-7m-9 17 3 3 6-7"/><path d="M36 29h7m-7 13h7"/></svg></span><div class="tag">WEEK 2 / DAY 2 · HOMEWORK</div><h3>Week 2 Day 2 Homework · Photorealistic AI Advertisement</h3><p>Build a photoreal product ad: frames first, motion next, then review your best shots.</p><div class="actions"><a class="btn" href="https://docs.google.com/document/d/1jbIb9krXCTVpHprI3tqm9V6tHL-L5Sr1NCFYQ5WHNBA" rel="noopener" target="_blank">OPEN HOMEWORK DOC</a></div></article><article class="card featured"><span class="library-card-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="14" y="13" width="36" height="43" rx="6"/><rect x="23" y="8" width="18" height="10" rx="3"/><path class="library-icon-accent" d="m22 29 3 3 6-7m-9 17 3 3 6-7"/><path d="M36 29h7m-7 13h7"/></svg></span><div class="tag">WEEK 3 / DAY 1 · HOMEWORK</div><h3>Week 3 Day 1 Homework · Structured Brand Story Pipeline</h3><p>Give your brand story a solid foundation: character, visual world, screenplay, and shots.</p><div class="actions"><a class="btn" href="https://docs.google.com/document/d/1C9Txnwd_Fi2gqeHLZnfkGq5lEoqtA6WzqI4aGBCWFL4/edit?usp=sharing" rel="noopener" target="_blank">OPEN HOMEWORK DOC</a></div></article>
 </div></div></section>
-
 <section id="resources"><div class="container">
-<div class="section-head"><div><div class="kicker">04 / EQUIP</div><h2>Resource Library</h2></div><p>Supporting references are kept here. Session, Homework and Playbook links stay in their dedicated categories above.</p></div>
-<div class="grid">
-<article class="card featured"><div class="tag">WEEK 1 / DAY 2 · SESSION RESOURCE</div><h3>Week 1 Day 2 · YouTube Masterclass Reference</h3><p>The complete AI Faceless YouTube Channel Masterclass reference for the completed Week 1 Day 2 session.</p><div class="actions"><a class="btn" href="resources/ai-faceless-youtube-masterclass.html">OPEN RESOURCE</a></div></article>
-<article class="card resource-placeholder"><div class="tag">COMING SOON · TOOLS</div><h3>AI Tools</h3><p>Tools used across the cohort, organized by what they help you create.</p></article>
-<article class="card resource-placeholder"><div class="tag">COMING SOON · PROMPTS</div><h3>Prompt Library</h3><p>Reusable prompts for ideation, visual development, characters, shots and production.</p></article>
-<article class="card resource-placeholder"><div class="tag">COMING SOON · TEMPLATES</div><h3>Templates</h3><p>Worksheets, checklists and other reusable student resources.</p></article>
-<article class="card"><div class="tag">WEEK 2 / DAY 1 · SESSION RESOURCE</div><h3>Week 2 Day 1 · Session Guide</h3><p>Full session guide covering Google Flow, video types, scripts, voiceover, Filmora and YouTube channel launch.</p><div class="actions"><a class="btn secondary" href="sessions/week-2-day-1/index.html">OPEN RESOURCE</a></div></article><article class="card"><div class="tag">WEEK 2 / DAY 2 · SESSION RESOURCE</div><h3>Week 2 Day 2 · Production Guide</h3><p>Detailed reference for OpenArt image generation, visual references, continuity, start frame animation and troubleshooting.</p><div class="actions"><a class="btn secondary" href="sessions/week-2-day-2/index.html">OPEN RESOURCE</a></div></article><article class="card"><div class="tag">WEEK 3 / DAY 1 · SESSION RESOURCE</div><h3>Week 3 Day 1 · Structured Brand Story Guide</h3><p>Full reference for the professional brand-story pipeline, tools, prompt structure, failure rules, hands-on steps and troubleshooting.</p><div class="actions"><a class="btn secondary" href="sessions/week-3-day-1/index.html">OPEN SESSION GUIDE</a></div></article>
-</div></div></section>
+<div class="section-head"><div><div class="kicker">04 / EQUIP</div><h2>Resource Library</h2></div><p>Your creative toolkit, all in one place. Find the right tool, borrow a prompt, or run a final check before your next big shot.</p></div><aside class="studio-guidance wave"><div class="studio-guidance-visual"><div aria-label="Alexx Roy: wave pose" class="studio-avatar wave" role="img"></div></div><div class="studio-guidance-copy"><div class="kicker">DIRECTOR’S NOTE</div><h3>A little help for your next big idea.</h3><p>Stuck on a step? Explore the toolkit, revisit the lesson, and get back to making.</p></div></aside>
+<div aria-label="Resource library categories" class="studio-resource-tabs" role="tablist"><button aria-controls="resource-panel-tools" aria-selected="true" data-resource-tab="tools" id="resource-tab-tools" role="tab" tabindex="0" type="button">AI Tools</button><button aria-controls="resource-panel-prompts" aria-selected="false" data-resource-tab="prompts" id="resource-tab-prompts" role="tab" tabindex="-1" type="button">Prompts</button><button aria-controls="resource-panel-checklists" aria-selected="false" data-resource-tab="checklists" id="resource-tab-checklists" role="tab" tabindex="-1" type="button">Checklists</button><button aria-controls="resource-panel-references" aria-selected="false" data-resource-tab="references" id="resource-tab-references" role="tab" tabindex="-1" type="button">Session References</button></div><div class="studio-resource-library"><div aria-labelledby="resource-tab-tools" data-resource-panel="tools" id="resource-panel-tools" role="tabpanel"><aside class="studio-companion"><div aria-label="Alexx Roy: camera" class="studio-avatar camera" role="img"></div><p class="studio-companion-copy">Choose the tool for the job. The source lesson shows how to use it.</p></aside><div class="studio-resource-grid"><!-- resources:tools:start -->
+<details class="studio-resource-card"><summary><span><span class="kicker">TOOL / WORKFLOW</span><strong>Google Flow</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p>Generate frames and image-to-video shots; build the visual world.</p></div></details>
+<details class="studio-resource-card"><summary><span><span class="kicker">TOOL / WORKFLOW</span><strong>OpenArt</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p>Generate reference-led product frames and turn selected images into video.</p></div></details>
+<details class="studio-resource-card"><summary><span><span class="kicker">TOOL / WORKFLOW</span><strong>Nano Banana Pro</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p>Create character sheets and photorealistic frames with uploaded references.</p></div></details>
+<details class="studio-resource-card"><summary><span><span class="kicker">TOOL / WORKFLOW</span><strong>Kling</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p>Animate prepared frames and compare motion variations before the final edit.</p></div></details>
+<details class="studio-resource-card"><summary><span><span class="kicker">TOOL / WORKFLOW</span><strong>ElevenLabs</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p>Generate a voiceover, test voices, and prepare the audio for editing.</p></div></details>
+<details class="studio-resource-card"><summary><span><span class="kicker">TOOL / WORKFLOW</span><strong>Filmora</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p>Combine video, voiceover, and music into a finished timeline.</p></div></details>
+<details class="studio-resource-card"><summary><span><span class="kicker">TOOL / WORKFLOW</span><strong>Gemini</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p>Develop the colour palette and analyse reference material.</p></div></details>
+<details class="studio-resource-card"><summary><span><span class="kicker">TOOL / WORKFLOW</span><strong>Claude</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p>Use the character sheet and mood board to create and review a screenplay.</p></div></details>
+<details class="studio-resource-card"><summary><span><span class="kicker">TOOL / WORKFLOW</span><strong>Kimi</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p>Run the channel research prompt and develop a launch blueprint.</p></div></details>
+<details class="studio-resource-card"><summary><span><span class="kicker">TOOL / WORKFLOW</span><strong>ChatGPT</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p>Create channel brand assets and develop visual or script ideas.</p></div></details>
+<details class="studio-resource-card"><summary><span><span class="kicker">TOOL / WORKFLOW</span><strong>Canva</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p>Build channel banners and supporting visual brand assets.</p></div></details>
+<!-- resources:tools:end --></div></div><div aria-labelledby="resource-tab-prompts" data-resource-panel="prompts" hidden="" id="resource-panel-prompts" role="tabpanel"><aside class="studio-companion"><div aria-label="Alexx Roy: idea" class="studio-avatar idea" role="img"></div><p class="studio-companion-copy">Use the full prompts as written, and adapt the practice recipes to your scene.</p></aside><div class="studio-resource-grid"><!-- resources:prompts:start -->
+<details class="studio-resource-card" data-resource-release="2026-10-04T20:00:00+05:30" data-resource-session="week-1-day-2"><summary><span><span class="kicker">PRACTICE RECIPE / Week 1 Day 2</span><strong>Choose Your Channel Direction</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><details class="studio-practice-detail"><summary>Show practice steps</summary><p>Look for evidence before committing. A sold channel is a signal that the category has passed a proof-of-concept stage.</p></details><a class="studio-resource-source" href="playbook.html#mission">View Week 1 Day 2 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-04T20:00:00+05:30" data-resource-session="week-1-day-2"><summary><span><span class="kicker">PRACTICE RECIPE / Week 1 Day 2</span><strong>Run the God Prompt</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><details class="studio-practice-detail"><summary>Show practice steps</summary><p>If you do not know the audience or channel name yet, state that clearly in the variables and ask the research to investigate or suggest them.</p></details><a class="studio-resource-source" href="playbook.html#mission">View Week 1 Day 2 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-04T20:00:00+05:30" data-resource-session="week-1-day-2"><summary><span><span class="kicker">PRACTICE RECIPE / Week 1 Day 2</span><strong>Finalize the Channel Identity</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><details class="studio-practice-detail"><summary>Show practice steps</summary><p>At this stage, focus on the channel name, UVP, tagline and mission. Positioning statement and tone or voice can wait.</p></details><a class="studio-resource-source" href="playbook.html#mission">View Week 1 Day 2 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-04T20:00:00+05:30" data-resource-session="week-1-day-2"><summary><span><span class="kicker">PRACTICE RECIPE / Week 1 Day 2</span><strong>Create the First Brand Assets</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><details class="studio-practice-detail"><summary>Show practice steps</summary><p>For the profile picture, copy B1, B2 and B3 into ChatGPT, add the channel name, choose image creation with Auto and a 1:1 format, then create the banner in Canva.</p></details><a class="studio-resource-source" href="playbook.html#mission">View Week 1 Day 2 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-10T20:00:00+05:30" data-resource-session="week-2-day-1"><summary><span><span class="kicker">PRACTICE RECIPE / Week 2 Day 1</span><strong>Create Your First Shot</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><details class="studio-practice-detail"><summary>Show practice steps</summary><p>Start with a prepared image or frame, add the prompt, choose the frame workflow, and generate the shot.</p></details><a class="studio-resource-source" href="sessions/week-2-day-1/playbook.html#mission">View Week 2 Day 1 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-10T20:00:00+05:30" data-resource-session="week-2-day-1"><summary><span><span class="kicker">PRACTICE RECIPE / Week 2 Day 1</span><strong>Build the Audio Layer</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><details class="studio-practice-detail"><summary>Show practice steps</summary><p>Paste your transcript into Text to Speech, test voices, choose a voice that fits the story, and generate the audio.</p></details><a class="studio-resource-source" href="sessions/week-2-day-1/playbook.html#mission">View Week 2 Day 1 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-10T20:00:00+05:30" data-resource-session="week-2-day-1"><summary><span><span class="kicker">PRACTICE RECIPE / Week 2 Day 1</span><strong>Assemble a First Timeline</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><details class="studio-practice-detail"><summary>Show practice steps</summary><p>Place the shot and audio on the timeline, adjust audio when needed, and get a complete first draft rather than waiting for perfection.</p></details><a class="studio-resource-source" href="sessions/week-2-day-1/playbook.html#mission">View Week 2 Day 1 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-10T20:00:00+05:30" data-resource-session="week-2-day-1"><summary><span><span class="kicker">PRACTICE RECIPE / Week 2 Day 1</span><strong>Publish for Seven Days</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><details class="studio-practice-detail"><summary>Show practice steps</summary><p>Your goal is consistency. After publishing, observe which topics, scripts or approaches perform better and use those signals for the next set of shots.</p></details><a class="studio-resource-source" href="sessions/week-2-day-1/playbook.html#mission">View Week 2 Day 1 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-11T20:00:00+05:30" data-resource-session="week-2-day-2"><summary><span><span class="kicker">PRACTICE RECIPE / Week 2 Day 2</span><strong>Finish the Remaining Frames</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><details class="studio-practice-detail"><summary>Show practice steps</summary><p>Keep the hero image as the visual anchor and use the most recent relevant frame when creating the next angle.</p></details><a class="studio-resource-source" href="sessions/week-2-day-2/playbook.html#mission">View Week 2 Day 2 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-11T20:00:00+05:30" data-resource-session="week-2-day-2"><summary><span><span class="kicker">PRACTICE RECIPE / Week 2 Day 2</span><strong>Create the Full Frame Sequence</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><details class="studio-practice-detail"><summary>Show practice steps</summary><p>Move deliberately from wide or aerial framing toward mid, close-up and extreme close-up while protecting continuity.</p></details><a class="studio-resource-source" href="sessions/week-2-day-2/playbook.html#mission">View Week 2 Day 2 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-11T20:00:00+05:30" data-resource-session="week-2-day-2"><summary><span><span class="kicker">PRACTICE RECIPE / Week 2 Day 2</span><strong>Generate Image-to-Video Shots</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><details class="studio-practice-detail"><summary>Show practice steps</summary><p>Use Start and End Frame Animation only when the two frames are meaningfully related. Otherwise, use the start frame only.</p></details><a class="studio-resource-source" href="sessions/week-2-day-2/playbook.html#mission">View Week 2 Day 2 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-11T20:00:00+05:30" data-resource-session="week-2-day-2"><summary><span><span class="kicker">PRACTICE RECIPE / Week 2 Day 2</span><strong>Review and Iterate</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><details class="studio-practice-detail"><summary>Show practice steps</summary><p>Generate at 720p first, keep the strongest variation, and upscale only the shots worth keeping.</p></details><a class="studio-resource-source" href="sessions/week-2-day-2/playbook.html#mission">View Week 2 Day 2 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-17T20:00:00+05:30" data-resource-session="week-3-day-1"><summary><span><span class="kicker">PRACTICE RECIPE / Week 3 Day 1</span><strong>Create the Character Foundation</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><details class="studio-practice-detail"><summary>Show practice steps</summary><p>Use Flow and the Image option with Nano Banana Pro. If the face drifts, tag the uploaded reference and reinforce facial-feature retention.</p></details><a class="studio-resource-source" href="sessions/week-3-day-1/playbook.html#mission">View Week 3 Day 1 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-17T20:00:00+05:30" data-resource-session="week-3-day-1"><summary><span><span class="kicker">PRACTICE RECIPE / Week 3 Day 1</span><strong>Create the Visual Language</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><details class="studio-practice-detail"><summary>Show practice steps</summary><p>Keep the palette and mood board aligned with the brand brief so the visual language is established before screenplay generation.</p></details><a class="studio-resource-source" href="sessions/week-3-day-1/playbook.html#mission">View Week 3 Day 1 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-17T20:00:00+05:30" data-resource-session="week-3-day-1"><summary><span><span class="kicker">PRACTICE RECIPE / Week 3 Day 1</span><strong>Generate and Review the Screenplay</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><details class="studio-practice-detail"><summary>Show practice steps</summary><p>Use the structured method when professional alignment matters. The direct method is faster, but the structured method gives the model more context.</p></details><a class="studio-resource-source" href="sessions/week-3-day-1/playbook.html#mission">View Week 3 Day 1 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-17T20:00:00+05:30" data-resource-session="week-3-day-1"><summary><span><span class="kicker">PRACTICE RECIPE / Week 3 Day 1</span><strong>Build the Structured Shot List</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><details class="studio-practice-detail"><summary>Show practice steps</summary><p>Move from story to executable shots. Keep the shot list, references and project assets together so later A-roll, B-roll and generation stay organized.</p></details><a class="studio-resource-source" href="sessions/week-3-day-1/playbook.html#mission">View Week 3 Day 1 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-04T20:00:00+05:30" data-resource-session="week-1-day-2"><summary><span><span class="kicker">FULL PROMPT / Week 1 Day 2</span><strong>YouTube channel research — God prompt</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><details class="studio-prompt-detail"><summary>Open and copy the prompt</summary><button type="button" class="btn secondary" data-copy-prompt>Copy prompt</button><pre># ROLE &amp; PERSONA
+
+You are a world-class **YouTube Growth Strategist and Content Architect** with 15+ years of experience building YouTube channels from zero to monetization across diverse niches.
+
+You combine the expertise of:
+
+- Brand strategist
+- YouTube SEO and AEO specialist
+- Video producer
+- Content strategist
+- Audience researcher
+- Data analyst
+- Growth strategist
+
+Maintain this expert persona throughout every section of the output.
+
+---
+
+# OPERATING MODE
+
+Treat this as a **live, paid client engagement**, not a generic template exercise.
+
+Conduct deep, real-time research on competitors, audience behavior, keywords, trends, and the {NICHE} landscape **before generating strategic recommendations**.
+
+Every recommendation must be:
+
+- Specific to the client
+- Actionable
+- Immediately executable
+- Supported by research or clear strategic reasoning
+- Free from generic filler
+
+Where reliable data is unavailable, clearly state the limitation and explain the reasoning behind your recommendation.
+
+**Never fabricate statistics, competitor data, search volumes, audience insights, or trend data.**
+
+---
+
+# CLIENT BRIEF
+
+| Parameter | Details |
+|---|---|
+| **Niche** | {NICHE} |
+| **Primary Audience** | {PRIMARY_AUDIENCE} |
+| **Language** | {LANGUAGE} |
+| **Brand Name** | {BRAND_NAME} |
+| **Constraints** | {CONSTRAINTS} |
+| **Launch Date** | {LAUNCH_DATE} |
+
+---
+
+# PRE-OUTPUT RESEARCH PROTOCOL
+
+Before producing any strategic section, complete the following research phase.
+
+**Do not skip the research phase.**
+
+## Research Step 1: Competitor Landscape
+
+Search YouTube for the **top 10 channels in {NICHE}**.
+
+For each relevant competitor, capture:
+
+- Channel name
+- Subscriber count
+- Average views per video
+- Upload frequency
+- Top 3 performing video titles by views
+- Core content themes
+- Content formats used
+- Observable content gaps
+- Underserved subtopics
+- Opportunities that {BRAND_NAME} could own
+
+Identify patterns across competitors rather than simply listing data.
+
+---
+
+## Research Step 2: Keyword &amp; Trend Intelligence
+
+Research YouTube search behavior and current demand around {NICHE}.
+
+Identify:
+
+1. High-volume, relatively low-competition keywords for {NICHE}
+2. Top 5 rising or trending search queries from the last 90 days
+3. 3 to 5 evergreen topics with sustained audience demand
+4. Long-tail keyword opportunities
+5. Search-intent patterns
+6. AEO opportunities, including questions people are asking through AI search engines such as:
+   - ChatGPT
+   - Perplexity
+   - Gemini
+   - Other relevant AI search platforms
+
+For every major trend or keyword claim, provide the source or research basis and date where available.
+
+---
+
+## Research Step 3: Audience Intelligence
+
+Analyze where **{PRIMARY_AUDIENCE}** spends time online beyond YouTube.
+
+Identify:
+
+- Platforms they actively use
+- Communities they participate in
+- Their top 5 frustrations related to {NICHE}
+- Their top 5 desires related to {NICHE}
+- Questions they repeatedly ask
+- Problems they are actively trying to solve
+- Content formats they respond to
+- Likely peak viewing periods
+- Preferred video lengths
+- Creators or brands they already follow
+
+---
+
+## Research Summary
+
+Present all research findings in a **compact summary table** before moving into the strategy sections.
+
+Clearly distinguish between:
+
+- **Researched facts**
+- **Observed patterns**
+- **Strategic recommendations**
+- **Reasoned assumptions**
+
+---
+
+# DELIVERABLES
+
+Produce all sections below **in the exact order specified**.
+
+Each major section must begin with a **2-sentence &quot;Why This Matters&quot; executive summary** explaining the strategic importance of that section for {NICHE} and {PRIMARY_AUDIENCE}.
+
+---
+
+# SECTION A: CHANNEL IDENTITY &amp; POSITIONING
+
+## A1. Channel Name Options
+
+Provide **5 channel name options**.
+
+For each option include:
+
+- Name
+- Strategic rationale
+- Brand positioning
+- Memorability
+- Domain availability check
+- Social handle availability check, where research is possible
+
+Do not claim availability without checking it.
+
+## A2. Unique Value Proposition
+
+Write one powerful sentence beginning with:
+
+&gt; &quot;The only channel that...&quot;
+
+Make it specific to {NICHE} and {PRIMARY_AUDIENCE}.
+
+## A3. Channel Tagline &amp; Mission
+
+Provide:
+
+- Channel tagline
+- Mission statement
+
+## A4. Competitive Positioning
+
+Explain how the channel will be positioned differently from the top 3 competitors.
+
+Use a comparison table.
+
+## A5. Tone &amp; Voice Guide
+
+Define:
+
+- 3 brand adjectives
+- 3 &quot;We are / We are NOT&quot; pairs
+- Vocabulary guidelines
+- Words and phrases to use
+- Words and phrases to avoid
+
+---
+
+# SECTION B: BRANDING SYSTEM
+
+## B1. Colour Palette
+
+Provide:
+
+- Primary colour
+- Secondary colour
+- Accent colour
+- Hex codes
+- Rationale for each choice
+
+Every colour recommendation must align with {NICHE}, {PRIMARY_AUDIENCE}, and {CONSTRAINTS}.
+
+## B2. Typography
+
+Recommend:
+
+- Heading font
+- Body font
+- Supporting font, if necessary
+
+Prioritize Google Fonts where appropriate.
+
+Explain the strategic reasoning behind each recommendation.
+
+## B3. Logo Concept
+
+Describe the logo concept in words.
+
+Do not design the logo.
+
+## B4. Thumbnail Design System
+
+Define:
+
+- Thumbnail layout grid
+- Typography
+- Font size hierarchy
+- Face vs. no-face rules
+- Colour rules
+- Contrast rules
+- Subject placement
+- Text usage
+- Visual hierarchy
+- Branding consistency
+
+Make the system specific to {NICHE}.
+
+## B5. Channel Art
+
+Provide:
+
+- Recommended banner dimensions
+- Key visual elements
+- Copy to include
+- Copy to exclude
+- Layout guidance
+- Mobile-safe considerations
+
+## B6. Intro &amp; Outro Video Brief
+
+Define:
+
+- Recommended duration
+- Visual style
+- Music mood
+- Voiceover requirements
+- Key visual elements
+- Animation direction
+- Outro CTA
+
+---
+
+# SECTION C: SEO &amp; AEO STRATEGY
+
+## C1. Channel Description
+
+Write a fully written, keyword-optimized YouTube channel description of approximately **250 words**.
+
+It must sound human and brand-specific, not keyword-stuffed.
+
+## C2. About Section Copy
+
+Write the first **100 characters** specifically for search snippet optimization.
+
+## C3. Master Keyword List
+
+Organize keywords into:
+
+- **Tier 1:** Primary keywords
+- **Tier 2:** Secondary keywords
+- **Tier 3:** Long-tail keywords
+
+Include search intent wherever useful.
+
+## C4. AEO Strategy
+
+Explain how the channel&#39;s content can increase its chances of being surfaced in AI-generated search answers.
+
+Cover:
+
+- Question-based content
+- Structured answers
+- Entity relevance
+- Topical authority
+- Semantic coverage
+- Citability
+- Content structure
+
+Make every recommendation specific to {NICHE}.
+
+## C5. Video SEO Template
+
+Provide a reusable template covering:
+
+- Title formulas
+- Description structure
+- Keyword placement
+- Tag strategy
+- Chapters
+- Metadata
+- Search intent alignment
+
+## C6. Playlist Architecture
+
+Define:
+
+- Playlist names
+- Playlist order
+- Content grouping
+- Viewer progression
+- Nesting logic
+- Search optimization
+
+## C7. End Screen &amp; Cards Strategy
+
+Explain:
+
+- Which videos should link to each other
+- Where cards should appear
+- End screen structure
+- Viewer journey
+- Session-time strategy
+
+---
+
+# SECTION D: CONTENT PILLARS &amp; FORMATS
+
+## D1. Content Pillars
+
+Define **4 to 5 content pillars**.
+
+For each pillar provide:
+
+- Pillar name
+- Purpose
+- Audience need served
+- Content examples
+- Search potential
+- Growth potential
+- Monetization potential
+
+## D2. Video Format Menu
+
+Evaluate:
+
+- Long-form
+- Shorts
+- Series
+- Collaborations
+- Live streams
+
+For each format explain whether it should be used, how it should be used, and why.
+
+## D3. Signature Content Series
+
+Create **one recurring show format** that is unique to {BRAND_NAME}.
+
+Define:
+
+- Series name
+- Concept
+- Episode structure
+- Hook
+- Recurring elements
+- Why viewers would return
+- Example episode titles
+
+## D4. Hook Writing Guide
+
+Create **3 proven hook formulas** specifically for {NICHE}.
+
+Provide written examples for each formula.
+
+## D5. Thumbnail Psychology
+
+Explain the psychological principles that should influence thumbnail design for {NICHE}.
+
+Provide specific examples.
+
+---
+
+# SECTION E: 90-DAY CONTENT CALENDAR
+
+Create a detailed 90-day content calendar.
+
+Minimum output:
+
+- **12 long-form videos per month**
+- **41 Shorts per month**
+- **2 collaboration or guest-video opportunities across the 90 days**
+
+For every content item include:
+
+- Date
+- Content title
+- Format
+- Content pillar
+- Target keyword
+- Search intent
+- Hook angle
+- CTA
+- Recommended publish day
+
+### Month 1 Focus
+
+**Establish authority and indexing.**
+
+### Month 2 Focus
+
+**Audience growth and community seeding.**
+
+### Month 3 Focus
+
+**Monetization eligibility and controlled viral attempts.**
+
+The calendar must build logically from one month to the next rather than functioning as a random list of video ideas.
+
+---
+
+# SECTION F: PRE-LAUNCH CHECKLIST
+
+## F1. Pre-Launch Countdown
+
+Create a week-by-week pre-launch plan working backward from **{LAUNCH_DATE}**.
+
+Include specific tasks and deadlines.
+
+## F2. YouTube Studio Setup
+
+Create a complete platform setup checklist covering every important YouTube Studio setting that must be configured before launch.
+
+## F3. Equipment &amp; Tools
+
+Recommend a minimum viable production stack based on:
+
+- {CONSTRAINTS}
+- Budget
+- Content format
+- Production quality requirements
+
+Prioritize practical, cost-effective solutions.
+
+## F4. Social Media Cross-Promotion
+
+Identify:
+
+- Which platforms to use
+- What content to publish on each
+- How frequently to post
+- When to post
+- How each platform should drive viewers toward YouTube
+
+## F5. First Video Strategy
+
+Specify **exactly what the first YouTube upload should be**.
+
+Explain:
+
+- Topic
+- Title
+- Thumbnail concept
+- Hook
+- Video structure
+- CTA
+- Target keyword
+- Why this should be the first upload
+
+---
+
+# SECTION G: MONETIZATION ROADMAP
+
+## G1. YouTube Partner Program Path
+
+Create a milestone-based roadmap toward YPP eligibility.
+
+Include:
+
+- Required milestones
+- Target timeline
+- Key activities
+- Risks
+- Acceleration opportunities
+
+## G2. Revenue Stream Stack
+
+Rank potential revenue streams for {NICHE} by:
+
+1. Feasibility
+2. Speed to first revenue
+3. Revenue potential
+4. Scalability
+
+## G3. Brand Partnership Pitch
+
+Write **one ready-to-send cold outreach email** for potential brand partnerships.
+
+Make it specific to {NICHE} and {BRAND_NAME}.
+
+## G4. Product &amp; Merch Opportunities
+
+Provide:
+
+- 1 quick-win digital product idea
+- 1 long-term digital product or business opportunity
+- 1 relevant merchandise opportunity, if appropriate
+
+Explain the strategic reasoning for each.
+
+---
+
+# SECTION H: ANALYTICS &amp; KPI DASHBOARD
+
+## H1. North Star Metric
+
+Identify **one primary KPI** for the channel.
+
+Explain why it is the most important metric for this specific channel.
+
+## H2. 30/60/90-Day Targets
+
+Set measurable targets for:
+
+- Subscribers
+- Views
+- Watch time
+- CTR
+- Average view duration
+- Returning viewers
+
+Do not invent benchmarks without explaining the basis for them.
+
+## H3. Weekly Review Framework
+
+Define:
+
+- What to check
+- What numbers matter
+- What patterns to look for
+- What to adjust
+- When to make changes
+- What not to overreact to
+
+## H4. Early Warning Signals
+
+Identify the metrics and patterns that indicate:
+
+- Content-market mismatch
+- Weak packaging
+- Poor retention
+- Audience mismatch
+- Topic fatigue
+- Need for a strategic pivot
+
+---
+
+# SECTION I: COMMUNITY &amp; PLATFORM GROWTH
+
+## I1. Community Tab Strategy
+
+Explain:
+
+- When to unlock/use the Community tab
+- What to post
+- Posting frequency
+- Poll strategy
+- Engagement strategy
+- How to use community posts to support video launches
+
+## I2. Comment Engagement Playbook
+
+Define the actions to take during the **first 60 minutes after every upload**.
+
+Include:
+
+- Comment response strategy
+- Pinning strategy
+- Creator replies
+- Questions to ask viewers
+- Engagement loops
+
+## I3. Cross-Platform Amplification
+
+Create a cross-platform content distribution strategy.
+
+Explain how one YouTube video can be repurposed into content for other platforms.
+
+## I4. Collaboration Outreach Script
+
+Write a ready-to-send DM template for approaching peer creators for collaborations.
+
+Make it specific to {NICHE}.
+
+---
+
+# OUTPUT QUALITY RULES
+
+## 1. Specificity Law
+
+Every piece of advice must explicitly reference **{NICHE}** and **{PRIMARY_AUDIENCE}** where relevant.
+
+No generic YouTube advice.
+
+If a recommendation could apply equally to a cooking channel, a filmmaking channel, and a finance channel, rewrite it until it becomes specific to this client.
+
+---
+
+## 2. Format Rules
+
+Use:
+
+- Markdown headers for every section
+- Tables for comparison data and the content calendar
+- Numbered lists for sequential steps
+- Bullet points for non-sequential information
+
+Every major section must begin with a **2-sentence &quot;Why This Matters&quot; executive summary**.
+
+---
+
+## 3. Constraint Compliance
+
+Honor every requirement in **{CONSTRAINTS}** throughout the entire strategy.
+
+Constraints may include:
+
+- Tone
+- Colours
+- Vocabulary
+- Budget
+- Production limitations
+- Platform limitations
+- Team size
+- Time availability
+
+If any recommendation conflicts with a stated constraint:
+
+1. Clearly flag the conflict.
+2. Explain why the conflict exists.
+3. Provide a practical alternative that respects the constraint.
+
+---
+
+## 4. Research Citations
+
+When presenting competitor data, keyword data, trend information, audience research, or other externally sourced claims:
+
+- State the source or research basis
+- Include a date reference where available
+- Distinguish researched facts from strategic recommendations
+- Never present assumptions as facts
+
+---
+
+## 5. No Fabricated Data
+
+Never fabricate:
+
+- Subscriber counts
+- View counts
+- Search volumes
+- Competition scores
+- Audience demographics
+- Trends
+- Revenue estimates
+- Competitor information
+- Platform statistics
+
+When data cannot be verified, explicitly state that it is unavailable and provide a reasoned strategic estimate only when useful.
+
+---
+
+## 6. Completeness Check
+
+Before ending the response, internally verify that all **9 sections, A through I**, are complete.
+
+Confirm that every subsection has been addressed.
+
+Do not omit sections because of output length.
+
+---
+
+# BANNED PHRASES
+
+Never use these phrases:
+
+- &quot;It depends&quot;
+- &quot;This varies&quot;
+- &quot;Generally speaking&quot;
+- &quot;You should consider&quot;
+- &quot;Make sure to&quot;
+
+Replace hedging language with **direct, confident, expert recommendations**.
+
+---
+
+# FINAL OUTPUT
+
+Close the entire strategy with a section titled:
+
+# WHAT&#39;S NEXT
+
+List the **5 most important actions to take within the first 48 hours** after receiving this strategy.
+
+Prioritize actions by impact and urgency.
+
+Each action must be specific, executable, and tied directly to {NICHE}, {PRIMARY_AUDIENCE}, and {BRAND_NAME}.</pre></details><a class="studio-resource-source" href="resources/ai-faceless-youtube-masterclass.html#resource-prompt-1">View Week 1 Day 2 session guide &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-04T20:00:00+05:30" data-resource-session="week-1-day-2"><summary><span><span class="kicker">FULL PROMPT / Week 1 Day 2</span><strong>Viral Short → scene-by-scene JSON prompt</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><details class="studio-prompt-detail"><summary>Open and copy the prompt</summary><button type="button" class="btn secondary" data-copy-prompt>Copy prompt</button><pre>I have the transcript of a viral YouTube Short. 
+I want you to write step-by-step JSON prompts by dividing the entire script into sequential scenes for Google Veo 3.1 video generation.
+STRICT INSTRUCTIONS:
+1. Divide the script into 5 to 8 second visual scenes.
+2. In each scene prompt, describe ONLY: visual action, subject movements, camera angles (close-up, pan, tracking), lighting mood, and atmospheric environment.
+3. Include specific Sound Effects (SFX) in each scene prompt.
+4. DO NOT include any dialogue, narration, or voiceover text inside the video prompts. Spoken dialogue is handled separately.
+OUTPUT FORMAT (JSON):
+[
+  {
+    &quot;scene_number&quot;: 1,
+    &quot;duration&quot;: &quot;5s&quot;,
+    &quot;visual_prompt&quot;: &quot;Cinematic close-up of [character action], dramatic low-key moonlight, volumetric shadows, high temporal coherence.&quot;,
+    &quot;camera_movement&quot;: &quot;Slow forward tracking shot&quot;,
+    &quot;sound_effects&quot;: &quot;Eerie wind whistling, distant owl hooting&quot;
+  }
+]</pre></details><a class="studio-resource-source" href="resources/ai-faceless-youtube-masterclass.html#resource-prompt-2">View Week 1 Day 2 session guide &rarr;</a></div></details>
+<!-- resources:prompts:end --></div></div><div aria-labelledby="resource-tab-checklists" data-resource-panel="checklists" hidden="" id="resource-panel-checklists" role="tabpanel"><aside class="studio-companion"><div aria-label="Alexx Roy: checklist" class="studio-avatar checklist" role="img"></div><p class="studio-companion-copy">Check your work before the next stage. These checks save on this device.</p></aside><div class="studio-resource-grid"><!-- resources:checklists:start -->
+<details class="studio-resource-card" data-resource-release="2026-10-04T20:00:00+05:30" data-resource-session="week-1-day-2"><summary><span><span class="kicker">PRODUCTION CHECK / Week 1 Day 2</span><strong>Launch Your YouTube Channel</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p class="studio-resource-progress" aria-live="polite">0 / 11 complete</p><div class="studio-resource-checks" data-resource-checklist="week-1-day-2"><label><input type="checkbox" data-resource-check="0"><span>I selected a clear channel category or niche.</span></label><label><input type="checkbox" data-resource-check="1"><span>I researched viral channels in the category.</span></label><label><input type="checkbox" data-resource-check="2"><span>I checked proof-of-concept signals such as recently sold channels where relevant.</span></label><label><input type="checkbox" data-resource-check="3"><span>I copied the God prompt into Google Docs and edited its variables.</span></label><label><input type="checkbox" data-resource-check="4"><span>I ran the research in Kimi.</span></label><label><input type="checkbox" data-resource-check="5"><span>I reviewed Section A of the research report.</span></label><label><input type="checkbox" data-resource-check="6"><span>I finalized one channel name.</span></label><label><input type="checkbox" data-resource-check="7"><span>I captured the unique value proposition, tagline and mission statement.</span></label><label><input type="checkbox" data-resource-check="8"><span>I created a channel profile picture using the Section B inputs.</span></label><label><input type="checkbox" data-resource-check="9"><span>I created a YouTube channel banner in Canva.</span></label><label><input type="checkbox" data-resource-check="10"><span>I am ready to move toward launching the channel.</span></label></div><a class="studio-resource-source" href="playbook.html#checklistSection">View Week 1 Day 2 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-10T20:00:00+05:30" data-resource-session="week-2-day-1"><summary><span><span class="kicker">PRODUCTION CHECK / Week 2 Day 1</span><strong>Build Your First AI Movie Short</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p class="studio-resource-progress" aria-live="polite">0 / 10 complete</p><div class="studio-resource-checks" data-resource-checklist="week-2-day-1"><label><input type="checkbox" data-resource-check="0"><span>I completed the Day 1 Shot / Frame Breakdown.</span></label><label><input type="checkbox" data-resource-check="1"><span>I recorded my Generation Tool(s) and Character / Visual Consistency Notes.</span></label><label><input type="checkbox" data-resource-check="2"><span>I tracked the clips or frames I generated and updated the Combined Video Status.</span></label><label><input type="checkbox" data-resource-check="3"><span>I generated at least one usable shot from a frame and prompt.</span></label><label><input type="checkbox" data-resource-check="4"><span>I know how to use the frame workflow in Flow.</span></label><label><input type="checkbox" data-resource-check="5"><span>I created or prepared a voiceover for my shot.</span></label><label><input type="checkbox" data-resource-check="6"><span>I created a first draft of my timeline.</span></label><label><input type="checkbox" data-resource-check="7"><span>I published my shot for today.</span></label><label><input type="checkbox" data-resource-check="8"><span>I have a plan to publish one shot every day for the next seven days.</span></label><label><input type="checkbox" data-resource-check="9"><span>I will observe the winners and use them to guide my next shots.</span></label></div><a class="studio-resource-source" href="sessions/week-2-day-1/playbook.html#checklistSection">View Week 2 Day 1 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-11T20:00:00+05:30" data-resource-session="week-2-day-2"><summary><span><span class="kicker">PRODUCTION CHECK / Week 2 Day 2</span><strong>Image to Video Production</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p class="studio-resource-progress" aria-live="polite">0 / 10 complete</p><div class="studio-resource-checks" data-resource-checklist="week-2-day-2"><label><input type="checkbox" data-resource-check="0"><span>I completed the remaining image practice from Day 2.</span></label><label><input type="checkbox" data-resource-check="1"><span>I generated the aerial coconut-farm shot.</span></label><label><input type="checkbox" data-resource-check="2"><span>I generated the close-up coconut bunch shot.</span></label><label><input type="checkbox" data-resource-check="3"><span>I generated the coconut falling shot.</span></label><label><input type="checkbox" data-resource-check="4"><span>I completed the other required frames and posted them in the group.</span></label><label><input type="checkbox" data-resource-check="5"><span>I created at least one image-to-video shot from a strong frame.</span></label><label><input type="checkbox" data-resource-check="6"><span>I used Start and End Frame Animation only when the frames had a meaningful visual relationship.</span></label><label><input type="checkbox" data-resource-check="7"><span>I used start-frame-only when an end frame would create an unrelated transition.</span></label><label><input type="checkbox" data-resource-check="8"><span>I checked continuity, movement and product consistency in my generated clips.</span></label><label><input type="checkbox" data-resource-check="9"><span>I selected keepers before spending credits on higher-quality output.</span></label></div><a class="studio-resource-source" href="sessions/week-2-day-2/playbook.html#checklistSection">View Week 2 Day 2 playbook &rarr;</a></div></details>
+<details class="studio-resource-card" data-resource-release="2026-10-17T20:00:00+05:30" data-resource-session="week-3-day-1"><summary><span><span class="kicker">PRODUCTION CHECK / Week 3 Day 1</span><strong>The Structured Brand Story Pipeline</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p class="studio-resource-progress" aria-live="polite">0 / 10 complete</p><div class="studio-resource-checks" data-resource-checklist="week-3-day-1"><label><input type="checkbox" data-resource-check="0"><span>I selected and prepared useful character references.</span></label><label><input type="checkbox" data-resource-check="1"><span>I created a character sheet in Flow.</span></label><label><input type="checkbox" data-resource-check="2"><span>I fixed or documented any face-consistency issue.</span></label><label><input type="checkbox" data-resource-check="3"><span>I generated and selected a brand colour palette in Gemini.</span></label><label><input type="checkbox" data-resource-check="4"><span>I created a mood board in Flow.</span></label><label><input type="checkbox" data-resource-check="5"><span>I attached the character sheet and mood board to the screenplay workflow.</span></label><label><input type="checkbox" data-resource-check="6"><span>I generated and reviewed the screenplay.</span></label><label><input type="checkbox" data-resource-check="7"><span>I converted the screenplay into a structured shot shortlist.</span></label><label><input type="checkbox" data-resource-check="8"><span>I organized the assets and project documents for continued production.</span></label><label><input type="checkbox" data-resource-check="9"><span>I understand the three-failure rule and when to change the generation approach.</span></label></div><a class="studio-resource-source" href="sessions/week-3-day-1/playbook.html#checklistSection">View Week 3 Day 1 playbook &rarr;</a></div></details>
+<!-- resources:checklists:end --></div></div><div aria-labelledby="resource-tab-references" data-resource-panel="references" hidden="" id="resource-panel-references" role="tabpanel"><aside class="studio-companion"><div aria-label="Alexx Roy: storyboard" class="studio-avatar storyboard" role="img"></div><p class="studio-companion-copy">Go back to the lesson when you need the full workflow.</p></aside><div class="studio-resource-grid">
+<details class="studio-resource-card"><summary><span><div class="tag">WEEK 1 / DAY 2 · SESSION RESOURCE</div><strong>Week 1 Day 2 · YouTube Masterclass Reference</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p>The complete AI Faceless YouTube Channel Masterclass reference for the completed Week 1 Day 2 session.</p><div class="actions"><a class="btn" href="resources/ai-faceless-youtube-masterclass.html">OPEN RESOURCE</a></div></div></details>
+<details class="studio-resource-card"><summary><span><div class="tag">WEEK 2 / DAY 1 · SESSION RESOURCE</div><strong>Week 2 Day 1 · Session Guide</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p>Full session guide covering Google Flow, video types, scripts, voiceover, Filmora and YouTube channel launch.</p><div class="actions"><a class="btn secondary" href="sessions/week-2-day-1/index.html">OPEN RESOURCE</a></div></div></details><details class="studio-resource-card"><summary><span><div class="tag">WEEK 2 / DAY 2 · SESSION RESOURCE</div><strong>Week 2 Day 2 · Production Guide</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p>Detailed reference for OpenArt image generation, visual references, continuity, start frame animation and troubleshooting.</p><div class="actions"><a class="btn secondary" href="sessions/week-2-day-2/index.html">OPEN RESOURCE</a></div></div></details><details class="studio-resource-card"><summary><span><div class="tag">WEEK 3 / DAY 1 · SESSION RESOURCE</div><strong>Week 3 Day 1 · Structured Brand Story Guide</strong></span><span class="studio-resource-chevron" aria-hidden="true"></span></summary><div class="studio-resource-body"><p>Full reference for the professional brand-story pipeline, tools, prompt structure, failure rules, hands-on steps and troubleshooting.</p><div class="actions"><a class="btn secondary" href="sessions/week-3-day-1/index.html">OPEN SESSION GUIDE</a></div></div></details>
+</div></div></div><details class="studio-library-fold" id="bmaiUnreleasedContent"><summary><span aria-hidden="true" class="studio-fold-icon"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24" width="20"><rect height="16" rx="3" width="16" x="4" y="5"></rect><path d="M8 3v4m8-4v4M4 11h16m-12 4h3"></path></svg></span><span><strong>Unreleased content</strong><small>More creative challenges are on the way. Your toolkit is ready above.</small></span><span class="studio-fold-count" id="bmaiUnreleasedCount"></span><span aria-hidden="true" class="studio-fold-chevron"></span></summary><div class="studio-fold-body"><div class="studio-unreleased-weeks" id="bmaiUnreleasedSessions"></div></div></details></div></section>
 </main>
-<footer><div class="container footer-inner"><div><strong>BUILD MY AI MOVIE COHORT</strong> · Student Hub</div><div>Alexx Roy, Founder</div></div></footer>
+<footer class="studio-site-footer"><div class="container footer-inner"><div><strong>BUILD MY AI MOVIE STUDIO</strong><p>Alexx Roy, Founder of Build My AI Movie Studio</p></div><div>© 2026 AI FilmCraft - All Rights Reserved</div></div></footer>
 </body>
 </html>

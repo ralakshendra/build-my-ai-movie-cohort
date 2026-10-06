@@ -1,0 +1,20 @@
+/* Page-specific playbook layout only. */
+/* Cohesive layout utilities migrated from inline attributes. */
+body[data-page-key="w1d2-playbook"] .layout-w1d2-playbook-1{margin-top:25px}
+body[data-page-key="w1d2-playbook"] .layout-w1d2-playbook-2{display: flex; flex-direction: column; gap: 14px; margin-top: 16px;}
+body[data-page-key="w1d2-playbook"] .layout-w1d2-playbook-3{background: rgba(0,0,0,0.3); border-left: 3px solid var(--accent-cyan); padding: 12px 14px; border-radius: 0 8px 8px 0;}
+body[data-page-key="w1d2-playbook"] .layout-w1d2-playbook-4{color: #fff; font-size: 0.92rem;}
+body[data-page-key="w1d2-playbook"] .layout-w1d2-playbook-5{font-size: 0.85rem; color: var(--text-muted); margin: 4px 0 0 0;}
+body[data-page-key="w1d2-playbook"] .layout-w1d2-playbook-6{background: rgba(0,0,0,0.3); border-left: 3px solid var(--accent-primary); padding: 12px 14px; border-radius: 0 8px 8px 0;}
+body[data-page-key="w1d2-playbook"] .layout-w1d2-playbook-7{color: #fff; font-size: 0.92rem;}
+body[data-page-key="w1d2-playbook"] .layout-w1d2-playbook-8{font-size: 0.85rem; color: var(--text-muted); margin: 4px 0 0 0;}
+body[data-page-key="w1d2-playbook"] .layout-w1d2-playbook-9{background: rgba(0,0,0,0.3); border-left: 3px solid var(--accent-emerald); padding: 12px 14px; border-radius: 0 8px 8px 0;}
+body[data-page-key="w1d2-playbook"] .layout-w1d2-playbook-10{color: #fff; font-size: 0.92rem;}
+body[data-page-key="w1d2-playbook"] .layout-w1d2-playbook-11{font-size: 0.85rem; color: var(--text-muted); margin: 4px 0 0 0;}
+body[data-page-key="w1d2-playbook"] .layout-w1d2-playbook-12{background: rgba(0,0,0,0.3); border-left: 3px solid var(--accent-amber); padding: 12px 14px; border-radius: 0 8px 8px 0;}
+body[data-page-key="w1d2-playbook"] .layout-w1d2-playbook-13{color: #fff; font-size: 0.92rem;}
+body[data-page-key="w1d2-playbook"] .layout-w1d2-playbook-14{font-size: 0.85rem; color: var(--text-muted); margin: 4px 0 0 0;}
+body[data-page-key="w1d2-playbook"] .layout-w1d2-playbook-15{margin-top:14px}
+body[data-page-key="w1d2-playbook"] .layout-w1d2-playbook-16{max-width:580px;margin:16px auto 0}
+body[data-page-key="w1d2-playbook"] .layout-w1d2-playbook-17{margin-top:25px}
+body[data-page-key="w1d2-playbook"] .layout-w1d2-playbook-18{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}

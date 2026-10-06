@@ -295,7 +295,7 @@ html[data-bmai-page="playbook"] .pill{
 html[data-bmai-page="playbook"] .visual,
 html[data-bmai-page="playbook"] .card,
 html[data-bmai-page="playbook"] .step,
-html[data-bmai-page="playbook"] .checklist,
+html[data-bmai-page="playbook"] .checklist:not(.studio-avatar),
 html[data-bmai-page="playbook"] .next,
 html[data-bmai-page="playbook"] .callout{
  border-color:var(--bmai-line)!important;background:var(--bmai-panel)!important;
@@ -960,4 +960,68 @@ html,body{overflow-x:hidden!important;max-width:100%}
  .bmai-session-top-actions{display:none}
  header .nav>.bmai-header-home,.topbar .nav>.bmai-header-home,.top .nav>.bmai-header-home{flex:0 0 auto!important}
  header .nav>.brand,.topbar .nav>.brand,.top .nav>.brand{flex:0 1 auto!important}
+}
+
+
+/* v26 shared shell stabilization · avatar asset repair verified */
+.bmai-global-header{
+  position:sticky!important;
+  top:0!important;
+  z-index:100!important;
+  width:100%;
+  border-bottom:1px solid var(--bm-line)!important;
+  background:rgba(7,7,7,.96)!important;
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+.bmai-global-header .bmai-session-topbar-inner{
+  width:min(var(--bm-max),calc(100% - 40px));
+  margin:0 auto;
+}
+.bmai-global-header .bmai-header-home{
+  width:auto!important;
+  min-width:0!important;
+  height:38px!important;
+  padding:0 14px!important;
+  border-radius:999px!important;
+  font-size:9px!important;
+  font-weight:900!important;
+  letter-spacing:.08em;
+  white-space:nowrap;
+}
+.bmai-global-header .bmai-session-brand{
+  flex:0 1 auto;
+  min-width:0;
+}
+.bmai-global-header .bmai-session-top-actions{
+  min-width:0;
+  overflow:auto;
+  scrollbar-width:none;
+}
+.bmai-global-header .bmai-session-top-actions::-webkit-scrollbar{display:none}
+.bmai-global-header .bmai-session-top-actions a{white-space:nowrap}
+.bmai-locked-page{background:#050505!important;min-height:100vh}
+.bmai-locked-page .bmai-global-header{position:sticky!important}
+.bmai-locked-page .bmai-lock-screen{
+  min-height:calc(100vh - 69px);
+}
+.bmai-locked-link{cursor:not-allowed!important}
+@media(max-width:700px){
+  .bmai-global-header .bmai-session-topbar-inner{
+    width:100%;
+    min-height:58px;
+    padding-left:12px;
+    padding-right:12px;
+  }
+  .bmai-global-header .bmai-header-home{
+    height:34px!important;
+    padding:0 10px!important;
+    font-size:8px!important;
+  }
+  .bmai-global-header .bmai-session-brand{
+    font-size:10px;
+    gap:6px;
+  }
+  .bmai-global-header .bmai-session-brand img{width:26px;height:26px;flex-basis:26px}
+  .bmai-global-header .bmai-session-top-actions a{padding:8px 10px;font-size:8px}
 }

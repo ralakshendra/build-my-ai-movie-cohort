@@ -1,6 +1,18 @@
 {
-  "name":"build-my-ai-movie-cohort",
-  "private":true,
-  "scripts":{"qa:visual":"playwright test -c qa/playwright.config.js"},
-  "devDependencies":{"@playwright/test":"^1.55.0"}
+  "name": "build-my-ai-movie-cohort",
+  "private": true,
+  "scripts": {
+    "qa:visual": "playwright test -c qa/playwright.config.js",
+    "resources:build": "node scripts/build-resources.cjs",
+    "build": "node scripts/build-resources.cjs && node scripts/build-site.cjs && node scripts/check-site.cjs",
+    "site:check": "node scripts/check-site.cjs",
+    "qa:cohesion": "node scripts/audit-site.cjs",
+    "session:new": "node scripts/new-session.cjs",
+    "qa:release": "node scripts/release-check.cjs",
+    "preview": "python scripts/serve-preview.py --port 8766"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "playwright": "^1.55.0"
+  }
 }

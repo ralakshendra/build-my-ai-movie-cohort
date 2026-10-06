@@ -1,292 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html data-bmai-page="w2d2" lang="en">
 <head>
-<meta charset="UTF-8"><meta name="description" content="Week 2 Day 2 | Photorealistic AI Advertisement | Build My AI Movie"><meta name="theme-color" content="#050505"><meta property="og:title" content="Week 2 Day 2 | Photorealistic AI Advertisement | Build My AI Movie"><meta property="og:description" content="Week 2 Day 2 | Photorealistic AI Advertisement | Build My AI Movie"><meta property="og:type" content="website"><meta property="og:url" content="https://ralakshendra.github.io/build-my-ai-movie-cohort/sessions/week-2-day-2/playbook.html"><link rel="canonical" href="https://ralakshendra.github.io/build-my-ai-movie-cohort/sessions/week-2-day-2/playbook.html">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/><meta content="Week 2 Day 2 | Photorealistic AI Advertisement | Build My AI Movie" name="description"/><meta content="#050505" name="theme-color"/><meta content="Week 2 Day 2 | Photorealistic AI Advertisement | Build My AI Movie" property="og:title"/><meta content="Week 2 Day 2 | Photorealistic AI Advertisement | Build My AI Movie" property="og:description"/><meta content="website" property="og:type"/><meta content="https://ralakshendra.github.io/build-my-ai-movie-cohort/sessions/week-2-day-2/playbook.html" property="og:url"/><link href="https://ralakshendra.github.io/build-my-ai-movie-cohort/sessions/week-2-day-2/playbook.html" rel="canonical"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Week 2 Day 2 | Photorealistic AI Advertisement | Build My AI Movie Studio</title>
 
-<title>Week 2 Day 2 | Photorealistic AI Advertisement | Build My AI Movie</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#080808; --surface:#101010; --surface2:#151515; --text:#f4f0e8;
-  --muted:#a6a29a; --line:#2b2a27; --accent:#ff6a00; --accent2:#ff9a3d;
-  --danger:#ff7a70; --max:1180px; --shadow:0 24px 70px rgba(0,0,0,.42);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:
- radial-gradient(circle at 78% 8%,rgba(255,106,0,.08),transparent 25rem),
- radial-gradient(circle at 12% 35%,rgba(255,255,255,.035),transparent 25rem),
- var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;line-height:1.55}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");z-index:5}
-a{color:inherit}
-button,input,textarea{font:inherit}
-.container{width:min(calc(100% - 40px),var(--max));margin:auto}
-.mono{font-family:"DM Mono",monospace}
-.eyebrow{font:500 12px "DM Mono",monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
-h1,h2,h3,p{margin-top:0}
-h1{font-size:clamp(48px,9vw,108px);line-height:.9;letter-spacing:-.065em;margin-bottom:26px}
-h2{font-size:clamp(34px,5vw,64px);line-height:1;letter-spacing:-.045em;margin-bottom:18px}
-h3{font-size:22px;line-height:1.15;margin-bottom:10px}
-.muted{color:var(--muted)}
-header{position:sticky;top:0;z-index:20;background:rgba(8,8,8,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07)}
-.nav{height:68px;display:flex;align-items:center;justify-content:space-between}
-.brand{font-weight:800;letter-spacing:-.03em}
-.brand span{color:var(--accent)}
-.nav-right{display:flex;gap:12px;align-items:center}
-.pill{border:1px solid var(--line);padding:7px 11px;border-radius:999px;font:500 11px "DM Mono",monospace;color:var(--muted)}
-.hero{min-height:calc(100vh - 68px);display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;padding:70px 0 90px;position:relative}
-.hero-copy{animation:rise .8s ease both}
-.hero h1 span{color:var(--accent)}
-.hero-sub{font-size:clamp(19px,2.1vw,27px);max-width:650px;color:#ddd8ce;margin-bottom:28px}
-.hero-meta{display:flex;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14px}
-.hero-meta strong{display:block;color:var(--text);font-size:15px;margin-top:3px}
-.visual{min-height:500px;position:relative;overflow:hidden;border:1px solid var(--line);background:#0d0d0d;box-shadow:var(--shadow)}
-.visual:before{content:"";position:absolute;inset:12% -10% 18% 8%;background:linear-gradient(125deg,transparent 0 25%,rgba(255,106,0,.8) 25.2% 25.6%,transparent 25.8% 50%,rgba(255,255,255,.12) 50.2% 50.7%,transparent 50.9%);transform:rotate(-12deg);opacity:.6}
-.visual:after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;right:-40px;top:80px;background:radial-gradient(circle,#ff6a00 0 3%,rgba(255,106,0,.25) 4% 18%,transparent 60%);filter:blur(1px)}
-.screen{position:absolute;left:11%;right:11%;top:14%;bottom:14%;border:1px solid #444;background:linear-gradient(145deg,#25251f,#0b0b0b 60%);transform:perspective(900px) rotateY(-8deg) rotateX(2deg);box-shadow:0 35px 80px #000}
-.screen-grid{position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:25% 25%}
-.screen-subject{position:absolute;left:20%;right:20%;top:17%;bottom:20%;background:radial-gradient(circle at 48% 34%,#ded8c5 0 5%,transparent 6%),radial-gradient(circle at 48% 43%,#3b3933 0 11%,transparent 12%),linear-gradient(120deg,#5c614d,#111 58%);clip-path:polygon(35% 0,65% 0,85% 100%,15% 100%);filter:saturate(.75)}
-.screen-label{position:absolute;left:18px;bottom:15px;font:500 11px "DM Mono",monospace;color:#ff6a00}
-.section{padding:105px 0}
-.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:38px}
-.section-head p{max-width:520px;color:var(--muted)}
-.grid{display:grid;gap:14px}
-.objectives{grid-template-columns:repeat(4,1fr)}
-.card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012));padding:25px;position:relative;overflow:hidden}
-.card:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 40%,rgba(255,106,0,.035),transparent 70%);pointer-events:none}
-.num{font:500 12px "DM Mono",monospace;color:var(--accent);margin-bottom:45px}
-.card p{color:var(--muted);margin-bottom:0}
-.mission{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;display:flex;justify-content:space-between;gap:30px;align-items:center;margin-bottom:32px}
-.mission strong{font-size:22px}
-.steps{grid-template-columns:repeat(2,1fr)}
-.step{display:grid;grid-template-columns:70px 1fr;gap:10px;min-height:230px}
-.step .num{margin:4px 0 0;font-size:15px}
-.step ul{padding-left:19px;color:var(--muted);margin:14px 0 0}
-.step li{margin:5px 0}
-.tip{margin-top:18px;border-left:2px solid var(--accent);padding:12px 16px;background:rgba(255,106,0,.045);color:#d9d6cf}
-.check-wrap{display:grid;grid-template-columns:1fr 360px;gap:16px;align-items:start}
-.checklist{display:grid;gap:10px}
-.check{display:flex;gap:14px;align-items:flex-start;padding:17px 18px;border:1px solid var(--line);background:var(--surface);cursor:pointer;transition:.2s}
-.check:hover{border-color:#45443e}
-.check input{appearance:none;width:20px;height:20px;border:1px solid #5b5952;margin:0;flex:none;position:relative}
-.check input:checked{background:var(--accent);border-color:var(--accent)}
-.check input:checked:after{content:"";position:absolute;left:5px;top:1px;width:6px;height:11px;border:solid #080808;border-width:0 2px 2px 0;transform:rotate(45deg)}
-.check.done span{color:#777;text-decoration:line-through}
-.progress-card{position:sticky;top:92px;background:var(--surface);border:1px solid var(--line);padding:25px}
-.progress-number{font-size:54px;font-weight:800;letter-spacing:-.05em;margin:10px 0}
-.progress-bar{height:5px;background:#292824;overflow:hidden}
-.progress-fill{height:100%;width:0;background:var(--accent);transition:width .4s ease}
-.workspace{background:linear-gradient(135deg,#130e0a,#0b0b0b);border:1px solid rgba(255,106,0,.28);padding:30px}
-.workspace-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.field{display:flex;flex-direction:column;gap:8px}
-.field.full{grid-column:1/-1}
-label{font-weight:700;font-size:14px}
-label small{display:block;color:var(--muted);font-weight:400;margin-top:3px}
-textarea{min-height:155px;resize:vertical;background:#0a0a0a;border:1px solid #34352f;color:var(--text);padding:15px;outline:none;transition:.2s}
-textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(255,106,0,.08)}
-.note{font:12px "DM Mono",monospace;color:#99978e;margin-top:15px}
-.share{margin-top:18px;padding:38px;background:linear-gradient(135deg,#17100a,#100c08);border:1px solid rgba(255,106,0,.32);display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;padding:15px 20px;cursor:pointer;text-decoration:none;font-weight:800;letter-spacing:.01em;transition:.2s}
-.btn-primary{background:var(--accent);color:#080808}
-.btn-primary:hover{background:#ff9a3d;transform:translateY(-2px)}
-.btn-secondary{background:transparent;color:var(--text);border:1px solid var(--line)}
-.btn-secondary:hover{border-color:#666}
-.workflow{grid-template-columns:repeat(5,1fr);position:relative}
-.workflow:before{content:"";position:absolute;left:8%;right:8%;top:26px;border-top:1px dashed #46453f}
-.flow-card{position:relative;text-align:center;background:var(--bg)}
-.flow-icon{width:52px;height:52px;margin:0 auto 14px;border:1px solid #4a4943;background:#101010;display:grid;place-items:center;color:var(--accent);font:12px "DM Mono",monospace;position:relative;z-index:2}
-.flow-card strong{display:block;font-size:12px;letter-spacing:.08em}
-.flow-card p{font-size:12px;color:var(--muted);margin-top:7px}
-.quiz{max-width:850px;margin:auto}
-.quiz-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
-.quiz-bar{height:4px;background:#282723;margin-bottom:35px}
-.quiz-bar span{display:block;height:100%;width:0;background:var(--accent);transition:.3s}
-.question{font-size:28px;line-height:1.25;letter-spacing:-.025em;margin-bottom:24px}
-.options{display:grid;gap:10px}
-.option{display:flex;align-items:flex-start;gap:14px;padding:18px;border:1px solid var(--line);background:var(--surface);color:var(--text);text-align:left;cursor:pointer;transition:.2s}
-.option:hover{border-color:#666}
-.option .letter{width:28px;height:28px;border:1px solid #4b4a45;display:grid;place-items:center;flex:none;font:12px "DM Mono",monospace}
-.option.selected{border-color:var(--accent);background:rgba(255,106,0,.06)}
-.option.correct{border-color:var(--accent);background:rgba(255,106,0,.08)}
-.option.wrong{border-color:var(--danger);background:rgba(255,122,112,.07)}
-.option:disabled{cursor:default}
-.quiz-feedback{margin-top:16px;padding:15px 17px;border-left:2px solid var(--accent);background:#111;color:#c7c3b9}
-.quiz-actions{margin-top:20px;display:flex;justify-content:space-between;gap:12px}
-.hidden{display:none!important}
-.results{text-align:center;border:1px solid var(--line);background:radial-gradient(circle at 50% 0,rgba(255,106,0,.1),transparent 35%),var(--surface);padding:60px 25px}
-.score-big{font-size:88px;line-height:.9;font-weight:800;letter-spacing:-.07em;margin:20px 0}
-.category{color:var(--accent);font:500 13px "DM Mono",monospace;letter-spacing:.15em;text-transform:uppercase}
-.review{margin-top:25px;text-align:left;display:grid;gap:10px}
-.review-item{border:1px solid var(--line);padding:18px;background:#0d0d0d}
-.review-q{font-weight:700}
-.review-a{margin-top:9px;color:var(--muted);font-size:14px}
-.complete{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.status{border:1px solid var(--line);padding:18px;background:var(--surface)}
-.status strong{display:block;font-size:13px;color:var(--muted);font:500 11px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.1em}
-.status span{display:block;margin-top:5px;font-weight:800}
-footer{border-top:1px solid var(--line);padding:45px 0;margin-top:50px;color:var(--muted)}
-.footer-row{display:flex;justify-content:space-between;gap:20px}
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-@media(max-width:900px){
- .hero{grid-template-columns:1fr;padding-top:55px}.visual{min-height:380px}
- .objectives{grid-template-columns:repeat(2,1fr)}
- .check-wrap{grid-template-columns:1fr}.progress-card{position:static}
- .workflow{grid-template-columns:1fr;gap:10px}.workflow:before{left:26px;right:auto;top:26px;bottom:26px;border-left:1px dashed #46453f;border-top:0}
- .flow-card{text-align:left;display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:center}.flow-card p{grid-column:2;margin-top:-12px}
- .share{grid-template-columns:1fr}
-}
-@media(max-width:650px){
- .container{width:min(calc(100% - 24px),var(--max))}
- .nav{height:60px}.nav-right .pill{display:none}
- .hero{min-height:auto;padding:55px 0 70px}.visual{min-height:300px}
- .section{padding:75px 0}.section-head{display:block}
- .objectives,.steps,.workspace-grid{grid-template-columns:1fr}
- .field.full{grid-column:auto}.step{min-height:auto}
- .mission{display:block}.mission strong{display:block;margin-bottom:6px}
- .score-big{font-size:70px}
- .complete{grid-template-columns:1fr}
- .footer-row{display:block}.footer-row div+div{margin-top:15px}
- h1{font-size:58px}
-}
-@media(prefers-reduced-motion:reduce){
- html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}
-}
-</style>
-<link rel="stylesheet" href="../../brand.css?v=20261005-brand-v25"><!-- Build My AI Movie shared brand system -->
-</head>
-<body>
-<header>
-  <div class="container nav">
-    <div class="brand">BUILD MY <span>AI MOVIE</span></div>
-    <div class="nav-right"><span class="pill">BUILD MY AI MOVIE</span><span class="pill">SESSION <span id="navNumber">04</span></span></div>
-  </div>
-</header>
 
+
+<link href="../../brand.css?v=20261005-brand-v25" rel="stylesheet"/><link rel="stylesheet" href="../../library/playbook.css?v=e994c1686b71"><link data-page-styles="" href="../../styles/pages/w2d2-playbook.css?v=preview2" rel="stylesheet"/><!-- Build My AI Movie shared brand system -->
+<link rel="stylesheet" href="../../library/components.css?v=92ea426f6b11"><script defer src="../../library/site.js?v=c8fdb3322df0"></script></head>
+<body data-page-id="w2d2" data-page-key="w2d2-playbook" data-page-type="playbook" data-session-id="week-2-day-2"><a class="bmai-skip-link" href="#main-content">Skip to main content</a><header class="bmai-global-header"><div class="studio-nav"><a class="bmai-session-brand" href="../../index.html"><img alt="" src="../../assets/brand/build-my-ai-movie-mark.svg"/><span>BUILD MY <b>AI MOVIE STUDIO</b></span></a><a aria-label="Back to homepage" class="bmai-header-home" href="../../index.html" title="Home"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="20"><path d="M3 10 12 3l9 7M5 9v12h5v-7h4v7h5V9"></path></svg></a><div class="bmai-session-top-actions"><a href="../../sessions/week-2-day-2/index.html">SESSION GUIDE</a><a href="../../sessions/week-2-day-2/homework.html">HOMEWORK</a></div></div></header>
 <main>
 <section class="hero container">
-  <div class="hero-copy">
-    <div class="eyebrow" id="heroEyebrow">BUILD MY AI MOVIE COHORT</div>
-    <h1>BUILD THE<br><span>SHOT.</span></h1>
-    <p class="hero-sub" id="heroSub">Generate the image first, then turn strong frames into controlled video with continuity, movement and deliberate iteration.</p>
-    <div class="hero-meta">
-      <div><span class="muted">Instructor</span><strong>Alexx Roy</strong></div>
-      <div><span class="muted">Program</span><strong>Build My AI Movie</strong></div>
-      <div><span class="muted">Session</span><strong id="heroSession">04 / PHOTOREALISTIC AI ADVERTISEMENT</strong></div>
-    </div>
-  </div>
-  <div class="visual bmai-playbook-hero-image" aria-label="Week 2 Day 2 visual reference"><img src="../../assets/week-2-day-2-hero.svg?v=20261005-hero-v2" alt="Week 2 Day 2 visual reference"><div class="screen-label" style="position:absolute;left:18px;bottom:15px;z-index:3;font:500 11px &quot;DM Mono&quot;,monospace;color:#ff9a3d">FRAME / GENERATE / EDIT</div></div>
+<div class="hero-copy">
+<div class="eyebrow" id="heroEyebrow">BUILD MY AI MOVIE COHORT<span class="studio-session-label">SESSION <span id="navNumber">04</span></span></div>
+<h1>BUILD THE<br/><span>SHOT.</span></h1>
+<p class="hero-sub" id="heroSub">Generate the image first, then turn strong frames into controlled video with continuity, movement and deliberate iteration.</p>
+<div class="hero-meta">
+<div><span class="muted">Instructor</span><strong>Alexx Roy</strong></div>
+<div><span class="muted">Program</span><strong>Build My AI Movie</strong></div>
+<div><span class="muted">Session</span><strong id="heroSession">04 / PHOTOREALISTIC AI ADVERTISEMENT</strong></div>
+</div>
+<div class="studio-mentor"><img alt="Alexx Roy" src="../../assets/avatars/alexx-portrait.webp"/><span>Guided by <strong>Alexx Roy</strong></span></div></div>
+<div aria-label="Week 2 Day 2 visual reference" class="visual bmai-playbook-hero-image"><img alt="Week 2 Day 2 visual reference" src="../../assets/week-2-day-2-hero.svg?v=20261005-hero-v2"/><div class="screen-label" style='position:absolute;left:18px;bottom:15px;z-index:3;font:500 11px "DM Mono",monospace;color:#ff9a3d'>FRAME / GENERATE / EDIT</div></div>
+</section><aside class="studio-guidance laptop container studio-flow-entry"><div class="studio-guidance-visual"><div aria-label="Alexx Roy: laptop" class="studio-avatar laptop" role="img"></div></div><div class="studio-guidance-copy"><h3>Start with your homework.</h3><p>See what you will build, then use this playbook to complete it.</p><a class="btn" href="homework.html">OPEN HOMEWORK</a></div></aside>
+<section aria-label="Creative guide" class="container bmai-avatar-rail">
+<div class="bmai-avatar-note"><div class="bmai-eyebrow">CREATIVE GUIDE</div><strong>One strong scene at a time.</strong><p>Plan your shot, keep the visual direction consistent, and review each result before moving on.</p></div>
+<div class="visual studio-playbook-visual"><div aria-label="Alexx Roy reviewing the visual story plan" class="studio-avatar storyboard" role="img"></div></div>
 </section>
-
-<section class="container bmai-avatar-rail" aria-label="Creative guide">
-  <div class="bmai-avatar-note"><div class="bmai-eyebrow">CREATIVE GUIDE</div><strong>Keep the visual language consistent.</strong><p>Use Alexx as the recurring mentor presence across the production journey, with the pose system reserved for contextual teaching moments.</p></div>
-  <div class="bmai-character-card avatar-cutout"><img src="../../assets/avatars/alexx-point.webp?v=20261005-pose-point-v1" alt="Alexx Roy avatar"><div class="character-copy"><div class="character-kicker">ALEXX ROY</div><div class="character-title">Build the next frame.</div></div></div>
-</section>
-
 <section class="section container" id="overview">
-  <div class="section-head">
-    <div><div class="eyebrow">SESSION <span id="sessionNumber">04</span></div><h2 id="sessionTitle">Photorealistic AI Advertisement</h2></div>
-    <p id="sessionObjective">Turn the visual-generation workflow into repeatable output by creating seven shots and publishing one shot every day for one week.</p>
-  </div>
-  <div class="hero-meta">
-    <div><span class="muted">Estimated effort</span><strong id="estimatedTime">Session practice + 7 days of publishing</strong></div>
-    <div><span class="muted">Difficulty</span><strong id="difficulty">Beginner</strong></div>
-    <div><span class="muted">Outcome</span><strong id="goal">Publish one shot every day for one week.</strong></div>
-  </div>
+<div class="section-head">
+<div><div class="eyebrow">SESSION <span id="sessionNumber">04</span></div><h2 id="sessionTitle">Photorealistic AI Advertisement</h2></div>
+<p id="sessionObjective">Turn the visual-generation workflow into repeatable output by creating seven shots and publishing one shot every day for one week.</p>
+</div>
+<div class="hero-meta">
+<div><span class="muted">Estimated effort</span><strong id="estimatedTime">Session practice + 7 days of publishing</strong></div>
+<div><span class="muted">Difficulty</span><strong id="difficulty">Beginner</strong></div>
+<div><span class="muted">Outcome</span><strong id="goal">Publish one shot every day for one week.</strong></div>
+</div>
 </section>
-
 <section class="section container">
-  <div class="section-head"><div><div class="eyebrow">LEARN</div><h2>What You'll Build</h2></div><p>The session moves from generation to a practical publishing loop. The goal is speed, repetition and learning from the shots that work.</p></div>
-  <div class="grid objectives" id="objectives"></div>
+<div class="section-head"><div><div class="eyebrow">LEARN</div><h2>What You'll Build</h2></div><p>The session moves from generation to a practical publishing loop. The goal is speed, repetition and learning from the shots that work.</p></div>
+<div class="grid objectives" id="objectives"></div>
 </section>
-
-
 <section class="section container" id="productionRules">
-  <div class="section-head">
-    <div><div class="eyebrow">DAY 2 / PRODUCTION RULES</div><h2>Control the visual transition.</h2></div>
-    <p>Day 2 is about building a believable sequence from images before adding motion. Use the frames to define the visual world and the prompt to guide movement.</p>
-  </div>
-  <div class="grid objectives">
-    <article class="card"><div class="num">01</div><h3>Image First</h3><p>Build a strong hero image before generating video. The hero becomes the visual anchor for the sequence.</p></article>
-    <article class="card"><div class="num">02</div><h3>Reference Continuity</h3><p>Use the hero and the immediately previous frame to carry product, lighting, colour and visual identity forward.</p></article>
-    <article class="card"><div class="num">03</div><h3>Meaningful Frames</h3><p>Use Start and End Frame Animation only when the two frames describe a believable visual transition.</p></article>
-    <article class="card"><div class="num">04</div><h3>Generate Smart</h3><p>Start at 720p, use short 5 to 7 second generations and iterate before spending credits on an upscale.</p></article>
-  </div>
-  <div class="tip"><strong>Core rule:</strong> A video prompt cannot reliably repair unrelated start and end frames. Fix the visual relationship first, then generate the motion.</div>
+<div class="section-head">
+<div><div class="eyebrow">DAY 2 / PRODUCTION RULES</div><h2>Control the visual transition.</h2></div>
+<p>Day 2 is about building a believable sequence from images before adding motion. Use the frames to define the visual world and the prompt to guide movement.</p>
+</div>
+<div class="grid objectives">
+<article class="card"><div class="num">01</div><h3>Image First</h3><p>Build a strong hero image before generating video. The hero becomes the visual anchor for the sequence.</p></article>
+<article class="card"><div class="num">02</div><h3>Reference Continuity</h3><p>Use the hero and the immediately previous frame to carry product, lighting, colour and visual identity forward.</p></article>
+<article class="card"><div class="num">03</div><h3>Meaningful Frames</h3><p>Use Start and End Frame Animation only when the two frames describe a believable visual transition.</p></article>
+<article class="card"><div class="num">04</div><h3>Generate Smart</h3><p>Start at 720p, use short 5 to 7 second generations and iterate before spending credits on an upscale.</p></article>
+</div>
+<div class="tip"><strong>Core rule:</strong> A video prompt cannot reliably repair unrelated start and end frames. Fix the visual relationship first, then generate the motion.</div>
 </section>
-
-<section class="section container" id="mission">
-  <div class="mission"><div><div class="eyebrow">YOUR MISSION</div><strong>Turn a sequence of generated frames into controlled image-to-video shots.</strong></div><span class="muted">Generate → animate → check → iterate</span></div>
-  <div class="grid steps" id="homeworkSteps"></div>
+<section class="section container" id="mission"><aside class="studio-guidance camera"><div class="studio-guidance-visual"><div aria-label="Alexx Roy: camera" class="studio-avatar camera" role="img"></div></div><div class="studio-guidance-copy"><h3>Lock your product reference.</h3><p>Keep the product, lighting, and framing consistent before animating.</p></div></aside>
+<div class="mission"><div><div class="eyebrow">YOUR MISSION</div><strong>Turn a sequence of generated frames into controlled image-to-video shots.</strong></div><span class="muted">Generate → animate → check → iterate</span></div>
+<div class="grid steps" id="homeworkSteps"></div>
 </section>
-
-<section class="section container" id="share">
-  <div class="section-head"><div><div class="eyebrow">SHARE</div><h2>Ready to Share?</h2></div><p>Complete the Day 2 production practice in the official Google Doc, then share your completed homework with Alexx.</p></div>
-  <div class="share">
-    <div>
-      <h3>GENERATE → ANIMATE → REVIEW → SHARE</h3>
-      <p class="muted">The official homework lives in Google Docs. Open it in a new tab, complete the image and video practice there, then share it manually with Alexx.</p>
-      <div class="note" id="shareStatus">Homework sharing link is ready.</div>
-    </div>
-    <a id="shareButton" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer" aria-label="Open homework Google Doc in a new tab">OPEN HOMEWORK DOC ↗</a>
-  </div>
-  <div class="grid workflow" style="margin-top:25px" id="workflow"></div>
+<section class="section container" id="share"><aside class="studio-guidance checklist"><div class="studio-guidance-visual"><div aria-label="Alexx Roy: checklist" class="studio-avatar checklist" role="img"></div></div><div class="studio-guidance-copy"><h3>Ready for the final review?</h3><p>Check your references, files, and finished output before you submit.</p></div></aside>
+<div class="section-head"><div><div class="eyebrow">SHARE</div><h2>Ready to Share?</h2></div><p>Complete the Day 2 production practice in the official Google Doc, then share your completed homework with Alexx.</p></div>
+<div class="share">
+<div>
+<h3>GENERATE → ANIMATE → REVIEW → SHARE</h3>
+<p class="muted">The official homework lives in Google Docs. Open it in a new tab, complete the image and video practice there, then share it manually with Alexx.</p>
+<div class="note" id="shareStatus">Homework sharing link is ready.</div>
+</div>
+<a aria-label="Open homework Google Doc in a new tab" class="btn btn-primary" href="#" id="shareButton" rel="noopener noreferrer" target="_blank">OPEN HOMEWORK DOC ↗</a>
+</div>
+<div class="layout-w2d2-playbook-1 grid workflow" id="workflow"></div>
+<details class="studio-homework-details"><summary>Assignment details and reference checklist</summary><section class="studio-homework-reference" id="reference-hw"><h2>Homework workspace</h2><div class="card"><h3>Student workbook</h3><p class="lead">Complete the dedicated Day 2 workbook for frame practice, video generation, continuity checks, final submission and reflection.</p><div class="tools"><a class="chip" href="https://docs.google.com/document/d/1jbIb9krXCTVpHprI3tqm9V6tHL-L5Sr1NCFYQ5WHNBA" rel="noopener" target="_blank">Open official Google Doc homework</a></div></div><h2>Homework and what comes next</h2>
+<div class="card" data-steps="">
+<div class="step"><label><input type="checkbox"/><div><strong>Finish every remaining image</strong>Aerial coconut farm, bunch close ups, falling coconut, and the rest of the Canva slides. Practice gives you an edge. If you skip, use the shared drive images.</div></label></div>
+<div class="step"><label><input type="checkbox"/><div><strong>Generate the videos from the video prompt bank</strong>Use start frame only. Generate low, then upscale. Share results in the WhatsApp group.</div></label></div>
+<div class="step"><label><input type="checkbox"/><div><strong>Know editing? Compile your video</strong>Don't? Keep the footage aside. Tomorrow's Filmora session shows editing.</div></label></div>
+<div class="step"><label><input type="checkbox"/><div><strong>Upload last week's seven videos to your YouTube channel</strong>Share the link in the group or bring it to the review session.</div></label></div>
+</div>
+<div class="callout"><b>Tomorrow</b>Editing in Filmora, plus audio. Videos have no audio, so you add a background score. Heavy SFX comes in later weeks.</div>
+<aside class="studio-guidance celebrate"><div class="studio-guidance-visual"><div aria-label="Alexx Roy celebrating your progress" class="studio-avatar celebrate" role="img"></div></div><div class="studio-guidance-copy"><div class="kicker">YOUR CREATIVE GUIDE</div><h3>Make the final check.</h3><p>Complete the tasks, review your output, and follow the homework submission instructions.</p></div></aside></section></details></section>
+<section class="section container" data-progress-scope="" id="checklistSection">
+<div class="section-head"><div><div class="eyebrow">PROGRESS</div><h2>Track Your Production Progress</h2></div><p>Use the checklist after completing the detailed Day 2 homework in the official Google Doc.</p></div><aside class="studio-companion" data-companion="progress"><div aria-label="Alexx Roy: checklist" class="studio-avatar checklist" role="img"></div><p aria-live="polite" class="studio-companion-copy">Every completed step moves your movie forward.</p></aside>
+<div class="check-wrap">
+<div class="checklist" id="checklist"></div>
+<aside class="progress-card">
+<div class="eyebrow">HOMEWORK PROGRESS</div>
+<div class="progress-number" id="progressNumber">0%</div>
+<div aria-label="Homework completion" class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+<p class="layout-w2d2-playbook-2 muted" id="progressText">Open the homework Doc and start your first shot.</p>
+</aside>
+</div>
 </section>
-
-<section class="section container" id="checklistSection">
-  <div class="section-head"><div><div class="eyebrow">PROGRESS</div><h2>Track Your Production Progress</h2></div><p>Use the checklist after completing the detailed Day 2 homework in the official Google Doc.</p></div>
-  <div class="check-wrap">
-    <div class="checklist" id="checklist"></div>
-    <aside class="progress-card">
-      <div class="eyebrow">HOMEWORK PROGRESS</div>
-      <div class="progress-number" id="progressNumber">0%</div>
-      <div class="progress-bar" aria-label="Homework completion"><div class="progress-fill" id="progressFill"></div></div>
-      <p class="muted" id="progressText" style="margin-top:14px">Open the homework Doc and start your first shot.</p>
-    </aside>
-  </div>
+<section class="section container" data-skill-scope="" id="skillcheck">
+<div class="section-head"><div><div class="eyebrow">SKILL CHECK</div><h2>Think You Got It?</h2></div><p>Seven practical questions based only on the concepts covered in this session.</p></div><aside class="studio-companion" data-companion="skill"><div aria-label="Alexx Roy: idea" class="studio-avatar idea" role="img"></div><p aria-live="polite" class="studio-companion-copy">Think like a director. Pick the answer you would use on a real project.</p></aside>
+<div class="quiz" id="quiz">
+<div class="quiz-top"><span class="eyebrow" id="questionCounter">QUESTION 01 / 07</span><span class="mono muted" id="questionPct">14%</span></div>
+<div class="quiz-bar"><span id="quizBar"></span></div>
+<div id="questionArea"></div>
+</div>
+<div class="results hidden" id="results">
+<div class="eyebrow">YOUR RESULT</div>
+<div class="score-big" id="scoreBig">0 / 7</div>
+<div class="category" id="category">KEEP BUILDING</div>
+<p class="layout-w2d2-playbook-3 muted" id="categoryCopy"></p>
+<div class="review" id="review"></div>
+<div class="layout-w2d2-playbook-4"><button class="btn btn-primary" id="retake">RETAKE QUIZ</button></div>
+</div>
 </section>
-
-<section class="section container" id="skillcheck">
-  <div class="section-head"><div><div class="eyebrow">SKILL CHECK</div><h2>Think You Got It?</h2></div><p>Seven practical questions based only on the concepts covered in this session.</p></div>
-  <div class="quiz" id="quiz">
-    <div class="quiz-top"><span class="eyebrow" id="questionCounter">QUESTION 01 / 07</span><span class="mono muted" id="questionPct">14%</span></div>
-    <div class="quiz-bar"><span id="quizBar"></span></div>
-    <div id="questionArea"></div>
-  </div>
-  <div id="results" class="results hidden">
-    <div class="eyebrow">YOUR RESULT</div>
-    <div class="score-big" id="scoreBig">0 / 7</div>
-    <div class="category" id="category">KEEP BUILDING</div>
-    <p class="muted" id="categoryCopy" style="max-width:580px;margin:16px auto 0"></p>
-    <div class="review" id="review"></div>
-    <div style="margin-top:25px"><button class="btn btn-primary" id="retake">RETAKE QUIZ</button></div>
-  </div>
-</section>
-
 <section class="section container" id="complete">
-  <div class="section-head"><div><div class="eyebrow">FINISH LINE</div><h2>Session Complete</h2></div><p>Complete the practice, share the work manually, then use the skill check to see what you remember.</p></div>
-  <div class="complete">
-    <div class="status"><strong>Homework</strong><span id="homeworkStatus">In progress</span></div>
-    <div class="status"><strong>Homework Sharing</strong><span>Available</span></div>
-    <div class="status"><strong>Skill Check</strong><span id="quizStatus">Not started</span></div>
-    <div class="status"><strong>Score</strong><span id="finalScore">Not available</span></div>
-  </div>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px">
-    <button class="btn btn-secondary" onclick="document.getElementById('overview').scrollIntoView()">REVIEW SESSION</button>
-    <button class="btn btn-primary" >CONTINUE TO NEXT SESSION</button>
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="container footer-row">
-    <div><strong>BUILD MY AI MOVIE</strong><br><span>Build My AI Movie</span></div>
-    <div>Alexx Roy, Founder</div>
-  </div>
-</footer>
-
+<div class="section-head"><div><div class="eyebrow">FINISH LINE</div><h2>Session Complete</h2></div><p>Complete the practice, share the work manually, then use the skill check to see what you remember.</p></div>
+<div class="complete">
+<div class="status"><strong>Homework</strong><span id="homeworkStatus">In progress</span></div>
+<div class="status"><strong>Homework Sharing</strong><span>Available</span></div>
+<div class="status"><strong>Skill Check</strong><span id="quizStatus">Not started</span></div>
+<div class="status"><strong>Score</strong><span id="finalScore">Not available</span></div>
+</div>
+<div class="layout-w2d2-playbook-5">
+<button class="btn btn-secondary" onclick="document.getElementById('overview').scrollIntoView()">REVIEW SESSION</button>
+<button class="btn btn-primary">CONTINUE TO NEXT SESSION</button>
+</div>
+<aside class="studio-guidance celebrate"><div class="studio-guidance-visual"><div aria-label="Alexx Roy: celebrate" class="studio-avatar celebrate" role="img"></div></div><div class="studio-guidance-copy"><h3>You built something real.</h3><p>Save your finished work. Each completed project makes your portfolio stronger.</p></div></aside></section>
+<aside class="studio-guidance point"><div class="studio-guidance-visual"><img alt="Alexx Roy pointing toward the next step" src="../../assets/avatars/alexx-hero-approved.webp"/></div><div class="studio-guidance-copy"><div class="kicker">YOUR CREATIVE GUIDE</div><h3>Put the plan into practice.</h3><p>Return to the session guide when you are ready to build.</p><a class="btn secondary" href="../../sessions/week-2-day-2/index.html">OPEN SESSION GUIDE →</a></div></aside></main>
+<footer class="studio-site-footer"><div class="container footer-inner"><div><strong>BUILD MY AI MOVIE STUDIO</strong><p>Alexx Roy, Founder of Build My AI Movie Studio</p></div><div>© 2026 AI FilmCraft - All Rights Reserved</div></div></footer>
 <script>
 const sessionData = {
   number: 4,
@@ -455,6 +292,6 @@ document.getElementById("retake").addEventListener("click",()=>{
 renderQuestion();
 updateProgress();
 </script>
-<script src="../../app.js?v=20261005-app-v24"></script>
+
 </body>
 </html>

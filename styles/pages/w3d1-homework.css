@@ -1,0 +1,47 @@
+/* Page styles: homework / w3d1 / block 1 */
+body[data-page-key="w3d1-homework"]{--hw-max:1080px}
+body[data-page-key="w3d1-homework"] .hw-wrap{width:min(var(--hw-max),calc(100% - 40px));margin:auto}
+body[data-page-key="w3d1-homework"] .hw-hero{padding:58px 0 38px}
+body[data-page-key="w3d1-homework"] .hw-kicker{color:var(--bm-orange);font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+body[data-page-key="w3d1-homework"] .hw-hero h1{max-width:900px;margin:12px 0 14px;font-size:clamp(42px,7vw,78px);line-height:.96}
+body[data-page-key="w3d1-homework"] .hw-hero p{max-width:720px;color:var(--bm-muted);font-size:16px;line-height:1.65}
+body[data-page-key="w3d1-homework"] .hw-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+body[data-page-key="w3d1-homework"] .hw-meta span{padding:7px 10px;border:1px solid var(--bm-line);border-radius:999px;color:#bbb;font-size:9px;font-weight:900;letter-spacing:.08em}
+body[data-page-key="w3d1-homework"] .hw-doc{display:flex;justify-content:space-between;gap:20px;align-items:center;margin:8px 0 30px;padding:18px 20px;border:1px solid rgba(255,106,0,.25);border-radius:16px;background:linear-gradient(145deg,rgba(255,106,0,.08),rgba(255,255,255,.02))}
+body[data-page-key="w3d1-homework"] .hw-doc strong{display:block;color:#fff;font-size:14px}
+body[data-page-key="w3d1-homework"] .hw-doc p{margin:4px 0 0;color:#777;font-size:11px}
+body[data-page-key="w3d1-homework"] .hw-doc .btn{white-space:nowrap}
+body[data-page-key="w3d1-homework"] .hw-section{padding:42px 0;border-top:1px solid var(--bm-line-soft)}
+body[data-page-key="w3d1-homework"] .hw-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:18px}
+body[data-page-key="w3d1-homework"] .hw-head h2{margin:0;font-size:clamp(28px,4vw,48px)}
+body[data-page-key="w3d1-homework"] .hw-head p{max-width:470px;margin:0;color:#777;font-size:12px}
+body[data-page-key="w3d1-homework"] .hw-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+body[data-page-key="w3d1-homework"] .hw-card{padding:22px;border:1px solid var(--bm-line);border-radius:16px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012))}
+body[data-page-key="w3d1-homework"] .hw-card .num{color:var(--bm-orange);font-size:10px;font-weight:900;letter-spacing:.15em}
+body[data-page-key="w3d1-homework"] .hw-card h3{margin:9px 0 7px;font-size:20px}
+body[data-page-key="w3d1-homework"] .hw-card p{margin:0;color:#999;font-size:13px;line-height:1.6}
+body[data-page-key="w3d1-homework"] .hw-tip{margin-top:13px;padding:12px 13px;border-left:2px solid var(--bm-orange);background:rgba(255,106,0,.055);color:#c0c0c0;font-size:11px;line-height:1.55}
+body[data-page-key="w3d1-homework"] .hw-checklist{display:grid;gap:7px}
+body[data-page-key="w3d1-homework"] .hw-check{display:flex;gap:12px;align-items:flex-start;padding:13px 14px;border:1px solid var(--bm-line);border-radius:12px;background:rgba(255,255,255,.018);cursor:pointer}
+body[data-page-key="w3d1-homework"] .hw-check input{width:18px;height:18px;flex:0 0 18px;margin-top:2px;accent-color:var(--bm-orange)}
+body[data-page-key="w3d1-homework"] .hw-check span{color:#aaa;font-size:12px;line-height:1.5}
+body[data-page-key="w3d1-homework"] .hw-check:has(input:checked){border-color:rgba(255,106,0,.38);background:rgba(255,106,0,.055)}
+body[data-page-key="w3d1-homework"] .hw-submit{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+body[data-page-key="w3d1-homework"] .hw-field{min-height:150px;padding:16px;border:1px dashed rgba(255,255,255,.18);border-radius:12px;color:#666;font-size:11px}
+body[data-page-key="w3d1-homework"] .hw-final{padding:26px;border:1px solid rgba(255,106,0,.25);border-radius:18px;background:radial-gradient(circle at 90% 10%,rgba(255,106,0,.11),transparent 34%),linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,255,255,.012))}
+body[data-page-key="w3d1-homework"] .hw-final h3{margin:0 0 8px;font-size:24px}
+body[data-page-key="w3d1-homework"] .hw-final p{color:#888;font-size:12px}
+@media(max-width:700px){
+ body[data-page-key="w3d1-homework"] .hw-wrap{width:calc(100% - 24px)}
+ body[data-page-key="w3d1-homework"] .hw-hero{padding:38px 0 26px}
+ body[data-page-key="w3d1-homework"] .hw-grid, body[data-page-key="w3d1-homework"] .hw-submit{grid-template-columns:1fr}
+ body[data-page-key="w3d1-homework"] .hw-head{display:block}
+ body[data-page-key="w3d1-homework"] .hw-head p{margin-top:9px}
+ body[data-page-key="w3d1-homework"] .hw-doc{align-items:flex-start;flex-direction:column}
+ body[data-page-key="w3d1-homework"] .hw-doc .btn{width:100%}
+ body[data-page-key="w3d1-homework"] .hw-section{padding:34px 0}
+}
+
+/* Page styles: homework / w3d1 / block 2 */
+body[data-page-key="w3d1-homework"] .bmai-homework-hero-visual{width:min(900px,100%);height:300px;margin-top:26px;border:1px solid rgba(255,106,0,.24);border-radius:18px;overflow:hidden;background:#090909}body[data-page-key="w3d1-homework"] .bmai-homework-hero-visual img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 48%}@media(max-width:700px){body[data-page-key="w3d1-homework"] .bmai-homework-hero-visual{height:220px;margin-top:20px}}
+

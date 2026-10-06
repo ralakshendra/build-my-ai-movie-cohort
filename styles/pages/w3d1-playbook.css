@@ -1,0 +1,10 @@
+/* Page-specific playbook layout only. */
+/* Cohesive layout utilities migrated from inline attributes. */
+body[data-page-key="w3d1-playbook"] .layout-w3d1-playbook-1{margin-top:20px}
+body[data-page-key="w3d1-playbook"] .layout-w3d1-playbook-2{margin-top:25px}
+body[data-page-key="w3d1-playbook"] .layout-w3d1-playbook-3{color:#aaa}
+body[data-page-key="w3d1-playbook"] .layout-w3d1-playbook-4{color:#aaa;font-size:12px}
+body[data-page-key="w3d1-playbook"] .layout-w3d1-playbook-5{margin-top:14px}
+body[data-page-key="w3d1-playbook"] .layout-w3d1-playbook-6{max-width:580px;margin:16px auto 0}
+body[data-page-key="w3d1-playbook"] .layout-w3d1-playbook-7{margin-top:25px}
+body[data-page-key="w3d1-playbook"] .layout-w3d1-playbook-8{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
