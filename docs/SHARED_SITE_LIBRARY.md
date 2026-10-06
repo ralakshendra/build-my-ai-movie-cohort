@@ -28,3 +28,6 @@ This remains a static website. Release gates are student-experience controls, no
 
 
 Topic illustrations: library/visuals.js owns accessible resource-type variants and mapping; library/visuals.css owns layouts. library/schedule.js visual selects the topic. All resources inherit that key. assets/illustrations contains true SVGs (no embedded raster). scripts/new-session.cjs defaults unspecified future topics to production; scripts/check-site.cjs validates keys, assets and SVG format.
+
+
+Hero preservation rule: Keep the authored character/cinematic hero artwork and its labels on session, playbook and homework pages. Topic vectors supplement library cards and locked previews; the shared renderer must never replace an existing hero panel.

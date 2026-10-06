@@ -58,7 +58,8 @@ function intro(){
  const type=['playbook','homework'].includes(document.body.dataset.pageType)?document.body.dataset.pageType:'session';
  const lock=document.querySelector('.bmai-lock-card');if(lock){if(!lock.querySelector('.studio-topic-figure'))lock.insertAdjacentHTML('afterbegin',html(s,type,false));return;}
  const host=document.querySelector('main>.hero .visual,.studio-session-image,.bmai-session-hero-visual,.bmai-resource-hero-visual,.bmai-playbook-hero-image');
- if(host){host.classList.add('studio-topic-hero-host');host.removeAttribute('aria-label');host.innerHTML=html(s,type,false);return;}
+ // Existing character artwork is authored content: never replace its hero panel.
+ if(host)return;
  const overview=document.querySelector('main #overview');if(overview&&!overview.querySelector('.studio-topic-figure'))overview.insertAdjacentHTML('afterbegin',html(s,type,false));
 }
 window.BMAI_VISUALS={topics,html,library,intro};
