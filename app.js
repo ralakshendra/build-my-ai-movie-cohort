@@ -129,7 +129,7 @@ if(x.session)action='<a class="btn '+(unlocked?"":"secondary")+'" href="'+esc(se
 else action='<span class="lock-label">'+(unlocked?"CONTENT COMING SOON":"CONTENT NOT RELEASED")+'</span>';
 const status=isCurrent?"CURRENT SESSION":!x.session?"UNRELEASED":new Date(x.start).getTime()>now()?"UPCOMING":"AVAILABLE NOW";
 const extra=!unlocked?'<span class="countdown" data-unlock="'+esc(x.start)+'">'+countdown(x.start)+'</span>':"";
-return '<article class="session schedule-row '+(isCurrent?"is-current ":"")+(unlocked?"":"upcoming")+'"><div class="session-rail"><div class="session-number">'+esc(x.week)+'</div><div class="session-date">'+esc(dateRange(x))+'</div></div><div><div class="session-status">'+status+(isNext&&!isCurrent?" · NEXT":"")+'</div><h3>'+esc(x.title)+'</h3><p>'+esc(x.description)+'</p></div><div class="actions">'+action+extra+'</div></article>'
+return '<article class="session schedule-row '+(isCurrent?"is-current ":"")+(unlocked?"":"upcoming")+'"><div class="session-rail">'+window.BMAI_VISUALS.html(x,'session')+'<div class="session-number">'+esc(x.week)+'</div><div class="session-date">'+esc(dateRange(x))+'</div></div><div><div class="session-status">'+status+(isNext&&!isCurrent?" · NEXT":"")+'</div><h3>'+esc(x.title)+'</h3><p>'+esc(x.description)+'</p></div><div class="actions">'+action+extra+'</div></article>'
 }
 function homepage(){
 if(document.body.dataset.pageType!=="home")return;
@@ -252,18 +252,18 @@ window.addEventListener('hashchange',revealReferenceAnchor);
 function ready(){
 applyBrandMark();
 accessibility();
-if(lockPage()){applyPageIdentity();setupMobileHeader();guardLockedLinks();return;}
+if(lockPage()){window.BMAI_VISUALS.intro();applyPageIdentity();setupMobileHeader();guardLockedLinks();return;}
 if(document.body.dataset.pageType==="home"){
  homepage();
  homepageStateId=current()?.id||null;
  setInterval(()=>{
   const id=current()?.id||null;
-  if(id!==homepageStateId){homepage();homepageStateId=id;guardLockedLinks()}
+  if(id!==homepageStateId){homepage();window.BMAI_VISUALS.library();homepageStateId=id;guardLockedLinks()}
   updateHomepageCountdowns();guardLockedLinks();
  },1000)
 }
 try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
-enhanceLongText();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();enhanceAvatarFallbacks();setupScrollControls();guardLockedLinks();revealReferenceAnchor();
+window.BMAI_VISUALS.intro();enhanceLongText();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();enhanceAvatarFallbacks();setupScrollControls();guardLockedLinks();revealReferenceAnchor();
 document.querySelectorAll("a").forEach(a=>{if(a.href===location.href)a.setAttribute("aria-current","page")})
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ready);else ready();

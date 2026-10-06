@@ -12,12 +12,13 @@ Copy this prompt into the next authoring task. Fill the input brief before execu
 - Expected deliverable, acceptance criteria and submission destination: [fill]
 - Official homework Google Doc URL or instruction to create it: [fill]
 - Existing approved reference document/template, if any: [link]
+- Topic visual key: [youtube / short / advertisement / story / production]
 
 Do not invent source facts, prompts, dates, results, or document URLs. Identify missing facts clearly. Keep progress moving on work that does not depend on those missing facts.
 
 ## 1. Inspect the site before writing
 
-Read AGENTS.md, library/schedule.js, library/page-contract.js, the shared style sources, and this guide. Inspect one current session guide and one current playbook for structure, not stale facts. Check existing resource entries before adding tools/prompts. Confirm the approved instructor artwork and asset paths. Never edit sources/.
+Read AGENTS.md, library/schedule.js, library/page-contract.js, library/visuals.js, library/visuals.css, the shared style sources, and this guide. Inspect one current session guide and one current playbook for structure, not stale facts. Check existing resource entries before adding tools/prompts. Confirm the approved instructor artwork and asset paths. Never edit sources/.
 
 ## 2. Define the student result
 
@@ -100,3 +101,8 @@ Inspect screenshots, not just test output. Review at least homepage libraries, o
 ## 10. Deliver a concrete review package
 
 Provide the local preview URL, official homework Doc URL, files changed, validation results and known limitations. List any missing source input or sharing restriction. Explain how the deliverable teaches the stated student outcome. Do not publish, push, merge or deploy until the user authorizes it. After approval, rebuild, verify generated files are current, deploy through the established project workflow and smoke-test the actual hosted URLs.
+
+
+## Topic illustration contract
+
+Assign one session visual key in library/schedule.js. Reuse it across the session guide, playbook, homework card and HTML workspace, current-class banner, teaser and locked preview. The shared renderer handles placement, labels and resource badges. New-session scaffolding accepts visual and defaults to the neutral production illustration. Untitled future sessions use production; do not invent a topic. For a genuinely new subject, add its topic to library/visuals.js and the allowed keys in scripts/new-session.cjs and scripts/check-site.cjs, then create one lightweight, true SVG workflow illustration under assets/illustrations/. Do not embed raster images in SVG. Match orange, charcoal and cream, a 560 × 320 viewBox and the existing stroke style. Include meaningful alt text and a short three-stage workflow label. Preserve the homepage photographic hero and instructor avatars. For Google Docs homework, use the matching topic artwork as a modest cover illustration when authoring, preserving an explicit supplied template; the website renderer does not edit Google Docs. Verify exact topic mapping, keyboard access, mobile sizing and release guards. Run npm run build; it enforces every registered session visual and rebuilds the shared bundle.

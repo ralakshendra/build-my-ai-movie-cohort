@@ -2,21 +2,21 @@
 /* library/schedule.js */
 /* Single schedule for every page. Register new sessions here. */
 window.BMAI_SESSIONS=[
-{id:"week-1-day-2",hero:"assets/week-1-day-2-hero.jpg.webp",week:"WEEK 1 · DAY 2",title:"YouTube Masterclass",number:2,start:"2026-10-04T20:00:00+05:30",end:null,stage:"BLUEPRINT",session:"resources/ai-faceless-youtube-masterclass.html",playbook:"playbook.html",homework:"https://docs.google.com/document/d/1ElXCXzfTup1HubGb0KDTIzqCkbPUBWxXwqm3_HDxFmw/edit?usp=sharing",description:"AI Faceless YouTube Channel Masterclass. Completed foundation session."},
-{id:"week-2-day-1",hero:"assets/week-2-day-1-hero.svg",week:"WEEK 2 · DAY 1",title:"Build Your First AI Movie Short",number:3,start:"2026-10-10T20:00:00+05:30",end:"2026-10-10T22:00:00+05:30",stage:"VISUAL WORLD",session:"sessions/week-2-day-1/index.html",playbook:"sessions/week-2-day-1/playbook.html",homework:"https://docs.google.com/document/d/1zdEzgOX22ghpxgmNN5yQeYLprWsAUX3R7zNxuMmJQwI",description:"Visual mastery, first short production, Filmora editing and channel launch."},
-{id:"week-2-day-2",hero:"assets/week-2-day-2-hero.svg",week:"WEEK 2 · DAY 2",title:"Photorealistic AI Advertisement",number:4,start:"2026-10-11T20:00:00+05:30",end:"2026-10-11T22:00:00+05:30",stage:"MOTION",session:"sessions/week-2-day-2/index.html",playbook:"sessions/week-2-day-2/playbook.html",homeworkPage:"sessions/week-2-day-2/homework.html",homework:"https://docs.google.com/document/d/1jbIb9krXCTVpHprI3tqm9V6tHL-L5Sr1NCFYQ5WHNBA",description:"Create photorealistic product frames, build continuity and turn images into video."},
-{id:"week-3-day-1",hero:"assets/week-3-day-1-hero.jpg",week:"WEEK 3 · DAY 1",title:"Structured Brand Story Pipeline",number:5,start:"2026-10-17T20:00:00+05:30",end:"2026-10-17T22:00:00+05:30",stage:"STORY",session:"sessions/week-3-day-1/index.html",playbook:"sessions/week-3-day-1/playbook.html",homework:"https://docs.google.com/document/d/1C9Txnwd_Fi2gqeHLZnfkGq5lEoqtA6WzqI4aGBCWFL4/edit?usp=sharing",description:"Build the character sheet, visual direction, screenplay and structured shot shortlist before deeper generation."},
-{id:"week-3-day-2",week:"WEEK 3 · DAY 2",title:"Week 3 Day 2 Session",number:6,start:"2026-10-18T20:00:00+05:30",end:"2026-10-18T22:00:00+05:30",stage:"SHOTS",session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-4-day-1",week:"WEEK 4 · DAY 1",title:"Week 4 Day 1 Session",number:7,start:"2026-10-24T20:00:00+05:30",end:"2026-10-24T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-4-day-2",week:"WEEK 4 · DAY 2",title:"Week 4 Day 2 Session",number:8,start:"2026-10-25T20:00:00+05:30",end:"2026-10-25T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-5-day-1",week:"WEEK 5 · DAY 1",title:"Week 5 Day 1 Session",number:9,start:"2026-10-31T20:00:00+05:30",end:"2026-10-31T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-5-day-2",week:"WEEK 5 · DAY 2",title:"Week 5 Day 2 Session",number:10,start:"2026-11-01T20:00:00+05:30",end:"2026-11-01T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-6-day-1",week:"WEEK 6 · DAY 1",title:"Week 6 Day 1 Session",number:11,start:"2026-11-07T20:00:00+05:30",end:"2026-11-07T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-6-day-2",week:"WEEK 6 · DAY 2",title:"Week 6 Day 2 Session",number:12,start:"2026-11-08T20:00:00+05:30",end:"2026-11-08T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-7-day-1",week:"WEEK 7 · DAY 1",title:"Week 7 Day 1 Session",number:13,start:"2026-11-14T20:00:00+05:30",end:"2026-11-14T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-7-day-2",week:"WEEK 7 · DAY 2",title:"Week 7 Day 2 Session",number:14,start:"2026-11-15T20:00:00+05:30",end:"2026-11-15T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-8-day-1",week:"WEEK 8 · DAY 1",title:"Week 8 Day 1 Session",number:15,start:"2026-11-21T20:00:00+05:30",end:"2026-11-21T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
-{id:"week-8-day-2",week:"WEEK 8 · DAY 2",title:"Week 8 Day 2 Session",number:16,start:"2026-11-22T20:00:00+05:30",end:"2026-11-22T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."}
+{id:"week-1-day-2",visual:"youtube",hero:"assets/illustrations/youtube.svg",week:"WEEK 1 · DAY 2",title:"YouTube Masterclass",number:2,start:"2026-10-04T20:00:00+05:30",end:null,stage:"BLUEPRINT",session:"resources/ai-faceless-youtube-masterclass.html",playbook:"playbook.html",homework:"https://docs.google.com/document/d/1ElXCXzfTup1HubGb0KDTIzqCkbPUBWxXwqm3_HDxFmw/edit?usp=sharing",description:"AI Faceless YouTube Channel Masterclass. Completed foundation session."},
+{id:"week-2-day-1",visual:"short",hero:"assets/illustrations/short.svg",week:"WEEK 2 · DAY 1",title:"Build Your First AI Movie Short",number:3,start:"2026-10-10T20:00:00+05:30",end:"2026-10-10T22:00:00+05:30",stage:"VISUAL WORLD",session:"sessions/week-2-day-1/index.html",playbook:"sessions/week-2-day-1/playbook.html",homework:"https://docs.google.com/document/d/1zdEzgOX22ghpxgmNN5yQeYLprWsAUX3R7zNxuMmJQwI",description:"Visual mastery, first short production, Filmora editing and channel launch."},
+{id:"week-2-day-2",visual:"advertisement",hero:"assets/illustrations/advertisement.svg",week:"WEEK 2 · DAY 2",title:"Photorealistic AI Advertisement",number:4,start:"2026-10-11T20:00:00+05:30",end:"2026-10-11T22:00:00+05:30",stage:"MOTION",session:"sessions/week-2-day-2/index.html",playbook:"sessions/week-2-day-2/playbook.html",homeworkPage:"sessions/week-2-day-2/homework.html",homework:"https://docs.google.com/document/d/1jbIb9krXCTVpHprI3tqm9V6tHL-L5Sr1NCFYQ5WHNBA",description:"Create photorealistic product frames, build continuity and turn images into video."},
+{id:"week-3-day-1",visual:"story",hero:"assets/illustrations/story.svg",week:"WEEK 3 · DAY 1",title:"Structured Brand Story Pipeline",number:5,start:"2026-10-17T20:00:00+05:30",end:"2026-10-17T22:00:00+05:30",stage:"STORY",session:"sessions/week-3-day-1/index.html",playbook:"sessions/week-3-day-1/playbook.html",homework:"https://docs.google.com/document/d/1C9Txnwd_Fi2gqeHLZnfkGq5lEoqtA6WzqI4aGBCWFL4/edit?usp=sharing",description:"Build the character sheet, visual direction, screenplay and structured shot shortlist before deeper generation."},
+{id:"week-3-day-2",visual:"production",hero:"assets/illustrations/production.svg",week:"WEEK 3 · DAY 2",title:"Week 3 Day 2 Session",number:6,start:"2026-10-18T20:00:00+05:30",end:"2026-10-18T22:00:00+05:30",stage:"SHOTS",session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
+{id:"week-4-day-1",visual:"production",hero:"assets/illustrations/production.svg",week:"WEEK 4 · DAY 1",title:"Week 4 Day 1 Session",number:7,start:"2026-10-24T20:00:00+05:30",end:"2026-10-24T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
+{id:"week-4-day-2",visual:"production",hero:"assets/illustrations/production.svg",week:"WEEK 4 · DAY 2",title:"Week 4 Day 2 Session",number:8,start:"2026-10-25T20:00:00+05:30",end:"2026-10-25T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
+{id:"week-5-day-1",visual:"production",hero:"assets/illustrations/production.svg",week:"WEEK 5 · DAY 1",title:"Week 5 Day 1 Session",number:9,start:"2026-10-31T20:00:00+05:30",end:"2026-10-31T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
+{id:"week-5-day-2",visual:"production",hero:"assets/illustrations/production.svg",week:"WEEK 5 · DAY 2",title:"Week 5 Day 2 Session",number:10,start:"2026-11-01T20:00:00+05:30",end:"2026-11-01T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
+{id:"week-6-day-1",visual:"production",hero:"assets/illustrations/production.svg",week:"WEEK 6 · DAY 1",title:"Week 6 Day 1 Session",number:11,start:"2026-11-07T20:00:00+05:30",end:"2026-11-07T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
+{id:"week-6-day-2",visual:"production",hero:"assets/illustrations/production.svg",week:"WEEK 6 · DAY 2",title:"Week 6 Day 2 Session",number:12,start:"2026-11-08T20:00:00+05:30",end:"2026-11-08T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
+{id:"week-7-day-1",visual:"production",hero:"assets/illustrations/production.svg",week:"WEEK 7 · DAY 1",title:"Week 7 Day 1 Session",number:13,start:"2026-11-14T20:00:00+05:30",end:"2026-11-14T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
+{id:"week-7-day-2",visual:"production",hero:"assets/illustrations/production.svg",week:"WEEK 7 · DAY 2",title:"Week 7 Day 2 Session",number:14,start:"2026-11-15T20:00:00+05:30",end:"2026-11-15T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
+{id:"week-8-day-1",visual:"production",hero:"assets/illustrations/production.svg",week:"WEEK 8 · DAY 1",title:"Week 8 Day 1 Session",number:15,start:"2026-11-21T20:00:00+05:30",end:"2026-11-21T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."},
+{id:"week-8-day-2",visual:"production",hero:"assets/illustrations/production.svg",week:"WEEK 8 · DAY 2",title:"Week 8 Day 2 Session",number:16,start:"2026-11-22T20:00:00+05:30",end:"2026-11-22T22:00:00+05:30",stage:null,session:null,playbook:null,homework:null,description:"Session materials will appear here when they are released."}
 ];
 
 ;
@@ -30,6 +30,39 @@ window.BMAI=Object.freeze({
  fold:({title,html})=>`<details class="studio-library-fold"><summary><strong>${window.BMAI.escape(title)}</strong></summary><div class="studio-fold-body">${html}</div></details>`
 });
 
+;
+
+/* library/visuals.js */
+/* One visual identity per session, reused across every resource type. */
+(()=>{'use strict';
+const topics={
+youtube:{alt:'Channel research, identity, video thumbnails and a channel launch.',steps:'Research · Identity · Launch'},
+short:{alt:'A camera, storyboard frames and an editing timeline for an AI movie short.',steps:'Frame · Sound · Edit'},
+advertisement:{alt:'A product hero frame between studio lights, ready for image-to-video production.',steps:'Product · Frames · Motion'},
+story:{alt:'A character sheet connects to a screenplay, colour palette and shot planning.',steps:'Character · Script · Shots'},
+production:{alt:'A production clapperboard for an upcoming lesson.',steps:'Your next creative chapter'}
+};
+const root=new URL('../',document.querySelector('script[src*="library/site.js"]').src);
+const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const key=s=>Object.hasOwn(topics,s?.visual)?s.visual:'production';
+const icons={session:'<path d="m9 6 10 6-10 6z"/>',playbook:'<path d="M12 6c-3-2-6-2-9-1v13c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1zM12 6v13"/>',homework:'<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2m-7 7 2 2 4-4m-6 8h8"/>'};
+const labels={session:'SESSION / LEARN',playbook:'PLAYBOOK / FOLLOW THE STEPS',homework:'HOMEWORK / BUILD & SUBMIT'};
+function html(s,type='session',lazy=false){const topic=topics[key(s)];return '<figure class="studio-topic-figure studio-topic-'+type+'" data-topic="'+key(s)+'"><div class="studio-topic-canvas"><img src="'+new URL('assets/illustrations/'+key(s)+'.svg',root).href+'" alt="'+escape(topic.alt)+'" width="560" height="320" '+(lazy?'loading="lazy"':'')+' decoding="async"><span class="studio-topic-kind" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'+(icons[type]||icons.session)+'</svg></span></div><figcaption><span>'+labels[type]+'</span><strong>'+escape(topic.steps)+'</strong></figcaption></figure>';}
+function resolveLink(href){const url=new URL(href,root);return window.BMAI_SESSIONS.find(s=>[s.session,s.playbook,s.homeworkPage].filter(Boolean).some(p=>url.pathname===new URL(p,root).pathname)||(s.homework&&url.hostname==='docs.google.com'&&url.pathname.split('/d/')[1]?.split('/')[0]===new URL(s.homework).pathname.split('/d/')[1]?.split('/')[0]));}
+function library(){
+ document.querySelectorAll('#playbooks article.card,#homework article.card').forEach(card=>{const type=card.closest('#homework')?'homework':'playbook';const s=[...card.querySelectorAll('a[href]')].map(a=>resolveLink(a.href)).find(Boolean);if(!s||card.querySelector('.studio-topic-figure'))return;card.querySelector('.library-card-icon')?.remove();card.insertAdjacentHTML('afterbegin',html(s,type));card.dataset.sessionId=s.id;});
+}
+function intro(){
+ if(document.body.dataset.pageType==='home'){library();return;}
+ const s=window.BMAI_SESSIONS.find(s=>s.id===document.body.dataset.sessionId);if(!s)return;
+ const type=['playbook','homework'].includes(document.body.dataset.pageType)?document.body.dataset.pageType:'session';
+ const lock=document.querySelector('.bmai-lock-card');if(lock){if(!lock.querySelector('.studio-topic-figure'))lock.insertAdjacentHTML('afterbegin',html(s,type,false));return;}
+ const host=document.querySelector('main>.hero .visual,.studio-session-image,.bmai-session-hero-visual,.bmai-resource-hero-visual,.bmai-playbook-hero-image');
+ if(host){host.classList.add('studio-topic-hero-host');host.removeAttribute('aria-label');host.innerHTML=html(s,type,false);return;}
+ const overview=document.querySelector('main #overview');if(overview&&!overview.querySelector('.studio-topic-figure'))overview.insertAdjacentHTML('afterbegin',html(s,type,false));
+}
+window.BMAI_VISUALS={topics,html,library,intro};
+})();
 ;
 
 /* library/lesson-engine.js */
@@ -170,7 +203,7 @@ if(x.session)action='<a class="btn '+(unlocked?"":"secondary")+'" href="'+esc(se
 else action='<span class="lock-label">'+(unlocked?"CONTENT COMING SOON":"CONTENT NOT RELEASED")+'</span>';
 const status=isCurrent?"CURRENT SESSION":!x.session?"UNRELEASED":new Date(x.start).getTime()>now()?"UPCOMING":"AVAILABLE NOW";
 const extra=!unlocked?'<span class="countdown" data-unlock="'+esc(x.start)+'">'+countdown(x.start)+'</span>':"";
-return '<article class="session schedule-row '+(isCurrent?"is-current ":"")+(unlocked?"":"upcoming")+'"><div class="session-rail"><div class="session-number">'+esc(x.week)+'</div><div class="session-date">'+esc(dateRange(x))+'</div></div><div><div class="session-status">'+status+(isNext&&!isCurrent?" · NEXT":"")+'</div><h3>'+esc(x.title)+'</h3><p>'+esc(x.description)+'</p></div><div class="actions">'+action+extra+'</div></article>'
+return '<article class="session schedule-row '+(isCurrent?"is-current ":"")+(unlocked?"":"upcoming")+'"><div class="session-rail">'+window.BMAI_VISUALS.html(x,'session')+'<div class="session-number">'+esc(x.week)+'</div><div class="session-date">'+esc(dateRange(x))+'</div></div><div><div class="session-status">'+status+(isNext&&!isCurrent?" · NEXT":"")+'</div><h3>'+esc(x.title)+'</h3><p>'+esc(x.description)+'</p></div><div class="actions">'+action+extra+'</div></article>'
 }
 function homepage(){
 if(document.body.dataset.pageType!=="home")return;
@@ -293,18 +326,18 @@ window.addEventListener('hashchange',revealReferenceAnchor);
 function ready(){
 applyBrandMark();
 accessibility();
-if(lockPage()){applyPageIdentity();setupMobileHeader();guardLockedLinks();return;}
+if(lockPage()){window.BMAI_VISUALS.intro();applyPageIdentity();setupMobileHeader();guardLockedLinks();return;}
 if(document.body.dataset.pageType==="home"){
  homepage();
  homepageStateId=current()?.id||null;
  setInterval(()=>{
   const id=current()?.id||null;
-  if(id!==homepageStateId){homepage();homepageStateId=id;guardLockedLinks()}
+  if(id!==homepageStateId){homepage();window.BMAI_VISUALS.library();homepageStateId=id;guardLockedLinks()}
   updateHomepageCountdowns();guardLockedLinks();
  },1000)
 }
 try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
-enhanceLongText();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();enhanceAvatarFallbacks();setupScrollControls();guardLockedLinks();revealReferenceAnchor();
+window.BMAI_VISUALS.intro();enhanceLongText();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();enhanceAvatarFallbacks();setupScrollControls();guardLockedLinks();revealReferenceAnchor();
 document.querySelectorAll("a").forEach(a=>{if(a.href===location.href)a.setAttribute("aria-current","page")})
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ready);else ready();

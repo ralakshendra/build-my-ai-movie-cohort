@@ -1,0 +1,24 @@
+/* Shared topic illustrations: consistent, intrinsic sizing on every resource. */
+.studio-topic-figure{margin:0 0 20px!important;padding:0!important;border:1px solid #393024;border-radius:14px;overflow:hidden;background:#11110f;min-width:0;max-width:100%}
+.studio-topic-canvas{position:relative}
+html body[data-page-type] .studio-topic-figure .studio-topic-canvas>img{min-height:0!important;max-height:none!important;position:static!important;display:block!important;inset:auto!important;width:100%!important;height:auto!important;aspect-ratio:7/4!important;object-fit:contain!important;filter:none!important}
+.studio-topic-kind{position:absolute;right:14px;bottom:12px;width:38px;height:38px;display:grid;place-items:center;border:1px solid #75401d;border-radius:11px;background:#20150e;color:#ff9a3d}
+.studio-topic-kind svg{width:22px;height:22px}
+.studio-topic-figure figcaption{display:grid;gap:8px;padding:16px 18px;border-top:1px solid #393024}
+.studio-topic-figure figcaption span{font:700 9px/1.4 system-ui,sans-serif;letter-spacing:.1em;color:#ff9a3d}
+.studio-topic-figure figcaption strong{font:600 13px/1.5 system-ui,sans-serif;color:#d9cbb4;overflow-wrap:anywhere}
+.studio-topic-homework .studio-topic-kind{border-color:#8b6c40;color:#ffe0aa}
+.studio-topic-playbook .studio-topic-kind{border-style:dashed}
+.studio-topic-hero-host{height:auto!important;min-height:0!important;aspect-ratio:auto!important;padding:0!important;background:#11110f!important;border:0!important;display:block!important}
+.studio-topic-hero-host:before,.studio-topic-hero-host:after{display:none!important}
+.studio-topic-hero-host>.studio-topic-figure{margin:0!important}
+body[data-page-type=home] .session.schedule-row{grid-template-columns:200px minmax(0,1fr) auto}
+.session-rail>.studio-topic-figure{margin-bottom:14px!important}
+.session-rail .studio-topic-figure figcaption{padding:10px 12px}
+.session-rail .studio-topic-figure figcaption strong{font-size:11px}
+.session-rail .studio-topic-kind{width:28px;height:28px;right:8px;bottom:8px;border-radius:8px}
+.session-rail .studio-topic-kind svg{width:17px;height:17px}
+.bmai-lock-card>.studio-topic-figure{max-width:440px;margin:0 auto 24px!important}
+.studio-current-visual>img[src*="illustrations/"]{object-fit:contain!important;object-position:center top}
+.studio-teaser-image img[src*="illustrations/"]{object-fit:contain!important;background:#11110f}
+@media(max-width:700px){body[data-page-type=home] .session.schedule-row{grid-template-columns:1fr}.session-rail>.studio-topic-figure{max-width:100%}.studio-topic-figure figcaption{padding:14px 16px}.studio-topic-hero-host{order:-1}.studio-topic-kind{right:12px;bottom:12px}.bmai-lock-card>.studio-topic-figure{margin-bottom:20px!important}}

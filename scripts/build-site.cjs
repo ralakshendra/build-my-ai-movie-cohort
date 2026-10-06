@@ -1,7 +1,7 @@
 const fs=require('fs'),path=require('path');const root=path.resolve(__dirname,'..');
 const read=p=>fs.readFileSync(path.join(root,p),'utf8');
-fs.writeFileSync(path.join(root,'library/components.css'),'/* Generated shared component library. */\n'+(read('studio.css')+'\n'+read('avatar-motion.css')).replace(/url\(['"]?assets\//g,"url('../assets/"));
-fs.writeFileSync(path.join(root,'library/site.js'),['library/schedule.js','library/page-contract.js','library/lesson-engine.js','app.js','session-ui.js','avatar-motion.js','resource-library.js'].map(p=>'\n/* '+p+' */\n'+read(p)).join('\n;\n'));
+fs.writeFileSync(path.join(root,'library/components.css'),'/* Generated shared component library. */\n'+(read('studio.css')+'\n'+read('avatar-motion.css')+'\n'+read('library/visuals.css')).replace(/url\(['"]?assets\//g,"url('../assets/"));
+fs.writeFileSync(path.join(root,'library/site.js'),['library/schedule.js','library/page-contract.js','library/visuals.js','library/lesson-engine.js','app.js','session-ui.js','avatar-motion.js','resource-library.js'].map(p=>'\n/* '+p+' */\n'+read(p)).join('\n;\n'));
 console.log('Shared library built: schedule, page contract, navigation, release gates, avatars, resources.');
 
 const crypto=require('crypto');const versions={};for(const file of ['library/site.js','library/components.css','library/playbook.css'])versions[file]=crypto.createHash('sha256').update(read(file)).digest('hex').slice(0,12);

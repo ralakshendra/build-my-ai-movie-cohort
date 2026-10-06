@@ -25,3 +25,6 @@ Run npm run build after edits. It rebuilds resources and shared outputs, then en
 Use the authoring prompt in FUTURE_PAGE_CREATION_PROMPT.md. Update existing page content deliberately; the scaffold is for net-new lessons. A guide explains the workflow; a playbook provides practice; the Google Doc captures the student's work. All three share one outcome and one schedule.
 
 This remains a static website. Release gates are student-experience controls, not server-side authorization. Google Doc sharing is controlled in Google Drive.
+
+
+Topic illustrations: library/visuals.js owns accessible resource-type variants and mapping; library/visuals.css owns layouts. library/schedule.js visual selects the topic. All resources inherit that key. assets/illustrations contains true SVGs (no embedded raster). scripts/new-session.cjs defaults unspecified future topics to production; scripts/check-site.cjs validates keys, assets and SVG format.

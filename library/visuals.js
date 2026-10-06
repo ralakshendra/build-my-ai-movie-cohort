@@ -1,0 +1,30 @@
+/* One visual identity per session, reused across every resource type. */
+(()=>{'use strict';
+const topics={
+youtube:{alt:'Channel research, identity, video thumbnails and a channel launch.',steps:'Research · Identity · Launch'},
+short:{alt:'A camera, storyboard frames and an editing timeline for an AI movie short.',steps:'Frame · Sound · Edit'},
+advertisement:{alt:'A product hero frame between studio lights, ready for image-to-video production.',steps:'Product · Frames · Motion'},
+story:{alt:'A character sheet connects to a screenplay, colour palette and shot planning.',steps:'Character · Script · Shots'},
+production:{alt:'A production clapperboard for an upcoming lesson.',steps:'Your next creative chapter'}
+};
+const root=new URL('../',document.querySelector('script[src*="library/site.js"]').src);
+const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const key=s=>Object.hasOwn(topics,s?.visual)?s.visual:'production';
+const icons={session:'<path d="m9 6 10 6-10 6z"/>',playbook:'<path d="M12 6c-3-2-6-2-9-1v13c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1zM12 6v13"/>',homework:'<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2m-7 7 2 2 4-4m-6 8h8"/>'};
+const labels={session:'SESSION / LEARN',playbook:'PLAYBOOK / FOLLOW THE STEPS',homework:'HOMEWORK / BUILD & SUBMIT'};
+function html(s,type='session',lazy=false){const topic=topics[key(s)];return '<figure class="studio-topic-figure studio-topic-'+type+'" data-topic="'+key(s)+'"><div class="studio-topic-canvas"><img src="'+new URL('assets/illustrations/'+key(s)+'.svg',root).href+'" alt="'+escape(topic.alt)+'" width="560" height="320" '+(lazy?'loading="lazy"':'')+' decoding="async"><span class="studio-topic-kind" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'+(icons[type]||icons.session)+'</svg></span></div><figcaption><span>'+labels[type]+'</span><strong>'+escape(topic.steps)+'</strong></figcaption></figure>';}
+function resolveLink(href){const url=new URL(href,root);return window.BMAI_SESSIONS.find(s=>[s.session,s.playbook,s.homeworkPage].filter(Boolean).some(p=>url.pathname===new URL(p,root).pathname)||(s.homework&&url.hostname==='docs.google.com'&&url.pathname.split('/d/')[1]?.split('/')[0]===new URL(s.homework).pathname.split('/d/')[1]?.split('/')[0]));}
+function library(){
+ document.querySelectorAll('#playbooks article.card,#homework article.card').forEach(card=>{const type=card.closest('#homework')?'homework':'playbook';const s=[...card.querySelectorAll('a[href]')].map(a=>resolveLink(a.href)).find(Boolean);if(!s||card.querySelector('.studio-topic-figure'))return;card.querySelector('.library-card-icon')?.remove();card.insertAdjacentHTML('afterbegin',html(s,type));card.dataset.sessionId=s.id;});
+}
+function intro(){
+ if(document.body.dataset.pageType==='home'){library();return;}
+ const s=window.BMAI_SESSIONS.find(s=>s.id===document.body.dataset.sessionId);if(!s)return;
+ const type=['playbook','homework'].includes(document.body.dataset.pageType)?document.body.dataset.pageType:'session';
+ const lock=document.querySelector('.bmai-lock-card');if(lock){if(!lock.querySelector('.studio-topic-figure'))lock.insertAdjacentHTML('afterbegin',html(s,type,false));return;}
+ const host=document.querySelector('main>.hero .visual,.studio-session-image,.bmai-session-hero-visual,.bmai-resource-hero-visual,.bmai-playbook-hero-image');
+ if(host){host.classList.add('studio-topic-hero-host');host.removeAttribute('aria-label');host.innerHTML=html(s,type,false);return;}
+ const overview=document.querySelector('main #overview');if(overview&&!overview.querySelector('.studio-topic-figure'))overview.insertAdjacentHTML('afterbegin',html(s,type,false));
+}
+window.BMAI_VISUALS={topics,html,library,intro};
+})();
