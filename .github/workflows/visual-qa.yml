@@ -50,7 +50,7 @@ jobs:
         run: npm run qa:cohesion && npm run qa:release
 
       - name: Upload screenshots and report
-        if: always()
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: build-my-ai-movie-visual-qa
@@ -60,4 +60,4 @@ jobs:
             test-results/
             /tmp/bmai-server.log
           if-no-files-found: ignore
-
+          retention-days: 7
