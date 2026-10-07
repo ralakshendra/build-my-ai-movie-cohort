@@ -2,6 +2,21 @@ const fs=require('fs'),path=require('path'),vm=require('vm');const root=path.res
 
 for(const file of files){const rel=path.relative(root,file).replaceAll('\\','/'),html=fs.readFileSync(file,'utf8');for(const attr of ['data-page-id','data-page-key','data-page-type'])check(html.includes(attr+'='),rel+': missing '+attr);for(const token of ['BUILD MY AI MOVIE STUDIO','Alexx Roy, Founder of Build My AI Movie Studio','© 2026 AI FilmCraft - All Rights Reserved.','bmai-global-header','bmai-session-brand','bmai-header-home','bmai-skip-link','library/components.css','library/site.js','brand.css'])check(html.includes(token),rel+': missing shared '+token);if(rel!=='index.html')check(html.includes('aria-label=\"Back to Home\"'),rel+': Back to Home control must use the shared label');check(!/<style[\s>]/i.test(html),rel+': inline stylesheet is forbidden');check(!/<script[^>]+src="[^\"]*(?:app|avatar-motion|session-ui|resource-library)\.js/i.test(html),rel+': use the shared bundle');const session=html.match(/data-session-id="([^\"]+)"/)?.[1];if(!['index.html','404.html'].includes(rel))check(registry.some(s=>s.id===session),rel+': unregistered session');const ids=[...html.matchAll(/\bid="([^\"]+)"/g)].map(m=>m[1]);check(new Set(ids).size===ids.length,rel+': duplicate DOM ids');for(const match of html.matchAll(/\b(?:src|href)="([^\"]+)"/g)){const url=match[1].replace(/&amp;/g,'&');if(/^(?:https?:|mailto:|data:|#)/.test(url))continue;const target=url.split(/[?#]/)[0];if(target)check(fs.existsSync(path.resolve(path.dirname(file),target)),rel+': missing local asset/link '+url);}const inline=(html.match(/\bstyle="/g)||[]).length;check(inline===0,rel+': inline layout attributes are forbidden');}
 
+const homeworkId=url=>url?.match(/^https:\/\/docs\.google\.com\/document\/d\/([^/?#]+)/)?.[1];
+const scheduledHomework=new Set(registry.map(s=>homeworkId(s.homework)).filter(Boolean));
+for(const file of files){
+ const rel=path.relative(root,file).replaceAll('\\','/'),html=fs.readFileSync(file,'utf8');
+ const home=html.match(/<a[^>]*class="[^"]*bmai-header-home[^"]*"[^>]*>([\s\S]*?)<\/a>/);
+ check(home?.[1]?.includes('<svg'),rel+': Back to Home control must use the home icon');
+ const sessionId=html.match(/data-session-id="([^"]+)"/)?.[1];
+ const expected=homeworkId(registry.find(s=>s.id===sessionId)?.homework);
+ for(const match of html.matchAll(/href="(https:\/\/docs\.google\.com\/document\/d\/[^"]+)"/g)){
+  const actual=homeworkId(match[1]);
+  if(expected)check(actual===expected,rel+': homework link differs from the official '+sessionId+' document');
+  else if(rel==='index.html')check(scheduledHomework.has(actual),rel+': homework link is not in the release schedule');
+ }
+}
+
 const unique=new Set();for(const session of registry){check(['youtube','short','advertisement','story','production'].includes(session.visual),'Missing/invalid topic visual '+session.id);check(session.hero==='assets/illustrations/'+session.visual+'.svg','Use the registered topic illustration '+session.id);check(fs.existsSync(path.join(root,session.hero||'')),'Missing topic SVG '+session.id);check(!unique.has(session.id),'Duplicate schedule id '+session.id);unique.add(session.id);check(Number.isFinite(Date.parse(session.start)),'Invalid release time '+session.id);check(/[+-]\d\d:\d\d$/.test(session.start),'Release timestamp needs explicit timezone '+session.id);for(const field of ['session','playbook','homeworkPage'])if(session[field])check(fs.existsSync(path.join(root,session[field])),'Missing registered '+field+' '+session.id);}
 
 for(const key of ['youtube','short','advertisement','story','production']){const svg=fs.readFileSync(path.join(root,'assets/illustrations',key+'.svg'),'utf8');check(!/<image\b|data:image/i.test(svg),'Topic artwork must be true vectors: '+key);}for(const p of ['library/site.js','library/components.css','library/visuals.js','library/visuals.css'])check(fs.existsSync(path.join(root,p)),'Missing bundle '+p);
