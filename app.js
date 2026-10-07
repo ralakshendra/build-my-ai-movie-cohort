@@ -6,7 +6,7 @@ const S=window.BMAI_SESSIONS;
 
 
 
-function isUnlocked(x){return !!x&&new Date(x.start).getTime()<=now()}
+function isUnlocked(x){return !!x&&(window.BMAI_LOCKS_PAUSED_FOR_REVIEW||new Date(x.start).getTime()<=now())}
 function sessionIdFromHref(href){
  try{
   const u=new URL(href,location.href);
@@ -127,12 +127,13 @@ const cur=current(),unlocked=isUnlocked(x),isCurrent=cur&&cur.id===x.id,isNext=n
 let action;
 if(x.session)action='<a class="btn '+(unlocked?"":"secondary")+'" href="'+esc(sessionUrl(x))+'">'+(unlocked?"OPEN SESSION":"VIEW LOCKED PAGE")+'</a>';
 else action='<span class="lock-label">'+(unlocked?"CONTENT COMING SOON":"CONTENT NOT RELEASED")+'</span>';
-const status=isCurrent?"CURRENT SESSION":!x.session?"UNRELEASED":new Date(x.start).getTime()>now()?"UPCOMING":"AVAILABLE NOW";
+const status=isCurrent?"CURRENT SESSION":!x.session?"UNRELEASED":new Date(x.start).getTime()>now()?(unlocked?"REVIEW OPEN":"UPCOMING"):"AVAILABLE NOW";
 const extra=!unlocked?'<span class="countdown" data-unlock="'+esc(x.start)+'">'+countdown(x.start)+'</span>':"";
 return '<article class="session schedule-row '+(isCurrent?"is-current ":"")+(unlocked?"":"upcoming")+'"><div class="session-rail">'+window.BMAI_VISUALS.html(x,'session')+'<div class="session-number">'+esc(x.week)+'</div><div class="session-date">'+esc(dateRange(x))+'</div></div><div><div class="session-status">'+status+(isNext&&!isCurrent?" · NEXT":"")+'</div><h3>'+esc(x.title)+'</h3><p>'+esc(x.description)+'</p></div><div class="actions">'+action+extra+'</div></article>'
 }
 function homepage(){
 if(document.body.dataset.pageType!=="home")return;
+const reviewBanner=document.getElementById("bmaiReviewBanner");if(reviewBanner)reviewBanner.hidden=!window.BMAI_LOCKS_PAUSED_FOR_REVIEW;
 const cur=current(),nxt=next();
 const title=document.querySelector(".bmai-studio-card h2"),desc=document.querySelector(".bmai-studio-card p.muted"),links=document.querySelectorAll(".bmai-studio-card .btn");
 if(cur&&title){
@@ -148,8 +149,8 @@ if(links[1]){if(cur.playbook){links[1].href=basePath()+cur.playbook;links[1].sty
 const stageWrap=document.querySelector(".bmai-production-pipeline");
 if(stageWrap){stageWrap.innerHTML=stages.map((s,i)=>'<div class="stage '+(cur&&cur.stage===s?"active":"")+'">'+String(i+1).padStart(2,"0")+'<br>'+s+'</div>').join("")}
 const sched=document.getElementById("bmaiSchedule");
-const available=S.filter(x=>x.session&&new Date(x.start).getTime()<=now());
-const upcoming=S.filter(x=>new Date(x.start).getTime()>now()&&(x.session||x.id===nxt?.id));
+const available=S.filter(x=>x.session&&isUnlocked(x));
+const upcoming=S.filter(x=>new Date(x.start).getTime()>now()&&(x.session||x.id===nxt?.id)&&!isUnlocked(x));
 const unreleased=S.filter(x=>!x.session&&x.id!==nxt?.id);
 if(sched)sched.innerHTML=available.map(renderCard).join("");
 const upcomingList=document.getElementById("bmaiUpcomingList");if(upcomingList)upcomingList.innerHTML=upcoming.map(renderCard).join("");
@@ -160,7 +161,16 @@ const unreleasedCount=document.getElementById("bmaiUnreleasedCount");if(unreleas
 const upcomingDescription=document.querySelector('#bmaiUpcomingSessions summary small');if(upcomingDescription)upcomingDescription.textContent='Unlocks automatically at each scheduled start time.';
 const cd=[...document.querySelectorAll(".countdown")];cd.forEach(el=>el.textContent=countdown(el.dataset.unlock));
 const nextBox=document.getElementById("bmaiNextSession");
-if(nextBox){if(nxt){const outcomes={"week-2-day-1":"You have the idea. Next, bring it to life with your first AI movie short: generate a shot, build the sound, and make your first cut.","week-2-day-2":"Make an ad that feels real. Build a consistent product world, then turn your strongest frames into controlled motion.","week-3-day-1":"Think like a director. Build a character, a visual world, and a story blueprint before your next generation."};nextBox.className="studio-teaser-card";nextBox.innerHTML='<div class="studio-teaser-copy"><div class="kicker">NEXT UP / '+esc(nxt.week)+'</div><h2>'+esc(nxt.title)+'</h2><p>'+esc(outcomes[nxt.id]||"Your next creative challenge is on its way. Bring what you have built so far and get ready to take the next step.")+'</p><div class="studio-teaser-date">'+esc(dateRange(nxt))+'</div><div class="studio-teaser-lock"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>CLASS LOCKED · OPENS IN <b data-teaser-countdown>'+esc(countdown(nxt.start))+'</b></span></div><small>Your next chapter unlocks automatically. Get your current project ready.</small></div>'+(nxt.hero?'<div class="studio-teaser-image"><img src="'+basePath()+esc(nxt.hero)+'" alt="'+esc(nxt.title)+' — next class preview" loading="lazy"></div>':'');}else nextBox.closest('section').hidden=true;}}
+if(nextBox){
+ if(nxt){
+  const outcomes={"week-2-day-1":"You have the idea. Next, bring it to life with your first AI movie short: generate a shot, build the sound, and make your first cut.","week-2-day-2":"Make an ad that feels real. Build a consistent product world, then turn your strongest frames into controlled motion.","week-3-day-1":"Think like a director. Build a character, a visual world, and a story blueprint before your next generation."};
+  const reviewOpen=window.BMAI_LOCKS_PAUSED_FOR_REVIEW&&!!nxt.session;
+  const access=reviewOpen?'<div class="studio-teaser-lock"><span>REVIEW ACCESS OPEN</span></div><div class="studio-teaser-actions"><a class="btn" href="'+esc(sessionUrl(nxt))+'">OPEN SESSION</a>'+(nxt.playbook?'<a class="btn secondary" href="'+basePath()+esc(nxt.playbook)+'">OPEN PLAYBOOK</a>':'')+'</div>':'<div class="studio-teaser-lock"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>CLASS LOCKED · OPENS IN <b data-teaser-countdown>'+esc(countdown(nxt.start))+'</b></span></div><small>Your next chapter unlocks automatically. Get your current project ready.</small>';
+  nextBox.className="studio-teaser-card";
+  nextBox.innerHTML='<div class="studio-teaser-copy"><div class="kicker">NEXT UP / '+esc(nxt.week)+'</div><h2>'+esc(nxt.title)+'</h2><p>'+esc(outcomes[nxt.id]||nxt.description||"Your next creative challenge is on its way. Bring what you have built so far and get ready to take the next step.")+'</p><div class="studio-teaser-date">'+esc(dateRange(nxt))+'</div>'+access+'</div>'+(nxt.hero?'<div class="studio-teaser-image"><img src="'+basePath()+esc(nxt.hero)+'" alt="'+esc(nxt.title)+' — next class preview" loading="lazy"></div>':'');
+ }else nextBox.closest('section').hidden=true;
+}
+}
 
 let homepageStateId=null;
 function updateHomepageCountdowns(){
