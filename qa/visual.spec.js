@@ -13,6 +13,12 @@ const pages = [
   ['w2d2-homework', 'sessions/week-2-day-2/homework.html'],
   ['w3d1', 'sessions/week-3-day-1/index.html'],
   ['w3d1-playbook', 'sessions/week-3-day-1/playbook.html'],
+  ['w3d2', 'sessions/week-3-day-2/index.html'],
+  ['w3d2-playbook', 'sessions/week-3-day-2/playbook.html'],
+  ['w4d1', 'sessions/week-4-day-1/index.html'],
+  ['w4d1-playbook', 'sessions/week-4-day-1/playbook.html'],
+  ['w4d2', 'sessions/week-4-day-2/index.html'],
+  ['w4d2-playbook', 'sessions/week-4-day-2/playbook.html'],
 ];
 
 async function auditPage(page, label, viewportWidth) {
@@ -130,6 +136,12 @@ test('future session materials stay locked before release', async ({browser}) =>
     'sessions/week-2-day-2/homework.html',
     'sessions/week-3-day-1/index.html',
     'sessions/week-3-day-1/playbook.html',
+    'sessions/week-3-day-2/index.html',
+    'sessions/week-3-day-2/playbook.html',
+    'sessions/week-4-day-1/index.html',
+    'sessions/week-4-day-1/playbook.html',
+    'sessions/week-4-day-2/index.html',
+    'sessions/week-4-day-2/playbook.html',
   ];
   const context = await browser.newContext();
   for (const path of futurePaths) {

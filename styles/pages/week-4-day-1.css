@@ -1,0 +1,159 @@
+/* Week 4 Day 1 layout. Shared branding, navigation, and avatar styles stay in the site library. */
+body[data-session-id="week-4-day-1"]{
+  --bg:#050505;--panel:#101010;--panel2:#161616;--text:#f7f7f7;--muted:#aaa;--line:rgba(255,255,255,.12);
+  --orange:#ff6a00;--orange2:#ff9a3d;--max:1180px;--radius:18px;--avatar-frame-aspect:1;
+}
+body[data-session-id="week-4-day-1"]{margin:0;background:radial-gradient(circle at 85% 0%,rgba(255,106,0,.12),transparent 28rem),linear-gradient(180deg,#050505,#090909 55%,#050505);color:var(--text);font-family:Inter,Manrope,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+body[data-session-id="week-4-day-1"] a{color:inherit;text-decoration:none}
+body[data-session-id="week-4-day-1"] button,body[data-session-id="week-4-day-1"] input{font:inherit}
+body[data-session-id="week-4-day-1"] img{max-width:100%}
+body[data-session-id="week-4-day-1"] .wrap{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+body[data-session-id="week-4-day-1"] .eyebrow{color:var(--orange);font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+body[data-session-id="week-4-day-1"] h1,body[data-session-id="week-4-day-1"] h2,body[data-session-id="week-4-day-1"] h3{margin:0;color:#fff;line-height:1.08;letter-spacing:-.045em}
+body[data-session-id="week-4-day-1"] h1{font-size:clamp(44px,6vw,82px)}
+body[data-session-id="week-4-day-1"] h2{font-size:clamp(30px,4vw,52px)}
+body[data-session-id="week-4-day-1"] h3{font-size:22px}
+body[data-session-id="week-4-day-1"] h1 em{font-style:normal;color:var(--orange)}
+body[data-session-id="week-4-day-1"] p{margin:0}
+body[data-session-id="week-4-day-1"] .lead{font-size:clamp(18px,2vw,24px);line-height:1.45;color:#d3d3d3}
+body[data-session-id="week-4-day-1"] .sub{font-size:17px;color:var(--muted);max-width:820px;margin-top:12px}
+body[data-session-id="week-4-day-1"] .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+body[data-session-id="week-4-day-1"] .session-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,.95fr);gap:48px;align-items:center;padding-block:56px 36px}
+body[data-session-id="week-4-day-1"] .hero-copy{min-width:0}
+body[data-session-id="week-4-day-1"] .hero-copy .eyebrow{margin-bottom:16px}
+body[data-session-id="week-4-day-1"] .hero-copy .lead{margin-top:18px;max-width:650px}
+body[data-session-id="week-4-day-1"] .hero-visual{position:relative;aspect-ratio:16/9;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#111;box-shadow:0 25px 90px rgba(0,0,0,.45)}
+body[data-session-id="week-4-day-1"] .hero-visual>img{width:100%;height:100%;object-fit:cover;display:block}
+body[data-session-id="week-4-day-1"] .hero-caption{position:absolute;left:16px;right:16px;bottom:16px;display:flex;justify-content:space-between;gap:12px;align-items:center;padding:10px 12px;background:rgba(5,5,5,.75);border:1px solid rgba(255,255,255,.12);border-radius:10px;backdrop-filter:blur(10px);font-size:10px;letter-spacing:.09em}
+body[data-session-id="week-4-day-1"] .hero-caption span{color:var(--orange)}
+body[data-session-id="week-4-day-1"] .meta-strip{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.025);margin-bottom:24px}
+body[data-session-id="week-4-day-1"] .meta-strip div{padding:17px 20px;border-right:1px solid var(--line);display:grid;gap:3px}
+body[data-session-id="week-4-day-1"] .meta-strip div:last-child{border-right:0}
+body[data-session-id="week-4-day-1"] .meta-strip b{font-size:14px}
+body[data-session-id="week-4-day-1"] .meta-strip span{font-size:10px;color:#8e8e8e;text-transform:uppercase;letter-spacing:.1em}
+body[data-session-id="week-4-day-1"] .section-nav{display:flex;gap:8px;overflow:auto;padding-block:18px 8px;scrollbar-width:none}
+body[data-session-id="week-4-day-1"] .section-nav::-webkit-scrollbar{display:none}
+body[data-session-id="week-4-day-1"] .section-nav a{flex:none;padding:9px 12px;border:1px solid var(--line);border-radius:999px;font-size:10px;font-weight:800;color:#bbb}
+body[data-session-id="week-4-day-1"] .section-nav a:hover{border-color:rgba(255,106,0,.5);color:var(--orange2)}
+body[data-session-id="week-4-day-1"] .section{padding:72px 0;border-top:1px solid rgba(255,255,255,.07)}
+body[data-session-id="week-4-day-1"] .section .eyebrow+ h2{margin-top:9px}
+body[data-session-id="week-4-day-1"] .pipeline{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:28px}
+body[data-session-id="week-4-day-1"] .pipeline.seven{grid-template-columns:repeat(7,1fr)}
+body[data-session-id="week-4-day-1"] .pipeline div{padding:18px 14px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));min-height:108px;display:grid;align-content:space-between}
+body[data-session-id="week-4-day-1"] .pipeline b{color:var(--orange);font-size:13px}
+body[data-session-id="week-4-day-1"] .pipeline span{font-weight:750;font-size:13px;line-height:1.25}
+body[data-session-id="week-4-day-1"] .rule-card,body[data-session-id="week-4-day-1"] .mini-note{margin-top:20px;padding:16px 18px;border-left:3px solid var(--orange);background:rgba(255,106,0,.07);border-radius:0 12px 12px 0;color:#cfcfcf}
+body[data-session-id="week-4-day-1"] .rule-card strong,body[data-session-id="week-4-day-1"] .mini-note b{color:#fff}
+body[data-session-id="week-4-day-1"] .step-heading{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:start}
+body[data-session-id="week-4-day-1"] .step-heading>span{margin-top:5px;padding:8px 10px;border-radius:8px;background:var(--orange);color:#090909;font-size:10px;font-weight:900;letter-spacing:.1em}
+body[data-session-id="week-4-day-1"] .step-heading .sub{margin-top:10px}
+body[data-session-id="week-4-day-1"] .guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:28px}
+body[data-session-id="week-4-day-1"] .guide-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+body[data-session-id="week-4-day-1"] .guide-card{padding:24px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));box-shadow:0 18px 50px rgba(0,0,0,.18)}
+body[data-session-id="week-4-day-1"] .guide-card h3{font-size:20px;letter-spacing:-.025em;margin-bottom:14px}
+body[data-session-id="week-4-day-1"] .guide-card p{color:#bbb}
+body[data-session-id="week-4-day-1"] .guide-card ol,body[data-session-id="week-4-day-1"] .guide-card ul{padding-left:20px;margin:0;color:#c7c7c7}
+body[data-session-id="week-4-day-1"] .guide-card li+li{margin-top:8px}
+body[data-session-id="week-4-day-1"] .review-list{list-style:none!important;padding-left:0!important}
+body[data-session-id="week-4-day-1"] .review-list li{position:relative;padding-left:21px}
+body[data-session-id="week-4-day-1"] .review-list li:before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:900}
+body[data-session-id="week-4-day-1"] .fold{margin-top:16px;border:1px solid var(--line);border-radius:14px;background:#0d0d0d;overflow:hidden}
+body[data-session-id="week-4-day-1"] .fold summary{cursor:pointer;padding:16px 18px;font-weight:800;color:#fff;list-style:none}
+body[data-session-id="week-4-day-1"] .fold summary::-webkit-details-marker{display:none}
+body[data-session-id="week-4-day-1"] .fold summary:after{content:"+";float:right;color:var(--orange)}
+body[data-session-id="week-4-day-1"] .fold[open] summary:after{content:"−"}
+body[data-session-id="week-4-day-1"] .fold>div{padding:0 18px 18px;color:#aaa}
+body[data-session-id="week-4-day-1"] .failure-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:26px}
+body[data-session-id="week-4-day-1"] .failure-grid article{padding:20px;border:1px solid var(--line);border-radius:14px;background:#0e0e0e}
+body[data-session-id="week-4-day-1"] .failure-grid b{display:block;color:var(--orange2);margin-bottom:8px}
+body[data-session-id="week-4-day-1"] .failure-grid p{color:#aaa}
+body[data-session-id="week-4-day-1"] .final-cta{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-top:34px;padding:28px;border:1px solid rgba(255,106,0,.28);border-radius:18px;background:radial-gradient(circle at 90% 0%,rgba(255,106,0,.13),transparent 28rem),#0e0e0e}
+body[data-session-id="week-4-day-1"] .final-cta p{color:#aaa;margin-top:10px;max-width:650px}
+body[data-session-id="week-4-day-1"] .play-hero{padding:52px 0 24px}
+body[data-session-id="week-4-day-1"] .play-hero h1{font-size:clamp(42px,6vw,72px);margin-top:10px}
+body[data-session-id="week-4-day-1"] .play-hero .lead{max-width:780px;margin-top:16px}
+body[data-session-id="week-4-day-1"] .homework-banner{margin-top:20px;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:24px;border:1px solid rgba(255,106,0,.35);border-radius:16px;background:linear-gradient(120deg,#21160e,#111 60%)}
+body[data-session-id="week-4-day-1"] .homework-banner h2{font-size:28px;margin:5px 0 8px}
+body[data-session-id="week-4-day-1"] .homework-banner p{color:#b8b8b8;max-width:720px}
+body[data-session-id="week-4-day-1"] .sticky-progress{position:sticky;top:72px;z-index:80;background:rgba(8,8,8,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
+body[data-session-id="week-4-day-1"] .progress-inner{height:48px;display:grid;grid-template-columns:auto minmax(100px,1fr) auto;align-items:center;gap:14px;font-size:10px;color:#9e9e9e}
+body[data-session-id="week-4-day-1"] .progress-inner [data-progress-text]{color:#fff;font-weight:800}
+body[data-session-id="week-4-day-1"] .progressbar{height:5px;background:#292929;border-radius:999px;overflow:hidden}
+body[data-session-id="week-4-day-1"] .progressbar span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--orange),var(--orange2));transition:width .25s ease}
+body[data-session-id="week-4-day-1"] .progress-card{margin-top:18px;padding:18px;border:1px solid var(--line);border-radius:16px;background:#0e0e0e;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:16px}
+body[data-session-id="week-4-day-1"] .progress-card>.progressbar{grid-column:1/-1}
+body[data-session-id="week-4-day-1"] .progress-copy{display:grid}
+body[data-session-id="week-4-day-1"] .progress-copy [data-progress-text]{font-weight:900}
+body[data-session-id="week-4-day-1"] .progress-copy small{color:#8e8e8e}
+body[data-session-id="week-4-day-1"] .tasklist{display:grid;gap:22px}
+body[data-session-id="week-4-day-1"] .task-card{border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));overflow:hidden;transition:.2s ease}
+body[data-session-id="week-4-day-1"] .task-card.done{border-color:rgba(255,106,0,.55);box-shadow:0 0 0 1px rgba(255,106,0,.08),0 18px 60px rgba(0,0,0,.24)}
+body[data-session-id="week-4-day-1"] .task-head{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;align-items:center;padding:22px;border-bottom:1px solid var(--line)}
+body[data-session-id="week-4-day-1"] .task-number{width:48px;height:48px;border-radius:12px;background:rgba(255,106,0,.1);color:var(--orange);display:grid;place-items:center;font-weight:900}
+body[data-session-id="week-4-day-1"] .task-title span{font-size:9px;letter-spacing:.13em;color:var(--orange);font-weight:900}
+body[data-session-id="week-4-day-1"] .task-title h2{font-size:28px;margin:3px 0 5px}
+body[data-session-id="week-4-day-1"] .task-title p{color:#999}
+body[data-session-id="week-4-day-1"] .task-check{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:800;color:#bbb;cursor:pointer}
+body[data-session-id="week-4-day-1"] .task-check input{width:20px;height:20px;accent-color:var(--orange)}
+body[data-session-id="week-4-day-1"] .task-content{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:16px;padding:22px}
+body[data-session-id="week-4-day-1"] .task-col{padding:18px;border:1px solid rgba(255,255,255,.08);border-radius:13px;background:rgba(0,0,0,.16)}
+body[data-session-id="week-4-day-1"] .task-col h3{font-size:16px;margin-bottom:12px}
+body[data-session-id="week-4-day-1"] .task-col p,body[data-session-id="week-4-day-1"] .task-col li{color:#bcbcbc}
+body[data-session-id="week-4-day-1"] .task-col ol,body[data-session-id="week-4-day-1"] .task-col ul{margin:0;padding-left:19px}
+body[data-session-id="week-4-day-1"] .task-col li+li{margin-top:7px}
+body[data-session-id="week-4-day-1"] .tool-chip{margin-top:14px;padding:9px 10px;border-radius:9px;background:rgba(255,106,0,.08);color:var(--orange2);font-size:10px;font-weight:800}
+body[data-session-id="week-4-day-1"] .quality{list-style:none;margin:0!important;padding:0!important}
+body[data-session-id="week-4-day-1"] .quality li{padding-left:18px;position:relative}
+body[data-session-id="week-4-day-1"] .quality li:before{content:"✓";position:absolute;left:0;color:var(--orange)}
+body[data-session-id="week-4-day-1"] .quiz-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}
+body[data-session-id="week-4-day-1"] .quiz-card{padding:22px;border:1px solid var(--line);border-radius:16px;background:#0e0e0e}
+body[data-session-id="week-4-day-1"] .quiz-card h3{font-size:17px;line-height:1.35}
+body[data-session-id="week-4-day-1"] .choices{display:grid;gap:8px;margin-top:16px}
+body[data-session-id="week-4-day-1"] .choices button{border:1px solid #333;background:#151515;color:#ddd;padding:12px 13px;border-radius:10px;text-align:left;cursor:pointer;transition:.2s}
+body[data-session-id="week-4-day-1"] .choices button:hover{border-color:rgba(255,106,0,.5)}
+body[data-session-id="week-4-day-1"] .choices button.correct{border-color:#ff8c3c;background:rgba(255,106,0,.12);color:#fff}
+body[data-session-id="week-4-day-1"] .choices button.wrong{border-color:#7d3b1b;background:rgba(125,59,27,.14)}
+body[data-session-id="week-4-day-1"] .feedback{display:none;margin-top:12px;color:#bdbdbd;font-size:13px}
+body[data-session-id="week-4-day-1"] .quiz-card.answered .feedback{display:block}
+body[data-session-id="week-4-day-1"] .reset-skill{margin-top:18px}
+body[data-session-id="week-4-day-1"] .final-section{padding-bottom:86px}
+body[data-session-id="week-4-day-1"] .skill-companion{margin-bottom:22px;max-width:720px}
+@media(max-width:980px){
+body[data-session-id="week-4-day-1"] .session-hero{grid-template-columns:1fr;gap:26px}
+body[data-session-id="week-4-day-1"] .hero-visual{order:-1}
+body[data-session-id="week-4-day-1"] .pipeline.seven{grid-template-columns:repeat(4,1fr)}
+body[data-session-id="week-4-day-1"] .task-content{grid-template-columns:1fr 1fr}
+body[data-session-id="week-4-day-1"] .task-content .task-col:first-child{grid-column:1/-1}
+body[data-session-id="week-4-day-1"] .failure-grid{grid-template-columns:repeat(2,1fr)}
+
+}
+@media(max-width:700px){
+body[data-session-id="week-4-day-1"] .wrap{width:min(var(--max),calc(100% - 24px))}
+body[data-session-id="week-4-day-1"] .session-hero{padding-top:28px}
+body[data-session-id="week-4-day-1"] .hero-visual{border-radius:16px}
+body[data-session-id="week-4-day-1"] .meta-strip{grid-template-columns:repeat(2,1fr)}
+body[data-session-id="week-4-day-1"] .meta-strip div:nth-child(2){border-right:0}
+body[data-session-id="week-4-day-1"] .meta-strip div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+body[data-session-id="week-4-day-1"] .pipeline.seven{grid-template-columns:repeat(2,1fr)}
+body[data-session-id="week-4-day-1"] .guide-grid,body[data-session-id="week-4-day-1"] .guide-grid.two,body[data-session-id="week-4-day-1"] .quiz-grid{grid-template-columns:1fr}
+body[data-session-id="week-4-day-1"] .task-head{grid-template-columns:auto 1fr}
+body[data-session-id="week-4-day-1"] .task-check{grid-column:1/-1}
+body[data-session-id="week-4-day-1"] .task-content{grid-template-columns:1fr}
+body[data-session-id="week-4-day-1"] .task-content .task-col:first-child{grid-column:auto}
+body[data-session-id="week-4-day-1"] .homework-banner{align-items:flex-start;flex-direction:column}
+body[data-session-id="week-4-day-1"] .progress-inner{grid-template-columns:1fr minmax(90px,1fr)}
+body[data-session-id="week-4-day-1"] .progress-inner>span:last-child{display:none}
+body[data-session-id="week-4-day-1"] .failure-grid{grid-template-columns:1fr}
+body[data-session-id="week-4-day-1"] .final-cta{align-items:flex-start;flex-direction:column}
+
+}
+@media(max-width:480px){
+body[data-session-id="week-4-day-1"] h1{font-size:42px}
+body[data-session-id="week-4-day-1"] .lead{font-size:17px}
+body[data-session-id="week-4-day-1"] .pipeline.seven{grid-template-columns:1fr 1fr}
+body[data-session-id="week-4-day-1"] .pipeline div{min-height:92px}
+body[data-session-id="week-4-day-1"] .task-title h2{font-size:23px}
+body[data-session-id="week-4-day-1"] .task-head{padding:17px}
+body[data-session-id="week-4-day-1"] .task-content{padding:17px}
+
+}
