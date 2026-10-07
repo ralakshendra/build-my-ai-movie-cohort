@@ -1,7 +1,6 @@
 
 /* library/schedule.js */
 /* Single schedule for every page. Register new sessions here. */
-window.BMAI_LOCKS_PAUSED_FOR_REVIEW=true;
 window.BMAI_SESSIONS=[
 {id:"week-1-day-2",visual:"youtube",hero:"assets/illustrations/youtube.svg",week:"WEEK 1 · DAY 2",title:"YouTube Masterclass",number:2,start:"2026-10-04T20:00:00+05:30",end:null,stage:"BLUEPRINT",session:"resources/ai-faceless-youtube-masterclass.html",playbook:"playbook.html",homework:"https://docs.google.com/document/d/1ElXCXzfTup1HubGb0KDTIzqCkbPUBWxXwqm3_HDxFmw/edit?usp=sharing",description:"AI Faceless YouTube Channel Masterclass. Completed foundation session."},
 {id:"week-2-day-1",visual:"short",hero:"assets/illustrations/short.svg",week:"WEEK 2 · DAY 1",title:"Build Your First AI Movie Short",number:3,start:"2026-10-10T20:00:00+05:30",end:"2026-10-10T22:00:00+05:30",stage:"VISUAL WORLD",session:"sessions/week-2-day-1/index.html",playbook:"sessions/week-2-day-1/playbook.html",homework:"https://docs.google.com/document/d/1zdEzgOX22ghpxgmNN5yQeYLprWsAUX3R7zNxuMmJQwI",description:"Visual mastery, first short production, Filmora editing and channel launch."},
