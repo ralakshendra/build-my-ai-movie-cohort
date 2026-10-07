@@ -45,7 +45,7 @@ Important: website locks govern website navigation. A publicly accessible Google
 ## 4. Create the structured lesson specification
 
 Create content/session-spec.json with these fields:
-- id, title, number, start, end, stage, objective, homework (the real Google Doc URL), submission.
+- id, title, number, start, end, stage, objective, homeworkUrl (the real Google Doc URL), homework (practice recipes as {title,prompt} records), submission.
 - steps: [{title, instruction, review}]. Each review describes observable acceptance criteria.
 - tools: [{name, useCase}]. Only tools used in the lesson.
 - prompts: [{title, text, source}]. Full reusable prompts; keep source attribution.

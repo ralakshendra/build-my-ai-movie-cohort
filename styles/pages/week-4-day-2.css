@@ -1,0 +1,134 @@
+/* Scoped lesson layout. Shared branding, navigation and avatar engine stay upstream. */
+body[data-page-key^="week-4-day-2"]{background:radial-gradient(ellipse at 88% 3%,#30180d,transparent 36rem),#0a0807;color:#f6f0e9;margin:0}
+body[data-page-key^="week-4-day-2"] *{box-sizing:border-box}
+body[data-page-key^="week-4-day-2"] .w4-page{width:min(1180px,calc(100% - 40px));margin:auto;padding:20px 0 70px;--w4-gold:#ffbc65;--w4-line:#4c3020}
+body[data-page-key^="week-4-day-2"] .w4-page h1, body[data-page-key^="week-4-day-2"] .w4-page h2, body[data-page-key^="week-4-day-2"] .w4-page h3{color:#fff;text-wrap:balance}
+body[data-page-key^="week-4-day-2"] .w4-page h2{font-size:clamp(1.8rem,3.5vw,2.9rem);line-height:1.1;margin:.6rem 0 1rem}
+body[data-page-key^="week-4-day-2"] .w4-page h3{font-size:1.04rem;line-height:1.35;margin:1.2rem 0 .6rem}
+body[data-page-key^="week-4-day-2"] .w4-page p, body[data-page-key^="week-4-day-2"] .w4-page li{line-height:1.65;color:#dbcec4}
+body[data-page-key^="week-4-day-2"] .w4-page a:not(.btn){color:#ffcb8d;text-underline-offset:4px}
+body[data-page-key^="week-4-day-2"] .w4-page :focus-visible{outline:3px solid #ffbc65;outline-offset:4px}
+body[data-page-key^="week-4-day-2"] .w4-page .btn{border-radius:999px;font-weight:850;min-height:44px;white-space:normal;text-align:center;letter-spacing:.035em}
+body[data-page-key^="week-4-day-2"] .w4-page .btn.secondary{background:transparent;border:1px solid #895430;color:#fff}
+body[data-page-key^="week-4-day-2"] .w4-page .btn.secondary:hover{background:#342015;border-color:#ff9d3f}
+body[data-page-key^="week-4-day-2"] .w4-kicker{font-size:.74rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--w4-gold)}
+body[data-page-key^="week-4-day-2"] .w4-muted{color:#b8a99c!important}
+body[data-page-key^="week-4-day-2"] .w4-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;align-items:center}
+body[data-page-key^="week-4-day-2"] .w4-hw-unavailable{padding:12px 14px;font-size:.7rem;letter-spacing:.06em;font-weight:800;color:#b4a99e;border:1px dashed #624432;border-radius:99px}
+body[data-page-key^="week-4-day-2"] .w4-hero{display:grid;grid-template-columns:minmax(0,.83fr) minmax(0,1.17fr);gap:34px;align-items:center;min-height:525px;padding:40px;border:1px solid #57321d;border-radius:28px;background:linear-gradient(125deg,#24170f,#0e0b09);box-shadow:0 24px 70px #0005;overflow:hidden}
+body[data-page-key^="week-4-day-2"] .w4-hero-art{order:2;margin:0;border:1px solid #74472b;border-radius:20px;overflow:hidden;aspect-ratio:16/9;box-shadow:0 20px 50px #0008}
+body[data-page-key^="week-4-day-2"] .w4-hero-art img{width:100%;height:100%;display:block;object-fit:cover}
+body[data-page-key^="week-4-day-2"] .w4-hero-copy{order:1;min-width:0}
+body[data-page-key^="week-4-day-2"] .w4-hero h1{font-size:clamp(3rem,5.5vw,5.1rem);line-height:.96;letter-spacing:-.055em;margin:16px 0 22px}
+body[data-page-key^="week-4-day-2"] .w4-deck{font-size:clamp(1.1rem,1.6vw,1.3rem);max-width:37ch}
+body[data-page-key^="week-4-day-2"] .w4-date{font-size:.87rem;color:#b4a89c!important}
+body[data-page-key^="week-4-day-2"] .w4-section-nav{position:sticky;top:0;z-index:12;display:flex;gap:6px;overflow-x:auto;padding:10px;margin:18px 0 30px;border:1px solid #422b1c;border-radius:15px;background:#100c09f5;backdrop-filter:blur(14px);scrollbar-width:thin}
+body[data-page-key^="week-4-day-2"] .w4-section-nav a{flex:0 0 auto;min-height:44px;display:flex;align-items:center;padding:8px 14px;font-size:.8rem;font-weight:850;text-decoration:none;border-radius:99px}
+body[data-page-key^="week-4-day-2"] .w4-section-nav a:hover{background:#332016}
+body[data-page-key^="week-4-day-2"] .w4-callout{display:grid;grid-template-columns:160px minmax(0,1fr);gap:28px;align-items:center;margin:32px 0;padding:26px 34px;border:1px solid #683a21;border-radius:24px;background:linear-gradient(110deg,#2d1a10,#130e0a)}
+body[data-page-key^="week-4-day-2"] .w4-callout-avatar{min-width:0;width:150px}
+body[data-page-key^="week-4-day-2"] .w4-callout-avatar .studio-avatar{width:100%}
+body[data-page-key^="week-4-day-2"] .w4-callout h2{font-size:clamp(1.7rem,3vw,2.5rem)}
+body[data-page-key^="week-4-day-2"] .w4-callout p{margin-bottom:0}
+body[data-page-key^="week-4-day-2"] .w4-overview{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;padding:42px;margin:32px 0;border-radius:24px;background:linear-gradient(125deg,#fff6ec,#ead8c8)}
+body[data-page-key^="week-4-day-2"] .w4-overview h2, body[data-page-key^="week-4-day-2"] .w4-overview p{color:#241910!important}
+body[data-page-key^="week-4-day-2"] .w4-overview .w4-kicker{color:#a34810}
+body[data-page-key^="week-4-day-2"] .w4-output-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+body[data-page-key^="week-4-day-2"] .w4-output-grid span{display:flex;align-items:center;gap:12px;padding:17px;border:1px solid #dac1ab;border-radius:14px;background:#fffaf5;color:#241910;font-weight:800}
+body[data-page-key^="week-4-day-2"] .w4-output-grid b{color:#a34810;font-size:.74rem}
+body[data-page-key^="week-4-day-2"] .w4-stage{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:48px;align-items:center;padding:60px 0;border-top:1px solid var(--w4-line);scroll-margin-top:80px}
+body[data-page-key^="week-4-day-2"] .w4-stage-right{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+body[data-page-key^="week-4-day-2"] .w4-stage-right .w4-stage-visual{order:2}
+body[data-page-key^="week-4-day-2"] .w4-stage-right .w4-stage-copy{order:1}
+body[data-page-key^="week-4-day-2"] .w4-stage-visual{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:16px;align-items:center;padding:30px 20px;min-height:320px;border:1px solid #58351f;border-radius:24px;background:radial-gradient(circle at 35% 30%,#603017,#1e110b 55%,#100c09);overflow:hidden}
+body[data-page-key^="week-4-day-2"] .w4-stage-visual>.studio-avatar{width:100%;min-width:0;max-width:260px;align-self:end;filter:drop-shadow(0 14px 20px #0006)}
+body[data-page-key^="week-4-day-2"] .w4-stage-visual.w4-avatar-right{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);background:radial-gradient(circle at 65% 30%,#603017,#1e110b 55%,#100c09)}
+body[data-page-key^="week-4-day-2"] .w4-avatar-right>.studio-avatar{order:2}
+body[data-page-key^="week-4-day-2"] .w4-avatar-right>:not(.studio-avatar){order:1}
+body[data-page-key^="week-4-day-2"] .w4-point-left{scale:-1 1}
+body[data-page-key^="week-4-day-2"] .w4-mini{display:grid;gap:10px;min-width:0;padding:14px 10px;background:#0c0907;border:1px solid #774626;border-radius:14px;text-align:center;color:#ffcc8e;font-weight:900;font-size:.65rem;letter-spacing:.05em}
+body[data-page-key^="week-4-day-2"] .w4-mini span{padding:8px 4px;border-bottom:1px solid #4b2c18;overflow-wrap:anywhere}
+body[data-page-key^="week-4-day-2"] .w4-mini b{font-size:1.12rem;color:#fff}
+body[data-page-key^="week-4-day-2"] .w4-mini small{font-size:.65rem;letter-spacing:0;font-weight:500;line-height:1.5;color:#d6bea6}
+body[data-page-key^="week-4-day-2"] .w4-frame-pair b{font-size:1.9rem}
+body[data-page-key^="week-4-day-2"] .w4-cut span{background:#5e2f16;border-radius:5px;border:0;color:#ffddb1}
+body[data-page-key^="week-4-day-2"] .w4-reference-mini{margin:0;min-width:0}
+body[data-page-key^="week-4-day-2"] .w4-reference-mini img{display:block;width:100%;height:auto;border:1px solid #68401f;border-radius:12px}
+body[data-page-key^="week-4-day-2"] .w4-reference-mini figcaption{margin-top:9px;font-size:.7rem;line-height:1.4;color:#d7bd9f;text-align:center}
+body[data-page-key^="week-4-day-2"] .w4-lead{font-size:1.09rem}
+body[data-page-key^="week-4-day-2"] .w4-stage-copy ol, body[data-page-key^="week-4-day-2"] .w4-task ol{padding-left:1.3rem}
+body[data-page-key^="week-4-day-2"] .w4-stage-copy li, body[data-page-key^="week-4-day-2"] .w4-task li{margin:.5rem 0;padding-left:.15rem}
+body[data-page-key^="week-4-day-2"] .w4-diagnostics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:22px}
+body[data-page-key^="week-4-day-2"] .w4-diagnostics>div{padding:14px;border:1px solid #4b3425;border-radius:13px;background:#19110c}
+body[data-page-key^="week-4-day-2"] .w4-diagnostics b{font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;color:#ffbc65}
+body[data-page-key^="week-4-day-2"] .w4-diagnostics p{font-size:.85rem;margin:.5rem 0 0}
+body[data-page-key^="week-4-day-2"] .w4-director-note{padding:16px 18px;margin-top:16px;background:#2c190e;border-left:3px solid #ff8b2b;border-radius:0 12px 12px 0;font-size:.9rem;line-height:1.6}
+body[data-page-key^="week-4-day-2"] .w4-director-note b{display:block;margin-bottom:3px;color:#ffbc65}
+body[data-page-key^="week-4-day-2"] .w4-finish{display:grid;grid-template-columns:180px minmax(0,1fr);gap:32px;align-items:center;padding:38px;margin-top:40px;border:1px solid #744024;border-radius:26px;background:radial-gradient(circle at 10% 20%,#683318,transparent 26rem),#150e09}
+body[data-page-key^="week-4-day-2"] .w4-finish>.studio-avatar{width:180px}
+body[data-page-key^="week-4-day-2"] .w4-progress{display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:32px;align-items:center;margin:32px 0 18px;padding:28px;border:1px solid #583623;border-radius:22px;background:#19110c}
+body[data-page-key^="week-4-day-2"] .w4-progress p{margin-bottom:0}
+body[data-page-key^="week-4-day-2"] .w4-progress-meter{display:grid;gap:10px}
+body[data-page-key^="week-4-day-2"] .w4-progress-meter strong{font-size:2rem;color:#ffbc65;text-align:right}
+body[data-page-key^="week-4-day-2"] .w4-progress-meter>span{height:9px;border-radius:99px;background:#3d281b;overflow:hidden}
+body[data-page-key^="week-4-day-2"] .w4-progress-meter i{display:block;width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,#ff6a00,#ffb13b);transition:width .25s ease}
+body[data-page-key^="week-4-day-2"] .w4-task-stack{display:grid;gap:24px}
+body[data-page-key^="week-4-day-2"] .w4-task{scroll-margin-top:90px;border:1px solid #573421;border-radius:24px;overflow:hidden;background:#14100c}
+body[data-page-key^="week-4-day-2"] .w4-task>header{display:grid;grid-template-columns:48px minmax(0,1fr) 105px;gap:20px;align-items:center;padding:22px 28px;background:linear-gradient(105deg,#301b10,#17100c);border-bottom:1px solid #4b2d1c}
+body[data-page-key^="week-4-day-2"] .w4-task>header h2{font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:0}
+body[data-page-key^="week-4-day-2"] .w4-task>header .studio-avatar{width:105px;justify-self:end}
+body[data-page-key^="week-4-day-2"] .w4-task-number{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#ff7d20;color:#170c05;font-size:1.1rem;font-weight:900}
+body[data-page-key^="week-4-day-2"] .w4-task-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:1px;background:#3e291c}
+body[data-page-key^="week-4-day-2"] .w4-task-grid>div{padding:24px 28px;background:#15100c;min-width:0}
+body[data-page-key^="week-4-day-2"] .w4-task-grid h3{margin-top:0;color:#ffbc65;font-size:.83rem;text-transform:uppercase;letter-spacing:.06em}
+body[data-page-key^="week-4-day-2"] .w4-task-grid h3:not(:first-child){margin-top:22px}
+body[data-page-key^="week-4-day-2"] .w4-task>footer{padding:18px 28px;background:#0e0a07}
+body[data-page-key^="week-4-day-2"] .w4-task-check{display:inline-flex;align-items:center;gap:12px;font-weight:850;padding:12px 16px;border:1px solid #784827;border-radius:99px;cursor:pointer}
+body[data-page-key^="week-4-day-2"] .w4-task-check input{width:20px;height:20px;accent-color:#ff7d20;flex:0 0 20px}
+body[data-page-key^="week-4-day-2"] .w4-panel{padding:36px;margin-top:38px;background:#17100b;border:1px solid #503320;border-radius:24px;scroll-margin-top:90px}
+body[data-page-key^="week-4-day-2"] .w4-beat-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:25px}
+body[data-page-key^="week-4-day-2"] .w4-beat-grid article{padding:18px 15px;border:1px solid #62402a;border-radius:14px;background:#21140d;min-width:0}
+body[data-page-key^="week-4-day-2"] .w4-beat-grid small{color:#ffbd68;font-weight:850;white-space:nowrap}
+body[data-page-key^="week-4-day-2"] .w4-beat-grid h3{font-size:.97rem}
+body[data-page-key^="week-4-day-2"] .w4-beat-grid p{font-size:.85rem}
+body[data-page-key^="week-4-day-2"] .w4-reference-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:26px}
+body[data-page-key^="week-4-day-2"] .w4-reference-grid figure{margin:0;border:1px solid #593720;border-radius:16px;overflow:hidden;background:#0b0806}
+body[data-page-key^="week-4-day-2"] .w4-reference-grid img{display:block;width:100%;aspect-ratio:1;object-fit:contain;background:#050403;padding:12px}
+body[data-page-key^="week-4-day-2"] .w4-reference-grid figcaption{padding:18px}
+body[data-page-key^="week-4-day-2"] .w4-reference-grid h3{margin-top:0}
+body[data-page-key^="week-4-day-2"] .w4-reference-grid p, body[data-page-key^="week-4-day-2"] .w4-reference-grid a{font-size:.88rem}
+body[data-page-key^="week-4-day-2"] .w4-prompt-nav{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}
+body[data-page-key^="week-4-day-2"] .w4-prompt-nav a{border:1px solid #614029;border-radius:99px;padding:12px 16px;font-size:.8rem;text-decoration:none;min-height:44px}
+body[data-page-key^="week-4-day-2"] .w4-prompt-setup{padding:26px 0;border-top:1px solid #4f311f;scroll-margin-top:80px}
+body[data-page-key^="week-4-day-2"] .w4-prompt-setup>h3{font-size:1.6rem;margin:.6rem 0}
+body[data-page-key^="week-4-day-2"] .w4-prompt{border:1px solid #5a3b25;border-radius:14px;background:#0e0a07;margin:12px 0;overflow:hidden}
+body[data-page-key^="week-4-day-2"] .w4-prompt summary{font-weight:850;padding:18px;cursor:pointer;min-height:52px;color:#fff}
+body[data-page-key^="week-4-day-2"] .w4-prompt[open] summary{border-bottom:1px solid #4b311e;background:#26180f}
+body[data-page-key^="week-4-day-2"] .w4-prompt .btn{margin:18px 18px 0;font-size:.78rem}
+body[data-page-key^="week-4-day-2"] .w4-prompt pre{margin:18px;padding:20px;border:1px solid #422e20;border-radius:10px;background:#050403;color:#e9ddd0;white-space:pre-wrap;overflow-wrap:anywhere;word-break:normal;font-size:.85rem;line-height:1.65;font-family:ui-monospace,Consolas,monospace;max-width:100%}
+body[data-page-key^="week-4-day-2"] .w4-sound-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+body[data-page-key^="week-4-day-2"] .w4-sound-grid article{padding:20px;border:1px solid #69422a;border-radius:14px;background:#25160c}
+body[data-page-key^="week-4-day-2"] .w4-sound-grid h3{margin-top:0}
+body[data-page-key^="week-4-day-2"] .w4-final-list{list-style:none;padding:0;display:grid;gap:10px}
+body[data-page-key^="week-4-day-2"] .w4-final-list li{padding:12px 16px;border-left:3px solid #ff9e40;border-radius:0 8px 8px 0;background:#27190f}
+body[data-page-key^="week-4-day-2"] .w4-skill-head{display:grid;grid-template-columns:minmax(0,1fr) 115px;gap:24px;align-items:center}
+body[data-page-key^="week-4-day-2"] .w4-skill-head>.studio-avatar{width:115px}
+body[data-page-key^="week-4-day-2"] .w4-page [data-library-quiz]{display:grid;gap:18px;margin-top:24px}
+body[data-page-key^="week-4-day-2"] .w4-page [data-library-quiz] fieldset{min-width:0;padding:22px;border:1px solid #63402a;border-radius:14px;background:#0d0906}
+body[data-page-key^="week-4-day-2"] .w4-page [data-library-quiz] legend{padding:0 8px;max-width:100%;font-size:1.05rem;line-height:1.5;font-weight:850;color:#ffe0b8}
+body[data-page-key^="week-4-day-2"] .w4-page [data-library-quiz] label{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;margin:8px 0;border:1px solid #483323;border-radius:10px;color:#ded0c2;cursor:pointer;line-height:1.5}
+body[data-page-key^="week-4-day-2"] .w4-page [data-library-quiz] input{flex:0 0 19px;width:19px;height:19px;accent-color:#ff962e;margin-top:2px}
+body[data-page-key^="week-4-day-2"] .w4-page [data-library-quiz] button{margin-top:12px;border:1px solid #ffa747;border-radius:99px;padding:12px 20px;min-height:44px;background:#ff8a26;color:#1a0d04;font-weight:850;cursor:pointer}
+body[data-page-key^="week-4-day-2"] .w4-page [data-library-quiz] p{min-height:24px;margin-bottom:0;color:#ffce94}
+@media(max-width:1000px){body[data-page-key^="week-4-day-2"] .w4-hero{gap:22px;padding:28px;min-height:440px}body[data-page-key^="week-4-day-2"] .w4-beat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}body[data-page-key^="week-4-day-2"] .w4-stage{gap:28px}body[data-page-key^="week-4-day-2"] .w4-diagnostics{grid-template-columns:1fr}body[data-page-key^="week-4-day-2"] .w4-stage-visual{padding:22px 14px;gap:10px;min-height:260px}body[data-page-key^="week-4-day-2"] .w4-mini{padding:10px 6px;font-size:.6rem}}
+@media(max-width:900px){body[data-page-key^="week-4-day-2"] .w4-hero{grid-template-columns:1fr;min-height:0}body[data-page-key^="week-4-day-2"] .w4-hero-art{order:1}body[data-page-key^="week-4-day-2"] .w4-hero-copy{order:2;padding:10px}body[data-page-key^="week-4-day-2"] .w4-hero h1 br{display:none}body[data-page-key^="week-4-day-2"] .w4-hero h1{font-size:clamp(3rem,7vw,4.5rem)}body[data-page-key^="week-4-day-2"] .w4-deck{max-width:50ch}body[data-page-key^="week-4-day-2"] .w4-stage, body[data-page-key^="week-4-day-2"] .w4-stage-right{grid-template-columns:1fr}body[data-page-key^="week-4-day-2"] .w4-stage .w4-stage-visual, body[data-page-key^="week-4-day-2"] .w4-stage-right .w4-stage-visual{order:1;max-width:620px;width:100%;justify-self:center;min-height:280px}body[data-page-key^="week-4-day-2"] .w4-stage .w4-stage-copy, body[data-page-key^="week-4-day-2"] .w4-stage-right .w4-stage-copy{order:2}body[data-page-key^="week-4-day-2"] .w4-stage-visual>.studio-avatar{width:220px;max-width:100%;justify-self:center}body[data-page-key^="week-4-day-2"] .w4-mini{font-size:.78rem;padding:18px}body[data-page-key^="week-4-day-2"] .w4-mini span{padding:12px 4px}body[data-page-key^="week-4-day-2"] .w4-reference-mini{max-width:200px;justify-self:center}body[data-page-key^="week-4-day-2"] .w4-overview{grid-template-columns:1fr}body[data-page-key^="week-4-day-2"] .w4-task-grid{grid-template-columns:1fr}body[data-page-key^="week-4-day-2"] .w4-panel{padding:28px}}
+@media(max-width:600px){body[data-page-key^="week-4-day-2"] .w4-page{width:calc(100% - 24px);padding-top:12px}body[data-page-key^="week-4-day-2"] .w4-hero{padding:12px 12px 24px;gap:14px;border-radius:20px}body[data-page-key^="week-4-day-2"] .w4-hero-art{border-radius:14px}body[data-page-key^="week-4-day-2"] .w4-hero h1{font-size:clamp(2.7rem,12vw,3.7rem);margin-top:14px}body[data-page-key^="week-4-day-2"] .w4-hero h1 br{display:block}body[data-page-key^="week-4-day-2"] .w4-kicker{font-size:.65rem;letter-spacing:.08em}body[data-page-key^="week-4-day-2"] .w4-actions{display:grid;align-items:stretch}body[data-page-key^="week-4-day-2"] .w4-section-nav{margin:12px 0 22px;padding:6px}body[data-page-key^="week-4-day-2"] .w4-callout{grid-template-columns:85px minmax(0,1fr);padding:20px 16px;gap:14px;margin:24px 0;align-items:start}body[data-page-key^="week-4-day-2"] .w4-callout-avatar{width:85px}body[data-page-key^="week-4-day-2"] .w4-callout h2{font-size:1.65rem}body[data-page-key^="week-4-day-2"] .w4-callout p{font-size:.9rem}body[data-page-key^="week-4-day-2"] .w4-overview{padding:26px 22px;gap:22px}body[data-page-key^="week-4-day-2"] .w4-output-grid{grid-template-columns:1fr}body[data-page-key^="week-4-day-2"] .w4-stage{padding:38px 0;gap:24px}body[data-page-key^="week-4-day-2"] .w4-stage-visual, body[data-page-key^="week-4-day-2"] .w4-stage .w4-stage-visual{min-height:225px;padding:18px 14px;gap:12px;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}body[data-page-key^="week-4-day-2"] .w4-stage-visual.w4-avatar-right{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}body[data-page-key^="week-4-day-2"] .w4-stage-visual>.studio-avatar{width:170px;max-width:100%}body[data-page-key^="week-4-day-2"] .w4-mini{padding:12px 7px;font-size:.62rem;gap:7px}body[data-page-key^="week-4-day-2"] .w4-mini span{padding:7px 3px}body[data-page-key^="week-4-day-2"] .w4-mini b{font-size:.85rem}body[data-page-key^="week-4-day-2"] .w4-mini small{font-size:.58rem}body[data-page-key^="week-4-day-2"] .w4-reference-mini figcaption{font-size:.62rem}body[data-page-key^="week-4-day-2"] .w4-finish{grid-template-columns:90px minmax(0,1fr);padding:22px 18px;gap:16px;align-items:start}body[data-page-key^="week-4-day-2"] .w4-finish>.studio-avatar{width:90px}body[data-page-key^="week-4-day-2"] .w4-progress{grid-template-columns:1fr;padding:22px;gap:18px}body[data-page-key^="week-4-day-2"] .w4-progress-meter strong{text-align:left}body[data-page-key^="week-4-day-2"] .w4-task>header{grid-template-columns:36px minmax(0,1fr) 65px;gap:10px;padding:20px 16px}body[data-page-key^="week-4-day-2"] .w4-task>header h2{font-size:1.65rem}body[data-page-key^="week-4-day-2"] .w4-task>header .studio-avatar{width:65px}body[data-page-key^="week-4-day-2"] .w4-task-number{width:36px;height:36px;font-size:.85rem}body[data-page-key^="week-4-day-2"] .w4-task-grid>div{padding:22px 20px}body[data-page-key^="week-4-day-2"] .w4-task>footer{padding:18px 20px}body[data-page-key^="week-4-day-2"] .w4-task-check{font-size:.9rem;border-radius:14px}body[data-page-key^="week-4-day-2"] .w4-panel{padding:24px 18px;border-radius:20px}body[data-page-key^="week-4-day-2"] .w4-beat-grid, body[data-page-key^="week-4-day-2"] .w4-reference-grid, body[data-page-key^="week-4-day-2"] .w4-sound-grid{grid-template-columns:1fr}body[data-page-key^="week-4-day-2"] .w4-beat-grid article{display:grid;grid-template-columns:90px minmax(0,1fr);column-gap:12px}body[data-page-key^="week-4-day-2"] .w4-beat-grid small{grid-row:1/4}body[data-page-key^="week-4-day-2"] .w4-beat-grid h3{margin:0}body[data-page-key^="week-4-day-2"] .w4-beat-grid p{margin:8px 0 0}body[data-page-key^="week-4-day-2"] .w4-reference-grid img{max-height:300px}body[data-page-key^="week-4-day-2"] .w4-prompt summary{font-size:.9rem;padding:16px}body[data-page-key^="week-4-day-2"] .w4-prompt pre{padding:14px;margin:14px;font-size:.78rem}body[data-page-key^="week-4-day-2"] .w4-prompt .btn{margin:14px 14px 0}body[data-page-key^="week-4-day-2"] .w4-skill-head{grid-template-columns:minmax(0,1fr) 65px;gap:12px;align-items:start}body[data-page-key^="week-4-day-2"] .w4-skill-head>.studio-avatar{width:65px}body[data-page-key^="week-4-day-2"] .w4-page [data-library-quiz] fieldset{padding:16px 12px}body[data-page-key^="week-4-day-2"] .w4-page [data-library-quiz] legend{font-size:.95rem}body[data-page-key^="week-4-day-2"] .w4-page [data-library-quiz] label{font-size:.9rem;padding:12px 10px}}
+@media(prefers-reduced-motion:reduce){body[data-page-key^="week-4-day-2"] .w4-progress-meter i{transition:none}}
+
+body[data-page-key^="week-4-day-2"] .w4-task>header{position:static;backdrop-filter:none;z-index:auto}
+body[data-page-key^="week-4-day-2"] .studio-avatar-tip{grid-column:1/-1}
+
+body[data-page-key^="week-4-day-2"] .w4-editing-help{padding:8px 22px 16px}
+body[data-page-key^="week-4-day-2"] #task-4>header .studio-avatar.camera,body[data-page-key^="week-4-day-2"] #task-6>header .studio-avatar.microphone{scale:-1 1}
+body[data-page-key^="week-4-day-2"] .w4-reference-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:600px){body[data-page-key^="week-4-day-2"] .w4-reference-grid{grid-template-columns:1fr}}
