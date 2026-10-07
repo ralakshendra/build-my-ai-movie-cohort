@@ -13,7 +13,7 @@ const init=()=>{
  // Source links retain the site's existing scheduled-access guard.
  const locked=[];
  document.querySelectorAll('[data-resource-release]').forEach(card=>{
-  const release=Date.parse(card.dataset.resourceRelease);if(!Number.isFinite(release)||release<=Date.now())return;
+  const release=Date.parse(card.dataset.resourceRelease);if(window.BMAI_LOCKS_PAUSED_FOR_REVIEW||!Number.isFinite(release)||release<=Date.now())return;
   const body=card.querySelector('.studio-resource-body');if(!body)return;
   const content=[...body.childNodes];content.forEach(node=>node.remove());
   const note=document.createElement('p');note.className='studio-resource-lock-note';body.append(note);
