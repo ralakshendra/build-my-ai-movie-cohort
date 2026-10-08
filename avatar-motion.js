@@ -81,7 +81,8 @@ function init(){
    const right=near?!previous.right:block.classList.contains('headphones');block.classList.toggle('avatar-right',right);previous={bottom:r.bottom,right};}
   for(const avatar of avatars){
    const host=hostFor(avatar);
-   const target=host.querySelector('.studio-guidance-copy,.studio-companion-copy,.bmai-avatar-note')||
+   const target=(avatar.dataset.avatarTarget&&document.querySelector(avatar.dataset.avatarTarget))||
+    host.querySelector('.studio-guidance-copy,.studio-companion-copy,.bmai-avatar-note')||
     host.querySelector('h2,h3,p,.hero-copy')||
     [...host.children].find(child=>child!==avatar&&!child.contains(avatar)&&!child.classList.contains('studio-avatar-tip'))||
     avatar.closest('.w4-callout,.w3d2-stage,.w4-stage,.studio-home-hero')?.querySelector('h2,h3,p,.hero-copy');

@@ -16,7 +16,7 @@ review_prefix = '/__review__/'
 
 def review_access_script():
     schedule = (root / 'library/schedule.js').read_text(encoding='utf-8')
-    starts = re.findall(r'start:\s*"([^"]+)"', schedule)
+    starts = re.findall(r'["\']?start["\']?\s*:\s*"([^"]+)"', schedule)
     review_time = int(max(datetime.fromisoformat(value).timestamp() for value in starts) * 1000) + 86400000
     return f'''window.BMAI_LOCKS_PAUSED_FOR_REVIEW = true;
 (() => {{

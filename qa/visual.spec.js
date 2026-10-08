@@ -19,6 +19,8 @@ const pages = [
   ['w4d1-playbook', 'sessions/week-4-day-1/playbook.html'],
   ['w4d2', 'sessions/week-4-day-2/index.html'],
   ['w4d2-playbook', 'sessions/week-4-day-2/playbook.html'],
+  ['w5d1', 'sessions/week-5-day-1/index.html'],
+  ['w5d1-playbook', 'sessions/week-5-day-1/playbook.html'],
 ];
 
 async function auditPage(page, label, viewportWidth) {
@@ -141,6 +143,8 @@ test('future session materials stay locked before release', async ({browser}) =>
     'sessions/week-4-day-1/playbook.html',
     'sessions/week-4-day-2/index.html',
     'sessions/week-4-day-2/playbook.html',
+    'sessions/week-5-day-1/index.html',
+    'sessions/week-5-day-1/playbook.html',
   ];
   const context = await browser.newContext();
   for (const path of futurePaths) {
@@ -194,7 +198,8 @@ test('future materials are guarded from the student hub', async ({browser}) => {
 
 for (const [label, path, frozenIso] of [
   ['w2d1-unlocked', 'sessions/week-2-day-1/index.html', '2026-10-10T20:30:00+05:30'],
-  ['w3d1-unlocked', 'sessions/week-3-day-1/index.html', '2026-10-17T20:30:00+05:30']
+  ['w3d1-unlocked', 'sessions/week-3-day-1/index.html', '2026-10-17T20:30:00+05:30'],
+  ['w5d1-unlocked', 'sessions/week-5-day-1/index.html', '2026-10-31T20:30:00+05:30']
 ]) {
   for (const [width, height] of [[390,844],[1440,900]]) {
     test(label + ' ' + width + 'px unlocked visual', async ({browser}) => {

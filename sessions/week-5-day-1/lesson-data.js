@@ -1,0 +1,153 @@
+window.BMAI_LESSON={
+  "id": "week-5-day-1",
+  "title": "Real Estate Walkthrough Challenge",
+  "number": 9,
+  "stage": "MOTION",
+  "visual": "production",
+  "objective": "Create one coherent real-estate walkthrough of about one minute or less as a team, using consistent property references, purposeful image-to-video movement and a Filmora edit with music.",
+  "homeworkUrl": "https://docs.google.com/document/d/1qHcYXyMzjkQSD6remiUbcOcrgI9wMqELxpDtU2Oxylk/edit",
+  "submission": "Share one finished team film in the cohort group. Only one final film is required from each team. Record the final link, review notes and reflection in your Homework Doc.",
+  "steps": [
+    {
+      "title": "Select and prepare property references",
+      "instruction": "Choose the property images your team will use from the supplied website. Convert unsupported WebP files to PNG or JPEG when needed, verify every file opens, and agree which views anchor the walkthrough.",
+      "review": "The selected property is identifiable in every reference and the files open in the team’s production tools."
+    },
+    {
+      "title": "Prepare views for motion",
+      "instruction": "Use the supplied images directly or create only the additional angles the walkthrough needs. Nano Banana or GPT Image 2 may recreate the same property at 16:9 or from another angle; the rough-sketch workflow remains a separate demonstration.",
+      "review": "The approved stills read as the same property and provide useful start or end frames without introducing a competing building or scene."
+    },
+    {
+      "title": "Generate the walkthrough motion",
+      "instruction": "Animate the approved stills with Kling 3.0 Omni or another image-to-video model the team understands. Use start-only or start-and-end frames as needed, and apply the supplied FPV prompt structure when it fits the selected view.",
+      "review": "The camera move clarifies the property, respects open space and keeps the architecture recognizable without visible warping or structural drift."
+    },
+    {
+      "title": "Edit one team film in Filmora",
+      "instruction": "Choose the useful motion clips, cut them into one clear property walkthrough in Filmora and add music. Keep the finished film to about one minute or less and remove decorative beauty shots that do not help the walkthrough.",
+      "review": "The team delivers one coherent walkthrough with supportive music, clear property continuity and a runtime of about one minute or less."
+    }
+  ],
+  "homework": [
+    {
+      "title": "Reference preparation recipe",
+      "prompt": "Select the property images your team will use. If a file is WebP and the next tool will not accept it, convert it to PNG or JPEG and confirm the converted image opens before generation."
+    },
+    {
+      "title": "Additional-view recipe",
+      "prompt": "When the walkthrough needs another view, ask Nano Banana or GPT Image 2 to keep the same property, building and structure while creating the needed angle or a 16:9 composition. Review the result for property continuity before animation."
+    },
+    {
+      "title": "Motion test recipe",
+      "prompt": "Choose start-only or start-and-end image-to-video based on the shot. Test a purposeful camera move, then reject or revise any result that changes the architecture, passes through solid walls or breaks the visual continuity of the property."
+    },
+    {
+      "title": "Team edit recipe",
+      "prompt": "Arrange the approved motion clips into one real-estate walkthrough in Filmora, add music and trim away beauty-shot filler. Keep the final team film to about one minute or less."
+    }
+  ],
+  "tools": [
+    {
+      "name": "Chrome image-conversion extension",
+      "useCase": "Save property references as PNG or JPEG when a downloaded WebP image is unsupported by the next production tool."
+    },
+    {
+      "name": "Nano Banana",
+      "useCase": "Recreate the same property at 16:9 or generate another useful angle while keeping the building and structure consistent."
+    },
+    {
+      "name": "GPT Image 2",
+      "useCase": "Alternative image-generation route for recreating the same property or preparing an additional angle for motion."
+    },
+    {
+      "name": "Kling 3.0 Omni",
+      "useCase": "Demonstrated image-to-video route for start-frame and start-plus-end-frame property movement."
+    },
+    {
+      "name": "OpenArt",
+      "useCase": "The class recording showed the previously generated walkthrough examples and image-to-video process in this production environment."
+    },
+    {
+      "name": "Filmora",
+      "useCase": "Edit the approved motion clips into one team walkthrough and add music."
+    }
+  ],
+  "prompts": [
+    {
+      "title": "Rough-sketch demonstration prompt",
+      "text": "Convert this rough sketch to an ultra realistic 4K quality image of a contemporary style house with pastel color tones, also add a loan to the front garden. Strictly don’t change the structural details from the given drawing.",
+      "source": "Advanced Real estate Video production — rough-sketch demonstration"
+    },
+    {
+      "title": "Generic FPV walkthrough prompt",
+      "text": "A smooth, steady and slow FPV drone moves through video of a luxury real estate property. The FPV drone starts from a wide angle into the start image and does a slow dolly in, then gradually increases the speed and enters to the end frame, then does a dollyout and a jib up to reveal a wide angle of end frame. Keep the natural parallax of objects and materials within, strictly don't change any features or objects from the reference image. there is no need to show the drone, it should be a complete FPV visual.",
+      "source": "Advanced Real estate Video production — supplied generic FPV prompt"
+    },
+    {
+      "title": "Omni Flash prompt 1 — courtyard start frame",
+      "text": "[Start Frame: Provided Image] Seamless first-person view (FPV) drone shot beginning exactly from this courtyard perspective. The camera lifts smoothly and moves along a dynamic, continuous flight path.\n\nMaintaining 100% structural and architectural consistency of the environment: the drone skims low over the circular stone fountain with cascading water, banking gently to the right. It sweeps smoothly past the active fire pit and over the manicured green lawn, maintaining the light-beige neo-classical luxury villa on the left and the lush palm trees on the right.\n\nThe flight continues through the courtyard, executing a precise cinematic curve around the modern wooden pergola and towards the circular cutout wall featuring the manicured bonsai tree.\n\nStyle and Technicals: Hyper-realistic, fluid FPV drone physics, organic motion blur during fast banks, continuous one-take sequence, volumetric golden hour morning sunlight casting long shadows, 8k resolution, photorealistic textures. No cuts, no warping.",
+      "source": "Advanced Real estate Video production — New Omni Flash prompt 1"
+    },
+    {
+      "title": "Omni Flash prompt 2 — generic FPV",
+      "text": "[Start Frame: Provided Image] Realistic, fluid first-person view (FPV) drone fly-through shot starting exactly from the perspective and geometry defined by the input image.\n\nStructural Integrity: The generation must maintain absolute architectural accuracy and geometric consistency of all buildings, structures, walls, and landscape features visible in the initial frame. All architectural elements must remain completely rigid and physically static, with zero morphing, warping, stretching, or changing shapes as the camera moves past them.\n\nMotion: The camera glides smoothly and dynamically along a continuous, stable aerial trajectory, strictly through open spaces (not passing through solid walls). Realistically simulate parallax and lens distortion appropriate for an FPV drone.\n\nExclusions & Quality: Clean cinematic output. Absolutely no visible interface elements, no red lines, no drawn path overlays, no brush strokes, and no motion trail artifacts. Professional 4k drone stabilization, crisp textures, natural lighting, and photorealistic depth of field.",
+      "source": "Advanced Real estate Video production — New Omni Flash prompt 2"
+    },
+    {
+      "title": "Omni Flash prompt 3 — geotagging",
+      "text": "[Start Frame: Uploaded Image/Coordinates] First-person view (FPV) drone fly-through animation sequence beginning exactly from the camera perspective, depth parameters, and spatial coordinate layout defined by the source image at coordinates [INSERT LATITUDE, LONGITUDE].\n\nCRITICAL ENVIRONMENT CONSTRAINT: The model must maintain 100% geometric, structural, and environmental fidelity to the provided start frame. The underlying terrain, layout, elements, and horizons of this [INSERT LANDSCAPE TYPE: e.g., open desert field / rocky canyon / dense forest] must remain completely rigid, unmutated, and physically static. Zero morphing, zero hallucinating of new buildings, zero warping of existing landmarks, and zero structural shifting as the camera translates through space.\n\nFLIGHT PATH & KINETICS: Execute a continuous, single-take aerial camera movement following the user-drawn trajectory path. The drone must glide smoothly over [INSERT FOCUS ELEMENT: e.g., the open dirt path / the grassy plain], simulating realistic drone aerodynamics, smooth bank compensation, subtle natural motion blur on fast turns, and real-world lens parallax.\n\nMANDATORY ARTIFACT EXCLUSION: The final video must be a clean, cinematic photographic render. Systematically eliminate all user interface overlays, brush stroke artifacts, drawn lines, colored paths, or motion path tracking indicators from the output frames.",
+      "source": "Advanced Real estate Video production — New Omni Flash prompt 3"
+    }
+  ],
+  "checklist": [
+    "The team selected and can link the property reference images used.",
+    "The generated stills and motion clips keep the property recognizable and its architecture stable.",
+    "Image-to-video movement is purposeful; the team fixed or removed shots with visible warping or unusable transitions.",
+    "The Filmora edit forms one clear walkthrough with music and avoids unnecessary beauty-shot filler.",
+    "The team produced one final video that is about one minute or less."
+  ],
+  "quiz": [
+    {
+      "question": "A selected property image downloads as WebP and your next tool will not accept it. What should you do first?",
+      "options": [
+        "Convert it to PNG or JPEG and verify the saved file opens",
+        "Take a low-resolution screenshot and continue",
+        "Replace the property with an unrelated image"
+      ],
+      "correct": 0,
+      "explanation": "The instructor demonstrated using a Chrome image-conversion extension so the reference can be saved as a supported PNG or JPEG before generation."
+    },
+    {
+      "question": "When is a start frame by itself enough for image-to-video?",
+      "options": [
+        "When the planned camera move does not need a specific destination frame",
+        "Only when the image is a rough sketch",
+        "Never; every shot requires a start and end frame"
+      ],
+      "correct": 0,
+      "explanation": "The class allowed both start-only and start-plus-end-frame animation. The shot’s intended movement determines which setup is useful."
+    },
+    {
+      "question": "A generated camera move passes through a solid wall. What is the best first response?",
+      "options": [
+        "Simplify or redirect the move through open space, then test again",
+        "Hide the mistake under more music",
+        "Add more beauty shots so viewers notice it less"
+      ],
+      "correct": 0,
+      "explanation": "The supplied FPV structure explicitly keeps the camera in open spaces. Fixing the path protects architectural continuity before more credits are spent."
+    },
+    {
+      "question": "What is the required team output for this challenge?",
+      "options": [
+        "One real-estate walkthrough per team, about one minute or less",
+        "One video from every individual team member",
+        "A long collection of beauty-shot B-roll"
+      ],
+      "correct": 0,
+      "explanation": "The instructor clarified that each team makes one final video and should focus on the walkthrough and image-to-video technique rather than extra B-roll."
+    }
+  ],
+  "hero": "assets/illustrations/production.svg"
+};

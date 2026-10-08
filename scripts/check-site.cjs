@@ -10,8 +10,9 @@ for(const file of files){
  check(home?.[1]?.includes('<svg'),rel+': Back to Home control must use the home icon');
  const sessionId=html.match(/data-session-id="([^"]+)"/)?.[1];
  const expected=homeworkId(registry.find(s=>s.id===sessionId)?.homework);
- for(const match of html.matchAll(/href="(https:\/\/docs\.google\.com\/document\/d\/[^"]+)"/g)){
+ for(const match of html.matchAll(/<a\b[^>]*href="(https:\/\/docs\.google\.com\/document\/d\/[^"]+)"[^>]*>/g)){
   const actual=homeworkId(match[1]);
+  if(match[0].includes('data-reference-doc="true"')){check(actual==='1WL-yOxzgmvCZTDNMphWndJ8ZL0tOiBa7-ebi5lGuj9Q',rel+': reference Doc link differs from the verified class handout');continue;}
   if(expected)check(actual===expected,rel+': homework link differs from the official '+sessionId+' document');
   else if(rel==='index.html')check(scheduledHomework.has(actual),rel+': homework link is not in the release schedule');
  }
@@ -23,4 +24,3 @@ const unique=new Set();for(const session of registry){check(['youtube','short','
 for(const key of ['youtube','short','advertisement','story','production']){const svg=fs.readFileSync(path.join(root,'assets/illustrations',key+'.svg'),'utf8');check(!/<image\b|data:image/i.test(svg),'Topic artwork must be true vectors: '+key);}for(const p of ['library/site.js','library/components.css','library/visuals.js','library/visuals.css'])check(fs.existsSync(path.join(root,p)),'Missing bundle '+p);
 
 console.log(JSON.stringify({pages:files.length,sessions:registry.length,errors,warnings},null,2));if(errors.length)process.exit(1);
-
