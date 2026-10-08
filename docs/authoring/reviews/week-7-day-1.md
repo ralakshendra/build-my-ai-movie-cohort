@@ -40,13 +40,14 @@
 - Current Drive metadata reports anyone-with-link reader access. Access with an actual student account was not checked.
 - This release did not edit the official Doc, change its sharing, create a backup or alter canonical links.
 
-## Hosting and release status — live verification pending this push
+## Hosting and release status — live pages verified
 
-- The repository is public and `main` is the default branch. The hosted student hub currently returns HTTP 200 and includes the latest Week 8 material; the Week 8 guide also returns HTTP 200.
-- Before this commit is pushed, the hosted Week 7 Day 1 guide and playbook return HTTP 404, as expected for files not yet present on live `main`.
-- GitHub’s Pages API returns 404 even while the public homepage and Week 8 guide load. I use direct hosted-page responses for release verification and will recheck the Week 7 URLs after the push.
+- Commit `9548b7c` was pushed to public `main`. Its GitHub Pages deployment completed successfully.
+- The hosted homepage, Week 7 Day 1 guide, playbook, schedule, page stylesheet, and both optimized hero images returned HTTP 200. The live guide and playbook titles/session IDs matched Week 7 Day 1; the playbook contains the canonical Doc URL, while the guide does not.
+- The GitHub Pages API returned 404 while these hosted pages returned 200, so direct page responses and the successful Pages deployment run were used as release evidence.
+- GitHub Actions visual QA initially failed because the new interactive test opened the scheduled student URL while the session was correctly locked. The test now uses the owner-review route; all nine focused Week 7 visual tests pass locally with the ordinary preview base used by CI. The CI run for this test correction is tracked separately.
 - No repository visibility, Pages setting, or student-document permission was changed during this work.
 
 ## Final findings
 
-Week 7 Day 1 is complete and locally reviewed. Build, cohesion, visual, content, owner-review and scheduled-release checks passed. The exact official prompt remains intentionally omitted. Hosted guide, playbook, resources and assets must be verified after the main push.
+Week 7 Day 1 is complete, pushed to `main`, and live. Build, cohesion, visual, content, owner-review, scheduled-release and hosted-page checks passed. The exact official prompt remains intentionally omitted.

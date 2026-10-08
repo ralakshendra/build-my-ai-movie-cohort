@@ -1,6 +1,7 @@
 const { test, devices, expect } = require('playwright/test');
 
 const BASE = process.env.BMAI_BASE_URL || 'https://ralakshendra.github.io/build-my-ai-movie-cohort/';
+const REVIEW_BASE = BASE.includes('/__review__/') ? BASE : new URL('__review__/', BASE).href;
 
 const pages = [
   ['not-found', '404.html'],
@@ -142,7 +143,7 @@ for (const [label, path] of pages) {
 test('Week 7 playbook avatar, checklist and skill feedback work', async ({browser}) => {
   const context = await browser.newContext({viewport:{width:390,height:844}});
   const page = await context.newPage();
-  await page.goto(new URL('sessions/week-7-day-1/playbook.html', BASE).href, {waitUntil:'domcontentloaded'});
+  await page.goto(new URL('sessions/week-7-day-1/playbook.html', REVIEW_BASE).href, {waitUntil:'domcontentloaded'});
 
   const avatar = page.locator('#task-1 .studio-avatar').first();
   await avatar.scrollIntoViewIfNeeded();
