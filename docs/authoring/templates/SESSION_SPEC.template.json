@@ -1,0 +1,42 @@
+{
+  "id": "__VERIFIED_SESSION_ID__",
+  "title": "__CURRENT_SESSION_TITLE__",
+  "number": null,
+  "start": "__CONFIRMED_START_ISO_WITH_IST__",
+  "end": "__CONFIRMED_END_ISO_WITH_IST_OR_NULL__",
+  "stage": "__APPROVED_PRODUCTION_STAGE__",
+  "visual": "production",
+  "objective": "__ONE_SOURCE_BACKED_STUDENT_OUTCOME__",
+  "homeworkUrl": "__VERIFIED_NATIVE_GOOGLE_DOC_URL__",
+  "submission": "__ACTUAL_SUBMISSION_INSTRUCTIONS__",
+  "steps": [
+    {
+      "title": "__CURRENT_TASK_TITLE__",
+      "instruction": "__SOURCE_GROUNDED_ACTION_SEQUENCE__",
+      "review": "__OBSERVABLE_OUTPUT_CRITERION__"
+    }
+  ],
+  "homework": [
+    {
+      "title": "__MATCHING_PRACTICE_TASK_TITLE__",
+      "prompt": "__PRACTICE_INSTRUCTIONS_NOT_AN_INVENTED_OFFICIAL_PROMPT__"
+    }
+  ],
+  "tools": [],
+  "prompts": [],
+  "checklist": [
+    "__CANONICAL_PRODUCTION_REVIEW_CRITERION__"
+  ],
+  "quiz": [
+    {
+      "question": "__SOURCE_GROUNDED_PRODUCTION_DECISION__",
+      "options": [
+        "__CHOICE_A__",
+        "__CHOICE_B__",
+        "__CHOICE_C__"
+      ],
+      "correct": null,
+      "explanation": "__WHY_THE_CORRECT_CHOICE_SERVES_THE_LESSON__"
+    }
+  ]
+}
