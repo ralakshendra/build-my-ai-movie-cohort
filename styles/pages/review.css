@@ -1,0 +1,14 @@
+body[data-page-key="review"] .review-main{max-width:1200px;margin:0 auto;padding:clamp(28px,5vw,64px) 24px 96px}
+body[data-page-key="review"] .review-intro{max-width:720px;margin-bottom:32px}
+body[data-page-key="review"] .review-intro h1{margin:10px 0 16px;font-size:clamp(36px,5vw,64px);line-height:1.05}
+body[data-page-key="review"] .review-intro p{font-size:clamp(16px,2vw,20px);line-height:1.5}
+body[data-page-key="review"] .review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px}
+body[data-page-key="review"] .review-card{display:flex;flex-direction:column;gap:10px;min-height:160px;padding:22px;border:1px solid rgba(255,154,61,.35);border-radius:14px;background:#14100d;color:#fff;text-decoration:none}
+body[data-page-key="review"] .review-card:hover,body[data-page-key="review"] .review-card:focus-visible{border-color:#ff9a3d;background:#22170e;outline-offset:3px}
+body[data-page-key="review"] .review-card-kind{color:#ff9a3d;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+body[data-page-key="review"] .review-card strong{font-size:19px;line-height:1.25}
+body[data-page-key="review"] .review-card small{margin-top:auto;color:#c9b6a5;overflow-wrap:anywhere}
+.bmai-review-toolbar{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px clamp(16px,4vw,48px);border-bottom:1px solid #a95b20;background:#231307;color:#ffe0bd;font-size:14px;font-weight:700}
+.bmai-review-toolbar a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.bmai-review-toolbar a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+@media(max-width:540px){.bmai-review-toolbar{font-size:12px}.bmai-review-toolbar span{text-align:right}}

@@ -94,13 +94,15 @@ Run npm run build. Confirm the resource catalog updates and no duplicate tool/pr
 
 ## 9. Validate before asking for review
 
-Run npm run build, npm run qa:cohesion, npm run qa:release, and npm run qa:visual. Check every public page at 390px, 820px and 1440px. Verify header/footer identity, Back to Home, section links, source anchors, image decoding, avatar textures, no page overflow, prompt copying, checkbox persistence and quiz feedback. Use controlled browser clocks to verify before release, the countdown crossing zero, automatic unlock, and after release for session/playbook/homework. Check that future Google Doc links navigate to the website lock screen.
+Run npm run build, npm run qa:cohesion, npm run qa:release, npm run qa:review, and npm run qa:visual. Keep the local preview server running for `qa:review`. Check every public page at 390px, 820px and 1440px. Verify header/footer identity, Back to Home, section links, source anchors, image decoding, avatar textures, no page overflow, prompt copying, checkbox persistence and quiz feedback. Use controlled browser clocks to verify before release, the countdown crossing zero, automatic unlock, and after release for session/playbook/homework. Check that future Google Doc links navigate to the website lock screen.
+
+Start `npm run preview`. Use `http://127.0.0.1:8766/__review__/` to review every public HTML page before its release date. The local server discovers the pages automatically and keeps internal page navigation inside the review area. Open a future guide, playbook and homework workspace there and confirm they are readable; then open their ordinary `http://127.0.0.1:8766/` URLs and confirm the scheduled lock still applies. Review access is local to the preview server and must never be added to production page scripts, the generated site bundle or a hostname bypass. External Google Docs remain subject to their own sharing permissions.
 
 Inspect screenshots, not just test output. Review at least homepage libraries, one full guide, one full playbook, homework workspace, locked pages and all avatar poses. Report loading measurements as local measurements, not production speed guarantees. Test network-throttled hosted performance after an authorized deployment.
 
 ## 10. Deliver a concrete review package
 
-Provide the local preview URL, official homework Doc URL, files changed, validation results and known limitations. List any missing source input or sharing restriction. Explain how the deliverable teaches the stated student outcome. Do not publish, push, merge or deploy until the user authorizes it. After approval, rebuild, verify generated files are current, deploy through the established project workflow and smoke-test the actual hosted URLs.
+Provide both local URLs: the ordinary scheduled preview at `http://127.0.0.1:8766/` and the unlocked owner review area at `http://127.0.0.1:8766/__review__/`. Include the official homework Doc URL, files changed, validation results and known limitations. List any missing source input or sharing restriction. Explain how the deliverable teaches the stated student outcome. Do not publish, push, merge or deploy until the user authorizes it. After approval, rebuild, verify generated files are current, deploy through the established project workflow and smoke-test the actual hosted URLs. Pushing to a private repository does not by itself establish a hosted website deployment.
 
 
 ## Topic illustration contract

@@ -1,14 +1,14 @@
-# BUILD MY AI MOVIE STUDIO — final execution report
+# BUILD MY AI MOVIE STUDIO — initial site refactor report (historical)
 
-Status: implemented and validated locally; ready for user review. No push, merge or production deployment has occurred.
+This report records the initial 11-page refactor and its validation at that time. The current repository includes 17 public HTML pages through Week 4 Day 2. For current authoring and review instructions, use `AGENTS.md`, `docs/FUTURE_PAGE_CREATION_PROMPT.md` and `docs/SHARED_SITE_LIBRARY.md`.
 
-Review homepage: http://127.0.0.1:8766/index.html
+Ordinary preview: http://127.0.0.1:8766/ (scheduled locks apply). Owner review: http://127.0.0.1:8766/__review__/ (all local pages open for review).
 
 Use port 8766 instead of the earlier preview on 8765. The new preview server explicitly supplies the correct WebP, SVG, JavaScript and CSS content types. Restart it with `npm run preview`.
 
 ## Branding and student experience
 
-All eleven public pages use BUILD MY AI MOVIE STUDIO; Alexx Roy, Founder of Build My AI Movie Studio; and © 2026 AI FilmCraft - All Rights Reserved. Locked pages retain the shared header, Back to Home and footer.
+At the time of this refactor, all eleven public pages used BUILD MY AI MOVIE STUDIO; Alexx Roy, Founder of Build My AI Movie Studio; and © 2026 AI FilmCraft - All Rights Reserved. Locked pages retained the shared header, Back to Home and footer. The current 17-page site is checked by `npm run build` and `npm run qa:cohesion`.
 
 The next class remains in both the homepage teaser and Upcoming Sessions. Session, Playbook and Homework library headings have relevant vector icons; playbook/homework cards have smaller supporting icons.
 
@@ -16,7 +16,7 @@ The Resource Library separates tools, prompts, checklists and session references
 
 ## Scheduled locks and homework
 
-`library/schedule.js` is the single schedule. Local preview and production obey the same start times, displayed in IST. The old local-host bypass was removed.
+`library/schedule.js` is the single schedule. Ordinary local preview and production obey the same start times, displayed in IST. The owner review area is an explicit, local-only preview route; its override is supplied by the preview server and is absent from production page scripts.
 
 Future session guides, playbooks and existing homework workspaces show a lock screen with a live countdown. At release, the page reloads into its available state and homepage current/upcoming state updates. Future Google Doc homework links in homepage cards and page headers lead to the associated website lock screen before release. Matching uses Google document IDs rather than requiring identical query strings. Future session-specific prompts/checklists show release notices and restore their content at release.
 
@@ -57,9 +57,9 @@ A local homepage measurement recorded DOM readiness around 278 ms and page load 
 
 `scripts/new-session.cjs` generates paired session/playbook pages from a validated specification, plus lesson data, a resource content record and schedule entry. It refuses overwrites and validates steps, quiz answers, production stage, dates, tool use cases and prompt attribution. A temporary fixture verified creation, quiz feedback, saved progress and mobile layout. It did not add a student session to the live schedule.
 
-The local CI workflow now builds shared outputs, checks generated files are current and runs responsive, release and cohesion QA. These CI changes have not run on GitHub because nothing has been pushed.
+The initial local CI workflow built shared outputs, checked generated files and ran responsive, release and cohesion QA. Current repository status should be read from GitHub and current local checks rather than inferred from this historical report.
 
-## Validation evidence
+## Historical validation evidence
 
 | Check | Result |
 |---|---|
@@ -79,4 +79,4 @@ Read `docs/FUTURE_PAGE_CREATION_PROMPT.md` for the detailed session/playbook/Goo
 
 Commands: `npm run preview`, `npm run build`, `npm run site:check`, `npm run qa:cohesion`, `npm run qa:release`, `npm run qa:visual`, and `npm run session:new -- path/to/spec.json`.
 
-Remaining steps: user review; then, if authorized, sync the complete local working copy into the intended Git branch, inspect the diff/generated files, run hosted CI, deploy through the established workflow and smoke-test the real URLs. The local directory remains a working copy without Git metadata, so synchronization needs to be deliberate.
+Current changes belong in the private Git repository and follow the review and release rules in `AGENTS.md`. A push updates repository source; a hosted website must be deployed and checked separately. The local owner review area does not change public access or Google Docs sharing.

@@ -9,6 +9,7 @@
     "qa:cohesion": "node scripts/audit-site.cjs",
     "session:new": "node scripts/new-session.cjs",
     "qa:release": "node scripts/release-check.cjs",
+    "qa:review": "node scripts/review-check.cjs",
     "preview": "python scripts/serve-preview.py --port 8766"
   },
   "devDependencies": {

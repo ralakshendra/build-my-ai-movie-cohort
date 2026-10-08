@@ -19,12 +19,16 @@ The site uses one release schedule, one runtime bundle and shared visual compone
 | New session/playbook scaffold | scripts/new-session.cjs |
 | Mandatory public-page contract | scripts/check-site.cjs |
 | All-page responsive/load audit | scripts/audit-site.cjs |
+| Local owner review area | scripts/serve-preview.py and styles/pages/review.css |
+| Review access and ordinary lock check | scripts/review-check.cjs |
 
 Run npm run build after edits. It rebuilds resources and shared outputs, then enforces the contract. Run npm run qa:cohesion for page/viewport checks. Registration, links, static metadata, brand/header/footer, shared dependencies and absence of inline styling are enforced on all public HTML pages. QA pages and the explicit hero approval preview are development-only exceptions and must not be published as student routes.
 
 Use the authoring prompt in FUTURE_PAGE_CREATION_PROMPT.md. Update existing page content deliberately; the scaffold is for net-new lessons. A guide explains the workflow; a playbook provides practice; the Google Doc captures the student's work. All three share one outcome and one schedule.
 
 This remains a static website. Release gates are student-experience controls, not server-side authorization. Google Doc sharing is controlled in Google Drive.
+
+Run `npm run preview` from the repository root. The ordinary preview at `http://127.0.0.1:8766/` follows `library/schedule.js`. The owner review area at `http://127.0.0.1:8766/__review__/` discovers every public HTML page and serves it through a local-only namespace with the existing review flag enabled. Relative links and shared assets stay in that namespace. The review area and its access script are supplied by the preview server; they are not public site files. Run `npm run qa:review` to check every review page and confirm a future lesson remains locked in the ordinary preview. The local review area does not alter Google Docs permissions.
 
 
 Topic illustrations: library/visuals.js owns accessible resource-type variants and mapping; library/visuals.css owns layouts. library/schedule.js visual selects the topic. All resources inherit that key. assets/illustrations contains true SVGs (no embedded raster). scripts/new-session.cjs defaults unspecified future topics to production; scripts/check-site.cjs validates keys, assets and SVG format.
