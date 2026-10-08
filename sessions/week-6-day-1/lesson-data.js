@@ -41,7 +41,7 @@ window.BMAI_LESSON={
     },
     {
       "title": "Build the prop sheet",
-      "instruction": "Identify story-critical objects from the shot list and the team’s assigned scenes. Use the mother sheet’s character and prop columns as an inventory aid. Create reference images from the official materials or instructor-shared prompt; no complete official prop-sheet prompt was supplied in this source packet.",
+      "instruction": "Identify story-critical objects from the shot list and the team’s assigned scenes. Use the Mahabharatha Project (BMAM) sheet’s character and prop columns as an inventory aid. Create reference images from the official materials or instructor-shared prompt; no complete official prop-sheet prompt was supplied in this source packet.",
       "review": "Each selected prop has a clear name, reference, visual details, and the scene or character it belongs to. Unverified designs are marked for review."
     },
     {
@@ -126,7 +126,7 @@ window.BMAI_LESSON={
     {
       "title": "Prepare the prop reference pack",
       "body": "Make a prop inventory and reference sheet for objects needed in your assigned scenes.",
-      "prompt": "Use the production shot list and the mother sheet’s prop entries to select only the objects used by your team. For each object, record its name, source reference, scene use, and the unresolved visual details. Do not invent an official prompt when one has not been supplied."
+      "prompt": "Use the production shot list and the Mahabharatha Project (BMAM) sheet’s prop entries to select only the objects used by your team. For each object, record its name, source reference, scene use, and the unresolved visual details. Do not invent an official prompt when one has not been supplied."
     },
     {
       "title": "Revise and select image generations",
@@ -149,7 +149,7 @@ window.BMAI_LESSON={
     "I listed only the characters that appear in our assigned film.",
     "I used the supplied face and costume references when revising character sheets.",
     "The character sheets include consistent views and useful expressions.",
-    "I checked the mother sheet and shot list for story-critical props.",
+    "I checked the Mahabharatha Project (BMAM) sheet and shot list for story-critical props.",
     "Each prop reference is tied to a character or scene, and unknown details are marked for review.",
     "I recorded a visible mismatch before revising an image or clip.",
     "I compared the selected generation with the supplied references.",
