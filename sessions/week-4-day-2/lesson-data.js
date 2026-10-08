@@ -2,8 +2,6 @@ window.BMAI_LESSON={
   "id": "week-4-day-2",
   "title": "Product Spec Ad: Frames, Motion and Edit",
   "number": 8,
-  "start": "2026-10-25T20:00:00+05:30",
-  "end": "2026-10-25T22:00:00+05:30",
   "stage": "MOTION",
   "visual": "advertisement",
   "homework": [

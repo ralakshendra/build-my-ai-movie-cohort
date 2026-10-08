@@ -83,3 +83,16 @@ body .studio-guidance.avatar-milestone{border-color:#ff6a00!important;box-shadow
 @keyframes avatar-encourage{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 @keyframes avatar-confidence{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
 @keyframes avatar-laugh{0%,100%{transform:rotate(0)}30%{transform:rotate(-1.2deg) translateY(-2px)}70%{transform:rotate(1.2deg)}}
+
+/* Approved planning and pointing cutouts complement the complete pose library. */
+.studio-avatar.pointing{background-image:url('assets/avatars/alexx-point.webp');background-size:contain;background-position:center}
+.studio-avatar.storyboard{background-image:url('assets/avatars/alexx-storyboard.webp');background-size:contain;background-position:center}
+.studio-avatar.reference-board{background-image:url('assets/avatars/alexx-learning-poses.webp');background-size:202% 202%;background-position:100% 0%}
+.studio-avatar.laptop{background-image:url('assets/avatars/alexx-learning-poses.webp');background-size:200% 200%;background-position:0% 100%}
+.studio-avatar[data-avatar-flip=true],.studio-guidance-visual>img[data-avatar-flip=true],.studio-hero-character>img[data-avatar-flip=true]{scale:-1 1}
+.studio-avatar[data-avatar-flip=false],.studio-guidance-visual>img[data-avatar-flip=false],.studio-hero-character>img[data-avatar-flip=false]{scale:1 1}
+body .studio-guidance.avatar-right .studio-guidance-visual{transform:none}
+.w3d2-progress>.studio-companion,.w4-progress>.studio-companion{grid-column:1/-1;flex-basis:100%;margin:8px 0 0}
+.w3d2-task>header>.studio-avatar-tip,.w4-task>header>.studio-avatar-tip{grid-column:1/-1;justify-self:stretch}
+.w3d2-skill-intro>.studio-avatar-tip,.w4-skill-head>.studio-avatar-tip{grid-column:1/-1}
+.bmai-skill-instruction{color:#c7c1b9;line-height:1.65}

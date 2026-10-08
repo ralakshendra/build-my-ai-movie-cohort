@@ -147,3 +147,6 @@ body[data-page-type="playbook"] .footer-row{display:flex;justify-content:space-b
 }
 
 
+body[data-page-type="playbook"] .visual:before,body[data-page-type="playbook"] .visual:after{pointer-events:none}
+body[data-page-type="playbook"] .studio-playbook-visual{flex-direction:column;max-height:none!important}
+body[data-page-type="playbook"] .studio-playbook-visual .studio-avatar{flex-shrink:0}

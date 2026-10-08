@@ -2,8 +2,6 @@ window.BMAI_LESSON={
   "id": "week-3-day-2",
   "title": "Make Yourself the Hero: Superhero Teaser Production",
   "number": 6,
-  "start": "2026-10-18T20:00:00+05:30",
-  "end": "2026-10-18T22:00:00+05:30",
   "stage": "SHOTS",
   "visual": "short",
   "objective": "Create a short superhero teaser by designing an original hero and costume, building a consistent character sheet and hero location, generating title artwork and reference-led shots, then assembling and reviewing the edit.",

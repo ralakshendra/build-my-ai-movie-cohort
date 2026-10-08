@@ -6,14 +6,14 @@ const S=window.BMAI_SESSIONS;
 
 
 
-function isUnlocked(x){return !!x&&(window.BMAI_LOCKS_PAUSED_FOR_REVIEW||new Date(x.start).getTime()<=now())}
+function isUnlocked(x){return !!x&&(new Date(x.start).getTime()<=now())}
 function sessionIdFromHref(href){
  try{
   const u=new URL(href,location.href);
   const markerIndex=u.pathname.startsWith(siteRoot.pathname)?0:-1;
   if(u.origin===location.origin){
    const rel=(markerIndex>=0?u.pathname.slice(siteRoot.pathname.length):u.pathname).replace(/^\/+|\/+$/g,"");
-   const matched=S.find(x=>[x.session,x.playbook,x.homeworkPage].filter(Boolean).includes(rel));
+   const matched=S.find(x=>[x.session,x.playbook].filter(Boolean).includes(rel));
    if(matched)return matched.id;
    const sessionPath=rel.match(/^sessions\/(week-\d+-day-\d+)(?:\/|$)/);
    if(sessionPath)return sessionPath[1];
@@ -33,7 +33,7 @@ function byId(id){return S.find(x=>x.id===id)}
 function pageId(){return document.body.dataset.sessionId||null}
 function pageSession(){const id=pageId();return id?byId(id):null}
 function pageLabel(){return ({session:"SESSION GUIDE",playbook:"PLAYBOOK",homework:"HOMEWORK",resource:"RESOURCE"})[document.body.dataset.pageType]||"SESSION GUIDE"}
-function current(){let found=null;for(const x of S)if(new Date(x.start).getTime()<=now())found=x;return found}
+function current(){let found=null;for(const x of S)if(x.session&&new Date(x.start).getTime()<=now())found=x;return found}
 function next(){return S.find(x=>new Date(x.start).getTime()>now())}
 function basePath(){return siteRoot.href}
 function dateParts(iso){return new Intl.DateTimeFormat("en-IN",{weekday:"long",day:"numeric",month:"long",year:"numeric",timeZone:"Asia/Kolkata"}).format(new Date(iso))}
@@ -56,7 +56,7 @@ if(!skip.isConnected)document.body.appendChild(skip);
 const main=document.createElement("main");
 main.id="main-content";
 main.className="bmai-lock-screen";
-main.innerHTML='<div class="bmai-lock-card"><div class="bmai-lock-kicker">BUILD MY AI MOVIE · SESSION LOCKED</div><div class="bmai-lock-week">'+esc(x.week)+'</div><div class="bmai-lock-date">'+esc(dateRange(x))+'</div><h1>'+esc(x.title)+'</h1><p>This session is scheduled to unlock at the official cohort start time.</p><div class="bmai-lock-count" id="bmaiLockCount">'+esc(countdown(x.start))+'</div><div class="bmai-lock-note">The page will unlock automatically when the countdown reaches zero. You do not need to refresh.</div><a class="btn btn-primary bmai-header-home" aria-label="Back to home" title="Back to home" href="'+hub+'"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" width="20"><path d="M3 10 12 3l9 7M5 9v12h5v-7h4v7h5V9"></path></svg></a></div>';
+main.innerHTML='<div class="bmai-lock-card"><div class="bmai-lock-avatars"><div class="studio-avatar ready" aria-label="Alexx ready for your next creative step"></div></div><div class="bmai-lock-kicker">BUILD MY AI MOVIE · SESSION LOCKED</div><div class="bmai-lock-week">'+esc(x.week)+'</div><div class="bmai-lock-date">'+esc(dateRange(x))+'</div><h1>'+esc(x.title)+'</h1><p>This session is scheduled to unlock at the official cohort start time.</p><div class="bmai-lock-count" id="bmaiLockCount">'+esc(countdown(x.start))+'</div><div class="bmai-lock-note">The page will unlock automatically when the countdown reaches zero. You do not need to refresh.</div><a class="btn btn-primary bmai-lock-home" aria-label="Back to Home" title="Back to home" href="'+hub+'"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" width="20"><path d="M3 10 12 3l9 7M5 9v12h5v-7h4v7h5V9"></path></svg> Back to Home</a></div>';
 document.body.insertBefore(main,document.querySelector(".studio-site-footer"));
 function tick(){const el=document.getElementById("bmaiLockCount");if(!el)return;el.textContent=countdown(x.start);if(new Date(x.start).getTime()<=now())location.reload()}
 tick();setInterval(tick,1000);return true
@@ -117,10 +117,25 @@ targets.forEach(el=>{
 });
 }
 function progress(){
-const boxes=[...document.querySelectorAll('.checklist input[type="checkbox"], input[type="checkbox"][data-index]')];if(!boxes.length)return;
-const key="bmai-progress:"+page;let saved=[];try{saved=JSON.parse(localStorage.getItem(key)||"[]")}catch(e){}
-boxes.forEach((b,i)=>{b.checked=!!saved[i];b.addEventListener("change",()=>{try{localStorage.setItem(key,JSON.stringify(boxes.map(x=>x.checked)))}catch(e){}update()})});
-function update(){const done=boxes.filter(x=>x.checked).length,pct=Math.round(done/boxes.length*100);document.querySelectorAll(".bmai-progress-value").forEach(x=>x.textContent=pct+"%");document.querySelectorAll(".bmai-progress-fill").forEach(x=>x.style.width=pct+"%")}update()
+const boxes=[...document.querySelectorAll('main input[type="checkbox"]')];if(!boxes.length)return;
+const state=window.BMAI_PROGRESS, session=pageId(), isPlaybook=document.body.dataset.pageType==='playbook';
+const mainBoxes=[...document.querySelectorAll('#checklist input[type="checkbox"], main input[type="checkbox"][data-index]')];
+boxes.forEach(b=>{const text=b.getAttribute('aria-label')||b.closest('label')?.textContent||b.parentElement.textContent;
+ if(!b.closest('label')&&!b.hasAttribute('aria-label'))b.setAttribute('aria-label',text.trim());
+ const spec=window.BMAI_LESSON||(typeof sessionData!=='undefined'?sessionData:null),index=Number(b.dataset.index);
+ b.dataset.taskKey=state.taskKey(b.hasAttribute('data-index')&&spec?.checklist?.[index]?spec.checklist[index]:text);
+});
+function update(){const primary=mainBoxes.length?mainBoxes:boxes,done=primary.filter(b=>b.checked).length,pct=Math.round(done/primary.length*100);
+document.querySelectorAll('.bmai-progress-value,#progressNumber').forEach(el=>el.textContent=pct+'%');
+document.querySelectorAll('.bmai-progress-fill,#progressFill').forEach(el=>el.style.width=pct+'%');
+const text=document.getElementById('progressText');if(text)text.textContent=done===primary.length?'All homework checkpoints complete.':'Keep going. '+(primary.length-done)+' checkpoints left.';
+const status=document.getElementById('homeworkStatus');if(status)status.textContent=done===primary.length?'Complete':done+' / '+primary.length+' checkpoints';
+primary.forEach(b=>b.closest('label')?.classList.toggle('done',b.checked));
+const guideFill=document.getElementById('pb')||document.getElementById('prog'),guideText=document.getElementById('pt');if(guideFill)guideFill.style.width=pct+'%';if(guideText)guideText.textContent=done+' of '+primary.length+' tasks done';
+}
+const legacyBoxes=[...document.querySelectorAll('.checklist input[type="checkbox"], input[type="checkbox"][data-index]')];
+const key=isPlaybook?'bmai-tasks:'+session:'bmai-page-tasks:'+page;
+const guideKey=({'sessions/week-2-day-1/index.html':'w2d1-session','sessions/week-2-day-2/index.html':'w2d2'})[page];state.bind(boxes,{key,legacyKey:guideKey||'bmai-progress:'+page,legacyBoxes:guideKey?boxes:legacyBoxes,update});
 }
 function renderCard(x){
 const cur=current(),unlocked=isUnlocked(x),isCurrent=cur&&cur.id===x.id,isNext=next()&&next().id===x.id;
@@ -133,8 +148,11 @@ return '<article class="session schedule-row '+(isCurrent?"is-current ":"")+(unl
 }
 function homepage(){
 if(document.body.dataset.pageType!=="home")return;
-const reviewBanner=document.getElementById("bmaiReviewBanner");if(reviewBanner)reviewBanner.hidden=!window.BMAI_LOCKS_PAUSED_FOR_REVIEW;
+const reviewBanner=document.getElementById("bmaiReviewBanner");if(reviewBanner)reviewBanner.hidden=true;
 const cur=current(),nxt=next();
+try{const last=localStorage.getItem('bmai:lastPath'),session=S.find(x=>[x.session,x.playbook].includes(last));
+ if(last&&session&&isUnlocked(session)){const host=document.querySelector('.bmai-studio-card');if(host&&!host.querySelector('.bmai-resume')){const resume=document.createElement('div');resume.className='bmai-resume';const link=document.createElement('a');link.className='btn secondary';link.href=basePath()+last;link.textContent='RESUME YOUR LAST LESSON →';resume.append(link);host.append(resume);}}
+}catch{}
 const title=document.querySelector(".bmai-studio-card h2"),desc=document.querySelector(".bmai-studio-card p.muted"),links=document.querySelectorAll(".bmai-studio-card .btn");
 if(cur&&title){
 title.innerHTML=esc(cur.week)+"<br><span>"+esc(cur.title)+"</span>";
@@ -164,7 +182,7 @@ const nextBox=document.getElementById("bmaiNextSession");
 if(nextBox){
  if(nxt){
   const outcomes={"week-2-day-1":"You have the idea. Next, bring it to life with your first AI movie short: generate a shot, build the sound, and make your first cut.","week-2-day-2":"Make an ad that feels real. Build a consistent product world, then turn your strongest frames into controlled motion.","week-3-day-1":"Think like a director. Build a character, a visual world, and a story blueprint before your next generation."};
-  const reviewOpen=window.BMAI_LOCKS_PAUSED_FOR_REVIEW&&!!nxt.session;
+  const reviewOpen=false&&!!nxt.session;
   const access=reviewOpen?'<div class="studio-teaser-lock"><span>REVIEW ACCESS OPEN</span></div><div class="studio-teaser-actions"><a class="btn" href="'+esc(sessionUrl(nxt))+'">OPEN SESSION</a>'+(nxt.playbook?'<a class="btn secondary" href="'+basePath()+esc(nxt.playbook)+'">OPEN PLAYBOOK</a>':'')+'</div>':'<div class="studio-teaser-lock"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>CLASS LOCKED · OPENS IN <b data-teaser-countdown>'+esc(countdown(nxt.start))+'</b></span></div><small>Your next chapter unlocks automatically. Get your current project ready.</small>';
   nextBox.className="studio-teaser-card";
   nextBox.innerHTML='<div class="studio-teaser-copy"><div class="kicker">NEXT UP / '+esc(nxt.week)+'</div><h2>'+esc(nxt.title)+'</h2><p>'+esc(outcomes[nxt.id]||nxt.description||"Your next creative challenge is on its way. Bring what you have built so far and get ready to take the next step.")+'</p><div class="studio-teaser-date">'+esc(dateRange(nxt))+'</div>'+access+'</div>'+(nxt.hero?'<div class="studio-teaser-image"><img src="'+basePath()+esc(nxt.hero)+'" alt="'+esc(nxt.title)+' — next class preview" loading="lazy"></div>':'');
@@ -272,7 +290,7 @@ if(document.body.dataset.pageType==="home"){
   updateHomepageCountdowns();guardLockedLinks();
  },1000)
 }
-try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
+if(pageSession())try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
 window.BMAI_VISUALS.intro();enhanceLongText();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();enhanceAvatarFallbacks();setupScrollControls();guardLockedLinks();revealReferenceAnchor();
 document.querySelectorAll("a").forEach(a=>{if(a.href===location.href)a.setAttribute("aria-current","page")})
 }

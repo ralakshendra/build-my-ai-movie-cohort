@@ -4,6 +4,11 @@ on:
   push:
     branches: [main, 'fix/**']
   workflow_dispatch:
+    inputs:
+      upload_artifacts:
+        description: 'Upload failure screenshots (requires available Actions storage)'
+        type: boolean
+        default: false
 
 concurrency:
   group: visual-qa-${{ github.ref }}
@@ -50,7 +55,8 @@ jobs:
         run: npm run qa:cohesion && npm run qa:release && npm run qa:review
 
       - name: Upload screenshots and report
-        if: failure()
+        if: failure() && github.event_name == 'workflow_dispatch' && inputs.upload_artifacts
+        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: build-my-ai-movie-visual-qa
@@ -60,4 +66,4 @@ jobs:
             test-results/
             /tmp/bmai-server.log
           if-no-files-found: ignore
-          retention-days: 7
+          retention-days: 1

@@ -1,6 +1,8 @@
 # BUILD MY AI MOVIE STUDIO — initial site refactor report (historical)
 
-This report records the initial 11-page refactor and its validation at that time. The current repository includes 17 public HTML pages through Week 4 Day 2. For current authoring and review instructions, use `AGENTS.md`, `docs/FUTURE_PAGE_CREATION_PROMPT.md` and `docs/SHARED_SITE_LIBRARY.md`.
+The latest reviewed avatar and homework changes are documented in [FIXES_REVIEW_2026-10-08.md](FIXES_REVIEW_2026-10-08.md).
+
+This report records the initial 11-page refactor and its validation at that time. The current repository includes 16 public HTML pages through Week 4 Day 2. For current authoring and review instructions, use `AGENTS.md`, `docs/FUTURE_PAGE_CREATION_PROMPT.md` and `docs/SHARED_SITE_LIBRARY.md`.
 
 Ordinary preview: http://127.0.0.1:8766/ (scheduled locks apply). Owner review: http://127.0.0.1:8766/__review__/ (all local pages open for review).
 
@@ -8,7 +10,7 @@ Use port 8766 instead of the earlier preview on 8765. The new preview server exp
 
 ## Branding and student experience
 
-At the time of this refactor, all eleven public pages used BUILD MY AI MOVIE STUDIO; Alexx Roy, Founder of Build My AI Movie Studio; and © 2026 AI FilmCraft - All Rights Reserved. Locked pages retained the shared header, Back to Home and footer. The current 17-page site is checked by `npm run build` and `npm run qa:cohesion`.
+At the time of this refactor, all eleven public pages used BUILD MY AI MOVIE STUDIO; Alexx Roy, Founder of Build My AI Movie Studio; and © 2026 AI FilmCraft - All Rights Reserved. Locked pages retained the shared header, Back to Home and footer. The current 16-page site is checked by `npm run build` and `npm run qa:cohesion`.
 
 The next class remains in both the homepage teaser and Upcoming Sessions. Session, Playbook and Homework library headings have relevant vector icons; playbook/homework cards have smaller supporting icons.
 

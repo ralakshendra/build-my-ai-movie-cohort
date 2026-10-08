@@ -10,7 +10,9 @@
     "session:new": "node scripts/new-session.cjs",
     "qa:release": "node scripts/release-check.cjs",
     "qa:review": "node scripts/review-check.cjs",
-    "preview": "python scripts/serve-preview.py --port 8766"
+    "preview": "python scripts/serve-preview.py --port 8766",
+    "qa:fixes": "node qa/fixes-check.cjs",
+    "qa:content-review": "node qa/final-review.cjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0",

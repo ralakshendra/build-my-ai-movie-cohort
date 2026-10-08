@@ -2,8 +2,6 @@ window.BMAI_LESSON={
   "id": "week-4-day-1",
   "title": "Superhero Teaser Production",
   "number": 7,
-  "start": "2026-10-24T20:00:00+05:30",
-  "end": "2026-10-24T22:00:00+05:30",
   "stage": "EDIT",
   "visual": "short",
   "objective": "Turn the existing superhero identity into a finished cinematic 16:9 teaser by building usable references, generating and editing hero footage, then reviewing and sharing the cut.",

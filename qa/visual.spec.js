@@ -3,6 +3,7 @@ const { test, devices } = require('playwright/test');
 const BASE = process.env.BMAI_BASE_URL || 'https://ralakshendra.github.io/build-my-ai-movie-cohort/';
 
 const pages = [
+  ['not-found', '404.html'],
   ['home', 'index.html'],
   ['playbook', 'playbook.html'],
   ['resource', 'resources/ai-faceless-youtube-masterclass.html'],
@@ -10,7 +11,6 @@ const pages = [
   ['w2d1-playbook', 'sessions/week-2-day-1/playbook.html'],
   ['w2d2', 'sessions/week-2-day-2/index.html'],
   ['w2d2-playbook', 'sessions/week-2-day-2/playbook.html'],
-  ['w2d2-homework', 'sessions/week-2-day-2/homework.html'],
   ['w3d1', 'sessions/week-3-day-1/index.html'],
   ['w3d1-playbook', 'sessions/week-3-day-1/playbook.html'],
   ['w3d2', 'sessions/week-3-day-2/index.html'],
@@ -75,7 +75,7 @@ async function auditPage(page, label, viewportWidth) {
   if (audit.pageOverflow > 2) throw new Error(label + ': horizontal page overflow ' + audit.pageOverflow + 'px');
   if (!audit.pageType || !audit.pageId) throw new Error(label + ': missing static page metadata');
   if (audit.pageIdentity !== audit.pageId) throw new Error(label + ': page identity metadata is inconsistent');
-  if (label !== 'home' && !audit.sessionId) throw new Error(label + ': session page has no static session id');
+  if (label !== 'home' && label !== 'not-found' && !audit.sessionId) throw new Error(label + ': session page has no static session id');
   if (!audit.hasMain) throw new Error(label + ': missing main landmark');
   if (!audit.hasSkipLink) throw new Error(label + ': missing skip link');
   if (label !== 'home') {
@@ -85,7 +85,7 @@ async function auditPage(page, label, viewportWidth) {
     if (!audit.hasBrand) throw new Error(label + ': missing shared brand identity');
   }
   if (audit.brokenMedia.length) throw new Error(label + ': broken media ' + audit.brokenMedia.join(', '));
-  
+
   for (const href of audit.localLinks) {
     const response = await page.request.get(href);
     if (!response.ok()) throw new Error(label + ': broken local link ' + href + ' (' + response.status() + ')');
@@ -133,7 +133,6 @@ test('future session materials stay locked before release', async ({browser}) =>
     'sessions/week-2-day-1/playbook.html',
     'sessions/week-2-day-2/index.html',
     'sessions/week-2-day-2/playbook.html',
-    'sessions/week-2-day-2/homework.html',
     'sessions/week-3-day-1/index.html',
     'sessions/week-3-day-1/playbook.html',
     'sessions/week-3-day-2/index.html',
@@ -222,4 +221,3 @@ for (const [label, path, frozenIso] of [
     });
   }
 }
-

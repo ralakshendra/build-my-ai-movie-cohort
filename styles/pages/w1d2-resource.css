@@ -439,3 +439,4 @@ body[data-page-key="w1d2-resource"] .layout-w1d2-resource-13{color: #fecdd3; fon
 body[data-page-key="w1d2-resource"] .layout-w1d2-resource-14{color: #fef3c7; font-size: 0.88rem;}
 body[data-page-key="w1d2-resource"] .layout-w1d2-resource-15{color: #fef3c7; font-size: 0.88rem;}
 body[data-page-key="w1d2-resource"] .layout-w1d2-resource-16{margin-bottom: 20px;}
+@media(max-width:380px){body[data-page-key="w1d2-resource"] main .grid-2,body[data-page-key="w1d2-resource"] main .grid-3{grid-template-columns:minmax(0,1fr)}body[data-page-key="w1d2-resource"] .card{min-width:0;overflow-wrap:anywhere}}

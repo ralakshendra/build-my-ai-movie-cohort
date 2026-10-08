@@ -218,6 +218,19 @@ body .studio-guidance.avatar-milestone{border-color:#ff6a00!important;box-shadow
 @keyframes avatar-confidence{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
 @keyframes avatar-laugh{0%,100%{transform:rotate(0)}30%{transform:rotate(-1.2deg) translateY(-2px)}70%{transform:rotate(1.2deg)}}
 
+/* Approved planning and pointing cutouts complement the complete pose library. */
+.studio-avatar.pointing{background-image:url('../assets/avatars/alexx-point.webp');background-size:contain;background-position:center}
+.studio-avatar.storyboard{background-image:url('../assets/avatars/alexx-storyboard.webp');background-size:contain;background-position:center}
+.studio-avatar.reference-board{background-image:url('../assets/avatars/alexx-learning-poses.webp');background-size:202% 202%;background-position:100% 0%}
+.studio-avatar.laptop{background-image:url('../assets/avatars/alexx-learning-poses.webp');background-size:200% 200%;background-position:0% 100%}
+.studio-avatar[data-avatar-flip=true],.studio-guidance-visual>img[data-avatar-flip=true],.studio-hero-character>img[data-avatar-flip=true]{scale:-1 1}
+.studio-avatar[data-avatar-flip=false],.studio-guidance-visual>img[data-avatar-flip=false],.studio-hero-character>img[data-avatar-flip=false]{scale:1 1}
+body .studio-guidance.avatar-right .studio-guidance-visual{transform:none}
+.w3d2-progress>.studio-companion,.w4-progress>.studio-companion{grid-column:1/-1;flex-basis:100%;margin:8px 0 0}
+.w3d2-task>header>.studio-avatar-tip,.w4-task>header>.studio-avatar-tip{grid-column:1/-1;justify-self:stretch}
+.w3d2-skill-intro>.studio-avatar-tip,.w4-skill-head>.studio-avatar-tip{grid-column:1/-1}
+.bmai-skill-instruction{color:#c7c1b9;line-height:1.65}
+
 /* Shared topic illustrations: consistent, intrinsic sizing on every resource. */
 .studio-topic-figure{margin:0 0 20px!important;padding:0!important;border:1px solid #393024;border-radius:14px;overflow:hidden;background:#11110f;min-width:0;max-width:100%}
 .studio-topic-canvas{position:relative}
@@ -250,3 +263,44 @@ body[data-page-type=home] .session.schedule-row{grid-template-columns:200px minm
  body[data-page-type=home] .bmai-studio-card[data-desktop-image-side=left]{grid-template-columns:.95fr 1.05fr}
  body[data-page-type=home] .bmai-studio-card[data-desktop-image-side=left]>.studio-current-visual{border-left:0;border-right:1px solid #333}
 }
+/* Student controls share one accessible, readable treatment. */
+[data-library-quiz] fieldset{min-width:0;margin:24px 0;padding:24px;border:1px solid #454545;border-radius:16px;background:#101010;color:#f5f5f5}
+[data-library-quiz] legend{max-width:100%;padding:0 8px;font-size:1.1rem;font-weight:700;line-height:1.5}
+[data-library-quiz] label{display:flex!important;align-items:flex-start;gap:12px;min-height:48px;padding:14px!important;margin:10px 0!important;border:1px solid #454545;border-radius:10px;color:#ddd;cursor:pointer;line-height:1.5}
+[data-library-quiz] label:has(input:checked){border-color:#ff8e44;background:#28180e}
+[data-library-quiz] input[type=radio]{flex:0 0 20px;width:20px;height:20px;margin:2px 0 0;accent-color:#ff6a00}
+[data-library-quiz] button{min-height:44px;margin-top:12px;padding:12px 18px;border:1px solid #ff8e44;border-radius:8px;background:#ff6a00;color:#080808;font:inherit;font-weight:700;font-size:.95rem;line-height:1.4;cursor:pointer}
+[data-library-quiz] p[aria-live]{line-height:1.6;margin:16px 0 0;color:#ddd}
+:where(a,button,input,textarea,select,summary):focus-visible{outline:3px solid #ff9b56;outline-offset:4px}
+.bmai-lock-avatars{display:flex;justify-content:center;gap:16px;margin:0 auto 12px}
+.bmai-lock-avatars .studio-avatar{width:100px;flex:none}
+.bmai-lock-home{display:inline-flex!important;align-items:center;gap:10px;min-height:48px}
+.bmai-lock-home svg{flex:none;width:20px;height:20px}
+.bmai-resource-filters{display:flex;flex-wrap:wrap;align-items:end;gap:14px;margin:18px 0 24px}
+.bmai-resource-filters label{display:grid;gap:8px;flex:1 1 200px;color:#ccc;font-size:.9rem}
+.bmai-resource-filters input,.bmai-resource-filters select{width:100%;min-height:46px;padding:12px;border:1px solid #555;border-radius:8px;background:#111;color:#fff;font:inherit}
+.bmai-resource-filter-status{flex:1 1 100%;margin:0;color:#bfbfbf}
+.studio-resource-card[hidden]{display:none!important}
+.bmai-resume{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:16px}
+/* Offscreen avatar textures are fetched only when the character approaches view. */
+.studio-avatar:not([data-avatar-seen=true]){background-image:none!important}
+@media(max-width:700px){
+ [data-library-quiz] fieldset{padding:18px 12px}
+ [data-library-quiz] legend{font-size:1rem}
+ .w3d2-nav,.w4-section-nav,.guide-nav{padding-bottom:10px!important;scrollbar-width:thin;scrollbar-color:#ff8e44 #222}
+ .w4-section-nav a,.w3d2-nav a{min-height:44px;font-size:12px!important;display:inline-flex;align-items:center}
+}
+body .bmai-tool-source{width:min(1000px,calc(100% - 32px));margin:32px auto;padding:24px!important;border:1px solid #3f3f3f;border-radius:16px;background:#111}
+.bmai-tool-source h2{font-size:1.2rem!important;letter-spacing:-.015em!important;margin-top:0}
+.bmai-tool-source p{color:#ccc;font-size:1rem;line-height:1.6}
+@media(max-width:700px){.studio-home-actions .btn,.studio-flow-entry .btn,.hero-actions .btn{font-size:12px!important}}
+.bmai-system-actions{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:18px}
+.bmai-system-actions .studio-avatar{width:84px;flex:none}
+.bmai-session-picker{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin:16px 0 24px}
+.bmai-session-picker label{display:grid;gap:8px;color:#ccc;font-size:14px;min-width:0;max-width:100%;flex:1 1 260px}
+.bmai-session-picker select{width:100%;min-width:0;max-width:100%;min-height:46px;padding:12px;border:1px solid #555;border-radius:8px;background:#111;color:#fff;font:inherit}
+.bmai-session-picker p{flex:1 1 240px;color:#bbb;font-size:13px;line-height:1.6;margin:0}
+#playbooks article.card[hidden],#homework article.card[hidden]{display:none!important}
+.bmai-step-title{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.bmai-step-title .studio-avatar{width:80px;flex:none}
+.bmai-scaffold-finish{width:120px}

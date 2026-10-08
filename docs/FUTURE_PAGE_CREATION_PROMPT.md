@@ -26,6 +26,8 @@ Write one concrete outcome: what the student will produce, how they will review 
 
 ## 3. Prepare the homework Google Doc first
 
+The website contains session guides and playbooks; homework lives only in the official Google Doc. Link to Google Homework Docs only from playbook pages. Session pages and homepage homework cards link to the playbook instead. Do not create a separate HTML homework worksheet, workspace, or homeworkPage route.
+
 Use the connected Google Docs workflow and its applicable skill. If an approved native template exists, preserve its structure and adapt it to this lesson; do not silently replace it. Create an actual document before linking to it. Use the same session title/week/day as the website.
 
 The document must contain:
@@ -69,24 +71,27 @@ Every public page includes:
 - BUILD MY AI MOVIE STUDIO in the visible site brand.
 - Alexx Roy, Founder of Build My AI Movie Studio.
 - © 2026 AI FilmCraft - All Rights Reserved in the shared footer.
-- Real session/playbook/homework links near the beginning and in the final action area.
+- Real session/playbook links near the beginning and in the final action area. Only playbooks contain homework Google Doc links.
 
 No inline style attributes, embedded stylesheet blocks, copied navigation engines, duplicate schedules, or duplicated shared CSS. Put reusable components in the shared library. Keep new page-specific CSS scoped to data-page-key. Use npm run build after source edits; do not hand-edit generated library/site.js or library/components.css.
 
 ## 7. Use the learning components deliberately
 
 - Use BMAI.guidance for instructor guidance and BMAI.fold for expandable supporting text when useful.
-- Place the approved storyboard pose by planning; camera by frame generation; headphones by audio review; clapperboard by editing; checklist by final review; idea by skill decisions; caution by troubleshooting; celebration by completion.
+- Use the new pose set throughout each page: open-welcome for entry, curious for decisions, palette for visual planning, product for product frames, confident for execution, ready for checkpoints, encouragement for troubleshooting, thumbs-up for approvals, trophy or applause for completion, and surprised or laugh where the lesson context fits. Long pages should use at least four distinct new poses. Use compact new-avatar placements on system and locked pages. Keep authored cinematic hero artwork.
+- Set data-avatar-tip when the lesson needs a specific instruction. Tips must follow the current task or progress state. Fetch avatar textures only as they approach view.
 - Use the existing avatar engine, visible-state motion, reduced-motion support and keyboard-accessible tips. Do not add page-specific animation code or preload all avatar sheets.
-- Avoid adjacent instructor blocks on the same side; retain the existing alternating alignment behavior.
+- Use one instructor per guidance, skill or progress block. Never nest guidance panels. Avoid consecutive duplicate poses and redundant adjacent guidance. Reuse the full approved pose library for its real jobs: camera, headphones, microphone, clapperboard, laptop, reference-board, framing/storyboard, pointing, idea, checklist and caution, alongside the newer expressive cutouts. Use the drink/product pose only for the coconut advertisement lesson. The shared engine orients each cutout toward its text/image, independently of motion. Wrong answers use caution, correct answers use thumbs-up, perfect completion uses applause, and saved progress restores its actual state. Keep all skill scopes and progress companions connected to the shared engine.
 - Use relevant decorative SVG icons around large library/section headings. Mark decorative graphics aria-hidden and keep text labels readable.
 - Use native details/summary for long prompts, troubleshooting and supporting references. Copy buttons must copy the full prompt. Never turn missing materials into invented placeholders.
-- Use meaningful checkbox checkpoints with device-local persistence. Explain that progress is saved on this device.
+- Use meaningful checkbox checkpoints with device-local persistence through BMAI_PROGRESS. Match the structured checklist wording so playbook and Resource Library checks share stable task identities. Do not add another page persistence engine. Explain that progress is saved on this device.
 - Include scenario-based skill checks with explanations and a way to retry. Preserve keyboard navigation, focus visibility and reduced-motion behavior.
 
 ## 8. Register resources and scheduled access
 
-library/schedule.js is the sole website release source. Session guides, playbooks, local homework workspaces, official homework links and session-specific prompt/checklist entries use the same start time. Keep the next class in both the homepage teaser and Upcoming Sessions. Leave genuinely missing materials in Unreleased Content.
+library/schedule.js is the sole website release source. Session guides, playbooks, official homework Google Doc links and session-specific prompt/checklist entries use the same start time. Keep the next class in both the homepage teaser and Upcoming Sessions. Leave genuinely missing materials in Unreleased Content.
+
+Runtime lesson-data.js contains lesson content only; the shared release engine reads the schedule. Keep static canonical and sharing metadata, including the approved social-preview image, on each new page.
 
 Tools belong under AI Tools as concise use cases, without repeated lesson-link clutter. Put full prompts, practice recipes, checklists and session references in their own expandable entries. Full prompts require exact source anchors. New tools use data-resource-tool and a unique section ID. Full prompts use pre elements with unique IDs. Resource data is generated from lesson content and structured content records; do not manually edit generated index.html resource blocks.
 
@@ -94,11 +99,11 @@ Run npm run build. Confirm the resource catalog updates and no duplicate tool/pr
 
 ## 9. Validate before asking for review
 
-Run npm run build, npm run qa:cohesion, npm run qa:release, npm run qa:review, and npm run qa:visual. Keep the local preview server running for `qa:review`. Check every public page at 390px, 820px and 1440px. Verify header/footer identity, Back to Home, section links, source anchors, image decoding, avatar textures, no page overflow, prompt copying, checkbox persistence and quiz feedback. Use controlled browser clocks to verify before release, the countdown crossing zero, automatic unlock, and after release for session/playbook/homework. Check that future Google Doc links navigate to the website lock screen.
+Run npm run build, npm run qa:cohesion, npm run qa:release, npm run qa:review, and npm run qa:visual. Keep the local preview server running for qa:review. Check every public page at 390px, 820px and 1440px. Verify header/footer identity, Back to Home, section links, source anchors, image decoding, avatar textures, no page overflow, prompt copying, checkbox persistence and quiz feedback. Use controlled browser clocks to verify before release, the countdown crossing zero, automatic unlock, and after release for session/playbook/homework. Check that future Google Doc links navigate to the website lock screen.
 
-Start `npm run preview`. Use `http://127.0.0.1:8766/__review__/` to review every public HTML page before its release date. The local server discovers the pages automatically and keeps internal page navigation inside the review area. Open a future guide, playbook and homework workspace there and confirm they are readable; then open their ordinary `http://127.0.0.1:8766/` URLs and confirm the scheduled lock still applies. Review access is local to the preview server and must never be added to production page scripts, the generated site bundle or a hostname bypass. External Google Docs remain subject to their own sharing permissions.
+Start `npm run preview`. Use `http://127.0.0.1:8766/__review__/` to review every public HTML page before its release date. The local server discovers the pages automatically and keeps internal page navigation inside the review area. Open a future guide and playbook there and confirm they are readable; then open their ordinary `http://127.0.0.1:8766/` URLs and confirm the scheduled lock still applies. Review access is local to the preview server and must never be added to production page scripts, the generated site bundle or a hostname bypass. External Google Docs remain subject to their own sharing permissions.
 
-Inspect screenshots, not just test output. Review at least homepage libraries, one full guide, one full playbook, homework workspace, locked pages and all avatar poses. Report loading measurements as local measurements, not production speed guarantees. Test network-throttled hosted performance after an authorized deployment.
+Inspect screenshots, not just test output. Review at least homepage libraries, one full guide, one full playbook, homework Google Doc links, locked pages and all avatar poses. Report loading measurements as local measurements, not production speed guarantees. Test network-throttled hosted performance after an authorized deployment.
 
 ## 10. Deliver a concrete review package
 
@@ -107,10 +112,10 @@ Provide both local URLs: the ordinary scheduled preview at `http://127.0.0.1:876
 
 ## Topic illustration contract
 
-Assign one session visual key in library/schedule.js. Reuse it across the session guide, playbook, homework card and HTML workspace, current-class banner, teaser and locked preview. The shared renderer handles placement, labels and resource badges. New-session scaffolding accepts visual and defaults to the neutral production illustration. Untitled future sessions use production; do not invent a topic. For a genuinely new subject, add its topic to library/visuals.js and the allowed keys in scripts/new-session.cjs and scripts/check-site.cjs, then create one lightweight, true SVG workflow illustration under assets/illustrations/. Do not embed raster images in SVG. Match orange, charcoal and cream, a 560 × 320 viewBox and the existing stroke style. Include meaningful alt text and a short three-stage workflow label. Preserve the homepage photographic hero and instructor avatars. For Google Docs homework, use the matching topic artwork as a modest cover illustration when authoring, preserving an explicit supplied template; the website renderer does not edit Google Docs. Verify exact topic mapping, keyboard access, mobile sizing and release guards. Run npm run build; it enforces every registered session visual and rebuilds the shared bundle.
+Assign one session visual key in library/schedule.js. Reuse it across the session guide, playbook, homework Google Doc card, current-class banner, teaser and locked preview. The shared renderer handles placement, labels and resource badges. New-session scaffolding accepts visual and defaults to the neutral production illustration. Untitled future sessions use production; do not invent a topic. For a genuinely new subject, add its topic to library/visuals.js and the allowed keys in scripts/new-session.cjs and scripts/check-site.cjs, then create one lightweight, true SVG workflow illustration under assets/illustrations/. Do not embed raster images in SVG. Match orange, charcoal and cream, a 560 × 320 viewBox and the existing stroke style. Include meaningful alt text and a short three-stage workflow label. Preserve the homepage photographic hero and instructor avatars. For Google Docs homework, use the matching topic artwork as a modest cover illustration when authoring, preserving an explicit supplied template; the website renderer does not edit Google Docs. Verify exact topic mapping, keyboard access, mobile sizing and release guards. Run npm run build; it enforces every registered session visual and rebuilds the shared bundle.
 
 
-Hero preservation rule: Keep the authored character/cinematic hero artwork and its labels on session, playbook and homework pages. Topic vectors supplement library cards and locked previews; the shared renderer must never replace an existing hero panel.
+Hero preservation rule: Keep the authored character/cinematic hero artwork and its labels on session and playbook pages. Topic vectors supplement library cards and locked previews; the shared renderer must never replace an existing hero panel.
 
 
 Desktop composition rule: Starting with hero text on the left and image on the right, alternate image sides across subsequent major text/image feature cards. Homepage order: hero image right, Current Session image left, next-session teaser image right, workflow guidance image left. Library grids and small companion strips are exempt. For shared feature rows use studio-feature-split with data-desktop-image-side="left" or "right", and direct child studio-feature-copy / studio-feature-visual classes. The shared order rule applies above 900px; preserve the approved mobile stacking and original character heroes.

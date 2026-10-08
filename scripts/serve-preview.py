@@ -5,12 +5,34 @@ from io import BytesIO
 from urllib.parse import urlsplit
 import argparse
 import re
+from datetime import datetime
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--port', type=int, default=8766)
 args = parser.parse_args()
 root = Path(__file__).resolve().parent.parent
 review_prefix = '/__review__/'
+
+
+def review_access_script():
+    schedule = (root / 'library/schedule.js').read_text(encoding='utf-8')
+    starts = re.findall(r'start:\s*"([^"]+)"', schedule)
+    review_time = int(max(datetime.fromisoformat(value).timestamp() for value in starts) * 1000) + 86400000
+    return f'''window.BMAI_LOCKS_PAUSED_FOR_REVIEW = true;
+(() => {{
+  const NativeDate = Date;
+  const started = performance.now();
+  const now = () => {review_time} + performance.now() - started;
+  const ReviewDate = new Proxy(NativeDate, {{
+    construct(target, args, newTarget) {{
+      return Reflect.construct(target, args.length ? args : [now()], newTarget === ReviewDate ? target : newTarget);
+    }},
+    apply() {{ return new NativeDate(now()).toString(); }},
+    get(target, key, receiver) {{ return key === 'now' ? now : Reflect.get(target, key, receiver); }}
+  }});
+  Object.defineProperty(globalThis, 'Date', {{ value: ReviewDate, writable: true, configurable: true }});
+}})();
+'''
 
 
 def page_label(relative):
@@ -93,7 +115,7 @@ class Handler(SimpleHTTPRequestHandler):
         if not relative:
             return self.send_review_bytes(review_page(), 'text/html; charset=utf-8')
         if relative == 'access.js':
-            return self.send_review_bytes('window.BMAI_LOCKS_PAUSED_FOR_REVIEW = true;\n', 'text/javascript; charset=utf-8')
+            return self.send_review_bytes(review_access_script(), 'text/javascript; charset=utf-8')
         if relative.endswith('.html'):
             file = Path(self.translate_path('/' + relative))
             if not file.is_file() or not file.is_relative_to(root):

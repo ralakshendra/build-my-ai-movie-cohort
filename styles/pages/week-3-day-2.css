@@ -39,9 +39,8 @@ body[data-page-key^="week-3-day-2"] .btn.secondary:hover{border-color:var(--w3-o
 .w3d2-stage-visual:before{content:"";position:absolute;inset:14px;border:1px dashed rgba(255,177,59,.28);border-radius:17px;pointer-events:none}
 .w3d2-stage-visual>.studio-avatar{position:relative;z-index:2;width:100%;max-width:280px;align-self:end;justify-self:center;filter:drop-shadow(0 20px 25px rgba(0,0,0,.45))}
 .w3d2-stage:nth-of-type(even) .w3d2-stage-visual{background:radial-gradient(circle at 66% 25%,#633015 0,#25140c 35%,#0e0b09 76%)}
-.w3d2-stage:nth-of-type(even) .w3d2-stage-visual>.studio-avatar{order:2;scale:-1 1}
+.w3d2-stage:nth-of-type(even) .w3d2-stage-visual>.studio-avatar{order:2}
 .w3d2-stage:nth-of-type(even) .w3d2-stage-visual>:not(.studio-avatar){order:1}
-#edit .w3d2-stage-visual>.studio-avatar{scale:1 1}
 .w3d2-stage-copy>ol{padding-left:1.3rem}
 .w3d2-stage-copy>ol li{padding-left:.35rem;margin:.45rem 0;color:#e2d9d1}
 .w3d2-lead{font-size:1.1rem;color:#d3c8bf}
@@ -85,7 +84,6 @@ body[data-page-key^="week-3-day-2"] .btn.secondary:hover{border-color:var(--w3-o
 /* Contextual instructor avatars across every production task. */
 .w3d2-task>header{grid-template-columns:auto minmax(0,1fr) 118px;align-items:center;min-height:142px}
 .w3d2-task-avatar{width:110px;justify-self:end;align-self:end;filter:drop-shadow(0 14px 16px rgba(0,0,0,.48))}
-.w3d2-task-avatar.pointing,.w3d2-task-avatar.camera,.w3d2-task-avatar.microphone{scale:-1 1}
 .w3d2-export-warning{max-width:none!important;margin:0 0 32px!important;border-color:#754321!important;background:linear-gradient(250deg,#29170d,#100d0b 62%)!important}
 #review{padding-bottom:34px}
 
