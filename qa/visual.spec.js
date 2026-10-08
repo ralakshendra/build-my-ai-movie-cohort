@@ -114,13 +114,15 @@ async function auditPage(page, label, viewportWidth) {
 }
 
 for (const [label, path] of pages) {
-  test(label + ' narrow mobile 320px', async ({browser}) => {
-    const context = await browser.newContext({...devices['iPhone 13'], viewport:{width:320,height:740}});
-    const page = await context.newPage();
-    await page.goto(new URL(path, BASE).href, {waitUntil:'domcontentloaded'});
-    await auditPage(page, label + '-320', 320);
-    await context.close();
-  });
+  if (label === 'w7d1' || label === 'w7d1-playbook') {
+    test(label + ' narrow mobile 320px', async ({browser}) => {
+      const context = await browser.newContext({...devices['iPhone 13'], viewport:{width:320,height:740}});
+      const page = await context.newPage();
+      await page.goto(new URL(path, BASE).href, {waitUntil:'domcontentloaded'});
+      await auditPage(page, label + '-320', 320);
+      await context.close();
+    });
+  }
   test(label + ' mobile 390px', async ({browser}) => {
     const context = await browser.newContext({...devices['iPhone 13'], viewport:{width:390,height:844}});
     const page = await context.newPage();

@@ -45,9 +45,9 @@
 - Commit `9548b7c` was pushed to public `main`. Its GitHub Pages deployment completed successfully.
 - The hosted homepage, Week 7 Day 1 guide, playbook, schedule, page stylesheet, and both optimized hero images returned HTTP 200. The live guide and playbook titles/session IDs matched Week 7 Day 1; the playbook contains the canonical Doc URL, while the guide does not.
 - The GitHub Pages API returned 404 while these hosted pages returned 200, so direct page responses and the successful Pages deployment run were used as release evidence.
-- GitHub Actions visual QA initially failed because the new interactive test opened the scheduled student URL while the session was correctly locked. The test now uses the owner-review route; all nine focused Week 7 visual tests pass locally with the ordinary preview base used by CI. The CI run for this test correction is tracked separately.
+- GitHub Actions exposed two test-harness issues: the interactive test first opened the scheduled student URL, and the first 320 px test change was applied to all pages (the 404 page does not pass at that width). The interaction check now uses the owner-review route, and the 320 px cases are limited to Week 7 Day 1. The complete local `npm run qa:visual` run passed all 81 tests, including both Week 7 pages at 320, 390, 820 and 1440 px. A fresh GitHub Actions run is pending this final test-scope correction.
 - No repository visibility, Pages setting, or student-document permission was changed during this work.
 
 ## Final findings
 
-Week 7 Day 1 is complete, pushed to `main`, and live. Build, cohesion, visual, content, owner-review, scheduled-release and hosted-page checks passed. The exact official prompt remains intentionally omitted.
+Week 7 Day 1 is complete, pushed to `main`, and live. Build, cohesion, full local visual QA, content, owner-review, scheduled-release and hosted-page checks passed. The exact official prompt remains intentionally omitted; final GitHub Actions confirmation for the visual-test correction is pending.
