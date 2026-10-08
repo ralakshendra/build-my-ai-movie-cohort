@@ -3,7 +3,7 @@
 ## Revision being reviewed
 
 - Session ID/title: `week-8-day-1` — Automobile Advertisement Production
-- Revision/branch: Release checkout based on `origin/main`; release commit pending.
+- Revision/branch: Week 8 commit `716c2f1`; included in current `main` at `d2aaed4`.
 - Session guide: `sessions/week-8-day-1/index.html`
 - Playbook: `sessions/week-8-day-1/playbook.html`
 - Native Homework Doc: [BUILD MY AI MOVIE STUDIO - Week 8 Day 1 - Automobile Advertisement Homework](https://docs.google.com/document/d/1pUmCjzW_iYchbUHelAkbBDYmJR2GRhBjYHf6n32_A0g/edit)
@@ -78,9 +78,9 @@
 - Local playbook: `sessions/week-8-day-1/playbook.html`
 - Canonical Homework Doc: https://docs.google.com/document/d/1pUmCjzW_iYchbUHelAkbBDYmJR2GRhBjYHf6n32_A0g/edit
 - Reference Doc, left unchanged: https://docs.google.com/document/d/1BmQ6wt0XZ57kMHaheZl-b9K-g_VrGXVnVADufk9-RjQ/edit
-- Hosted URLs in lesson data are the project’s existing website pattern; this review did not verify that the new pages or assets are deployed.
+- Live verification: GitHub Pages deployment succeeded. Homepage, session guide, playbook, schedule file and hero asset returned HTTP 200; the homepage links to the playbook and the playbook contains the canonical Homework Doc URL.
 - No push, publish, or merge was performed. Existing working-tree changes were preserved.
 
 ## Final findings
 
-Week 8 Day 1 content is integrated. The website build, full cohesion sweep, scheduled release checks and owner-review sweep pass on the clean main-based release checkout. Native homework was visually reviewed after correcting two task-specific answer labels and page breaks. The 320-pixel viewport, keyboard interaction, checklist persistence, student access and hosted deployment remain unverified.
+Week 8 Day 1 was committed and pushed to `main` as `716c2f1`. GitHub Pages deployment succeeded and the live homepage, guide, playbook, schedule and hero asset were verified. GitHub Actions visual QA and all-pages/release checks passed on the latest main commit `d2aaed4`. Native homework was visually reviewed after correcting two task-specific answer labels and page breaks. The 320-pixel viewport, keyboard interaction, checklist persistence and student access remain unverified.
