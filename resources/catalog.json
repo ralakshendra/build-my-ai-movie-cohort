@@ -1,7 +1,7 @@
 {
   "sessions": 11,
   "tools": 23,
-  "prompts": 91,
+  "prompts": 92,
   "checklists": 11,
   "sources": [
     "playbook.html",
@@ -25,6 +25,7 @@
     "sessions/week-6-day-1/playbook.html",
     "sessions/week-6-day-2/index.html",
     "sessions/week-6-day-2/playbook.html",
-    "resources/ai-faceless-youtube-masterclass.html"
+    "resources/ai-faceless-youtube-masterclass.html",
+    "resources/week-6-day-2-ugc-reference.html"
   ]
 }

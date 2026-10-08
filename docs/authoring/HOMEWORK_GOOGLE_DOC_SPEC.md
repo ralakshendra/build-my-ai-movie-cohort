@@ -13,7 +13,7 @@ Create one official, native Google Docs homework document for the same lesson as
 
 ## 2. Identity and document structure
 
-Suggested title: **BUILD MY AI MOVIE STUDIO — Week [N] Day [N] — [Current Session Title] — Homework**. Use the title format of an explicitly approved template when supplied.
+Suggested title: **BUILD MY AI MOVIE STUDIO - Week [N] Day [N] - [Current Session Title] - Homework**. Use the title format of an explicitly approved template when supplied.
 
 Keep these functions, placing them in the template's corresponding fields rather than duplicating sections:
 

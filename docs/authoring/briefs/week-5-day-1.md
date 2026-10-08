@@ -38,9 +38,9 @@ The five complete, exact prompts and source labels are canonical in `content/wee
 
 1. Rough-sketch demonstration prompt. This retains the source wording “add a loan to the front garden” and is labelled as a demonstration outside the team challenge.
 2. Generic FPV walkthrough prompt.
-3. Omni Flash prompt 1 — courtyard start frame.
-4. Omni Flash prompt 2 — generic FPV.
-5. Omni Flash prompt 3 — geotagging.
+3. Omni Flash prompt 1 - courtyard start frame.
+4. Omni Flash prompt 2 - generic FPV.
+5. Omni Flash prompt 3 - geotagging.
 
 No prompt was invented. Practice recipes remain separate from these official prompts.
 

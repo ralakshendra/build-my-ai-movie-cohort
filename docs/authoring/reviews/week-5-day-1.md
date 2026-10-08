@@ -2,7 +2,7 @@
 
 ## Revision
 
-- Session: `week-5-day-1` — Real Estate Walkthrough Challenge
+- Session: `week-5-day-1` - Real Estate Walkthrough Challenge
 - Revision: uncommitted working diff. The shared checkout was externally switched from `author/week-5-day-1-real-estate-walkthrough` to `author/week-5-day-2-mahabharata-preproduction` while both future-session drafts were in progress; no branch switch, commit or publish was performed during handoff.
 - Guide: `sessions/week-5-day-1/index.html`
 - Playbook: `sessions/week-5-day-1/playbook.html`
@@ -13,7 +13,7 @@
 
 ## Findings
 
-### Content and deliverables — pass
+### Content and deliverables - pass
 
 - Identity, schedule, stage, four tasks, five official prompts, four practice recipes and five review checks agree across the guide, playbook, structured data, Resource Library and Homework Doc.
 - Guide contains playbook links near its beginning and end and contains no direct Homework Doc link.
@@ -21,7 +21,7 @@
 - Submission uses the established process requested by the user: one team film in the cohort group, with link and notes recorded in Homework.
 - Demonstration content is labelled; no missing prompt, tool setting or export specification was invented.
 
-### Shared site and interactions — pass
+### Shared site and interactions - pass
 
 - Both pages use shared metadata, header, home control, skip link, main landmark, footer, schedule, styles and runtime.
 - No inline styles, embedded CSS, duplicate runtime or copied schedule was introduced.
@@ -30,19 +30,19 @@
 - Ordinary future URLs remain locked; the owner-review namespace opens and keeps navigation reviewable.
 - Generated practice recipes link to their corresponding `#task-1` through `#task-4` sections.
 
-### Resource Library and QA — pass
+### Resource Library and QA - pass
 
-- `npm run build` after the October 8 copy and visual revision: pass — 20 pages, 15 sessions, zero errors and zero warnings; library rebuilt with 21 tools, 74 prompts/recipes and 9 checklists.
-- `npm run qa:review`: pass — 20 pages open in owner review and ordinary preview remains locked.
-- `npm run qa:cohesion`: pass — all 60 page/viewport combinations.
-- `npm run qa:release`: pass — lock, countdown, boundary unlock and external-homework guard.
-- `npm run qa:content-review`: pass — 96 viewport captures, input labels, legacy-state migrations and 19 source prompt comparisons.
-- `npm run qa:visual`: pass — all 62 tests.
-- `npm run qa:fixes`: pass — saved progress, shared resources, filtering, exact copy, quizzes, 320px layouts, avatar tips and locks.
-- Focused Week 5 Day 1 check after the revision: pass at 390, 820 and 1440 pixels — both owner pages have the Alexx hero, no broken images or overflow, new class handout links and oriented avatars; ordinary URLs remain scheduled-locked.
+- `npm run build` after the October 8 copy and visual revision: pass - 20 pages, 15 sessions, zero errors and zero warnings; library rebuilt with 21 tools, 74 prompts/recipes and 9 checklists.
+- `npm run qa:review`: pass - 20 pages open in owner review and ordinary preview remains locked.
+- `npm run qa:cohesion`: pass - all 60 page/viewport combinations.
+- `npm run qa:release`: pass - lock, countdown, boundary unlock and external-homework guard.
+- `npm run qa:content-review`: pass - 96 viewport captures, input labels, legacy-state migrations and 19 source prompt comparisons.
+- `npm run qa:visual`: pass - all 62 tests.
+- `npm run qa:fixes`: pass - saved progress, shared resources, filtering, exact copy, quizzes, 320px layouts, avatar tips and locks.
+- Focused Week 5 Day 1 check after the revision: pass at 390, 820 and 1440 pixels - both owner pages have the Alexx hero, no broken images or overflow, new class handout links and oriented avatars; ordinary URLs remain scheduled-locked.
 - The rerun of `qa:cohesion` stops at a pre-existing Week 2 Day 2 playbook link to absent `homework.html`. The rerun of `qa:release` times out waiting for a homepage session picker selector. Neither failure was caused by the Week 5 Day 1 pages; both need separate site-wide repair before release.
 
-### Native Homework Google Doc — pass; access unverified
+### Native Homework Google Doc - pass; access unverified
 
 - Before this revision, copied the canonical Doc to [a dated backup](https://docs.google.com/document/d/1TCTonFFDhZ-HME-xPw_EUN0v77aM3gIw65BxlR-iqyI/edit). The backup is not linked from the site.
 - Before the avatar alignment pass, created a second native [dated backup](https://docs.google.com/document/d/13m7yVo3cwXxLwzL1fCBZU7b-MApoW72P2A9ZVRUoF1Q/edit). It is also noncanonical and unlinked.

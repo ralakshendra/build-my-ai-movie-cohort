@@ -1,4 +1,4 @@
-# Historical authoring prompt — superseded
+# Historical authoring prompt - superseded
 
 Preserved on 8 October 2026. This is a historical record, not active authoring guidance. Use [the maintained authoring kit](../authoring/README.md) for current work. The original text follows unchanged.
 

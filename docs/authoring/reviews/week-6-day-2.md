@@ -1,11 +1,11 @@
-# Week 6 Day 2 — content review
+# Week 6 Day 2 - content review
 
 - **Revision:** working tree on `author/week-5-day-2-mahabharata-preproduction`; existing changes preserved; no publish/push.
 - **Guide:** `sessions/week-6-day-2/index.html`
 - **Playbook:** `sessions/week-6-day-2/playbook.html`
 - **Native homework:** [Week 6 Day 2 Create a Complete AI UGC Ad Homework](https://docs.google.com/document/d/18ql4IsJL5RwCQ5jExGZxvk46kUFuxqQsptIjhfKSD2w/edit), one native tab, owner-only/private at last check.
 - **Schedule:** Nov 8, 2026, 8–10 PM IST; existing registered lesson 12 retained.
-- **Source:** supplied transcript and [AI Filmmakers Cohort UGC Masterclass](https://aifm-ai-ugc.tiiny.site/).
+- **Source:** supplied transcript and [AI Filmmakers Cohort UGC Masterclass](https://ralakshendra.github.io/build-my-ai-movie-cohort/resources/week-6-day-2-ugc-reference.html).
 - **Local preview:** `http://127.0.0.1:8766/__review__/sessions/week-6-day-2/index.html` and `/playbook.html`; regular preview route remains scheduled/locked.
 
 ## Content and consistency
@@ -22,12 +22,12 @@
 
 - **Pass:** `npm run build` and `site:check` (24 pages, 15 sessions, 0 errors / warnings); `npm run resources:build` (23 tools, 91 prompts/recipes, 11 checklists from 22 lesson files).
 - **Pass:** `npm run qa:review` (24 pages open in owner-review namespace; ordinary local preview remains locked).
-- **Pass:** `npm run qa:visual` against ordinary preview — all 62 configured tests passed. (Its page fixtures stop at Week 5.) Focused Week 6 Day 2 Playwright review at 320, 390, 820 and 1440 px: no horizontal overflow; prompt details open; playbook checklist persists after reload; quiz correct-state feedback works; no page errors; no Homework Doc link on guide.
+- **Pass:** `npm run qa:visual` against ordinary preview - all 62 configured tests passed. (Its page fixtures stop at Week 5.) Focused Week 6 Day 2 Playwright review at 320, 390, 820 and 1440 px: no horizontal overflow; prompt details open; playbook checklist persists after reload; quiz correct-state feedback works; no page errors; no Homework Doc link on guide.
 - **Pass:** Screenshots reviewed at mobile and desktop sizes; hero artwork loads, content stacks on mobile, playbook structure is intact, and an in-view avatar loads from the approved pose library.
 - **Issue (existing fixture):** `npm run qa:cohesion` catches a broken legacy link from `sessions/week-2-day-2/playbook.html` to its absent `homework.html`; the changed Week 6 Day 2 pages have no broken links in `site:check` or focused review.
-- **Pass:** `npm run qa:release` against the ordinary local preview — local locks, countdown ticks, boundary auto-unlock, and external homework guard passed. Its specific assertions cover sessions through Week 4; Week 6 was also checked directly.
+- **Pass:** `npm run qa:release` against the ordinary local preview - local locks, countdown ticks, boundary auto-unlock, and external homework guard passed. Its specific assertions cover sessions through Week 4; Week 6 was also checked directly.
 - **Issue (other lesson):** `npm run qa:fixes` stops at existing `sessions/week-6-day-1/playbook.html` for pose-variety assertion before reaching this lesson.
-- **Pass:** `npm run qa:content-review` — all 96 viewport captures, input labels, legacy-state migrations, and 19 source prompt comparisons passed. (Its fixed fixture list ends at Week 5; Week 6 was additionally covered by focused browser checks.)
+- **Pass:** `npm run qa:content-review` - all 96 viewport captures, input labels, legacy-state migrations, and 19 source prompt comparisons passed. (Its fixed fixture list ends at Week 5; Week 6 was additionally covered by focused browser checks.)
 - **Not checked:** Repository Playwright visual suite has no Week 6 Day 2 fixtures. Used direct local screenshot review instead.
 
 ## Native Homework Doc
@@ -42,3 +42,19 @@
 ## Handoff findings
 
 The connected lesson set is authored and built locally. No website was published and no Drive sharing was changed. The seven-page Doc has been visually inspected in Google Docs. Before student use, set the intended student access; the Doc remains private because sharing was not authorized. The broader cohesion and fixes QA findings originate in older or adjacent lessons and are recorded above.
+
+## 2026-10-09 readability and reference revision
+
+- **Pass:** Created `resources/week-6-day-2-ugc-reference.html` as the site-hosted, scheduled course reference page. The original tiiny.site course is linked only from this page. The guide, playbook, and Homework Doc now point to the local reference page. The page is listed in `sitemap.xml`.
+- **Pass:** Reworked the native Homework Doc to use 10 pt Inter body text, more line spacing, stronger task headings, right-aligned inward-facing avatars, and clearer answer areas. Original wording, all 15 answer tables, seven embedded images, review checklist, and submission instructions remain present. The exported PDF is seven pages and all pages were visually reviewed.
+- **Pass:** Created and verified a full native backup before editing. Backup: [Week 6 Day 2 homework backup](https://docs.google.com/document/d/1fQDmUhOtSkznqwb9agepOI27-8G2AwTp7RAYjJxgGls/edit). Its original text, tables, and embedded image count match the canonical document's pre-edit structure.
+- **Pass:** All 6 homework avatars sit beside their related content, facing or gesturing into the text or visual. The hosted reference page uses four approved poses beside their sections.
+- **Pass:** No em dash characters remain in authored site and lesson files. The tiiny.site URL appears only as the primary source link on the new reference page.
+- **Pass:** `npm run build` completed with 27 pages, 15 schedule sessions, and no errors or warnings.
+- **Pass:** `npm run qa:cohesion` completed all 81 page and viewport combinations.
+- **Pass:** `npm run qa:release` passed local locks, countdown, release boundary, and homework guard.
+- **Pass:** `npm run qa:review` opened all 27 pages in owner review; ordinary preview remains scheduled.
+- **Pass:** `npm run qa:visual` passed all 62 configured tests.
+- **Pass:** `npm run qa:content-review` completed its viewport captures, field-name audit, saved-state migrations, and 19 prompt comparisons.
+- **Issue (adjacent lesson):** `npm run qa:fixes` passed the new reference page's avatar checks, then stopped at `sessions/week-6-day-1/playbook.html` for its existing pose-variety assertion.
+- **Not released:** The new page and Doc reference URL are ready for review. GitHub Pages remains unavailable for this private repository, and widening repository visibility would expose the repository source and history. No push, visibility change, or public release has been made.

@@ -3,7 +3,7 @@
 ## Revision
 
 - Session: `week-6-day-1` - Mahabharata Character and Prop Reference
-- Revision: commit `dc2647e` — `Add Week 6 Day 1 Mahabharata lesson`, pushed to `origin/main`.
+- Revision: commit `dc2647e` - `Add Week 6 Day 1 Mahabharata lesson`, pushed to `origin/main`.
 - Guide: `sessions/week-6-day-1/index.html`
 - Playbook: `sessions/week-6-day-1/playbook.html`
 - Homework: [canonical native Google Doc](https://docs.google.com/document/d/1NG5eCKm4gutvS5j_3CASgbH1T8XIOI-_4F2vV7DQkyU/edit), single tab `t.0`

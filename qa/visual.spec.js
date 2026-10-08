@@ -40,7 +40,7 @@ async function auditPage(page, label, viewportWidth) {
     const main = document.querySelector('main');
     const skip = document.querySelector('.bmai-skip-link');
     const localLinks = [...document.querySelectorAll('a[href]')].map(a => a.href).filter(href => href.startsWith(location.origin) && !href.includes('#') && !href.endsWith('/build-my-ai-movie-cohort/')).slice(0, 60);
-    const emDash = document.body.innerText.includes('—');
+    const emDash = document.body.innerText.includes('-');
     const shell = document.querySelector('.bmai-global-header');
     const pageType = document.body.dataset.pageType || null;
     const pageId = document.body.dataset.pageId || null;

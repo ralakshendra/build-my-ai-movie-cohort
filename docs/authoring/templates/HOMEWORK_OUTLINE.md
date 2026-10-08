@@ -10,7 +10,7 @@ Turn this outline into the official native Google Doc using [HOMEWORK_GOOGLE_DOC
 
 ## Week [N] · Day [N] · Session [Number]
 
-# [Current Session Title] — Homework
+# [Current Session Title] - Homework
 
 [Approved topic/mentor artwork with the correct role. Distribute about three to five purposeful small avatars on the right beside relevant headings, facing inward, without crowding answer space.]
 
@@ -31,7 +31,7 @@ Turn this outline into the official native Google Doc using [HOMEWORK_GOOGLE_DOC
 - Playbook: [verified website link]
 - Submission destination: [actual verified destination/instructions]
 
-## Task 1 — [Current task title]
+## Task 1 - [Current task title]
 
 **Goal:** [concrete intermediate result]
 
@@ -72,7 +72,7 @@ Review notes / what changed: [editable blank answer area]
 
 [Repeat the task structure for the actual source-backed tasks. Rename answer fields to match each task. Do not duplicate these exact fields when a task only needs a written answer or one artifact link. Do not force a previous lesson's task count.]
 
-## Prompt reference — only when useful
+## Prompt reference - only when useful
 
 [Optional complete source prompts that several tasks share. Each has a clear title, source and task mapping. Do not repeat the same long prompt multiple times when a task can refer to this native section. Preserve all unique supplied prompts and required template prompt fields.]
 
@@ -122,6 +122,6 @@ Return to the session guide: [verified link]
 
 ---
 
-## Author completion note — remove from student document
+## Author completion note - remove from student document
 
 Confirm a verified pre-edit backup exists when revising an official Doc, canonical/folder/duplicate checks are recorded, approved typography and controls are applied, all placeholders are replaced, tasks match the pair, official prompts are complete, answer fields are empty and usable, links/chips and native controls read back correctly, template tabs/styles are preserved, and final layout is inspected as required. Return the actual native Doc URL and precise access verification status.
