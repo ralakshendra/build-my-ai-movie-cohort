@@ -199,18 +199,18 @@ window.BMAI_SESSIONS=[
   },
   {
     "id": "week-8-day-1",
-    "visual": "production",
-    "hero": "assets/illustrations/production.svg",
+    "visual": "advertisement",
+    "hero": "assets/illustrations/advertisement.svg",
     "week": "WEEK 8 · DAY 1",
-    "title": "Week 8 Day 1 Session",
+    "title": "Automobile Advertisement Production",
     "number": 15,
     "start": "2026-11-21T20:00:00+05:30",
     "end": "2026-11-21T22:00:00+05:30",
-    "stage": null,
-    "session": null,
-    "playbook": null,
-    "homework": null,
-    "description": "Session materials will appear here when they are released."
+    "stage": "MOTION",
+    "session": "sessions/week-8-day-1/index.html",
+    "playbook": "sessions/week-8-day-1/playbook.html",
+    "homework": "https://docs.google.com/document/d/1pUmCjzW_iYchbUHelAkbBDYmJR2GRhBjYHf6n32_A0g/edit",
+    "description": "Create and review an automobile advertisement using a chosen four-wheel vehicle, consistent visual references, a shot plan, and motion clips that preserve the vehicle's identity and move plausibly."
   },
   {
     "id": "week-8-day-2",
