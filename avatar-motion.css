@@ -56,3 +56,30 @@ body .studio-guidance.avatar-milestone{border-color:#ff6a00!important;box-shadow
 .studio-avatar:not(.avatar-motion-wave):not(.avatar-motion-celebrate).avatar-playing{animation:avatar-breathe 5s ease-in-out infinite}
 .studio-avatar.avatar-motion-wave,.studio-avatar.avatar-motion-celebrate{background-size:400% 200%;background-position:0% var(--avatar-row)}
 .studio-avatar.avatar-motion-celebrate{mask-image:linear-gradient(to bottom,transparent 0%,transparent 3%,#000 3%,#000 100%)}
+
+/* New Alexx poses use individual transparent cutouts; their motion stays small and page-focused. */
+.studio-avatar.surprised{background-image:url('assets/avatars/alexx-surprised.webp')}
+.studio-avatar.thumbs-up{background-image:url('assets/avatars/alexx-thumbs-up.webp')}
+.studio-avatar.palette{background-image:url('assets/avatars/alexx-palette.webp')}
+.studio-avatar.product{background-image:url('assets/avatars/alexx-product.webp')}
+.studio-avatar.encouragement{background-image:url('assets/avatars/alexx-encouragement.webp')}
+.studio-avatar.trophy{background-image:url('assets/avatars/alexx-trophy.webp')}
+.studio-avatar.applause{background-image:url('assets/avatars/alexx-applause.webp')}
+.studio-avatar.confident{background-image:url('assets/avatars/alexx-confident.webp')}
+.studio-avatar.curious{background-image:url('assets/avatars/alexx-curious.webp')}
+.studio-avatar.open-welcome{background-image:url('assets/avatars/alexx-open-welcome.webp')}
+.studio-avatar.laugh{background-image:url('assets/avatars/alexx-laugh.webp')}
+.studio-avatar.ready{background-image:url('assets/avatars/alexx-ready.webp')}
+.studio-avatar.surprised,.studio-avatar.thumbs-up,.studio-avatar.palette,.studio-avatar.product,.studio-avatar.encouragement,.studio-avatar.trophy,.studio-avatar.applause,.studio-avatar.confident,.studio-avatar.curious,.studio-avatar.open-welcome,.studio-avatar.laugh,.studio-avatar.ready{background-size:contain;background-position:center;background-repeat:no-repeat}
+.studio-avatar[data-avatar-pose=surprised],.studio-avatar[data-avatar-pose=open-welcome]{animation-name:avatar-wow}
+.studio-avatar[data-avatar-pose=thumbs-up],.studio-avatar[data-avatar-pose=applause],.studio-avatar[data-avatar-pose=trophy]{animation-name:avatar-affirm}
+.studio-avatar[data-avatar-pose=palette],.studio-avatar[data-avatar-pose=product],.studio-avatar[data-avatar-pose=curious]{animation-name:avatar-inspect}
+.studio-avatar[data-avatar-pose=encouragement],.studio-avatar[data-avatar-pose=ready]{animation-name:avatar-encourage}
+.studio-avatar[data-avatar-pose=confident]{animation-name:avatar-confidence}
+.studio-avatar[data-avatar-pose=laugh]{animation-name:avatar-laugh}
+@keyframes avatar-wow{0%,100%{transform:translateY(0) scale(1)}45%{transform:translateY(-4px) scale(1.025)}}
+@keyframes avatar-affirm{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes avatar-inspect{0%,100%{transform:translateY(0) rotate(0)}45%{transform:translateY(-3px) rotate(1deg)}}
+@keyframes avatar-encourage{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes avatar-confidence{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes avatar-laugh{0%,100%{transform:rotate(0)}30%{transform:rotate(-1.2deg) translateY(-2px)}70%{transform:rotate(1.2deg)}}
