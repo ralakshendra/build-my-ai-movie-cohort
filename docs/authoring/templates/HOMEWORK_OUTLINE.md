@@ -12,7 +12,7 @@ Turn this outline into the official native Google Doc using [HOMEWORK_GOOGLE_DOC
 
 # [Current Session Title] — Homework
 
-[Optional modest approved topic/mentor artwork with the correct role.]
+[Approved topic/mentor artwork with the correct role. Distribute about three to five purposeful small avatars on the right beside relevant headings, facing inward, without crowding answer space.]
 
 ## Your production outcome
 
@@ -124,4 +124,4 @@ Return to the session guide: [verified link]
 
 ## Author completion note — remove from student document
 
-Confirm all placeholders are replaced, tasks match the pair, official prompts are complete, answer fields are empty and usable, links/chips and native controls read back correctly, template tabs/styles are preserved, and final layout is inspected as required. Return the actual native Doc URL and precise access verification status.
+Confirm a verified pre-edit backup exists when revising an official Doc, canonical/folder/duplicate checks are recorded, approved typography and controls are applied, all placeholders are replaced, tasks match the pair, official prompts are complete, answer fields are empty and usable, links/chips and native controls read back correctly, template tabs/styles are preserved, and final layout is inspected as required. Return the actual native Doc URL and precise access verification status.

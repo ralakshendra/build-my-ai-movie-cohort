@@ -1,15 +1,15 @@
 # Homework Google Doc specification
 
-Create one official, native Google Docs homework document for the same lesson as the session guide and playbook. This document records the student's work; it is not another website page.
+Create one official, native Google Docs homework document for the same lesson as the session guide and playbook. This document records the student's work; it is not another website page. This specification incorporates the approved homework prototype and guidelines from **Unify homework Google Docs** (8 October 2026).
 
 ## 1. Resolve the destination and template
 
-- If the user provides an existing working document to edit, confirm the exact document and edit only the requested scope.
+- If the user provides an existing working document to edit, confirm the exact document and edit only the requested scope. Before changing an official homework Doc, create and verify a clearly titled full native backup; record its URL separately from the canonical Doc.
 - If an approved native template/reference is provided for a new homework, inspect the full document and make a native copy before adaptation. Preserve all tabs, order, nesting, styles, table roles, controls, headers, footers and relevant instructions unless the user directs a change.
 - Treat a past lesson as a structural reference. Replace its old lesson title, dates, people, products, links, tasks, results, prompts and statuses with current sourced content. Do not leave stale sections in unvisited tabs.
 - If no template is supplied, use the structure below and the appropriate current Google Docs authoring workflow. A Markdown outline is a drafting input, not proof that a native Doc exists.
 - Follow the current Google Docs skill when available. Read the document and its native controls before writing; refresh live indexes after structural edits. Do not rebuild an existing native template through an HTML/DOCX approximation that loses its structure.
-- If the user specifies a Drive folder, use it. Otherwise follow the connected authoring workflow's default location. Do not guess a cohort folder or move existing files unasked.
+- Use the established **Build My AI Movie Cohort Homework** folder for new official homework and backups when access permits, unless the user directs another destination. Preserve externally shared Docs in place if moving them is unavailable. See [HOMEWORK_OPERATIONS.md](HOMEWORK_OPERATIONS.md) for the folder, canonical-link rules and backup procedure.
 
 ## 2. Identity and document structure
 
@@ -45,20 +45,20 @@ For every task, give the student:
 6. An editable answer area, asset URL field or evidence space appropriate to that task.
 7. A useful failure-response note if the lesson provides one.
 
-Use descriptive fields such as “Approved reference link,” “Final film link,” or “What changed after review?” rather than generic blank boxes. Allow enough space for a realistic answer. Do not populate student answer areas with fabricated examples or completed responses.
+Use descriptive fields such as “Approved reference link,” “Final film link,” or “What changed after review?” rather than generic blank boxes. Replace filler such as “Add your answer here” with genuinely blank, lightly shaded writing space. Allow enough space for a realistic answer; a one-line asset URL and a longer reflection need different room. Keep labels and their writing areas together across page breaks. Preserve existing student answers and existing table dimensions unless a structural change is explicitly directed. Do not populate student answer areas with fabricated examples or completed responses.
 
 Native checklists can support self-review. They do not synchronize with website localStorage. Do not claim that checking a box in the Doc changes the website's percentage, or that website progress proves a submission was received.
 
-## 4. Formatting defaults for a new blank document
+## 4. Approved house formatting
 
-An explicitly approved native template takes precedence over these proposed house defaults.
+The approved house identity is Inter typography, orange accents, charcoal headings and a warm-white page background. An explicitly approved native template takes precedence where it governs. The numeric sizing below is a practical starting point, to be adjusted for legibility and the template.
 
 | Element | Default |
 | --- | --- |
-| Page | White/light page, dark readable text; normal editable document layout |
-| Body | Arial or the approved template font, 11 pt minimum, approximately 1.15 line spacing |
-| Title | About 22–24 pt, bold, dark text; restrained orange brand accent |
-| Heading 1 | About 16–18 pt, bold; consistent spacing |
+| Page | Warm-white page, dark readable text; normal editable document layout |
+| Body | Inter or the explicitly approved template font, 11 pt minimum, approximately 1.15 line spacing; disclose if the available editor cannot apply Inter |
+| Title | About 22–24 pt, bold, charcoal text; restrained orange brand accent |
+| Heading 1 | About 16–18 pt, bold, charcoal; consistent spacing |
 | Heading 2 | About 13–14 pt, bold |
 | Prompts | Readable monospaced text at 11 pt; preserve line breaks and exact wording |
 | Color | Orange `#ff6a00` for a small rule, label or accent; dark text for important instructions and links |
@@ -68,7 +68,7 @@ An explicitly approved native template takes precedence over these proposed hous
 
 Do not reproduce the website's black background across document pages. Keep long instructions as paragraphs/lists rather than a wide table. Avoid tiny text, decorative clutter, orphaned headings, clipped rows, stranded captions and empty pages. Keep task headings with their first instructions when the native layout supports it.
 
-Use actual heading styles so document navigation works. Number practical tasks consistently. Use native lists/checklists rather than typed pseudo-controls when supported. Each task's instruction, answer area and review note should read as one coherent unit.
+Use actual heading styles so document navigation works. Number practical tasks consistently. Use native lists/checklists rather than typed pseudo-controls when supported. Use real Google Docs checkboxes for actionable criteria. Use native dropdowns only when the current tools can create and verify them. When unavailable, use the approved checkbox approach for suitable review/choice fields and disclose the limitation; never imitate a dropdown using styled text or invent an unrequested companion Sheet. Each task's instruction, answer area and review note should read as one coherent unit.
 
 ## 5. Prompts, sources and links
 
@@ -82,12 +82,15 @@ Use actual heading styles so document navigation works. Number practical tasks c
 
 ## 6. Avatar and artwork use in the Doc
 
-Native Docs use static artwork, not the website avatar engine. One modest welcoming/planning avatar on the cover and an optional relevant review illustration are enough when they improve the document. Do not force all 25 poses into homework or repeat an instructor beside every answer field.
+Native Docs use static artwork, not the website avatar engine. Use approved website avatars generously: about **three to five per homework** when the content supports that many useful milestones. Group a small figure **on the right beside its related heading or visual**, close enough that the gesture reads as part of the section. Vary relevant poses across homework Docs, avoid consecutive repeated poses and use one figure per guidance moment. Reduce size or reposition when a figure feels detached or causes empty pages. Do not force all 25 poses into one Doc or place a figure beside every answer field. Never cover prompts, fields, links or table content.
+
+Use the approved assets available in repository `assets/avatars/` and the pose mappings in [AVATAR_GUIDE.md](AVATAR_GUIDE.md). The original approved local library was `assets/avatars/BMAMS-avatar-library-final-20261008/`; that local source folder is not shipped in this checkout. Resolve an existing approved single-pose image/export rather than assuming that folder exists, importing an entire sprite sheet as a figure or inventing new artwork.
 
 Choose an approved pose related to the task and position it so its existing gaze/gesture faces the text. Use an already approved mirrored asset if available, rather than claiming CSS orientation will work in a native Doc. Keep the source asset intact if a supported import format needs a separate export copy. Use the drink/product avatar only for the coconut advertisement lesson. Preserve supplied reference images and native-template artwork unless a change is authorized.
 
 ## 7. Access, copy behavior and verification
 
+- Keep exactly one canonical native Doc per assignment. Backups and student-owned copies are noncanonical: do not place their links in website homework actions, schedule records or generated resources. Audit all existing references for stale or duplicate IDs while preserving meaningful copies.
 - Confirm the actual native document URL before inserting it into the schedule or playbook. Do not link a Markdown draft or a guessed document ID.
 - Follow the supplied student copy/edit instructions. Do not invent a `/copy` workflow or alter sharing silently.
 - Google Drive controls document permissions. Website release gates do not secure a Google Doc that is already publicly accessible.

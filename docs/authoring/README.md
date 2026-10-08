@@ -28,6 +28,7 @@ For a narrower task, use the relevant prompt in [COPYABLE_PROMPTS.md](COPYABLE_P
 | [SESSION_GUIDE_SPEC.md](SESSION_GUIDE_SPEC.md) | Guide sections, teaching format, examples, source prompts and guide-to-playbook navigation |
 | [PLAYBOOK_SPEC.md](PLAYBOOK_SPEC.md) | Practical tasks, outputs, review criteria, progress, skill checks and homework navigation |
 | [HOMEWORK_GOOGLE_DOC_SPEC.md](HOMEWORK_GOOGLE_DOC_SPEC.md) | Native document structure, template preservation, formatting, answers and submission |
+| [HOMEWORK_OPERATIONS.md](HOMEWORK_OPERATIONS.md) | Approved prototype, Drive folder, backups, canonical Doc registry and duplicate handling |
 | [AVATAR_GUIDE.md](AVATAR_GUIDE.md) | All 25 approved poses, meaningful placement, orientation and interaction states |
 | [RESOURCE_AND_RELEASE_GUIDE.md](RESOURCE_AND_RELEASE_GUIDE.md) | Source data, Resource Library registration, schedule, generation and review routes |
 | [templates/SESSION_SPEC.template.json](templates/SESSION_SPEC.template.json) | Fillable input shape for the shared session generator |

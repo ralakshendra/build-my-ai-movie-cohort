@@ -99,6 +99,11 @@ Evidence / issues: [build outputs, links, before/after boundary observations]
 
 ## Native Homework Google Doc
 
+- [ ] A verified, clearly titled full native backup exists before official-Doc edits; its URL is recorded separately.
+- [ ] Approved Inter/orange/charcoal/warm-white formatting and usable shaded blank answer areas are applied where the template permits.
+- [ ] About three to five purposeful approved avatars sit on the right beside related headings, face inward and leave fields/links clear.
+- [ ] Native checkboxes work; dropdowns are genuine and verified or their unavailable capability is disclosed with the approved checkbox approach.
+- [ ] Canonical IDs, noncanonical backups/student copies, established folder and externally shared exceptions were reconciled without deleting meaningful work.
 - [ ] Target, complete tab tree and template/reference role were resolved before editing.
 - [ ] Supplied native structure, styles, table roles, controls and instructions are preserved unless an explicit change was directed.
 - [ ] Every retained tab contains current lesson content; no stale reference dates, people, assets or links remain.

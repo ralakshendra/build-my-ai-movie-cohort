@@ -81,24 +81,32 @@ for repository review and release authorization.
 Create/adapt the official native Google Docs homework for [verified session ID].
 Use the current brief, paired guide/playbook, supplied official prompts and
 [working target or approved native template URL, if supplied]. Read
-docs/authoring/HOMEWORK_GOOGLE_DOC_SPEC.md and docs/authoring/templates/HOMEWORK_OUTLINE.md and
+docs/authoring/HOMEWORK_GOOGLE_DOC_SPEC.md, HOMEWORK_OPERATIONS.md in the same
+folder, and docs/authoring/templates/HOMEWORK_OUTLINE.md, then
 follow the current Google Docs skill/workflow available in this environment.
 
 Resolve the target/reference role first. Copy an approved native template for a
 new assignment, preserving every tab, heading/table role, native control, chip,
 style and applicable instruction unless a change is directed. For an existing
-working document, inspect it and edit only the requested scope. Replace stale
+working document, inspect it, verify a full native backup, and edit only the
+requested scope. Preserve existing answers and table dimensions. Replace stale
 reference facts throughout all retained tabs. Do not flatten a native template.
 
 Include exact brand/founder identity, current lesson details, one outcome,
 preparation, practical tasks with editable answer/asset fields, complete supplied
 prompts, matching review criteria, reflection and actual submission instructions.
 Use the template's formatting, or a readable light native document with restrained
-orange accents and proper heading styles. Make answer areas usable on phone and
-desktop. Keep image roles modest and meaningful; no forced avatar coverage.
+orange accents, charcoal headings, warm-white pages and Inter typography. Replace
+filler answer text with labelled, lightly shaded blank writing space. Use real
+checkboxes; use native dropdowns only when tools can create and verify them. Use
+about three to five approved avatars when meaningful, on the right beside related
+headings and directed inward. Keep prompts, fields and links clear.
 
 Use verified links and supported native chips; never guess document IDs, dates,
 emails or submission URLs. Do not change sharing or send notifications unasked.
+Use the established homework folder where access permits. Keep one canonical Doc
+per assignment; backups/student copies never replace its website URL. Preserve
+externally shared Docs in place and audit stale/duplicate references.
 Read back all content and native structure, inspect PDF layout where required,
 and compare task/criterion wording with both pages. Return the actual native Doc
 URL, precise verification status and any missing input/access limitation. Do not

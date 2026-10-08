@@ -24,3 +24,14 @@ Keep the Resource Library current whenever a session guide or playbook is added 
 - Use `docs/authoring/README.md` and its master prompt, owning specifications and templates for new lessons or revisions. Fill the current source brief; do not publish placeholder inputs or copy old lesson facts. The guide, playbook and native Homework Doc must agree on tasks, outputs and review criteria.
 - Run `npm run build`, `npm run qa:cohesion`, `npm run qa:release`, and `npm run qa:review` before release; the review check requires the local preview server. `site:check` discovers every public HTML page automatically and rejects missing components, schedule entries, links, or assets.
 - Performance checks must distinguish local loading measurements from real hosted/network performance. Keep large source images and design references out of page requests. Do not preload every avatar texture.
+
+## Homework Google Docs standard
+
+- Follow `docs/authoring/HOMEWORK_GOOGLE_DOC_SPEC.md` and `docs/authoring/HOMEWORK_OPERATIONS.md`, which incorporate the approved homework prototype from the other chat.
+- Use Inter typography, orange accents, charcoal headings and a warm-white page background. Preserve an explicitly approved native template's formatting and structure.
+- Use about three to five approved website avatars where the homework supports them. Group each on the right beside its related heading or visual, facing or gesturing inward. Keep prompts, links and writing areas clear; avoid detached figures, redundant pairs and adjacent repeated poses.
+- Preserve official instructions, complete prompts, facts, existing table dimensions and submission requirements. Replace filler answer text with clear labels and usable, lightly shaded blank writing space; preserve existing student answers.
+- Use real native checkboxes for actionable review items. Use native dropdowns only when available tools can create and verify them; otherwise use the approved checkbox approach and report the limitation. Never label styled text as a native dropdown.
+- Before editing an official homework Doc, create and verify a clearly titled backup. Keep one canonical Doc per assignment; backups and student copies must never replace its website link. Direct Homework Doc links remain only on playbooks, with the URL registered in the single schedule.
+- Use the established Build My AI Movie Cohort Homework Drive folder for new official homework and backups when access permits. Preserve externally shared Docs in place if they cannot be moved; do not create competing copies to hide that limitation.
+- Audit duplicates and stale references, preserve meaningful copies and student work, and verify original text, fields, checkboxes, avatars and page flow after edits. Do not permanently delete Drive files without explicit direction.

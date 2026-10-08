@@ -75,6 +75,8 @@ Repeat for each supplied complete prompt; write “None supplied” if appropria
 - Student copy/edit instructions: [supplied workflow]
 - Required final deliverables and proof: [exact requirements]
 - Submission destination/instructions: [verified destination]
+- Verified pre-edit backup URL when revising an official Doc: [actual copy, not a site homework destination]
+- Established homework folder / external-sharing exception: [see HOMEWORK_OPERATIONS.md; verify current access]
 - Drive folder/permission instructions, if authorized: [explicit instructions]
 - Current website destinations and deployment state: [verified / intended but pending]
 
