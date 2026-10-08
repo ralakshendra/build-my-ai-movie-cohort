@@ -12,7 +12,7 @@ for(const file of files){
  const expected=homeworkId(registry.find(s=>s.id===sessionId)?.homework);
  for(const match of html.matchAll(/<a\b[^>]*href="(https:\/\/docs\.google\.com\/document\/d\/[^"]+)"[^>]*>/g)){
   const actual=homeworkId(match[1]);
-  if(match[0].includes('data-reference-doc="true"')){check(actual==='1WL-yOxzgmvCZTDNMphWndJ8ZL0tOiBa7-ebi5lGuj9Q',rel+': reference Doc link differs from the verified class handout');continue;}
+  if(match[0].includes('data-reference-doc="true"')){const referenceId=match[0].match(/data-reference-doc-id="([^"]+)"/)?.[1]||'1WL-yOxzgmvCZTDNMphWndJ8ZL0tOiBa7-ebi5lGuj9Q';check(actual===referenceId,rel+': source Doc link differs from its verified reference ID');continue;}
   if(expected)check(actual===expected,rel+': homework link differs from the official '+sessionId+' document');
   else if(rel==='index.html')check(scheduledHomework.has(actual),rel+': homework link is not in the release schedule');
  }

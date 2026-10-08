@@ -1,0 +1,42 @@
+body[data-page-key="week-6-day-2-ugc-reference"]{--ugc-ink:#191512;--ugc-muted:#5e534c;--ugc-paper:#f7f3ed;--ugc-orange:#e76f1a;color:var(--ugc-ink);background:var(--ugc-paper)}
+body[data-page-key="week-6-day-2-ugc-reference"] .ugc-reference{width:min(1050px,calc(100% - 40px));margin:0 auto 72px}
+body[data-page-key="week-6-day-2-ugc-reference"] .reference-hero{padding:clamp(30px,6vw,72px) clamp(22px,5vw,64px);margin:26px 0 20px;border:1px solid #eaded2;border-radius:24px;background:linear-gradient(135deg,#fffaf4,#f1e6d9)}
+body[data-page-key="week-6-day-2-ugc-reference"] .kicker{color:#9c4a16;font-size:.78rem;font-weight:850;letter-spacing:.11em}
+body[data-page-key="week-6-day-2-ugc-reference"] h1{max-width:780px;margin:.4em 0;font-size:clamp(2.2rem,5.6vw,4.4rem);line-height:1.02;color:#211a15}
+body[data-page-key="week-6-day-2-ugc-reference"] h2{margin:.25em 0 .75em;font-size:clamp(1.45rem,3vw,2rem);color:#211a15}
+body[data-page-key="week-6-day-2-ugc-reference"] h3{margin:0 0 .4em;color:#2c2119}
+body[data-page-key="week-6-day-2-ugc-reference"] p,body[data-page-key="week-6-day-2-ugc-reference"] li{line-height:1.7}
+body[data-page-key="week-6-day-2-ugc-reference"] .lead{max-width:740px;font-size:1.18rem;color:#43372f}
+body[data-page-key="week-6-day-2-ugc-reference"] .source-note{max-width:800px;padding:14px 18px;border-left:4px solid var(--ugc-orange);background:#fff9f2;color:#504238}
+body[data-page-key="week-6-day-2-ugc-reference"] .reference-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+body[data-page-key="week-6-day-2-ugc-reference"] .reference-nav{position:sticky;top:8px;z-index:3;display:flex;gap:8px;flex-wrap:wrap;padding:10px;margin:16px 0 26px;border:1px solid #e4d8cb;border-radius:14px;background:#fffdfaee;backdrop-filter:blur(8px)}
+body[data-page-key="week-6-day-2-ugc-reference"] .reference-nav a{padding:8px 12px;border-radius:9px;color:#69401f;font-weight:750;text-decoration:none}
+body[data-page-key="week-6-day-2-ugc-reference"] .reference-nav a:hover{background:#f9e7d5;color:#8d3d0d}
+body[data-page-key="week-6-day-2-ugc-reference"] .reference-panel{padding:clamp(22px,4vw,38px);margin:18px 0;border:1px solid #e8ddd2;border-radius:18px;background:#fffdfa;box-shadow:0 10px 28px #38200f0b}
+body[data-page-key="week-6-day-2-ugc-reference"] .workflow-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-left:1.4rem}
+body[data-page-key="week-6-day-2-ugc-reference"] .workflow-list li{padding:18px 18px 16px 22px;border:1px solid #eaded2;border-radius:14px;background:#fffaf4}
+body[data-page-key="week-6-day-2-ugc-reference"] .workflow-list li::marker{color:var(--ugc-orange);font-weight:900}
+body[data-page-key="week-6-day-2-ugc-reference"] .workflow-list p{margin:.5em 0;color:#51443b}
+body[data-page-key="week-6-day-2-ugc-reference"] .prompt-card{margin:14px 0;padding:18px;border:1px solid #e5d7ca;border-radius:14px;background:#fffaf4}
+body[data-page-key="week-6-day-2-ugc-reference"] .prompt-card summary{cursor:pointer;font-size:1.04rem;font-weight:800}
+body[data-page-key="week-6-day-2-ugc-reference"] .prompt-card pre{margin:14px 0;padding:18px;overflow-wrap:anywhere;white-space:pre-wrap;border-radius:10px;background:#221b17;color:#fff7ef;font:500 .93rem/1.65 Inter,Arial,sans-serif}
+body[data-page-key="week-6-day-2-ugc-reference"] .attribution{margin:.7em 0 0;color:var(--ugc-muted);font-size:.92rem}
+body[data-page-key="week-6-day-2-ugc-reference"] .incomplete{border-left:4px solid #d58a3c;background:#fff6e8}
+body[data-page-key="week-6-day-2-ugc-reference"] .incomplete h3{font-size:1.04rem}
+body[data-page-key="week-6-day-2-ugc-reference"] .source-panel{background:#27201b;color:#fffaf5}
+body[data-page-key="week-6-day-2-ugc-reference"] .source-panel h2{color:#fffaf5}
+body[data-page-key="week-6-day-2-ugc-reference"] .source-panel p{color:#eaded2}
+@media(max-width:680px){body[data-page-key="week-6-day-2-ugc-reference"] .ugc-reference{width:calc(100% - 22px)}body[data-page-key="week-6-day-2-ugc-reference"] .workflow-list{grid-template-columns:1fr}body[data-page-key="week-6-day-2-ugc-reference"] .reference-nav{position:static}body[data-page-key="week-6-day-2-ugc-reference"] .prompt-card pre{font-size:.86rem;padding:14px}}
+html body[data-page-key="week-6-day-2-ugc-reference"]{background:#f7f3ed!important;color:#191512!important}
+html body[data-page-key="week-6-day-2-ugc-reference"] #main-content{background:#f7f3ed;color:#191512}
+html body[data-page-key="week-6-day-2-ugc-reference"] #main-content .reference-panel h2{color:#211a15}
+html body[data-page-key="week-6-day-2-ugc-reference"] #main-content .reference-panel h3{color:#2c2119}
+html body[data-page-key="week-6-day-2-ugc-reference"] #main-content .reference-actions .btn.secondary{border-color:#35271e;background:#35271e;color:#fff}
+html body[data-page-key="week-6-day-2-ugc-reference"] #main-content .reference-panel h1,html body[data-page-key="week-6-day-2-ugc-reference"] #main-content .reference-panel h2,html body[data-page-key="week-6-day-2-ugc-reference"] #main-content .reference-panel h3{color:#211a15!important}
+html body[data-page-key="week-6-day-2-ugc-reference"] #main-content .source-panel h2{color:#fffaf5!important}
+html body[data-page-key="week-6-day-2-ugc-reference"] #main-content .reference-actions .btn.secondary{border-color:#35271e!important;background:#35271e!important;color:#fff!important}
+body[data-page-key="week-6-day-2-ugc-reference"] .reference-panel{position:relative}
+body[data-page-key="week-6-day-2-ugc-reference"] .reference-avatar{position:absolute;top:26px;right:26px;width:88px;height:88px;aspect-ratio:1;background-color:transparent!important}
+body[data-page-key="week-6-day-2-ugc-reference"] .reference-panel>h2{padding-right:104px}
+body[data-page-key="week-6-day-2-ugc-reference"] .reference-avatar-tip{position:relative;z-index:2}
+@media(max-width:680px){body[data-page-key="week-6-day-2-ugc-reference"] .reference-avatar{top:20px;right:16px;width:62px;height:62px}body[data-page-key="week-6-day-2-ugc-reference"] .reference-panel>h2{padding-right:72px}}

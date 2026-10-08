@@ -1,8 +1,8 @@
 {
-  "sessions": 11,
-  "tools": 23,
-  "prompts": 91,
-  "checklists": 11,
+  "sessions": 15,
+  "tools": 36,
+  "prompts": 126,
+  "checklists": 15,
   "sources": [
     "playbook.html",
     "sessions/week-2-day-1/index.html",
@@ -25,6 +25,15 @@
     "sessions/week-6-day-1/playbook.html",
     "sessions/week-6-day-2/index.html",
     "sessions/week-6-day-2/playbook.html",
-    "resources/ai-faceless-youtube-masterclass.html"
+    "sessions/week-7-day-1/index.html",
+    "sessions/week-7-day-1/playbook.html",
+    "sessions/week-7-day-2/index.html",
+    "sessions/week-7-day-2/playbook.html",
+    "sessions/week-8-day-1/index.html",
+    "sessions/week-8-day-1/playbook.html",
+    "sessions/week-8-day-2/index.html",
+    "sessions/week-8-day-2/playbook.html",
+    "resources/ai-faceless-youtube-masterclass.html",
+    "resources/week-6-day-2-ugc-reference.html"
   ]
 }

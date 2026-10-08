@@ -1,0 +1,122 @@
+window.BMAI_LESSON={
+  "id": "week-7-day-1",
+  "title": "Build Your AI Twin for UGC Videos",
+  "number": 13,
+  "stage": "MOVIE",
+  "visual": "production",
+  "objective": "Create a short test video with Google Flow and a verified video-trained avatar, compare face and voice consistency, and record the selected results and next fixes in the Homework Doc.",
+  "homeworkUrl": "https://docs.google.com/document/d/1ALm4BKj-6wdIDHxmhXt6DFcka-tMz-7s4sZmjjxxHZ8/edit",
+  "submission": "Record asset links and review notes in the official Homework Doc. The session source gives no separate submission route. Keep the videos organized in Drive for the later portfolio session.",
+  "steps": [
+    {
+      "title": "Prepare a clean face reference",
+      "instruction": "Bring the three or four photos from different angles that you prepared in the previous session. Use the instructor-shared image prompt to create a clean front-facing portrait with a simple background. The full prompt was shared separately and is not included in the source packet.",
+      "review": "The selected portrait has a clear, well-lit face, a quiet background, and a recognizable likeness."
+    },
+    {
+      "title": "Create a Flow character and agent video",
+      "instruction": "In a new Google Flow project, upload the portrait under Characters and select Nano Banana Pro. Attach a template voice, test its preview, tune its speed or tempo if useful, and add it to the character. Name the character; its description is optional. Tag the saved character in your prompt. Turn on Agent and use Always ask, Omni Flash, 9:16 portrait, and one variation as shown in class. Review the scene breakdown and approve generation only after checking the plan and credit request.",
+      "review": "The character and voice remain consistent across scenes, the dialogue is understandable, and generated text does not distract."
+    },
+    {
+      "title": "Build and verify a video-trained avatar",
+      "instruction": "Use the instructor-shared HeyGen link. Upload or record a well-lit training video with a visible face and mouth and modest gestures that do not cross the face. Follow the tool's current footage and consent requirements. Choose the voice from the video or record a voice sample, then verify the avatar using the tool's webcam or phone flow. Generate a short test. The class recording showed a free option limited to 15 seconds with Avatar 3; check current availability before relying on those settings.",
+      "review": "Identity, lip movement, voice, and framing are clear, and the avatar has completed the tool's consent and identity checks."
+    },
+    {
+      "title": "Compare and organize the results",
+      "instruction": "Compare the Flow character with the video-trained avatar. Check identity across every scene, voice, repeated or cut-off words, stretched framing, and generated captions. Record one first fix and the result you plan to carry into your portfolio. Keep the source photos and outputs organized in Drive.",
+      "review": "Both workflow results are linked in the Homework Doc, the comparison identifies a visible strength and issue, and the selected portfolio candidate has a next improvement recorded."
+    }
+  ],
+  "homework": [
+    {
+      "title": "Prepare the reference portrait",
+      "prompt": "Use the prior session's multi-angle photos to create and review a clean, front-facing portrait. Record the source and selected image links, likeness check, and first correction."
+    },
+    {
+      "title": "Test Google Flow",
+      "prompt": "Upload the portrait in a new Flow project, attach and preview a template voice, tag the saved character, and use the class Agent settings. Review the scene plan and credit request before approving generation. Record the character, video, voice and issue notes."
+    },
+    {
+      "title": "Test the video-trained avatar",
+      "prompt": "Use the instructor-shared avatar tool link. Provide your own clear training footage, follow the current consent and verification steps, create a short test, and review identity, voice, lip movement and framing. Record the result link and first fix."
+    },
+    {
+      "title": "Compare and save",
+      "prompt": "Compare both outputs, record which retained your face and voice more clearly, note one failure and first fix, and organize the candidate you plan to carry into the later portfolio session."
+    }
+  ],
+  "tools": [
+    {
+      "name": "Google Flow",
+      "useCase": "Build an image-based character with a selected template voice and use Agent to plan and generate a multi-scene UGC video."
+    },
+    {
+      "name": "OpenArt",
+      "useCase": "Optional route shown in class for generating the clean character portrait with Nano Banana Pro."
+    },
+    {
+      "name": "Claude",
+      "useCase": "Draft and critique a production prompt before it is used in Google Flow; the class example checks for setting and generation constraints."
+    },
+    {
+      "name": "HeyGen",
+      "useCase": "Create and verify a video-trained digital avatar, then generate a short talking test video. The class accessed it from an instructor-shared link."
+    }
+  ],
+  "prompts": [],
+  "checklist": [
+    "I prepared a clean portrait from my previous multi-angle photos and checked the likeness.",
+    "I used a new Flow project and selected Nano Banana Pro for the uploaded character image.",
+    "I added a template voice to the Flow character and previewed its sample dialogue.",
+    "I tagged the saved character and checked the Agent scene breakdown before generation.",
+    "I reviewed the Agent model, aspect ratio, variation count, approval setting, and credit request.",
+    "I completed the video avatar consent and identity verification steps for my own likeness.",
+    "I reviewed identity, voice, dialogue, lip movement, framing, and generated text in both tests.",
+    "I recorded the result links, comparison, first fix, and portfolio next step in the Homework Doc."
+  ],
+  "quiz": [
+    {
+      "question": "Flow shows a different face in each generated scene. What should you inspect first?",
+      "options": [
+        "Compare each scene prompt and make sure it tags the saved character consistently.",
+        "Generate again with a different voice template.",
+        "Add subtitles to every scene."
+      ],
+      "correct": 0,
+      "explanation": "The instructor tied identity drift to missing or changing character details across the agent's separate scene prompts."
+    },
+    {
+      "question": "Why should Agent be set to Always ask before generating?",
+      "options": [
+        "So you can review its scene plan and credit request before generation starts.",
+        "So the agent never creates a scene breakdown.",
+        "So every variation is generated automatically."
+      ],
+      "correct": 0,
+      "explanation": "The class chose Always to inspect proposed changes and credit use before approving generation."
+    },
+    {
+      "question": "Flow voice preview is silent on your device. What is the instructor's first troubleshooting suggestion?",
+      "options": [
+        "Refresh and preview again after adding sample dialogue.",
+        "Upload an ElevenLabs audio file into the character.",
+        "Remove the voice from the character."
+      ],
+      "correct": 0,
+      "explanation": "The transcript confirms custom audio upload is unavailable in this Flow workflow and suggests refreshing when preview playback fails."
+    },
+    {
+      "question": "Generated captions contain errors. What is the most useful fix from class?",
+      "options": [
+        "Remove the generated captions and add them in an editing or captioning tool.",
+        "Generate more scenes with longer captions.",
+        "Change the avatar's clothing."
+      ],
+      "correct": 0,
+      "explanation": "The instructor said video models often render subtitles unreliably and recommended editing or a dedicated caption tool."
+    }
+  ],
+  "hero": "assets/illustrations/production.svg"
+};

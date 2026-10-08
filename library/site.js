@@ -172,60 +172,60 @@ window.BMAI_SESSIONS=[
     "visual": "production",
     "hero": "assets/illustrations/production.svg",
     "week": "WEEK 7 · DAY 1",
-    "title": "Week 7 Day 1 Session",
+    "title": "Build Your AI Twin for UGC Videos",
     "number": 13,
     "start": "2026-11-14T20:00:00+05:30",
     "end": "2026-11-14T22:00:00+05:30",
-    "stage": null,
-    "session": null,
-    "playbook": null,
-    "homework": null,
-    "description": "Session materials will appear here when they are released."
+    "stage": "MOVIE",
+    "session": "sessions/week-7-day-1/index.html",
+    "playbook": "sessions/week-7-day-1/playbook.html",
+    "homework": "https://docs.google.com/document/d/1ALm4BKj-6wdIDHxmhXt6DFcka-tMz-7s4sZmjjxxHZ8/edit",
+    "description": "Create a short test video with Google Flow and a verified video-trained avatar, compare face and voice consistency, and record the selected results and next fixes in the Homework Doc."
   },
   {
     "id": "week-7-day-2",
     "visual": "production",
     "hero": "assets/illustrations/production.svg",
     "week": "WEEK 7 · DAY 2",
-    "title": "Week 7 Day 2 Session",
+    "title": "Build Your Portfolio Website with AI Builders",
     "number": 14,
     "start": "2026-11-15T20:00:00+05:30",
     "end": "2026-11-15T22:00:00+05:30",
-    "stage": null,
-    "session": null,
-    "playbook": null,
-    "homework": null,
-    "description": "Session materials will appear here when they are released."
+    "stage": "MOVIE",
+    "session": "sessions/week-7-day-2/index.html",
+    "playbook": "sessions/week-7-day-2/playbook.html",
+    "homework": "https://docs.google.com/document/d/1JWqUBGACD-YajJHTfU1GoBqmEPm2YIE6jVi-O6hWIjc",
+    "description": "Tailor the supplied portfolio master prompt to one AI builder, create a three-page portfolio draft with your own available material, review its responsive behavior and interactions, and record your next revisions."
   },
   {
     "id": "week-8-day-1",
-    "visual": "production",
-    "hero": "assets/illustrations/production.svg",
+    "visual": "advertisement",
+    "hero": "assets/illustrations/advertisement.svg",
     "week": "WEEK 8 · DAY 1",
-    "title": "Week 8 Day 1 Session",
+    "title": "Automobile Advertisement Production",
     "number": 15,
     "start": "2026-11-21T20:00:00+05:30",
     "end": "2026-11-21T22:00:00+05:30",
-    "stage": null,
-    "session": null,
-    "playbook": null,
-    "homework": null,
-    "description": "Session materials will appear here when they are released."
+    "stage": "MOTION",
+    "session": "sessions/week-8-day-1/index.html",
+    "playbook": "sessions/week-8-day-1/playbook.html",
+    "homework": "https://docs.google.com/document/d/1pUmCjzW_iYchbUHelAkbBDYmJR2GRhBjYHf6n32_A0g/edit",
+    "description": "Create and review an automobile advertisement using a chosen four-wheel vehicle, consistent visual references, a shot plan, and motion clips that preserve the vehicle's identity and move plausibly."
   },
   {
     "id": "week-8-day-2",
     "visual": "production",
     "hero": "assets/illustrations/production.svg",
     "week": "WEEK 8 · DAY 2",
-    "title": "Week 8 Day 2 Session",
+    "title": "Advanced VFX",
     "number": 16,
     "start": "2026-11-22T20:00:00+05:30",
     "end": "2026-11-22T22:00:00+05:30",
-    "stage": null,
-    "session": null,
-    "playbook": null,
-    "homework": null,
-    "description": "Session materials will appear here when they are released."
+    "stage": "MOTION",
+    "session": "sessions/week-8-day-2/index.html",
+    "playbook": "sessions/week-8-day-2/playbook.html",
+    "homework": "https://docs.google.com/document/d/1wb2orCymuOp6zqJzsOKgieM8Pw_Sxt7KJKEkQooBDuo/edit",
+    "description": "Select an advanced VFX route, prepare compatible references, generate one video transformation test, and review what changed, what stayed stable, and the first correction."
   }
 ];
 
@@ -479,7 +479,7 @@ title.innerHTML=esc(cur.week)+"<br><span>"+esc(cur.title)+"</span>";
 if(desc)desc.textContent=cur.session?"Ready to keep creating? Revisit the lesson, open your playbook, and turn the next step into a finished piece.":"This session is now on the cohort schedule. Session materials will appear here as they are released.";
 const status=document.querySelector(".bmai-studio-card .bmai-chip.active");if(status)status.textContent=cur.session?"CURRENT SESSION":"CURRENT · CONTENT COMING SOON";
 const stageChip=document.querySelector(".bmai-studio-card .bmai-chip[data-session-stage]");if(stageChip)stageChip.textContent=cur.stage||"PRODUCTION";const stageTitle=document.getElementById("bmaiCurrentStage");if(stageTitle)stageTitle.textContent=cur.stage||"PRODUCTION";
-const currentImage=document.getElementById("bmaiCurrentImage");if(currentImage){currentImage.hidden=!cur.hero;if(cur.hero){currentImage.src=basePath()+cur.hero;currentImage.alt=cur.title+" — session hero image";}}
+const currentImage=document.getElementById("bmaiCurrentImage");if(currentImage){currentImage.hidden=!cur.hero;if(cur.hero){currentImage.src=basePath()+cur.hero;currentImage.alt=cur.title+" - session hero image";}}
 const numberChip=document.querySelector(".bmai-studio-card .bmai-chip[data-session-number]");if(numberChip)numberChip.textContent="SESSION "+String(cur.number).padStart(2,"0");
 if(links[0]){if(cur.session){links[0].href=sessionUrl(cur);links[0].textContent="CONTINUE SESSION →";links[0].style.display="inline-block";links[0].classList.remove("secondary")}else{links[0].removeAttribute("href");links[0].textContent="SESSION CONTENT COMING SOON";links[0].style.display="inline-block";links[0].classList.add("secondary")}}
 if(links[1]){if(cur.playbook){links[1].href=basePath()+cur.playbook;links[1].style.display="inline-block"}else links[1].style.display="none"}
@@ -505,7 +505,7 @@ if(nextBox){
   const reviewOpen=false&&!!nxt.session;
   const access=reviewOpen?'<div class="studio-teaser-lock"><span>REVIEW ACCESS OPEN</span></div><div class="studio-teaser-actions"><a class="btn" href="'+esc(sessionUrl(nxt))+'">OPEN SESSION</a>'+(nxt.playbook?'<a class="btn secondary" href="'+basePath()+esc(nxt.playbook)+'">OPEN PLAYBOOK</a>':'')+'</div>':'<div class="studio-teaser-lock"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>CLASS LOCKED · OPENS IN <b data-teaser-countdown>'+esc(countdown(nxt.start))+'</b></span></div><small>Your next chapter unlocks automatically. Get your current project ready.</small>';
   nextBox.className="studio-teaser-card";
-  nextBox.innerHTML='<div class="studio-teaser-copy"><div class="kicker">NEXT UP / '+esc(nxt.week)+'</div><h2>'+esc(nxt.title)+'</h2><p>'+esc(outcomes[nxt.id]||nxt.description||"Your next creative challenge is on its way. Bring what you have built so far and get ready to take the next step.")+'</p><div class="studio-teaser-date">'+esc(dateRange(nxt))+'</div>'+access+'</div>'+(nxt.hero?'<div class="studio-teaser-image"><img src="'+basePath()+esc(nxt.hero)+'" alt="'+esc(nxt.title)+' — next class preview" loading="lazy"></div>':'');
+  nextBox.innerHTML='<div class="studio-teaser-copy"><div class="kicker">NEXT UP / '+esc(nxt.week)+'</div><h2>'+esc(nxt.title)+'</h2><p>'+esc(outcomes[nxt.id]||nxt.description||"Your next creative challenge is on its way. Bring what you have built so far and get ready to take the next step.")+'</p><div class="studio-teaser-date">'+esc(dateRange(nxt))+'</div>'+access+'</div>'+(nxt.hero?'<div class="studio-teaser-image"><img src="'+basePath()+esc(nxt.hero)+'" alt="'+esc(nxt.title)+' - next class preview" loading="lazy"></div>':'');
  }else nextBox.closest('section').hidden=true;
 }
 }

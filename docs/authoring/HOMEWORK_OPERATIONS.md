@@ -14,7 +14,7 @@ For new official homework and backups, use this established folder when access p
 
 1. Identify the current canonical target and inspect every tab, table, native control, field and source prompt.
 2. Make a full native copy before the first official-document mutation. A new assignment adapted from a template is a new canonical target; later edits to that target require their own backup.
-3. Give the backup a clear name such as `[Current title] — BACKUP before [change] — [actual date/time IST]`. Do not reuse an older backup as if it captured the latest pre-edit state.
+3. Give the backup a clear name such as `[Current title] - BACKUP before [change] - [actual date/time IST]`. Do not reuse an older backup as if it captured the latest pre-edit state.
 4. Verify the backup exists and retains the source's complete native structure/content. Record canonical ID, backup ID, actual time and change scope in the work's review record.
 5. Keep the backup noncanonical. Website homework actions must continue to point to the official target unless an explicit migration is authorized.
 6. Apply the requested change, read back all affected structure/text and compare official prompt/instruction text against the source/backup. Refresh live indexes after structural edits. Avoid transformations that delete the opening characters of checklist items.
@@ -32,7 +32,7 @@ Preserve every official instruction, prompt, factual detail, existing table dime
 - Preserve meaningful duplicates and student work in Drive. Remove stale site references where needed; do not permanently delete Drive files without explicit user direction.
 - Future homework navigation follows the existing scheduled start. The site's locks do not secure Drive sharing. Never replace an unavailable canonical Doc with a backup merely to make a link open.
 
-## Dated canonical registry — 8 October 2026
+## Dated canonical registry - 8 October 2026
 
 This is a supporting reconciliation record, not a second runtime schedule. Verify live metadata, current content and registered identity before using an entry in a future edit. Do not insert later-session links into released navigation just because they appear here.
 

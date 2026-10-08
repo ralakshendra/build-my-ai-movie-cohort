@@ -1,4 +1,4 @@
-# BUILD MY AI MOVIE STUDIO — initial site refactor report (historical)
+# BUILD MY AI MOVIE STUDIO - initial site refactor report (historical)
 
 The latest reviewed avatar and homework changes are documented in [FIXES_REVIEW_2026-10-08.md](FIXES_REVIEW_2026-10-08.md).
 

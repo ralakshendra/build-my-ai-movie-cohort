@@ -77,27 +77,27 @@ window.BMAI_LESSON={
     {
       "title": "Rough-sketch demonstration prompt",
       "text": "Convert this rough sketch to an ultra realistic 4K quality image of a contemporary style house with pastel color tones, also add a loan to the front garden. Strictly don’t change the structural details from the given drawing.",
-      "source": "Advanced Real estate Video production — rough-sketch demonstration"
+      "source": "Advanced Real estate Video production - rough-sketch demonstration"
     },
     {
       "title": "Generic FPV walkthrough prompt",
       "text": "A smooth, steady and slow FPV drone moves through video of a luxury real estate property. The FPV drone starts from a wide angle into the start image and does a slow dolly in, then gradually increases the speed and enters to the end frame, then does a dollyout and a jib up to reveal a wide angle of end frame. Keep the natural parallax of objects and materials within, strictly don't change any features or objects from the reference image. there is no need to show the drone, it should be a complete FPV visual.",
-      "source": "Advanced Real estate Video production — supplied generic FPV prompt"
+      "source": "Advanced Real estate Video production - supplied generic FPV prompt"
     },
     {
-      "title": "Omni Flash prompt 1 — courtyard start frame",
+      "title": "Omni Flash prompt 1 - courtyard start frame",
       "text": "[Start Frame: Provided Image] Seamless first-person view (FPV) drone shot beginning exactly from this courtyard perspective. The camera lifts smoothly and moves along a dynamic, continuous flight path.\n\nMaintaining 100% structural and architectural consistency of the environment: the drone skims low over the circular stone fountain with cascading water, banking gently to the right. It sweeps smoothly past the active fire pit and over the manicured green lawn, maintaining the light-beige neo-classical luxury villa on the left and the lush palm trees on the right.\n\nThe flight continues through the courtyard, executing a precise cinematic curve around the modern wooden pergola and towards the circular cutout wall featuring the manicured bonsai tree.\n\nStyle and Technicals: Hyper-realistic, fluid FPV drone physics, organic motion blur during fast banks, continuous one-take sequence, volumetric golden hour morning sunlight casting long shadows, 8k resolution, photorealistic textures. No cuts, no warping.",
-      "source": "Advanced Real estate Video production — New Omni Flash prompt 1"
+      "source": "Advanced Real estate Video production - New Omni Flash prompt 1"
     },
     {
-      "title": "Omni Flash prompt 2 — generic FPV",
+      "title": "Omni Flash prompt 2 - generic FPV",
       "text": "[Start Frame: Provided Image] Realistic, fluid first-person view (FPV) drone fly-through shot starting exactly from the perspective and geometry defined by the input image.\n\nStructural Integrity: The generation must maintain absolute architectural accuracy and geometric consistency of all buildings, structures, walls, and landscape features visible in the initial frame. All architectural elements must remain completely rigid and physically static, with zero morphing, warping, stretching, or changing shapes as the camera moves past them.\n\nMotion: The camera glides smoothly and dynamically along a continuous, stable aerial trajectory, strictly through open spaces (not passing through solid walls). Realistically simulate parallax and lens distortion appropriate for an FPV drone.\n\nExclusions & Quality: Clean cinematic output. Absolutely no visible interface elements, no red lines, no drawn path overlays, no brush strokes, and no motion trail artifacts. Professional 4k drone stabilization, crisp textures, natural lighting, and photorealistic depth of field.",
-      "source": "Advanced Real estate Video production — New Omni Flash prompt 2"
+      "source": "Advanced Real estate Video production - New Omni Flash prompt 2"
     },
     {
-      "title": "Omni Flash prompt 3 — geotagging",
+      "title": "Omni Flash prompt 3 - geotagging",
       "text": "[Start Frame: Uploaded Image/Coordinates] First-person view (FPV) drone fly-through animation sequence beginning exactly from the camera perspective, depth parameters, and spatial coordinate layout defined by the source image at coordinates [INSERT LATITUDE, LONGITUDE].\n\nCRITICAL ENVIRONMENT CONSTRAINT: The model must maintain 100% geometric, structural, and environmental fidelity to the provided start frame. The underlying terrain, layout, elements, and horizons of this [INSERT LANDSCAPE TYPE: e.g., open desert field / rocky canyon / dense forest] must remain completely rigid, unmutated, and physically static. Zero morphing, zero hallucinating of new buildings, zero warping of existing landmarks, and zero structural shifting as the camera translates through space.\n\nFLIGHT PATH & KINETICS: Execute a continuous, single-take aerial camera movement following the user-drawn trajectory path. The drone must glide smoothly over [INSERT FOCUS ELEMENT: e.g., the open dirt path / the grassy plain], simulating realistic drone aerodynamics, smooth bank compensation, subtle natural motion blur on fast turns, and real-world lens parallax.\n\nMANDATORY ARTIFACT EXCLUSION: The final video must be a clean, cinematic photographic render. Systematically eliminate all user interface overlays, brush stroke artifacts, drawn lines, colored paths, or motion path tracking indicators from the output frames.",
-      "source": "Advanced Real estate Video production — New Omni Flash prompt 3"
+      "source": "Advanced Real estate Video production - New Omni Flash prompt 3"
     }
   ],
   "checklist": [

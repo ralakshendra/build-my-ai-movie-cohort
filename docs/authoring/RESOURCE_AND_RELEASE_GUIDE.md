@@ -74,7 +74,7 @@ For a full supplied prompt:
 </details>
 ```
 
-The current extractor imports unique `pre` text whose trimmed length is at least 60 characters. A genuine shorter prompt needs deliberate extractor support; never pad or invent text to pass that threshold. Avoid placing configuration examples, partial snippets or practice recipes in lesson `pre` blocks where they would be misclassified. Use explicit source IDs before generation rather than relying on auto-added IDs whose numbering could change.
+The current extractor imports unique `pre` text whose trimmed length is at least 60 characters. A genuine shorter prompt may be imported by marking its `pre` with `data-resource-prompt="true"`; the marker is an explicit registration, not a reason to add incomplete or invented text. Never pad a prompt to pass the threshold. Avoid placing configuration examples, partial snippets or practice recipes in lesson `pre` blocks where they would be misclassified. Use explicit source IDs before generation rather than relying on auto-added IDs whose numbering could change.
 
 Run `npm run resources:build` after lesson content edits, or `npm run build` to rebuild resources and shared bundles together. Never hand-edit the generated `<!-- resources:... -->` blocks in `index.html` or generated `resources/catalog.json`. Inspect the result for correct labels, attribution, deduplication and links.
 

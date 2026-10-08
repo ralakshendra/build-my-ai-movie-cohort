@@ -1,4 +1,4 @@
-const { test, devices } = require('playwright/test');
+const { test, devices, expect } = require('playwright/test');
 
 const BASE = process.env.BMAI_BASE_URL || 'https://ralakshendra.github.io/build-my-ai-movie-cohort/';
 
@@ -21,6 +21,8 @@ const pages = [
   ['w4d2-playbook', 'sessions/week-4-day-2/playbook.html'],
   ['w5d1', 'sessions/week-5-day-1/index.html'],
   ['w5d1-playbook', 'sessions/week-5-day-1/playbook.html'],
+  ['w7d1', 'sessions/week-7-day-1/index.html'],
+  ['w7d1-playbook', 'sessions/week-7-day-1/playbook.html'],
 ];
 
 async function auditPage(page, label, viewportWidth) {
@@ -40,7 +42,7 @@ async function auditPage(page, label, viewportWidth) {
     const main = document.querySelector('main');
     const skip = document.querySelector('.bmai-skip-link');
     const localLinks = [...document.querySelectorAll('a[href]')].map(a => a.href).filter(href => href.startsWith(location.origin) && !href.includes('#') && !href.endsWith('/build-my-ai-movie-cohort/')).slice(0, 60);
-    const emDash = document.body.innerText.includes('—');
+    const emDash = document.body.innerText.includes('-');
     const shell = document.querySelector('.bmai-global-header');
     const pageType = document.body.dataset.pageType || null;
     const pageId = document.body.dataset.pageId || null;
@@ -109,6 +111,13 @@ async function auditPage(page, label, viewportWidth) {
 }
 
 for (const [label, path] of pages) {
+  test(label + ' narrow mobile 320px', async ({browser}) => {
+    const context = await browser.newContext({...devices['iPhone 13'], viewport:{width:320,height:740}});
+    const page = await context.newPage();
+    await page.goto(new URL(path, BASE).href, {waitUntil:'domcontentloaded'});
+    await auditPage(page, label + '-320', 320);
+    await context.close();
+  });
   test(label + ' mobile 390px', async ({browser}) => {
     const context = await browser.newContext({...devices['iPhone 13'], viewport:{width:390,height:844}});
     const page = await context.newPage();
@@ -127,6 +136,39 @@ for (const [label, path] of pages) {
     await auditPage(page, label, 1440);
   });
 }
+
+test('Week 7 playbook avatar, checklist and skill feedback work', async ({browser}) => {
+  const context = await browser.newContext({viewport:{width:390,height:844}});
+  const page = await context.newPage();
+  await page.goto(new URL('sessions/week-7-day-1/playbook.html', BASE).href, {waitUntil:'domcontentloaded'});
+
+  const avatar = page.locator('#task-1 .studio-avatar').first();
+  await avatar.scrollIntoViewIfNeeded();
+  expect(await avatar.evaluate(el => getComputedStyle(el).backgroundSize)).toBe('200% 200%');
+  await avatar.click({force:true});
+  expect(await avatar.getAttribute('aria-expanded')).toBe('true');
+  const tipId = await avatar.getAttribute('aria-controls');
+  expect(await page.locator('#' + tipId).innerText()).toContain('clear face');
+  await avatar.press('Space');
+  expect(await avatar.getAttribute('aria-expanded')).toBe('false');
+
+  const firstCheck = page.locator('#checklistSection input[type="checkbox"]').first();
+  await firstCheck.check();
+  await page.reload({waitUntil:'domcontentloaded'});
+  expect(await page.locator('#checklistSection input[type="checkbox"]').first().isChecked()).toBe(true);
+
+  const firstQuestion = page.locator('#skillcheck [data-library-quiz] fieldset').first();
+  await firstQuestion.scrollIntoViewIfNeeded();
+  await firstQuestion.locator('input[type="radio"][value="1"]').check();
+  await firstQuestion.getByRole('button', {name:'Check answer'}).click();
+  expect(await firstQuestion.getAttribute('data-answer-state')).toBe('incorrect');
+  expect(await page.locator('#skillcheck [data-companion="skill"] .studio-avatar').getAttribute('data-avatar-pose')).toBe('caution');
+  await firstQuestion.locator('input[type="radio"][value="0"]').check();
+  await firstQuestion.getByRole('button', {name:'Check answer'}).click();
+  expect(await firstQuestion.getAttribute('data-answer-state')).toBe('correct');
+  expect(await page.locator('#skillcheck [data-companion="skill"] .studio-avatar').getAttribute('data-avatar-pose')).toBe('thumbs-up');
+  await context.close();
+});
 
 
 test('future session materials stay locked before release', async ({browser}) => {
