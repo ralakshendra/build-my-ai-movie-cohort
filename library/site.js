@@ -187,15 +187,15 @@ window.BMAI_SESSIONS=[
     "visual": "production",
     "hero": "assets/illustrations/production.svg",
     "week": "WEEK 7 · DAY 2",
-    "title": "Week 7 Day 2 Session",
+    "title": "Build Your Portfolio Website with AI Builders",
     "number": 14,
     "start": "2026-11-15T20:00:00+05:30",
     "end": "2026-11-15T22:00:00+05:30",
-    "stage": null,
-    "session": null,
-    "playbook": null,
-    "homework": null,
-    "description": "Session materials will appear here when they are released."
+    "stage": "MOVIE",
+    "session": "sessions/week-7-day-2/index.html",
+    "playbook": "sessions/week-7-day-2/playbook.html",
+    "homework": "https://docs.google.com/document/d/1JWqUBGACD-YajJHTfU1GoBqmEPm2YIE6jVi-O6hWIjc",
+    "description": "Tailor the supplied portfolio master prompt to one AI builder, create a three-page portfolio draft with your own available material, review its responsive behavior and interactions, and record your next revisions."
   },
   {
     "id": "week-8-day-1",

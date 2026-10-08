@@ -1,8 +1,8 @@
 {
-  "sessions": 12,
-  "tools": 25,
-  "prompts": 100,
-  "checklists": 12,
+  "sessions": 13,
+  "tools": 29,
+  "prompts": 105,
+  "checklists": 13,
   "sources": [
     "playbook.html",
     "sessions/week-2-day-1/index.html",
@@ -25,6 +25,8 @@
     "sessions/week-6-day-1/playbook.html",
     "sessions/week-6-day-2/index.html",
     "sessions/week-6-day-2/playbook.html",
+    "sessions/week-7-day-2/index.html",
+    "sessions/week-7-day-2/playbook.html",
     "sessions/week-8-day-1/index.html",
     "sessions/week-8-day-1/playbook.html",
     "resources/ai-faceless-youtube-masterclass.html",
