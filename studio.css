@@ -149,3 +149,10 @@ body[data-page-key] main :is(.hero,.studio-session-hero,.w3d2-hero,.session-hero
     font-size: clamp(2rem, 8vw, 2.75rem) !important;
   }
 }
+
+@media (max-width: 360px) {
+  body .studio-nav, body[data-page-key] .studio-nav { width: calc(100% - 16px) !important; gap: 6px; }
+  body .bmai-session-brand { min-width: 0; font-size: 10px !important; }
+  body .bmai-session-brand span { line-height: 1.1; }
+  body .bmai-header-home, body .bmai-mobile-menu { flex: none; }
+}

@@ -79,7 +79,7 @@ async function auditPage(page, label, viewportWidth) {
   if (audit.pageOverflow > 2) throw new Error(label + ': horizontal page overflow ' + audit.pageOverflow + 'px');
   if (!audit.pageType || !audit.pageId) throw new Error(label + ': missing static page metadata');
   if (audit.pageIdentity !== audit.pageId) throw new Error(label + ': page identity metadata is inconsistent');
-  if (label !== 'home' && label !== 'not-found' && !audit.sessionId) throw new Error(label + ': session page has no static session id');
+  if (!['home','system'].includes(audit.pageType) && !audit.sessionId) throw new Error(label + ': session page has no static session id');
   if (!audit.hasMain) throw new Error(label + ': missing main landmark');
   if (!audit.hasSkipLink) throw new Error(label + ': missing skip link');
   if (label !== 'home') {
@@ -140,6 +140,15 @@ for (const [label, path] of pages) {
 test('Week 7 playbook avatar, checklist and skill feedback work', async ({browser}) => {
   const context = await browser.newContext({viewport:{width:390,height:844}});
   const page = await context.newPage();
+  await page.addInitScript(() => {
+    const fixed = new Date('2026-11-15T21:00:00+05:30').getTime();
+    const RealDate = Date;
+    class FrozenDate extends RealDate {
+      constructor(...args) { if (!args.length) super(fixed); else super(...args); }
+      static now() { return fixed; }
+    }
+    window.Date = FrozenDate;
+  });
   await page.goto(new URL('sessions/week-7-day-1/playbook.html', BASE).href, {waitUntil:'domcontentloaded'});
 
   const avatar = page.locator('#task-1 .studio-avatar').first();
@@ -264,7 +273,7 @@ for (const [label, path, frozenIso] of [
       await page.waitForTimeout(500);
       if (await page.locator('.bmai-lock-screen').count()) throw new Error(label + ': session remained locked at its scheduled start');
       if (!(await page.locator('.bmai-global-header').count())) throw new Error(label + ': missing shared header');
-      if (!(await page.locator('.studio-mentor').count())) throw new Error(label + ': missing instructor identity');
+      if (!(await page.evaluate(() => document.querySelector('main')?.innerText.includes('Alexx Roy') || !!document.querySelector('main img[alt*="Alexx Roy"]')))) throw new Error(label + ': missing instructor identity');
       const broken = await page.evaluate(() => [...document.querySelectorAll('img')].filter(img => !img.complete || img.naturalWidth === 0).map(img => img.getAttribute('src')));
       if (broken.length) throw new Error(label + ': broken images ' + broken.join(', '));
       await page.screenshot({path:'qa/artifacts/' + label + '-' + width + '.png', fullPage:true});
