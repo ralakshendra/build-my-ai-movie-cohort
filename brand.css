@@ -84,6 +84,11 @@ main,header,footer,section,.wrap,.container,.hero,.section{min-width:0}
   .bmai-lock-card p{font-size:14px}
   #bmai-site-utilities{right:12px;bottom:12px}
 }
+
+/* Resource cards keep wide comparison tables inside their mobile shell. */
+@media(max-width:430px){
+  body[data-page-type="resource"] .container{overflow-x:hidden;}
+}
 @media(max-width:480px){
   .container,.wrap{width:calc(100% - 22px)}
   .nav{align-items:flex-start}
