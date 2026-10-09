@@ -259,17 +259,33 @@ const icons={session:'<path d="m9 6 10 6-10 6z"/>',playbook:'<path d="M12 6c-3-2
 const labels={session:'SESSION / LEARN',playbook:'PLAYBOOK / FOLLOW THE STEPS',homework:'HOMEWORK / BUILD & SUBMIT'};
 function html(s,type='session',lazy=false){const topic=topics[key(s)];return '<figure class="studio-topic-figure studio-topic-'+type+'" data-topic="'+key(s)+'"><div class="studio-topic-canvas"><img src="'+new URL('assets/illustrations/'+key(s)+'.svg',root).href+'" alt="'+escape(topic.alt)+'" width="560" height="320" '+(lazy?'loading="lazy"':'')+' decoding="async"><span class="studio-topic-kind" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'+(icons[type]||icons.session)+'</svg></span></div><figcaption><span>'+labels[type]+'</span><strong>'+escape(topic.steps)+'</strong></figcaption></figure>';}
 function resolveLink(href){const url=new URL(href,root);return window.BMAI_SESSIONS.find(s=>[s.session,s.playbook].filter(Boolean).some(p=>url.pathname===new URL(p,root).pathname)||(s.homework&&url.hostname==='docs.google.com'&&url.pathname.split('/d/')[1]?.split('/')[0]===new URL(s.homework).pathname.split('/d/')[1]?.split('/')[0]));}
+function decorateCards(){
+ document.querySelectorAll('#playbooks article.card,#homework article.card').forEach(card=>{const type=card.closest('#homework')?'homework':'playbook';const s=[...card.querySelectorAll('a[href]')].map(a=>resolveLink(a.href)).find(Boolean);if(!s)return;card.dataset.sessionId=s.id;if(card.querySelector('.studio-topic-figure'))return;card.querySelector('.library-card-icon')?.remove();card.insertAdjacentHTML('afterbegin',html(s,type));});
+}
+function addMissingCards(section,type){
+ const grid=section.querySelector('.grid');if(!grid)return;
+ const known=new Set([...grid.querySelectorAll('article.card')].map(card=>card.dataset.sessionId).filter(Boolean));
+ window.BMAI_SESSIONS.filter(s=>s.session&&s.playbook&&!known.has(s.id)).forEach(s=>{
+  const card=document.createElement('article');card.className='card'+(type==='homework'?' featured':'');card.dataset.sessionId=s.id;
+  const href=type==='homework'?s.playbook+'#share':s.playbook;
+  const heading='Week '+s.id.match(/week-(\d+)-day-(\d+)/).slice(1).join(' Day ')+' '+(type==='homework'?'Homework':'Playbook')+' · '+s.title;
+  card.innerHTML='<div class="tag">'+escape(s.week)+' · '+(type==='homework'?'HOMEWORK':'PLAYBOOK')+'</div><h3>'+escape(heading)+'</h3><p>'+escape(s.description)+'</p><div class="actions"><a class="btn '+(type==='homework'?'':'secondary')+'" href="'+escape(href)+'">'+(type==='homework'?'OPEN PLAYBOOK HOMEWORK':'OPEN PLAYBOOK')+'</a></div>';
+  grid.append(card);
+ });
+}
 function library(){
- document.querySelectorAll('#playbooks article.card,#homework article.card').forEach(card=>{const type=card.closest('#homework')?'homework':'playbook';const s=[...card.querySelectorAll('a[href]')].map(a=>resolveLink(a.href)).find(Boolean);if(!s||card.querySelector('.studio-topic-figure'))return;card.querySelector('.library-card-icon')?.remove();card.insertAdjacentHTML('afterbegin',html(s,type));card.dataset.sessionId=s.id;});
+ decorateCards();
+ document.querySelectorAll('#playbooks,#homework').forEach(section=>addMissingCards(section,section.id==='homework'?'homework':'playbook'));
+ decorateCards();
  document.querySelectorAll('#playbooks,#homework').forEach(section=>{
   const cards=[...section.querySelectorAll('article.card')],sessions=window.BMAI_SESSIONS.filter(s=>cards.some(c=>c.dataset.sessionId===s.id));if(!sessions.length)return;
-  const latest=sessions.filter(s=>Date.parse(s.start)<=Date.now()).at(-1)||sessions[0],controls=document.createElement('div');controls.className='bmai-session-picker';
-  const existing=section.querySelector('.bmai-session-picker');if(existing){const select=existing.querySelector('select');sessions.forEach(s=>{select.querySelector('option[value="'+s.id+'"]').textContent=s.week+' · '+s.title+(Date.parse(s.start)>Date.now()?' (locked)':'');});if(select.value===existing.dataset.defaultSelection){select.value=latest.id;select.dispatchEvent(new Event('change'));}existing.dataset.defaultSelection=latest.id;return;}
+  const controls=document.createElement('div');controls.className='bmai-session-picker';
+  const existing=section.querySelector('.bmai-session-picker');if(existing){const select=existing.querySelector('select');sessions.forEach(s=>{const option=select.querySelector('option[value="'+s.id+'"]');if(option)option.textContent=s.week+' · '+s.title+(Date.parse(s.start)>Date.now()?' (locked)':'');});if(select.value===existing.dataset.defaultSelection){select.value='all';select.dispatchEvent(new Event('change'));}existing.dataset.defaultSelection='all';return;}
   const label=document.createElement('label'),select=document.createElement('select'),status=document.createElement('p');label.textContent='Choose a session';select.setAttribute('aria-label','Choose '+(section.id==='homework'?'homework':'playbook')+' session');status.setAttribute('role','status');
   const all=document.createElement('option');all.value='all';all.textContent='All sessions';select.append(all);
   sessions.forEach(s=>{const option=document.createElement('option');option.value=s.id;option.textContent=s.week+' · '+s.title+(Date.parse(s.start)>Date.now()?' (locked)':'');select.append(option)});
-  select.value=latest.id;controls.dataset.defaultSelection=latest.id;label.append(select);controls.append(label,status);cards[0].parentElement.insertAdjacentElement('beforebegin',controls);
-  const update=()=>{let count=0;cards.forEach(card=>{card.hidden=select.value!=='all'&&card.dataset.sessionId!==select.value;if(!card.hidden)count++;});status.textContent=count+' of '+cards.length+' '+(section.id==='homework'?'homework assignments':'playbooks')+' shown. Select All sessions for the full library.';};
+  select.value='all';controls.dataset.defaultSelection='all';label.append(select);controls.append(label,status);cards[0].parentElement.insertAdjacentElement('beforebegin',controls);
+  const update=()=>{let count=0;cards.forEach(card=>{card.hidden=select.value!=='all'&&card.dataset.sessionId!==select.value;if(!card.hidden)count++;});status.textContent=select.value==='all'?'Showing all '+cards.length+' '+(section.id==='homework'?'homework assignments':'playbooks')+'.':count+' of '+cards.length+' '+(section.id==='homework'?'homework assignments':'playbooks')+' shown. Select All sessions for the full library.';};
   select.addEventListener('change',update);update();
  });
 }
@@ -279,9 +295,10 @@ function intro(){
  const type=['playbook','homework'].includes(document.body.dataset.pageType)?document.body.dataset.pageType:'session';
  const lock=document.querySelector('.bmai-lock-card');if(lock){if(!lock.querySelector('.studio-topic-figure'))lock.insertAdjacentHTML('afterbegin',html(s,type,false));return;}
  const host=document.querySelector('main>.hero .visual,.studio-session-image,.bmai-session-hero-visual,.bmai-resource-hero-visual,.bmai-playbook-hero-image');
- // Existing character artwork is authored content: never replace its hero panel.
- if(host)return;
- const overview=document.querySelector('main #overview');if(overview&&!overview.querySelector('.studio-topic-figure'))overview.insertAdjacentHTML('afterbegin',html(s,type,false));
+ const overview=document.querySelector('main #overview');
+ // A page-authored hero image already explains the lesson; avoid adding a second visual above it.
+ if(host||overview?.querySelector('img'))return;
+ if(overview&&!overview.querySelector('.studio-topic-figure'))overview.insertAdjacentHTML('afterbegin',html(s,type,false));
 }
 window.BMAI_VISUALS={topics,html,library,intro};
 })();
@@ -487,16 +504,11 @@ if(links[1]){if(cur.playbook){links[1].href=basePath()+cur.playbook;links[1].sty
 const stageWrap=document.querySelector(".bmai-production-pipeline");
 if(stageWrap){stageWrap.innerHTML=stages.map((s,i)=>'<div class="stage '+(cur&&cur.stage===s?"active":"")+'">'+String(i+1).padStart(2,"0")+'<br>'+s+'</div>').join("")}
 const sched=document.getElementById("bmaiSchedule");
-const available=S.filter(x=>x.session&&isUnlocked(x));
-const upcoming=S.filter(x=>new Date(x.start).getTime()>now()&&(x.session||x.id===nxt?.id)&&!isUnlocked(x));
+const listed=S.filter(x=>x.session);
 const unreleased=S.filter(x=>!x.session&&x.id!==nxt?.id);
-if(sched)sched.innerHTML=available.map(renderCard).join("");
-const upcomingList=document.getElementById("bmaiUpcomingList");if(upcomingList)upcomingList.innerHTML=upcoming.map(renderCard).join("");
-const upcomingFold=document.getElementById("bmaiUpcomingSessions");if(upcomingFold)upcomingFold.hidden=!upcoming.length;
-const upcomingCount=document.getElementById("bmaiUpcomingCount");if(upcomingCount)upcomingCount.textContent=upcoming.length+" sessions";
+if(sched)sched.innerHTML=listed.map(renderCard).join("");
 const unreleasedList=document.getElementById("bmaiUnreleasedSessions");if(unreleasedList){const weeks=[...new Set(unreleased.map(x=>x.id.match(/week-(\d+)/)[1]))];unreleasedList.innerHTML=weeks.map(week=>'<article class="studio-unreleased-week"><div class="studio-unreleased-week-head"><h3>Week '+week+'</h3><span>Materials coming soon</span></div>'+unreleased.filter(x=>x.id.startsWith('week-'+week+'-')).map(x=>'<div class="studio-unreleased-day"><span>Day '+x.id.match(/day-(\d+)/)[1]+'</span><time datetime="'+esc(x.start)+'">'+esc(new Intl.DateTimeFormat('en-IN',{day:'numeric',month:'short',timeZone:'Asia/Kolkata'}).format(new Date(x.start)))+' · '+esc(timeParts(x.start))+' IST</time></div>').join('')+'</article>').join('');}
 const unreleasedCount=document.getElementById("bmaiUnreleasedCount");if(unreleasedCount)unreleasedCount.textContent=unreleased.length+" sessions";
-const upcomingDescription=document.querySelector('#bmaiUpcomingSessions summary small');if(upcomingDescription)upcomingDescription.textContent='Unlocks automatically at each scheduled start time.';
 const cd=[...document.querySelectorAll(".countdown")];cd.forEach(el=>el.textContent=countdown(el.dataset.unlock));
 const nextBox=document.getElementById("bmaiNextSession");
 if(nextBox){

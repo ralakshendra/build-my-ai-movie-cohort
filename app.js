@@ -167,16 +167,11 @@ if(links[1]){if(cur.playbook){links[1].href=basePath()+cur.playbook;links[1].sty
 const stageWrap=document.querySelector(".bmai-production-pipeline");
 if(stageWrap){stageWrap.innerHTML=stages.map((s,i)=>'<div class="stage '+(cur&&cur.stage===s?"active":"")+'">'+String(i+1).padStart(2,"0")+'<br>'+s+'</div>').join("")}
 const sched=document.getElementById("bmaiSchedule");
-const available=S.filter(x=>x.session&&isUnlocked(x));
-const upcoming=S.filter(x=>new Date(x.start).getTime()>now()&&(x.session||x.id===nxt?.id)&&!isUnlocked(x));
+const listed=S.filter(x=>x.session);
 const unreleased=S.filter(x=>!x.session&&x.id!==nxt?.id);
-if(sched)sched.innerHTML=available.map(renderCard).join("");
-const upcomingList=document.getElementById("bmaiUpcomingList");if(upcomingList)upcomingList.innerHTML=upcoming.map(renderCard).join("");
-const upcomingFold=document.getElementById("bmaiUpcomingSessions");if(upcomingFold)upcomingFold.hidden=!upcoming.length;
-const upcomingCount=document.getElementById("bmaiUpcomingCount");if(upcomingCount)upcomingCount.textContent=upcoming.length+" sessions";
+if(sched)sched.innerHTML=listed.map(renderCard).join("");
 const unreleasedList=document.getElementById("bmaiUnreleasedSessions");if(unreleasedList){const weeks=[...new Set(unreleased.map(x=>x.id.match(/week-(\d+)/)[1]))];unreleasedList.innerHTML=weeks.map(week=>'<article class="studio-unreleased-week"><div class="studio-unreleased-week-head"><h3>Week '+week+'</h3><span>Materials coming soon</span></div>'+unreleased.filter(x=>x.id.startsWith('week-'+week+'-')).map(x=>'<div class="studio-unreleased-day"><span>Day '+x.id.match(/day-(\d+)/)[1]+'</span><time datetime="'+esc(x.start)+'">'+esc(new Intl.DateTimeFormat('en-IN',{day:'numeric',month:'short',timeZone:'Asia/Kolkata'}).format(new Date(x.start)))+' · '+esc(timeParts(x.start))+' IST</time></div>').join('')+'</article>').join('');}
 const unreleasedCount=document.getElementById("bmaiUnreleasedCount");if(unreleasedCount)unreleasedCount.textContent=unreleased.length+" sessions";
-const upcomingDescription=document.querySelector('#bmaiUpcomingSessions summary small');if(upcomingDescription)upcomingDescription.textContent='Unlocks automatically at each scheduled start time.';
 const cd=[...document.querySelectorAll(".countdown")];cd.forEach(el=>el.textContent=countdown(el.dataset.unlock));
 const nextBox=document.getElementById("bmaiNextSession");
 if(nextBox){

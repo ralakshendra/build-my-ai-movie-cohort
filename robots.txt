@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://ralakshendra.github.io/build-my-ai-movie-cohort/sitemap.xml
+Sitemap: https://build-my-ai-movie-cohort.pages.dev/sitemap.xml
 

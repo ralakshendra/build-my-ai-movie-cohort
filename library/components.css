@@ -132,6 +132,25 @@ body details.studio-resource-card{margin:0!important}
 
 .library-lesson{width:min(1100px,calc(100% - 40px));margin:36px auto}.library-lesson section{padding:28px;border:1px solid #333;border-radius:16px;background:#111;margin:24px 0}.library-lesson h1{font-size:clamp(32px,5vw,58px);line-height:1.1}.library-lesson h2{font-size:30px}.library-lesson article{padding:20px 0;border-bottom:1px solid #303030}.library-lesson .checklist label,.library-lesson fieldset label{display:flex;gap:12px;padding:12px 0}.library-lesson fieldset{border:1px solid #333;border-radius:12px;margin:18px 0;padding:20px}.library-lesson pre{white-space:pre-wrap;overflow-wrap:anywhere}.library-lesson input{accent-color:#ff6a00}
 
+/* Keep lesson introductions readable beside their approved artwork. */
+body[data-page-key] main :is(.hero,.studio-session-hero,.w3d2-hero,.session-hero,.play-hero,.w4-hero,.w5-hero,.lesson-hero,.w6-hero,.w7-hero,.w8-hero,.vfx-hero,.reference-hero) h1 {
+  max-width: 16ch;
+  font-size: clamp(2.25rem, 4vw, 3.75rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+body[data-page-key] main :is(.hero,.studio-session-hero,.w3d2-hero,.session-hero,.play-hero,.w4-hero,.w5-hero,.lesson-hero,.w6-hero,.w7-hero,.w8-hero,.vfx-hero,.reference-hero) :is(.hero-sub,.lead,.sub,.w3d2-deck,.w4-deck,.w5-deck,.w6-lead,.w7-lead,.w8-lead,.vfx-lead) {
+  max-width: 56ch;
+  font-size: clamp(1rem, 1.35vw, 1.16rem) !important;
+  line-height: 1.55;
+}
+@media (max-width: 700px) {
+  body[data-page-key] main :is(.hero,.studio-session-hero,.w3d2-hero,.session-hero,.play-hero,.w4-hero,.w5-hero,.lesson-hero,.w6-hero,.w7-hero,.w8-hero,.vfx-hero,.reference-hero) h1 {
+    font-size: clamp(2rem, 8vw, 2.75rem) !important;
+  }
+}
+
 /* Brief, contextual motion; static pose remains the default. */
 .avatar-animated{transform-origin:50% 90%;animation-play-state:paused}
 .avatar-animated[data-avatar-visible="true"]{animation-play-state:running}

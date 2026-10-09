@@ -5,7 +5,7 @@
 - **Playbook:** `sessions/week-6-day-2/playbook.html`
 - **Native homework:** [Week 6 Day 2 Create a Complete AI UGC Ad Homework](https://docs.google.com/document/d/18ql4IsJL5RwCQ5jExGZxvk46kUFuxqQsptIjhfKSD2w/edit), one native tab, owner-only/private at last check.
 - **Schedule:** Nov 8, 2026, 8–10 PM IST; existing registered lesson 12 retained.
-- **Source:** supplied transcript and [AI Filmmakers Cohort UGC Masterclass](https://ralakshendra.github.io/build-my-ai-movie-cohort/resources/week-6-day-2-ugc-reference.html).
+- **Source:** supplied transcript and [AI Filmmakers Cohort UGC Masterclass](https://build-my-ai-movie-cohort.pages.dev/resources/week-6-day-2-ugc-reference.html).
 - **Local preview:** `http://127.0.0.1:8766/__review__/sessions/week-6-day-2/index.html` and `/playbook.html`; regular preview route remains scheduled/locked.
 
 ## Content and consistency

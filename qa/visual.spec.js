@@ -1,6 +1,6 @@
 const { test, devices, expect } = require('playwright/test');
 
-const BASE = process.env.BMAI_BASE_URL || 'https://ralakshendra.github.io/build-my-ai-movie-cohort/';
+const BASE = process.env.BMAI_BASE_URL || 'https://build-my-ai-movie-cohort.pages.dev/';
 
 const pages = [
   ['not-found', '404.html'],

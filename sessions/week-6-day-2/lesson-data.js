@@ -6,32 +6,32 @@ window.BMAI_LESSON={
   "visual": "advertisement",
   "objective": "Create and review one vertical AI UGC-style product ad using a consistent character, product-in-hand frame, talking A-roll, supporting B-roll, and a clean edit.",
   "homeworkUrl": "https://docs.google.com/document/d/18ql4IsJL5RwCQ5jExGZxvk46kUFuxqQsptIjhfKSD2w/edit",
-  "submission": "Export the final 9:16 advertisement and share it with the cohort group as the class instructed. The supplied source does not include a group URL or deadline; follow the current cohort submission instructions.",
+  "submission": "Export the final 9:16 advertisement and share it using the current cohort submission instructions. Confirm the approved destination and deadline with the cohort.",
   "steps": [
     {
-      "title": "Build the character",
-      "instruction": "In OpenArt, use All Tools → Create Character. Build Your Character is the class's main from-scratch path: choose character traits, describe the look, turn on four variations, generate, select a result, Set as character, name it, and create it. The reference-image path starts from an image and supports up to four references in the course guide.",
-      "review": "One named saved character is selected for reuse; its appearance fits the intended audience and any reference the team is authorized to use."
+      "title": "Build a reusable character",
+      "instruction": "Create an original creator character for the intended audience. Describe the appearance, wardrobe, setting, and camera framing; generate a small set of variations; choose one and save it as a reusable character. Use only references you have permission to use.",
+      "review": "One saved character has a clear identity, fits the audience, and can be reused consistently."
     },
     {
       "title": "Create the product-in-hand image",
-      "instruction": "In OpenArt image creation, select the saved character under visual references, attach a clear product image when available, and make a 9:16 hero frame. The class demo uses GPT Image 2; the reference course specifies 4K and four variations. Treat its supplied image text as an incomplete starter, then add accurate scene and product details.",
-      "review": "The selected frame shows the same saved character holding or using the intended product, with accurate packaging and legible product text."
+      "instruction": "Create a 9:16 product hero frame with the saved character and an approved product reference. Keep the product shape and printed label faithful to the supplied reference, then review face, hands, framing, and lighting before selecting a frame.",
+      "review": "The chosen frame shows the same creator holding or using the product, with accurate packaging and readable supplied label details."
     },
     {
       "title": "Generate the talking A-roll",
-      "instruction": "Use the product-in-hand frame as the start frame only, with no end frame, in the class's Kling 3.0 Omni video workflow. Turn audio on for dialogue. Replace the source demo's fictional serum claims with verified, authorized copy. If the line is cut off, shorten it or split it before spending credits on another generation.",
-      "review": "The spokesperson delivers the approved message with understandable audio, stable lip movement and hands, and continuity with the start frame."
+      "instruction": "Use the selected product frame as the starting image for a short talking clip. Add the approved dialogue and enable audio when available. Keep claims truthful and authorized. If the line is cut off or unclear, shorten it or split it before spending credits on another generation.",
+      "review": "The creator delivers the approved message with clear audio, stable face and hands, and continuity with the start frame."
     },
     {
       "title": "Create supporting B-roll",
-      "instruction": "Create a product close-up image using the product-in-hand frame as a visual reference. When a use-case insert adds useful information, generate a short B-roll clip using the relevant product images. The class transcript describes text-to-video, while the linked course labels video-to-video; check the current mode and test briefly.",
-      "review": "Every insert adds a clear product detail or demonstrates use, with consistent lighting and accurate packaging."
+      "instruction": "Create a product close-up from the selected frame. Add a short use-case insert only when it helps explain the product. Choose a video mode supported by the current tool, test a brief clip, and check that the action and product remain accurate.",
+      "review": "Each insert adds a useful product detail or truthful demonstration with consistent packaging and lighting."
     },
     {
       "title": "Edit, review, and export",
-      "instruction": "The reference course uses Filmora and a 9:16 project. Put lip-sync A-roll on the base layer and place useful B-roll over it. Keep transitions simple, add music only if it helps, use Foley when it supports the action, and export the vertical ad. Follow the cohort's current group instructions to share it.",
-      "review": "The exported vertical ad has clear dialogue, useful product coverage, truthful claims, consistent visuals, and no distracting effects."
+      "instruction": "Assemble the vertical edit in a suitable video editor. Keep the talking clip as the base, add useful product footage above it, keep transitions restrained, and use music or Foley only when it improves clarity. Export the final 9:16 advertisement and share it using current cohort instructions.",
+      "review": "The exported ad has clear dialogue, useful product coverage, truthful claims, consistent visuals, and no distracting effects."
     }
   ],
   "homework": [
@@ -59,45 +59,50 @@ window.BMAI_LESSON={
   "tools": [
     {
       "name": "OpenArt",
-      "useCase": "Create and save a reusable character, then generate character-referenced product images and video clips."
+      "useCase": "Save a reusable creator character and use it as a visual reference for product images and short clips."
     },
     {
       "name": "GPT Image 2",
-      "useCase": "The class image model for creating the 9:16 product-in-hand frame; verify current availability and settings."
+      "useCase": "Generate a product-in-hand still when this image model is available to you."
     },
     {
       "name": "Kling 3.0 Omni",
-      "useCase": "The class video model for a start-frame talking clip and the course's product-use B-roll example; current mode labels may differ."
+      "useCase": "Create a short talking clip from an approved start frame when the current account supports that workflow."
     },
     {
       "name": "Nano Banana Pro",
-      "useCase": "An alternate image model named in the reference course for product B-roll images."
+      "useCase": "Use as an alternate image-generation option for a product frame or close-up when available."
     },
     {
       "name": "Filmora",
-      "useCase": "The reference course editor for a 9:16 sequence with talking A-roll and supporting B-roll."
+      "useCase": "Use as one option for assembling vertical A-roll and supporting B-roll."
     }
   ],
   "prompts": [
     {
-      "title": "Bonus character image prompt",
-      "text": "hyper-realistic 8K photo of a pretty white woman in her mid-20s, light warm-toned skin, hazel-green expressive eyes, soft natural freckles, medium-length light-brown hair with loose strands framing her face, minimal natural makeup, subtle mascara, casual clean look. shot on a Canon EOS R5 with a 50mm f/1.4 lens, full-frame sensor look, shallow depth of field. soft natural indoor lighting, warm morning ambiance (~3000K), realistic shadows, skin pores and micro-details visible, true-to-life colors and textures, high dynamic range. She is standing in a cozy bathroom or bedroom scene with a neutral light background, wearing a simple white cotton T-shirt, tiny stud earrings. imperfections: subtle film grain, tiny imperfections on skin and fabric, slight lens dust and micro chromatic aberration, zero CGI look, unfiltered documentary-style realism.",
-      "source": "AI Filmmakers Cohort UGC Masterclass, Module 1, Bonus Prompt (Image Generation Feature). Reference-only demographic example; adapt to the intended audience."
+      "title": "Character reference image prompt",
+      "text": "Create an original on-camera creator for a vertical product advertisement. Audience: [intended audience]. Creator: [appearance and wardrobe]. Setting: [simple location]. Frame from mid-torso at eye level with soft practical light and a calm background. Keep the same face, hairstyle, wardrobe, and camera angle across four variations. Do not add logos, package text, unsupported claims, or additional people.",
+      "source": "BUILD MY AI MOVIE STUDIO practice prompt, written for this workflow. Replace every bracketed field before use."
     },
     {
-      "title": "Lip-sync demo prompt",
-      "text": "Starting from the current frame, the woman begins speaking directly to the lens with an energetic and warm UGC-style persona.\nDIALOGUE: \"People always ask me how I still look 20 even though I'm almost 50. Yeah, you heard that right. Lumière Radiance Face Serum. I've been using this serum every single day and night for the past 20 years.\"\nTECHNICAL MOTION CONSTRAINTS:\n1. LIP-SYNC: Precise phoneme-based lip-syncing. Lips must close fully on \"M\", \"P\", and \"B\" sounds.\n2. ANATOMICAL STABILITY: Maintain a fixed, single-row dental structure. No hallucination of extra teeth, overlapping gums, or shifting tooth shapes. Teeth must remain naturally occluded behind the lips, visible only through the jaw's natural hinge movement.\n3. MUSCLE DEFORMATION: Realistic activation of the zygomatic (cheek) muscles and chin while speaking. No \"floating\" mouth; the lower face must move as a cohesive unit.\n4. GESTURE: Subtle, organic hand movement while holding the Lumière serum bottle, ensuring the fingers do not morph or lose contact with the bottle.\n5. CONTINUITY: Maintain the exact 4k skin texture, marble bathroom environment, and shallow depth of field from the start frame. No flickering or lighting shifts.",
-      "source": "AI Filmmakers Cohort UGC Masterclass, Module 3. The dialogue and product details are fictional source examples and must be replaced with truthful, authorized copy."
+      "title": "Product-in-hand image prompt",
+      "text": "Create one 9:16 advertisement still using [saved_character_reference] and [approved_product_reference]. Show the creator holding [product] naturally at chest height with the supplied package facing camera. Preserve the product silhouette, color, and exact label from the reference. Use [setting], [lighting], and [camera framing]. Keep hands anatomically natural. Do not invent label text, logos, benefits, or claims.",
+      "source": "BUILD MY AI MOVIE STUDIO practice prompt, written for this workflow. Replace every bracketed field before use."
     },
     {
-      "title": "Product close-up B-roll image prompt",
-      "text": "A Extreme close up shot of the face serum bottle that the character is holding, The bottle as text \"Beauty Face Serum\". No change in light, No distortion.",
-      "source": "AI Filmmakers Cohort UGC Masterclass, Module 4, Part 1. Replace the sample label text with the exact authorized product name."
+      "title": "Talking A-roll prompt",
+      "text": "Use [approved_product_frame] as the first frame. The creator looks into the camera and speaks this approved script exactly: “[approved_script]”. Keep the same face, hair, clothing, room, and product details from the first frame. Use a natural conversational delivery, subtle gestures, clear dialogue, and one continuous take. Do not add dialogue, captions, logos, or product claims.",
+      "source": "BUILD MY AI MOVIE STUDIO practice prompt, written for this workflow. Replace every bracketed field before use."
     },
     {
-      "title": "Product-use B-roll video prompt",
-      "text": "Extreme close up, hyperrealistic 4k macro shot of thick clear serum texture dropping onto a hand from a glass dropper as of [@droper] when the fingers are squeezing the white silicon part, natural lighting, seamless motion. Match the color and light of [@heroimage]",
-      "source": "AI Filmmakers Cohort UGC Masterclass, Module 4, Part 2. Preserve the reference placeholders; attach the matching image references before use."
+      "title": "Product close-up B-roll prompt",
+      "text": "Create a vertical close-up of [approved_product] using [product_reference] for exact packaging and [hero_frame] for lighting and color. Show [one useful product detail or action] with a steady camera and realistic hands if needed. Keep the label unchanged and readable. Do not add extra packaging, text, effects, or unsupported claims.",
+      "source": "BUILD MY AI MOVIE STUDIO practice prompt, written for this workflow. Replace every bracketed field before use."
+    },
+    {
+      "title": "Product-use B-roll prompt",
+      "text": "Create a short vertical clip showing [specific, truthful product-use action] in [setting], guided by [approved_product_reference] and [hero_frame]. Keep the package, label, lighting, and surface details consistent. Show only the action described; avoid before-and-after implications or unverified benefits. Use a stable close-up and natural motion.",
+      "source": "BUILD MY AI MOVIE STUDIO practice prompt, written for this workflow. Replace every bracketed field before use."
     }
   ],
   "checklist": [
@@ -117,7 +122,7 @@ window.BMAI_LESSON={
         "Add a transition effect to conceal the missing line."
       ],
       "correct": 0,
-      "explanation": "The class advises keeping spoken lines within the selected duration or splitting a long message across clips, then combining them in the edit."
+      "explanation": "A practical first adjustment is keeping spoken lines withwithin the selected clip duration or splitting a long message across clips, then combining them in the edit."
     }
   ],
   "hero": "assets/illustrations/advertisement.svg"
