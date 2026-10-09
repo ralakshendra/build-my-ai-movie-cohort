@@ -34,7 +34,7 @@ async function auditPage(page, label, viewportWidth) {
     const offenders = [...document.querySelectorAll('body *')].filter(el => {
       const r = el.getBoundingClientRect();
       return r.width > 0 && (r.right > vw + 1 || r.left < -1);
-    }).slice(0, 20).map(el => {
+    }).sort((a,b) => a.getBoundingClientRect().right - b.getBoundingClientRect().right).slice(0, 30).map(el => {
       const r = el.getBoundingClientRect();
       return {tag: el.tagName, cls: typeof el.className === 'string' ? el.className.slice(0,100) : '', left: Math.round(r.left), right: Math.round(r.right), width: Math.round(r.width)};
     });
@@ -76,7 +76,7 @@ async function auditPage(page, label, viewportWidth) {
       localLinks
     };
   });
-  if (audit.pageOverflow > 2) throw new Error(label + ': horizontal page overflow ' + audit.pageOverflow + 'px');
+  if (audit.pageOverflow > 2) throw new Error(label + ': horizontal page overflow ' + audit.pageOverflow + 'px; nearest elements ' + JSON.stringify(audit.offenders));
   if (!audit.pageType || !audit.pageId) throw new Error(label + ': missing static page metadata');
   if (audit.pageIdentity !== audit.pageId) throw new Error(label + ': page identity metadata is inconsistent');
   if (!['home','system'].includes(audit.pageType) && !audit.sessionId) throw new Error(label + ': session page has no static session id');
