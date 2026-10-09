@@ -26,6 +26,7 @@ The generator integration is already implemented in that checkout. When releasin
 - Desktop and mobile screenshots inspected; portrait, copy and counts remain clear. Guidance sits below the banner.
 - Scheduled release boundaries: 45 authored routes passed.
 - Owner review: 49 pages open in review; ordinary preview retains its schedule locks.
-- Full-site cohesion check runs separately; do not infer hosted performance from local checks.
+- Full-site cohesion: all 136 page/viewport combinations passed.
+- The shared brand's muted `!important` lead color required a scoped override. Final copy uses bright text, a stronger dark image gradient, separate sentence spacing and a nonbreaking “create faster.” phrase. The final banner was rechecked at all four widths after this correction. Do not infer hosted performance from local checks.
 
 Deployment remains pending the user's choice to release the unpublished Vault together with this banner or save the banner for the pending site release.
