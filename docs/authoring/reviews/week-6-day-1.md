@@ -23,10 +23,11 @@
 ### Session guide and playbook - pass locally
 
 - Guide links to the playbook near its beginning and end and contains no direct Homework Doc link. Playbook links to the guide and the canonical Doc at its start and stable `#share` section.
-- Shared components, schedule, styles, runtime data and page structure are used. Build/site check reported 22 public pages, 15 sessions, zero errors and zero warnings. Resource Library regenerated from lesson source.
+- Shared components, schedule, styles, runtime data and page structure are used. Build/site check reported 24 public pages, 15 sessions, zero errors and zero warnings. Resource Library regenerated from lesson source.
 - Local review navigation passed (24 pages); ordinary future-session pages remain locked. Scheduled release test passed.
-- Cohesion scan passed all 66 page/viewport combinations across 22 pages at 390, 820 and 1440 px. `qa:visual` passed all 62 existing tests; that suite's listed session-page cases stop at Week 5, so Week 6 page visuals are covered by the cohesion scan rather than those individual visual cases. Week 6 at 320 px was not checked.
+- Cohesion scan passed all 72 page/viewport combinations across 24 pages at 390, 820 and 1440 px. `qa:visual` passed all 62 existing tests; that suite's listed session-page cases stop at Week 5, so Week 6 page visuals are covered by the cohesion scan rather than those individual visual cases. Week 6 at 320 px was not checked.
 - Local layout was reviewed at the recorded viewport sizes by the cohesion audit. This is local evidence, not hosted performance or deployment verification.
+- After push, direct requests to the declared hosted homepage, guide and playbook URLs returned HTTP 404. The repository commit is pushed, but live hosting/deployment has not been verified.
 
 ### Native Homework Google Doc - pass; access unverified
 
@@ -45,6 +46,6 @@
 
 - Confirm the calendar due date and the actual homework submission destination with the cohort lead; update the Doc and lesson materials if those facts change.
 - Verify student access/sharing for the canonical Doc through the authorized owner workflow.
-- Review and authorize the local draft before any push or publication; then verify the hosted guide, playbook, links and assets.
+- Resolve the hosted URL's HTTP 404 and verify the live guide, playbook, links and assets.
 
-Nothing was pushed, published or merged.
+The lesson commit was pushed to `main`; the hosted URL did not serve the site during this check.
