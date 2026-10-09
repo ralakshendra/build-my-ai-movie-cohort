@@ -1110,6 +1110,10 @@ function setupHeaderActions(){
   if(/resource|tool/i.test(name))return `<svg ${common}><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v3M3 12h18m-9 0v3"/></svg>`;
   return `<svg ${common}><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-5"/></svg>`;
  };
+ document.querySelectorAll('.bmai-global-header .studio-nav').forEach(nav=>{
+  const actions=nav.querySelector('.nav-links,.bmai-session-top-actions'),home=nav.querySelector(':scope > .bmai-header-home');
+  if(actions&&home)actions.prepend(home);
+ });
  document.querySelectorAll('.bmai-global-header :is(.nav-links,.bmai-session-top-actions) a').forEach(a=>{
   a.classList.add('bmai-header-action');
   const label=(a.textContent||'').trim();
@@ -1189,10 +1193,10 @@ function homepage(){
 if(document.body.dataset.pageType!=="home")return;
 const reviewBanner=document.getElementById("bmaiReviewBanner");if(reviewBanner)reviewBanner.hidden=true;
 const cur=current(),nxt=next();
-const heroAction=document.querySelector('[data-current-action]');if(heroAction&&cur){heroAction.href=basePath()+cur.playbook;heroAction.textContent='Continue your current work →';}
+const heroAction=document.querySelector('[data-current-action]');if(heroAction&&cur){heroAction.href=basePath()+cur.playbook;heroAction.querySelector('span').textContent='CONTINUE LEARNING';heroAction.querySelector('strong').textContent=cur.title;}
 const heroNext=document.querySelector('[data-next-date]');if(heroNext)heroNext.textContent=nxt?'Next class: '+dateRange(nxt):'All scheduled lessons are available.';
 try{const last=localStorage.getItem('bmai:lastPath'),session=S.find(x=>[x.session,x.playbook].includes(last));
- if(last&&session&&isUnlocked(session)){const host=document.querySelector('.studio-home-actions');if(host&&!host.querySelector('.bmai-resume')){const resume=document.createElement('div');resume.className='bmai-resume';const link=document.createElement('a');link.className='btn secondary';link.href=basePath()+last;link.textContent='Resume your last lesson →';resume.append(link);host.prepend(resume);}}
+ if(heroAction&&last&&session&&isUnlocked(session)){heroAction.href=basePath()+last;heroAction.querySelector('span').textContent='RESUME WHERE YOU LEFT OFF';heroAction.querySelector('strong').textContent=session.title;}
 }catch{}
 const title=document.querySelector(".bmai-studio-card h2"),desc=document.querySelector(".bmai-studio-card p.muted"),links=document.querySelectorAll(".bmai-studio-card .btn");
 if(cur&&title){
@@ -1202,8 +1206,8 @@ const status=document.querySelector(".bmai-studio-card .bmai-chip.active");if(st
 const stageChip=document.querySelector(".bmai-studio-card .bmai-chip[data-session-stage]");if(stageChip)stageChip.textContent=cur.stage||"PRODUCTION";const stageTitle=document.getElementById("bmaiCurrentStage");if(stageTitle)stageTitle.textContent=cur.stage||"PRODUCTION";
 const currentImage=document.getElementById("bmaiCurrentImage");if(currentImage){currentImage.hidden=!cur.hero;if(cur.hero){currentImage.src=basePath()+cur.hero;currentImage.alt=cur.title+" - session hero image";}}
 const numberChip=document.querySelector(".bmai-studio-card .bmai-chip[data-session-number]");if(numberChip)numberChip.textContent="SESSION "+String(cur.number).padStart(2,"0");
-if(links[0]){if(cur.session){links[0].href=sessionUrl(cur);links[0].textContent="CONTINUE SESSION →";links[0].style.display="inline-block";links[0].classList.remove("secondary")}else{links[0].removeAttribute("href");links[0].textContent="SESSION CONTENT COMING SOON";links[0].style.display="inline-block";links[0].classList.add("secondary")}}
-if(links[1]){if(cur.playbook){links[1].href=basePath()+cur.playbook;links[1].style.display="inline-block"}else links[1].style.display="none"}
+if(links[0]){if(cur.session){links[0].href=sessionUrl(cur);links[0].textContent="REVIEW SESSION GUIDE →";links[0].style.display="inline-block";links[0].classList.remove("secondary")}else{links[0].removeAttribute("href");links[0].textContent="SESSION CONTENT COMING SOON";links[0].style.display="inline-block";links[0].classList.add("secondary")}}
+if(links[1]){if(cur.playbook){links[1].href=basePath()+cur.playbook;links[1].textContent="WORK THROUGH PLAYBOOK →";links[1].style.display="inline-block"}else links[1].style.display="none"}
 }
 const stageWrap=document.querySelector(".bmai-production-pipeline");
 if(stageWrap){stageWrap.innerHTML=stages.map((s,i)=>'<div class="stage '+(cur&&cur.stage===s?"active":"")+'">'+String(i+1).padStart(2,"0")+'<br>'+s+'</div>').join("")}
@@ -1313,10 +1317,37 @@ function revealReferenceAnchor(){
  requestAnimationFrame(()=>target.scrollIntoView({block:'start',behavior:'instant'}));
 }
 window.addEventListener('hashchange',revealReferenceAnchor);
+function homepageProgress(){
+ if(document.body.dataset.pageType!=='home')return;
+ const identities=window.BMAI_TASK_IDENTITIES||{},available=S.filter(s=>s.session&&isUnlocked(s));let total=0,done=0;
+ available.forEach(session=>{const tasks=identities[session.id]||[],saved=window.BMAI_PROGRESS?.read('bmai-tasks:'+session.id)||{};total+=tasks.length;done+=tasks.filter(task=>saved[task.id]===true).length});
+ const pct=total?Math.round(done/total*100):0,fill=document.querySelector('[data-home-progress-fill]'),value=document.querySelector('[data-home-progress-value]'),detail=document.querySelector('[data-home-progress-detail]'),copy=document.querySelector('[data-home-progress-copy]');
+ if(fill)fill.style.width=pct+'%';if(value)value.textContent=pct+'%';if(detail)detail.textContent=done+' of '+total+' available checkpoints completed';
+ if(copy)copy.textContent=done===total&&total?'Every available checkpoint is complete. Open your homework and share your finished work.':done?'You have momentum. Resume your latest lesson or finish the next unchecked playbook task.':'Start with the current playbook and mark each review checkpoint as you finish it.';
+}
+function siteSearch(){
+ const form=document.querySelector('[data-site-search]');if(!form)return;
+ const input=form.querySelector('input[type=search]'),results=form.querySelector('[data-site-search-results]'),status=form.querySelector('[role=status]');
+ const entries=[];S.forEach(s=>{if(s.session)entries.push({kind:'Session',title:s.title,detail:s.week+' · '+s.description,url:sessionUrl(s)});if(s.playbook)entries.push({kind:'Playbook',title:s.title,detail:s.week+' · Step-by-step production workflow',url:basePath()+s.playbook});if(s.homework)entries.push({kind:'Homework',title:s.title,detail:s.week+' · Official assignment',url:s.homework,external:true});if(s.promptbook)entries.push({kind:'Prompt Vault',title:s.title,detail:s.week+' · Prompts and practice recipes',url:basePath()+s.promptbook})});
+ document.querySelectorAll('.studio-resource-card').forEach(card=>{const title=card.querySelector('summary strong')?.textContent.trim();if(!title)return;const source=card.querySelector('.studio-resource-source');entries.push({kind:'Resource',title,detail:card.querySelector('.studio-resource-body p')?.textContent.trim()||'Studio resource',url:source?.href||('#'+card.id)})});
+ const render=()=>{const query=input.value.trim().toLowerCase();if(query.length<2){results.hidden=true;results.innerHTML='';status.textContent='Enter at least two letters to search sessions, playbooks, homework, prompts, and resources.';return}const words=query.split(/\s+/),matches=entries.map(entry=>({...entry,score:words.reduce((score,word)=>score+(entry.title.toLowerCase().includes(word)?4:0)+((entry.kind+' '+entry.detail).toLowerCase().includes(word)?1:0),0)})).filter(entry=>entry.score>=words.length).sort((a,b)=>b.score-a.score||a.title.localeCompare(b.title)).slice(0,10);status.textContent=matches.length?matches.length+' best matches shown.':'No matches found. Try a broader term.';results.innerHTML=matches.map(entry=>'<a href="'+esc(entry.url)+'"'+(entry.external?' target="_blank" rel="noopener noreferrer"':'')+'><span>'+esc(entry.kind)+'</span><strong>'+esc(entry.title)+'</strong><small>'+esc(entry.detail)+'</small></a>').join('');results.hidden=!matches.length;document.dispatchEvent(new CustomEvent('bmai:metric',{detail:{name:'site_search',value:query,resultCount:matches.length}}));};
+ form.addEventListener('submit',event=>{event.preventDefault();render();results.querySelector('a')?.focus()});input.addEventListener('input',render);
+}
+function completionFeedback(){
+ let notice=document.querySelector('.bmai-save-notice');if(!notice){notice=document.createElement('div');notice.className='bmai-save-notice';notice.setAttribute('role','status');notice.setAttribute('aria-live','polite');document.body.append(notice)}let timer;
+ document.addEventListener('change',event=>{if(!event.target.matches('input[type=checkbox]'))return;clearTimeout(timer);notice.textContent=event.target.checked?'Completed and saved on this device.':'Marked incomplete and saved on this device.';notice.classList.add('is-visible');timer=setTimeout(()=>notice.classList.remove('is-visible'),2600);homepageProgress();document.dispatchEvent(new CustomEvent('bmai:metric',{detail:{name:'checkpoint_change',checked:event.target.checked}}));});
+}
+function usageMetrics(){
+ const key='bmai:usage-summary',read=()=>{try{return JSON.parse(localStorage.getItem(key)||'{}')}catch{return {}}},write=value=>{try{localStorage.setItem(key,JSON.stringify(value))}catch{}};
+ const record=detail=>{if(!detail?.name)return;const data=read(),today=new Date().toISOString().slice(0,10),bucket=data[today]||(data[today]={});bucket[detail.name]=(bucket[detail.name]||0)+1;write(data);window.dataLayer?.push({event:'bmams_'+detail.name,...detail});};
+ document.addEventListener('bmai:metric',event=>record(event.detail));document.addEventListener('click',event=>{const link=event.target.closest('a');if(!link)return;const label=(link.textContent||link.getAttribute('aria-label')||'').trim().replace(/\s+/g,' ').slice(0,80);record({name:'navigation',label,path:new URL(link.href,location.href).pathname})});
+ window.addEventListener('load',()=>{record({name:'page_view'});if('PerformanceObserver'in window)try{new PerformanceObserver(list=>list.getEntries().forEach(entry=>{if(entry.entryType==='largest-contentful-paint')window.BMAI_METRICS.lcp=Math.round(entry.startTime);if(entry.entryType==='layout-shift'&&!entry.hadRecentInput)window.BMAI_METRICS.cls=Number(((window.BMAI_METRICS.cls||0)+entry.value).toFixed(4))})).observe({type:'largest-contentful-paint',buffered:true})}catch{}});
+ window.BMAI_METRICS={summary:read(),lcp:null,cls:0};
+}
 function ready(){
 applyBrandMark();
 accessibility();
-if(lockPage()){window.BMAI_VISUALS.intro();applyPageIdentity();setupHeaderActions();setupMobileHeader();guardLockedLinks();return;}
+if(lockPage()){window.BMAI_VISUALS.intro();applyPageIdentity();setupHeaderActions();setupMobileHeader();usageMetrics();guardLockedLinks();return;}
 if(document.body.dataset.pageType==="home"){
  homepage();
  homepageStateId=current()?.id||null;
@@ -1327,7 +1358,7 @@ if(document.body.dataset.pageType==="home"){
  },1000)
 }
 if(pageSession())try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
-window.BMAI_VISUALS.intro();enhanceLongText();progress();window.BMAI_LEARNING?.init();enhanceNextButton();applyPageIdentity();siteUtilities();setupHeaderActions();setupMobileHeader();enhanceAvatarFallbacks();setupScrollControls();guardLockedLinks();revealReferenceAnchor();
+window.BMAI_VISUALS.intro();enhanceLongText();progress();window.BMAI_LEARNING?.init();enhanceNextButton();applyPageIdentity();siteUtilities();setupHeaderActions();setupMobileHeader();enhanceAvatarFallbacks();setupScrollControls();homepageProgress();siteSearch();completionFeedback();usageMetrics();guardLockedLinks();revealReferenceAnchor();
 document.addEventListener('bmai:library-change',guardLockedLinks);
 document.querySelectorAll("a").forEach(a=>{if(a.href===location.href)a.setAttribute("aria-current","page")})
 }

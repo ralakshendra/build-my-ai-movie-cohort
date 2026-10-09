@@ -183,3 +183,16 @@ body[data-page-key] main :is(.hero,.studio-session-hero,.w3d2-hero,.session-hero
   body .bmai-session-brand span { line-height: 1.1; }
   body .bmai-header-home, body .bmai-mobile-menu { flex: none; }
 }
+
+/* Release navigation: Home belongs to the action group immediately before Sessions. */
+.bmai-global-header :is(.nav-links,.bmai-session-top-actions)>.bmai-header-home{order:0!important;margin:0 2px 0 0!important;color:#fff!important;border-color:#5a361d!important;background:#17120f!important}
+.bmai-global-header :is(.nav-links,.bmai-session-top-actions)>.bmai-header-home:hover,.bmai-global-header :is(.nav-links,.bmai-session-top-actions)>.bmai-header-home[aria-current=page]{color:#ff9a3d!important;background:#25170e!important;border-color:#a5531d!important}
+.bmai-global-header :is(.nav-links,.bmai-session-top-actions)>.bmai-header-home svg{width:21px;height:21px}
+
+/* Clear saved-state confirmation for every shared checklist. */
+.bmai-save-notice{position:fixed;right:22px;bottom:22px;z-index:1000;max-width:min(360px,calc(100% - 28px));padding:13px 16px;border:1px solid #8e4d20;border-radius:12px;background:#21150d;color:#ffe0c6;font-size:13px;font-weight:700;box-shadow:0 16px 44px #000a;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .18s ease,transform .18s ease}.bmai-save-notice.is-visible{opacity:1;transform:none}
+
+/* Stronger keyboard and motion preferences across the public site. */
+:where(a,button,input,select,summary):focus-visible{outline:3px solid #ff9a45!important;outline-offset:3px!important}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+@media(max-width:700px){.bmai-save-notice{right:14px;bottom:14px}}
