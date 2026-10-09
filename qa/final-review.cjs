@@ -1,7 +1,7 @@
 const fs=require('fs'),path=require('path'),assert=require('assert'),{chromium}=require('playwright');
 const root=path.resolve(__dirname,'..'),base=process.env.BMAI_BASE_URL||'http://127.0.0.1:8771/',out=path.join(__dirname,'artifacts/final-review');fs.mkdirSync(out,{recursive:true});
 const walk=d=>fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(d,e.name)):[path.join(d,e.name)]);
-const pages=walk(root).filter(p=>p.endsWith('.html')&&!/(^|[\\/])(qa|templates|node_modules|test-results|dist)[\\/]/.test(path.relative(root,p))&&!p.endsWith('hero-approval.html')).map(p=>path.relative(root,p).replaceAll('\\','/'));
+const pages=require('../scripts/public-pages.cjs')();
 const results={migration:[],prompts:[],localAssetFootprint:[],accessibleNames:[],screenshots:0};
 (async()=>{const b=await chromium.launch({...(process.platform==='win32'?{channel:'chrome'}:{}),headless:true});
  for(const width of [390,1440]){const c=await b.newContext({viewport:{width,height:900},reducedMotion:'reduce'}),p=await c.newPage();await p.clock.install({time:new Date('2026-11-23T12:00:00+05:30')});
@@ -17,5 +17,5 @@ const results={migration:[],prompts:[],localAssetFootprint:[],accessibleNames:[]
  for(const file of ['sessions/week-2-day-1/index.html','sessions/week-2-day-2/index.html']){await p.goto(base+file);assert.equal(await p.locator('main input[type=checkbox]:checked').count(),await p.locator('main input[type=checkbox]').count());results.migration.push(file+' legacy ticks restored');}
  // Every full prompt matches the exact source text, including HTML-encoded characters.
  await p.goto(base+'index.html');const prompts=await p.locator('#resource-panel-prompts .studio-resource-card:has(pre)').evaluateAll(es=>es.map(e=>({text:e.querySelector('pre').textContent.trim(),source:e.querySelector('.studio-resource-source').href})));for(const prompt of prompts){await p.goto(prompt.source);const hash=new URL(prompt.source).hash;const text=await p.locator(hash).textContent();assert.equal(prompt.text,text.trim(),prompt.source+' prompt differs');results.prompts.push({source:prompt.source,exact:true});}
- await c.close();await b.close();fs.writeFileSync(path.join(out,'results.json'),JSON.stringify(results,null,2));console.log('All 96 viewport captures, input labels, legacy-state migrations and 19 source prompt comparisons passed.');
+ await c.close();await b.close();fs.writeFileSync(path.join(out,'results.json'),JSON.stringify(results,null,2));console.log('All '+results.screenshots+' viewport captures, input labels, legacy-state migrations and '+results.prompts.length+' source prompt comparisons passed.');
 })().catch(e=>{fs.writeFileSync(path.join(out,'partial-results.json'),JSON.stringify(results,null,2));console.error(e);process.exit(1)});

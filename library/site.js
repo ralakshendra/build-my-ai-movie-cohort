@@ -15,7 +15,8 @@ window.BMAI_SESSIONS=[
     "session": "resources/ai-faceless-youtube-masterclass.html",
     "playbook": "playbook.html",
     "homework": "https://docs.google.com/document/d/1ElXCXzfTup1HubGb0KDTIzqCkbPUBWxXwqm3_HDxFmw/edit?usp=sharing",
-    "description": "AI Faceless YouTube Channel Masterclass. Completed foundation session."
+    "description": "AI Faceless YouTube Channel Masterclass. Completed foundation session.",
+    "promptbook": "prompt-vault.html?session=week-1-day-2"
   },
   {
     "id": "week-2-day-1",
@@ -30,7 +31,8 @@ window.BMAI_SESSIONS=[
     "session": "sessions/week-2-day-1/index.html",
     "playbook": "sessions/week-2-day-1/playbook.html",
     "homework": "https://docs.google.com/document/d/1zdEzgOX22ghpxgmNN5yQeYLprWsAUX3R7zNxuMmJQwI",
-    "description": "Visual mastery, first short production, Filmora editing and channel launch."
+    "description": "Visual mastery, first short production, Filmora editing and channel launch.",
+    "promptbook": "prompt-vault.html?session=week-2-day-1"
   },
   {
     "id": "week-2-day-2",
@@ -45,7 +47,8 @@ window.BMAI_SESSIONS=[
     "session": "sessions/week-2-day-2/index.html",
     "playbook": "sessions/week-2-day-2/playbook.html",
     "homework": "https://docs.google.com/document/d/1jbIb9krXCTVpHprI3tqm9V6tHL-L5Sr1NCFYQ5WHNBA",
-    "description": "Create photorealistic product frames, build continuity and turn images into video."
+    "description": "Create photorealistic product frames, build continuity and turn images into video.",
+    "promptbook": "prompt-vault.html?session=week-2-day-2"
   },
   {
     "id": "week-3-day-1",
@@ -60,7 +63,8 @@ window.BMAI_SESSIONS=[
     "session": "sessions/week-3-day-1/index.html",
     "playbook": "sessions/week-3-day-1/playbook.html",
     "homework": "https://docs.google.com/document/d/1C9Txnwd_Fi2gqeHLZnfkGq5lEoqtA6WzqI4aGBCWFL4/edit?usp=sharing",
-    "description": "Build the character sheet, visual direction, screenplay and structured shot shortlist before deeper generation."
+    "description": "Build the character sheet, visual direction, screenplay and structured shot shortlist before deeper generation.",
+    "promptbook": "prompt-vault.html?session=week-3-day-1"
   },
   {
     "id": "week-3-day-2",
@@ -75,7 +79,8 @@ window.BMAI_SESSIONS=[
     "session": "sessions/week-3-day-2/index.html",
     "playbook": "sessions/week-3-day-2/playbook.html",
     "homework": "https://docs.google.com/document/d/1zj1OojpdpC8YHMYHqF2JPAvrJA78rckstWRN6wxr-MU/edit",
-    "description": "Build a superhero teaser from character and location references through motion, edit, sound and final review."
+    "description": "Build a superhero teaser from character and location references through motion, edit, sound and final review.",
+    "promptbook": "prompt-vault.html?session=week-3-day-2"
   },
   {
     "id": "week-4-day-1",
@@ -90,7 +95,8 @@ window.BMAI_SESSIONS=[
     "session": "sessions/week-4-day-1/index.html",
     "playbook": "sessions/week-4-day-1/playbook.html",
     "homework": "https://docs.google.com/document/d/1vIEK9NO-hJ_icVBlSQLUXVAHnlm46Gw1exPpc_42XR8/edit",
-    "description": "Develop a superhero teaser with consistent references, purposeful motion and a deliberate edit."
+    "description": "Develop a superhero teaser with consistent references, purposeful motion and a deliberate edit.",
+    "promptbook": "prompt-vault.html?session=week-4-day-1"
   },
   {
     "id": "week-4-day-2",
@@ -105,7 +111,8 @@ window.BMAI_SESSIONS=[
     "session": "sessions/week-4-day-2/index.html",
     "playbook": "sessions/week-4-day-2/playbook.html",
     "homework": "https://docs.google.com/document/d/1NplWrwx7vfEaAXLys4czsqwKzvm-wPwZRUsu9dhnJRY/edit",
-    "description": "Plan, generate and edit a camera-focused product advertisement."
+    "description": "Plan, generate and edit a camera-focused product advertisement.",
+    "promptbook": "prompt-vault.html?session=week-4-day-2"
   },
   {
     "id": "week-5-day-1",
@@ -120,7 +127,8 @@ window.BMAI_SESSIONS=[
     "session": "sessions/week-5-day-1/index.html",
     "playbook": "sessions/week-5-day-1/playbook.html",
     "homework": "https://docs.google.com/document/d/1qHcYXyMzjkQSD6remiUbcOcrgI9wMqELxpDtU2Oxylk/edit",
-    "description": "Create one coherent real-estate walkthrough of about one minute or less as a team, using consistent property references, purposeful image-to-video movement and a Filmora edit with music."
+    "description": "Create one coherent real-estate walkthrough of about one minute or less as a team, using consistent property references, purposeful image-to-video movement and a Filmora edit with music.",
+    "promptbook": "prompt-vault.html?session=week-5-day-1"
   },
   {
     "id": "week-5-day-2",
@@ -135,7 +143,8 @@ window.BMAI_SESSIONS=[
     "session": "sessions/week-5-day-2/index.html",
     "playbook": "sessions/week-5-day-2/playbook.html",
     "homework": "https://docs.google.com/document/d/1CGb4bhUlKvlzL4IrIrKtVGe1lMsYzwodJvVRnOTZWD4/edit",
-    "description": "Create a detailed screenplay and a Hollywood-style production sheet that turns the assigned story into visually consistent, executable shots."
+    "description": "Create a detailed screenplay and a Hollywood-style production sheet that turns the assigned story into visually consistent, executable shots.",
+    "promptbook": "prompt-vault.html?session=week-5-day-2"
   },
   {
     "id": "week-6-day-1",
@@ -150,7 +159,8 @@ window.BMAI_SESSIONS=[
     "session": "sessions/week-6-day-1/index.html",
     "playbook": "sessions/week-6-day-1/playbook.html",
     "homework": "https://docs.google.com/document/d/1NG5eCKm4gutvS5j_3CASgbH1T8XIOI-_4F2vV7DQkyU/edit",
-    "description": "By the end of the session, each team will have a reviewed character sheet for the characters in its assigned film and a prop sheet for the story-critical objects, with reference images ready to support consistent image and video generation."
+    "description": "By the end of the session, each team will have a reviewed character sheet for the characters in its assigned film and a prop sheet for the story-critical objects, with reference images ready to support consistent image and video generation.",
+    "promptbook": "prompt-vault.html?session=week-6-day-1"
   },
   {
     "id": "week-6-day-2",
@@ -165,7 +175,8 @@ window.BMAI_SESSIONS=[
     "session": "sessions/week-6-day-2/index.html",
     "playbook": "sessions/week-6-day-2/playbook.html",
     "homework": "https://docs.google.com/document/d/18ql4IsJL5RwCQ5jExGZxvk46kUFuxqQsptIjhfKSD2w/edit",
-    "description": "Create and review one vertical AI UGC-style product ad using a consistent character, product-in-hand frame, talking A-roll, supporting B-roll, and a clean edit."
+    "description": "Create and review one vertical AI UGC-style product ad using a consistent character, product-in-hand frame, talking A-roll, supporting B-roll, and a clean edit.",
+    "promptbook": "prompt-vault.html?session=week-6-day-2"
   },
   {
     "id": "week-7-day-1",
@@ -180,7 +191,8 @@ window.BMAI_SESSIONS=[
     "session": "sessions/week-7-day-1/index.html",
     "playbook": "sessions/week-7-day-1/playbook.html",
     "homework": "https://docs.google.com/document/d/1ALm4BKj-6wdIDHxmhXt6DFcka-tMz-7s4sZmjjxxHZ8/edit",
-    "description": "Create a short test video with Google Flow and a verified video-trained avatar, compare face and voice consistency, and record the selected results and next fixes in the Homework Doc."
+    "description": "Create a short test video with Google Flow and a verified video-trained avatar, compare face and voice consistency, and record the selected results and next fixes in the Homework Doc.",
+    "promptbook": "prompt-vault.html?session=week-7-day-1"
   },
   {
     "id": "week-7-day-2",
@@ -195,7 +207,8 @@ window.BMAI_SESSIONS=[
     "session": "sessions/week-7-day-2/index.html",
     "playbook": "sessions/week-7-day-2/playbook.html",
     "homework": "https://docs.google.com/document/d/1JWqUBGACD-YajJHTfU1GoBqmEPm2YIE6jVi-O6hWIjc",
-    "description": "Tailor the supplied portfolio master prompt to one AI builder, create a three-page portfolio draft with your own available material, review its responsive behavior and interactions, and record your next revisions."
+    "description": "Tailor the supplied portfolio master prompt to one AI builder, create a three-page portfolio draft with your own available material, review its responsive behavior and interactions, and record your next revisions.",
+    "promptbook": "prompt-vault.html?session=week-7-day-2"
   },
   {
     "id": "week-8-day-1",
@@ -210,7 +223,8 @@ window.BMAI_SESSIONS=[
     "session": "sessions/week-8-day-1/index.html",
     "playbook": "sessions/week-8-day-1/playbook.html",
     "homework": "https://docs.google.com/document/d/1pUmCjzW_iYchbUHelAkbBDYmJR2GRhBjYHf6n32_A0g/edit",
-    "description": "Create and review an automobile advertisement using a chosen four-wheel vehicle, consistent visual references, a shot plan, and motion clips that preserve the vehicle's identity and move plausibly."
+    "description": "Create and review an automobile advertisement using a chosen four-wheel vehicle, consistent visual references, a shot plan, and motion clips that preserve the vehicle's identity and move plausibly.",
+    "promptbook": "prompt-vault.html?session=week-8-day-1"
   },
   {
     "id": "week-8-day-2",
@@ -225,9 +239,637 @@ window.BMAI_SESSIONS=[
     "session": "sessions/week-8-day-2/index.html",
     "playbook": "sessions/week-8-day-2/playbook.html",
     "homework": "https://docs.google.com/document/d/1wb2orCymuOp6zqJzsOKgieM8Pw_Sxt7KJKEkQooBDuo/edit",
-    "description": "Select an advanced VFX route, prepare compatible references, generate one video transformation test, and review what changed, what stayed stable, and the first correction."
+    "description": "Select an advanced VFX route, prepare compatible references, generate one video transformation test, and review what changed, what stayed stable, and the first correction.",
+    "promptbook": "prompt-vault.html?session=week-8-day-2"
   }
 ];
+
+;
+
+/* library/task-identities.js */
+/* Generated from content/task-identities.json. */
+window.BMAI_TASK_IDENTITIES={
+  "week-1-day-2": [
+    {
+      "id": "checkpoint-1vjz12u",
+      "text": "I selected a clear channel category or niche.",
+      "legacyKey": "1vjz12u"
+    },
+    {
+      "id": "checkpoint-h2taje",
+      "text": "I researched viral channels in the category.",
+      "legacyKey": "h2taje"
+    },
+    {
+      "id": "checkpoint-4jy3wa",
+      "text": "I checked proof-of-concept signals such as recently sold channels where relevant.",
+      "legacyKey": "4jy3wa"
+    },
+    {
+      "id": "checkpoint-19mm5aa",
+      "text": "I copied the God prompt into Google Docs and edited its variables.",
+      "legacyKey": "19mm5aa"
+    },
+    {
+      "id": "checkpoint-125lw52",
+      "text": "I ran the research in Kimi.",
+      "legacyKey": "125lw52"
+    },
+    {
+      "id": "checkpoint-g5gjn2",
+      "text": "I reviewed Section A of the research report.",
+      "legacyKey": "g5gjn2"
+    },
+    {
+      "id": "checkpoint-4zxzqi",
+      "text": "I finalized one channel name.",
+      "legacyKey": "4zxzqi"
+    },
+    {
+      "id": "checkpoint-1376dh3",
+      "text": "I captured the unique value proposition, tagline and mission statement.",
+      "legacyKey": "1376dh3"
+    },
+    {
+      "id": "checkpoint-1kokr1o",
+      "text": "I created a channel profile picture using the Section B inputs.",
+      "legacyKey": "1kokr1o"
+    },
+    {
+      "id": "checkpoint-wzr2bv",
+      "text": "I created a YouTube channel banner in Canva.",
+      "legacyKey": "wzr2bv"
+    },
+    {
+      "id": "checkpoint-10hwwpz",
+      "text": "I am ready to move toward launching the channel.",
+      "legacyKey": "10hwwpz"
+    }
+  ],
+  "week-2-day-1": [
+    {
+      "id": "checkpoint-1j77pss",
+      "text": "I completed the Day 1 Shot / Frame Breakdown.",
+      "legacyKey": "1j77pss"
+    },
+    {
+      "id": "checkpoint-1teaygw",
+      "text": "I recorded my Generation Tool(s) and Character / Visual Consistency Notes.",
+      "legacyKey": "1teaygw"
+    },
+    {
+      "id": "checkpoint-1o2osk",
+      "text": "I tracked the clips or frames I generated and updated the Combined Video Status.",
+      "legacyKey": "1o2osk"
+    },
+    {
+      "id": "checkpoint-1vuit2e",
+      "text": "I generated at least one usable shot from a frame and prompt.",
+      "legacyKey": "1vuit2e"
+    },
+    {
+      "id": "checkpoint-aim9ql",
+      "text": "I know how to use the frame workflow in Flow.",
+      "legacyKey": "aim9ql"
+    },
+    {
+      "id": "checkpoint-x1wmx6",
+      "text": "I created or prepared a voiceover for my shot.",
+      "legacyKey": "x1wmx6"
+    },
+    {
+      "id": "checkpoint-1bj5mhk",
+      "text": "I created a first draft of my timeline.",
+      "legacyKey": "1bj5mhk"
+    },
+    {
+      "id": "checkpoint-1eqce4c",
+      "text": "I published my shot for today.",
+      "legacyKey": "1eqce4c"
+    },
+    {
+      "id": "checkpoint-1v0gz4y",
+      "text": "I have a plan to publish one shot every day for the next seven days.",
+      "legacyKey": "1v0gz4y"
+    },
+    {
+      "id": "checkpoint-1fedwny",
+      "text": "I will observe the winners and use them to guide my next shots.",
+      "legacyKey": "1fedwny"
+    }
+  ],
+  "week-2-day-2": [
+    {
+      "id": "checkpoint-19dv6ly",
+      "text": "I completed the remaining image practice from Day 2.",
+      "legacyKey": "19dv6ly"
+    },
+    {
+      "id": "checkpoint-1u3uuls",
+      "text": "I generated the aerial coconut-farm shot.",
+      "legacyKey": "1u3uuls"
+    },
+    {
+      "id": "checkpoint-rbo40v",
+      "text": "I generated the close-up coconut bunch shot.",
+      "legacyKey": "rbo40v"
+    },
+    {
+      "id": "checkpoint-fjwkts",
+      "text": "I generated the coconut falling shot.",
+      "legacyKey": "fjwkts"
+    },
+    {
+      "id": "checkpoint-mxhaxg",
+      "text": "I completed the other required frames and posted them in the group.",
+      "legacyKey": "mxhaxg"
+    },
+    {
+      "id": "checkpoint-gndd6g",
+      "text": "I created at least one image-to-video shot from a strong frame.",
+      "legacyKey": "gndd6g"
+    },
+    {
+      "id": "checkpoint-1njiodj",
+      "text": "I used Start and End Frame Animation only when the frames had a meaningful visual relationship.",
+      "legacyKey": "1njiodj"
+    },
+    {
+      "id": "checkpoint-13qf7r2",
+      "text": "I used start-frame-only when an end frame would create an unrelated transition.",
+      "legacyKey": "13qf7r2"
+    },
+    {
+      "id": "checkpoint-1lfg2vv",
+      "text": "I checked continuity, movement and product consistency in my generated clips.",
+      "legacyKey": "1lfg2vv"
+    },
+    {
+      "id": "checkpoint-1q35tmc",
+      "text": "I selected keepers before spending credits on higher-quality output.",
+      "legacyKey": "1q35tmc"
+    }
+  ],
+  "week-3-day-1": [
+    {
+      "id": "checkpoint-wrvlhm",
+      "text": "I selected and prepared useful character references.",
+      "legacyKey": "wrvlhm"
+    },
+    {
+      "id": "checkpoint-uv6pfw",
+      "text": "I created a character sheet in Flow.",
+      "legacyKey": "uv6pfw"
+    },
+    {
+      "id": "checkpoint-58kjdk",
+      "text": "I fixed or documented any face-consistency issue.",
+      "legacyKey": "58kjdk"
+    },
+    {
+      "id": "checkpoint-zds7xe",
+      "text": "I generated and selected a brand colour palette in Gemini.",
+      "legacyKey": "zds7xe"
+    },
+    {
+      "id": "checkpoint-1r85r9f",
+      "text": "I created a mood board in Flow.",
+      "legacyKey": "1r85r9f"
+    },
+    {
+      "id": "checkpoint-1gbkbw4",
+      "text": "I attached the character sheet and mood board to the screenplay workflow.",
+      "legacyKey": "1gbkbw4"
+    },
+    {
+      "id": "checkpoint-1w4yy3q",
+      "text": "I generated and reviewed the screenplay.",
+      "legacyKey": "1w4yy3q"
+    },
+    {
+      "id": "checkpoint-ysefsd",
+      "text": "I converted the screenplay into a structured shot shortlist.",
+      "legacyKey": "ysefsd"
+    },
+    {
+      "id": "checkpoint-580cp0",
+      "text": "I organized the assets and project documents for continued production.",
+      "legacyKey": "580cp0"
+    },
+    {
+      "id": "checkpoint-1qtlfoh",
+      "text": "I understand the three-failure rule and when to change the generation approach.",
+      "legacyKey": "1qtlfoh"
+    }
+  ],
+  "week-3-day-2": [
+    {
+      "id": "checkpoint-1ejxn5c",
+      "text": "Hero face and costume remain recognizable across the character sheet and chosen shots.",
+      "legacyKey": "1ejxn5c"
+    },
+    {
+      "id": "checkpoint-6vy0qw",
+      "text": "Raw personal reference photos are kept out of cohort-group submissions.",
+      "legacyKey": "6vy0qw"
+    },
+    {
+      "id": "checkpoint-w170ws",
+      "text": "The hero base reads as one coherent, recognizable location.",
+      "legacyKey": "w170ws"
+    },
+    {
+      "id": "checkpoint-utb8no",
+      "text": "Title artwork is legible and has a clean transparent background.",
+      "legacyKey": "utb8no"
+    },
+    {
+      "id": "checkpoint-z5tf9e",
+      "text": "The edit includes a purposeful establishing moment, reveal, and action beat where available.",
+      "legacyKey": "z5tf9e"
+    },
+    {
+      "id": "checkpoint-hb4vc1",
+      "text": "Chosen supporting shots fit the hero and location continuity.",
+      "legacyKey": "hb4vc1"
+    },
+    {
+      "id": "checkpoint-hthn6a",
+      "text": "The project is saved and the exported teaser plays with intentional title and audio choices.",
+      "legacyKey": "hthn6a"
+    },
+    {
+      "id": "checkpoint-1a2l61s",
+      "text": "Only the finished teaser is submitted, and public audio is owned or licensed for use.",
+      "legacyKey": "1a2l61s"
+    }
+  ],
+  "week-4-day-1": [
+    {
+      "id": "checkpoint-1axe724",
+      "text": "Character face, costume and anatomy remain consistent across the approved reference sheet.",
+      "legacyKey": "1axe724"
+    },
+    {
+      "id": "checkpoint-13sdz0d",
+      "text": "Architecture references describe one recognizable location from useful angles.",
+      "legacyKey": "13sdz0d"
+    },
+    {
+      "id": "checkpoint-1uqhz60",
+      "text": "Title asset is readable and exported as a clean transparent PNG.",
+      "legacyKey": "1uqhz60"
+    },
+    {
+      "id": "checkpoint-1uuq1zs",
+      "text": "A-roll keeps the intended hero and location across the selected moments.",
+      "legacyKey": "1uuq1zs"
+    },
+    {
+      "id": "checkpoint-1vt6cl9",
+      "text": "Every B-roll shot supports a specific editing need.",
+      "legacyKey": "1vt6cl9"
+    },
+    {
+      "id": "checkpoint-hmuo62",
+      "text": "The saved 16:9 timeline has a clear reveal, clean cuts and intentional sound.",
+      "legacyKey": "hmuo62"
+    },
+    {
+      "id": "checkpoint-buqu3r",
+      "text": "The exported teaser plays from beginning to end and only finished media is submitted.",
+      "legacyKey": "buqu3r"
+    }
+  ],
+  "week-4-day-2": [
+    {
+      "id": "checkpoint-1d3ukat",
+      "text": "The approved phone references show the correct model, camera geometry, ports and proportions.",
+      "legacyKey": "1d3ukat"
+    },
+    {
+      "id": "checkpoint-pzteha",
+      "text": "The selected still frames preserve the same phone and camera layout across the shot list.",
+      "legacyKey": "pzteha"
+    },
+    {
+      "id": "checkpoint-1gitk9g",
+      "text": "Motion clips use the demonstrated start-frame, end-frame or start-only method for each shot.",
+      "legacyKey": "1gitk9g"
+    },
+    {
+      "id": "checkpoint-1y0m6rv",
+      "text": "The cut uses no more than five core shots and remains ten seconds before any optional outro.",
+      "legacyKey": "1y0m6rv"
+    },
+    {
+      "id": "checkpoint-1nc2pn1",
+      "text": "The edit uses clean cuts and only purposeful speed changes, music and sound effects.",
+      "legacyKey": "1nc2pn1"
+    },
+    {
+      "id": "checkpoint-gksq6z",
+      "text": "The exported file plays from beginning to end with consistent colour, geometry and synchronized sound.",
+      "legacyKey": "gksq6z"
+    },
+    {
+      "id": "checkpoint-4qgxtj",
+      "text": "The saved Homework record contains the final film link and supporting production proof.",
+      "legacyKey": "4qgxtj"
+    }
+  ],
+  "week-5-day-1": [
+    {
+      "id": "checkpoint-8l1gzr",
+      "text": "The team selected and can link the property reference images used.",
+      "legacyKey": "8l1gzr"
+    },
+    {
+      "id": "checkpoint-13xjh5v",
+      "text": "The generated stills and motion clips keep the property recognizable and its architecture stable.",
+      "legacyKey": "13xjh5v"
+    },
+    {
+      "id": "checkpoint-1x19lcb",
+      "text": "Image-to-video movement is purposeful; the team fixed or removed shots with visible warping or unusable transitions.",
+      "legacyKey": "1x19lcb"
+    },
+    {
+      "id": "checkpoint-rs76lb",
+      "text": "The Filmora edit forms one clear walkthrough with music and avoids unnecessary beauty-shot filler.",
+      "legacyKey": "rs76lb"
+    },
+    {
+      "id": "checkpoint-mk8916",
+      "text": "The team produced one final video that is about one minute or less.",
+      "legacyKey": "mk8916"
+    }
+  ],
+  "week-5-day-2": [
+    {
+      "id": "checkpoint-1paus2n",
+      "text": "The screenplay follows the assigned story and is approved before shot listing.",
+      "legacyKey": "1paus2n"
+    },
+    {
+      "id": "checkpoint-171vk87",
+      "text": "Every shot has a clear visual action and camera choice.",
+      "legacyKey": "171vk87"
+    },
+    {
+      "id": "checkpoint-v2t1qc",
+      "text": "Lighting and color stay consistent across the production sheet.",
+      "legacyKey": "v2t1qc"
+    },
+    {
+      "id": "checkpoint-1clmrgv",
+      "text": "Main characters and important props have references where needed.",
+      "legacyKey": "1clmrgv"
+    },
+    {
+      "id": "checkpoint-lzlu0",
+      "text": "Image-generation and video-generation leads reviewed the plan together.",
+      "legacyKey": "lzlu0"
+    },
+    {
+      "id": "checkpoint-1guypyx",
+      "text": "Dialogue and voiceover are planned without relying on long monologues.",
+      "legacyKey": "1guypyx"
+    }
+  ],
+  "week-6-day-1": [
+    {
+      "id": "checkpoint-17wct35",
+      "text": "I confirmed my team and the film/topic assigned to us.",
+      "legacyKey": "17wct35"
+    },
+    {
+      "id": "checkpoint-1le4u2f",
+      "text": "I listed only the characters that appear in our assigned film.",
+      "legacyKey": "1le4u2f"
+    },
+    {
+      "id": "checkpoint-32fp2",
+      "text": "I used the supplied face and costume references when revising character sheets.",
+      "legacyKey": "32fp2"
+    },
+    {
+      "id": "checkpoint-1iaowcd",
+      "text": "The character sheets include consistent views and useful expressions.",
+      "legacyKey": "1iaowcd"
+    },
+    {
+      "id": "checkpoint-cjztvb",
+      "text": "I checked the Mahabharatha Project (BMAM) sheet and shot list for story-critical props.",
+      "legacyKey": "cjztvb"
+    },
+    {
+      "id": "checkpoint-19r1jvo",
+      "text": "Each prop reference is tied to a character or scene, and unknown details are marked for review.",
+      "legacyKey": "19r1jvo"
+    },
+    {
+      "id": "checkpoint-w28sca",
+      "text": "I recorded a visible mismatch before revising an image or clip.",
+      "legacyKey": "w28sca"
+    },
+    {
+      "id": "checkpoint-1kta6ss",
+      "text": "I compared the selected generation with the supplied references.",
+      "legacyKey": "1kta6ss"
+    },
+    {
+      "id": "checkpoint-yj1dw5",
+      "text": "I checked scale, anatomy, movement, and continuity before approving motion.",
+      "legacyKey": "yj1dw5"
+    },
+    {
+      "id": "checkpoint-e65ltz",
+      "text": "I shared the approved sheets, versions, open issues, and next owner with the team.",
+      "legacyKey": "e65ltz"
+    },
+    {
+      "id": "checkpoint-f68c44",
+      "text": "I kept the Mahabharata treatment respectful and avoided spoof framing.",
+      "legacyKey": "f68c44"
+    }
+  ],
+  "week-6-day-2": [
+    {
+      "id": "checkpoint-wsygel",
+      "text": "One named character is saved and selected for reuse.",
+      "legacyKey": "wsygel"
+    },
+    {
+      "id": "checkpoint-1xnuqlj",
+      "text": "The 9:16 product-in-hand frame keeps character, packaging, and label details consistent.",
+      "legacyKey": "1xnuqlj"
+    },
+    {
+      "id": "checkpoint-9pr89",
+      "text": "The A-roll uses the approved dialogue, audio, and product image as its start frame only.",
+      "legacyKey": "9pr89"
+    },
+    {
+      "id": "checkpoint-14g8zp3",
+      "text": "The spoken claims are verified and authorized; face, teeth, hands, and product contact look stable.",
+      "legacyKey": "14g8zp3"
+    },
+    {
+      "id": "checkpoint-zrelup",
+      "text": "B-roll adds useful product detail and keeps the product and lighting consistent.",
+      "legacyKey": "zrelup"
+    },
+    {
+      "id": "checkpoint-7e07kv",
+      "text": "The 9:16 edit has clear dialogue, restrained transitions, useful audio, and a reviewed export.",
+      "legacyKey": "7e07kv"
+    }
+  ],
+  "week-7-day-1": [
+    {
+      "id": "checkpoint-dnli2i",
+      "text": "I prepared a clean portrait from my previous multi-angle photos and checked the likeness.",
+      "legacyKey": "dnli2i"
+    },
+    {
+      "id": "checkpoint-1ejyh81",
+      "text": "I used a new Flow project and selected Nano Banana Pro for the uploaded character image.",
+      "legacyKey": "1ejyh81"
+    },
+    {
+      "id": "checkpoint-1ofjtpi",
+      "text": "I added a template voice to the Flow character and previewed its sample dialogue.",
+      "legacyKey": "1ofjtpi"
+    },
+    {
+      "id": "checkpoint-x24e9",
+      "text": "I tagged the saved character and checked the Agent scene breakdown before generation.",
+      "legacyKey": "x24e9"
+    },
+    {
+      "id": "checkpoint-1l2mkp1",
+      "text": "I reviewed the Agent model, aspect ratio, variation count, approval setting, and credit request.",
+      "legacyKey": "1l2mkp1"
+    },
+    {
+      "id": "checkpoint-17nahs8",
+      "text": "I completed the video avatar consent and identity verification steps for my own likeness.",
+      "legacyKey": "17nahs8"
+    },
+    {
+      "id": "checkpoint-zz1fux",
+      "text": "I reviewed identity, voice, dialogue, lip movement, framing, and generated text in both tests.",
+      "legacyKey": "zz1fux"
+    },
+    {
+      "id": "checkpoint-mz3akf",
+      "text": "I recorded the result links, comparison, first fix, and portfolio next step in the Homework Doc.",
+      "legacyKey": "mz3akf"
+    }
+  ],
+  "week-7-day-2": [
+    {
+      "id": "checkpoint-4jcn4r",
+      "text": "I chose a builder and tailored the master prompt to my actual portfolio.",
+      "legacyKey": "4jcn4r"
+    },
+    {
+      "id": "checkpoint-1ndrbk3",
+      "text": "I reviewed the proposed pages and interactions before generating the site.",
+      "legacyKey": "1ndrbk3"
+    },
+    {
+      "id": "checkpoint-1slb3i",
+      "text": "I replaced the available project, profile, video, and service placeholders with accurate material.",
+      "legacyKey": "1slb3i"
+    },
+    {
+      "id": "checkpoint-obevsz",
+      "text": "I checked navigation, project filtering, video playback, and the requested interactions.",
+      "legacyKey": "obevsz"
+    },
+    {
+      "id": "checkpoint-csq5hn",
+      "text": "I reviewed the desktop and mobile layouts and recorded anything unavailable or broken.",
+      "legacyKey": "csq5hn"
+    },
+    {
+      "id": "checkpoint-id2f2l",
+      "text": "I saved the preview or published link and my first grouped revision priorities in the Homework Doc.",
+      "legacyKey": "id2f2l"
+    }
+  ],
+  "week-8-day-1": [
+    {
+      "id": "checkpoint-99ggq5",
+      "text": "I chose a four-wheel vehicle and gathered same-colour references from useful angles.",
+      "legacyKey": "99ggq5"
+    },
+    {
+      "id": "checkpoint-t3ecya",
+      "text": "I checked that the vehicle's distinguishing body details remain consistent in my generated images.",
+      "legacyKey": "t3ecya"
+    },
+    {
+      "id": "checkpoint-6seqnv",
+      "text": "I planned an ordered set of advertisement shots with a clear camera move for each.",
+      "legacyKey": "6seqnv"
+    },
+    {
+      "id": "checkpoint-lsfavb",
+      "text": "I used start and end frames only when they show a coherent continuation of the same vehicle and scene.",
+      "legacyKey": "lsfavb"
+    },
+    {
+      "id": "checkpoint-1jngz0t",
+      "text": "I reviewed vehicle identity, camera path, wheel rotation, background motion, and road or water behavior in each clip.",
+      "legacyKey": "1jngz0t"
+    },
+    {
+      "id": "checkpoint-1ea5pqm",
+      "text": "I assembled a linked advertisement draft and recorded one issue and the first next fix in the Homework Doc.",
+      "legacyKey": "1ea5pqm"
+    }
+  ],
+  "week-8-day-2": [
+    {
+      "id": "checkpoint-n2ka0p",
+      "text": "I chose one transformation and identified the base clip or frame.",
+      "legacyKey": "n2ka0p"
+    },
+    {
+      "id": "checkpoint-310ty9",
+      "text": "I wrote what must change and what should remain stable in the shot.",
+      "legacyKey": "310ty9"
+    },
+    {
+      "id": "checkpoint-5t7qvd",
+      "text": "I prepared and labelled the reference assets required by the selected workflow.",
+      "legacyKey": "5t7qvd"
+    },
+    {
+      "id": "checkpoint-4fvzad",
+      "text": "I selected a source-backed method and attached the intended video, image, prop, character or background references.",
+      "legacyKey": "4fvzad"
+    },
+    {
+      "id": "checkpoint-4kii65",
+      "text": "I reviewed the generated clip for subject identity, scene continuity, camera, timing, lighting and motion drift.",
+      "legacyKey": "4kii65"
+    },
+    {
+      "id": "checkpoint-w4y3fi",
+      "text": "I saved the selected output and its source/reference links in the official Homework Doc.",
+      "legacyKey": "w4y3fi"
+    },
+    {
+      "id": "checkpoint-hg1a0v",
+      "text": "I recorded one observed problem and a first correction that addresses it.",
+      "legacyKey": "hg1a0v"
+    }
+  ]
+};
 
 ;
 
@@ -274,19 +916,12 @@ function addMissingCards(section,type){
  });
 }
 function library(){
- decorateCards();
- document.querySelectorAll('#playbooks,#homework').forEach(section=>addMissingCards(section,section.id==='homework'?'homework':'playbook'));
- decorateCards();
  document.querySelectorAll('#playbooks,#homework').forEach(section=>{
-  const cards=[...section.querySelectorAll('article.card')],sessions=window.BMAI_SESSIONS.filter(s=>cards.some(c=>c.dataset.sessionId===s.id));if(!sessions.length)return;
-  const controls=document.createElement('div');controls.className='bmai-session-picker';
-  const existing=section.querySelector('.bmai-session-picker');if(existing){const select=existing.querySelector('select');sessions.forEach(s=>{const option=select.querySelector('option[value="'+s.id+'"]');if(option)option.textContent=s.week+' · '+s.title+(Date.parse(s.start)>Date.now()?' (locked)':'');});if(select.value===existing.dataset.defaultSelection){select.value='all';select.dispatchEvent(new Event('change'));}existing.dataset.defaultSelection='all';return;}
-  const label=document.createElement('label'),select=document.createElement('select'),status=document.createElement('p');label.textContent='Choose a session';select.setAttribute('aria-label','Choose '+(section.id==='homework'?'homework':'playbook')+' session');status.setAttribute('role','status');
-  const all=document.createElement('option');all.value='all';all.textContent='All sessions';select.append(all);
-  sessions.forEach(s=>{const option=document.createElement('option');option.value=s.id;option.textContent=s.week+' · '+s.title+(Date.parse(s.start)>Date.now()?' (locked)':'');select.append(option)});
-  select.value='all';controls.dataset.defaultSelection='all';label.append(select);controls.append(label,status);cards[0].parentElement.insertAdjacentElement('beforebegin',controls);
-  const update=()=>{let count=0;cards.forEach(card=>{card.hidden=select.value!=='all'&&card.dataset.sessionId!==select.value;if(!card.hidden)count++;});status.textContent=select.value==='all'?'Showing all '+cards.length+' '+(section.id==='homework'?'homework assignments':'playbooks')+'.':count+' of '+cards.length+' '+(section.id==='homework'?'homework assignments':'playbooks')+' shown. Select All sessions for the full library.';};
-  select.addEventListener('change',update);update();
+  const type=section.id==='homework'?'homework':'playbook',sessions=window.BMAI_SESSIONS.filter(s=>s.session&&s.playbook),grid=section.querySelector('.grid');if(!grid)return;
+  let controls=section.querySelector('.bmai-session-picker');if(!controls){controls=document.createElement('div');controls.className='bmai-session-picker';controls.innerHTML='<label>Choose a session<select aria-label="Choose '+type+' session"></select></label><p role="status"></p>';grid.before(controls);const select=controls.querySelector('select');sessions.forEach(s=>{const o=document.createElement('option');o.value=s.id;select.append(o)});select.value=sessions.filter(s=>Date.parse(s.start)<=Date.now()).at(-1)?.id||sessions[0].id;select.addEventListener('change',update);}
+  const select=controls.querySelector('select');
+  function update(){sessions.forEach(s=>{select.querySelector('option[value="'+s.id+'"]').textContent=s.week+' · '+s.title+(Date.parse(s.start)>Date.now()?' (locked)':'')});const s=sessions.find(s=>s.id===select.value)||sessions[0],locked=Date.parse(s.start)>Date.now(),date=new Intl.DateTimeFormat('en-IN',{dateStyle:'medium',timeStyle:'short',timeZone:'Asia/Kolkata'}).format(new Date(s.start)),href=s.playbook+(type==='homework'?'#share':'');grid.innerHTML='<article class="card bmai-selection-card" data-session-id="'+s.id+'"><div class="tag">'+escape(s.week)+' · '+type.toUpperCase()+'</div><h3>'+escape(s.title)+'</h3><p>'+escape(s.description)+'</p>'+(locked?'<p class="bmai-availability">Locked · Opens '+escape(date)+' IST</p>':'')+'<div class="actions"><a class="btn '+(locked?'secondary':'')+'" href="'+new URL(href,root).href+'">'+(locked?'View locked lesson':type==='homework'?'Open playbook homework':'Open playbook')+'</a></div></article>';controls.querySelector('p').textContent=locked?'This lesson is scheduled and remains locked.':'Available now. '+(type==='homework'?'Homework submission is separate from browser checkpoints.':'Follow the tasks, then review your output.');document.dispatchEvent(new Event('bmai:library-change'));}
+  update();
  });
 }
 function intro(){
@@ -318,18 +953,65 @@ window.BMAI_VISUALS={topics,html,library,intro};
  const taskKey=text=>{let hash=2166136261;for(const c of normalize(text))hash=Math.imul(hash^c.charCodeAt(0),16777619);return (hash>>>0).toString(36);};
  const read=key=>{try{return JSON.parse(localStorage.getItem(key)||'null')}catch{return null}};
  const write=(key,value)=>{try{localStorage.setItem(key,JSON.stringify(value));return true}catch{return false}};
+ const keyFor=(session,text)=>window.BMAI_TASK_IDENTITIES?.[session]?.find(task=>normalize(task.text)===normalize(text))?.id||taskKey(text);
+ const legacyFor=(session,text)=>window.BMAI_TASK_IDENTITIES?.[session]?.find(task=>normalize(task.text)===normalize(text))?.legacyKey||taskKey(text);
  function bind(boxes,{key,legacyKey,legacyBoxes=boxes,update=()=>{}}){
   let saved=read(key);if(!saved||typeof saved!=='object'||Array.isArray(saved))saved={};
   saved.__migrated=saved.__migrated||{};
+  boxes.forEach(box=>{const old=box.dataset.legacyTaskKey;if(old&&!(box.dataset.taskKey in saved)&&typeof saved[old]==='boolean')saved[box.dataset.taskKey]=saved[old]});
   if(legacyKey&&!saved.__migrated[legacyKey]){const old=read(legacyKey);if(old)legacyBoxes.forEach((box,i)=>{if(!(box.dataset.taskKey in saved))saved[box.dataset.taskKey]=!!old[i]});saved.__migrated[legacyKey]=true;}
   const apply=()=>{boxes.forEach(box=>box.checked=!!saved[box.dataset.taskKey]);update();};
   apply();
   boxes.forEach(box=>box.addEventListener('change',()=>{saved[box.dataset.taskKey]=box.checked;write(key,saved);update();document.dispatchEvent(new Event('bmai:progress'));}));
-  window.addEventListener('storage',event=>{if(event.key!==key)return;saved=read(key)||{};apply();document.dispatchEvent(new Event('bmai:progress'));});
+  const refresh=()=>{saved=read(key)||{};apply();document.dispatchEvent(new Event('bmai:progress'));};
+  window.addEventListener('storage',event=>{if(event.key===key)refresh()});
+  document.addEventListener('bmai:restore-progress',refresh);
   // Persist the migration before a later page with the same tasks is opened.
   write(key,saved);
  }
- window.BMAI_PROGRESS={taskKey,bind,read,write};
+ window.BMAI_PROGRESS={taskKey,keyFor,legacyFor,bind,read,write};
+})();
+
+;
+
+/* library/learning.js */
+/* Student workflow enhancements shared by guides, playbooks and the hub. */
+(()=>{'use strict';
+const escape=window.BMAI.escape;
+function transfer(host){
+ if(!host||host.querySelector('.bmai-progress-transfer'))return;
+ const panel=document.createElement('details');panel.className='bmai-progress-transfer';
+ panel.innerHTML='<summary>Save or restore your progress</summary><p>Checkpoints are saved in this browser on this device. Download a backup to carry them to another device. Checkpoints and skill practice do not confirm homework submission.</p><div class="bmai-transfer-actions"><button class="btn secondary" type="button" data-export-progress>Download progress</button><label class="bmai-file-label">Restore a progress backup<input type="file" accept="application/json,.json" data-import-progress></label></div><p role="status" data-transfer-status></p>';
+ host.append(panel);const status=panel.querySelector('[data-transfer-status]');
+ const known=new Set(window.BMAI_SESSIONS.map(s=>'bmai-tasks:'+s.id));
+ panel.querySelector('[data-export-progress]').addEventListener('click',()=>{try{const checkpoints={};for(const key of known){const saved=window.BMAI_PROGRESS.read(key);if(saved)checkpoints[key]=saved;}const url=URL.createObjectURL(new Blob([JSON.stringify({format:'bmams-progress',version:1,exportedAt:new Date().toISOString(),checkpoints},null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='bmams-progress.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);status.textContent='Progress backup downloaded. Homework answers remain in your Google Doc.';}catch{status.textContent='Progress could not be downloaded. Your existing checkpoints are unchanged.'}});
+ panel.querySelector('[data-import-progress]').addEventListener('change',async event=>{const file=event.target.files[0];if(!file)return;try{if(file.size>1000000)throw Error('size');const data=JSON.parse(await file.text());if(data.format!=='bmams-progress'||data.version!==1||!data.checkpoints||Array.isArray(data.checkpoints)||typeof data.checkpoints!=='object')throw Error('format');const staged=[];for(const [key,value]of Object.entries(data.checkpoints)){if(!known.has(key)||!value||Array.isArray(value)||typeof value!=='object')throw Error('session');const clean={};for(const [id,checked]of Object.entries(value)){if(id==='__migrated')continue;if(!/^(?:checkpoint-)?[a-z0-9-]+$/.test(id)||typeof checked!=='boolean')throw Error('checkpoint');clean[id]=checked;}staged.push([key,{...(window.BMAI_PROGRESS.read(key)||{}),...clean}]);}const written=[];for(const [key,value]of staged){const old=window.BMAI_PROGRESS.read(key);if(!window.BMAI_PROGRESS.write(key,value)){for(const [k,v]of written)window.BMAI_PROGRESS.write(k,v);throw Error('storage');}written.push([key,old]);}document.dispatchEvent(new Event('bmai:restore-progress'));status.textContent='Progress restored for '+staged.length+' sessions. Homework submission is still separate.';}catch{status.textContent='That backup could not be restored. Choose a valid BMAMS progress file. Your existing checkpoints are unchanged.'}event.target.value='';});
+}
+function taskCards(){
+ document.querySelectorAll('main article').forEach(article=>{
+  const facts=[...article.children].filter(el=>el.matches('p')&&/^(Goal|Inputs|Output|Review|First fix|Next):/.test(el.textContent.trim()));if(facts.length<3)return;
+  const grid=document.createElement('dl');grid.className='bmai-task-facts';
+  const fixes=document.createElement('details');fixes.className='bmai-task-help';fixes.innerHTML='<summary>First fix and next step</summary>';
+  facts.sort((a,b)=>['Inputs','Goal','Output','Review','First fix','Next'].indexOf(a.querySelector('strong')?.textContent.trim().replace(/:$/,''))-['Inputs','Goal','Output','Review','First fix','Next'].indexOf(b.querySelector('strong')?.textContent.trim().replace(/:$/,'')));
+  for(const p of facts){const label=p.querySelector('strong');if(!label)continue;const name=label.textContent.trim().replace(/:$/,'');label.remove();const value=p.textContent.trim();if(name==='First fix'||name==='Next'){const line=document.createElement('p');line.innerHTML='<strong>'+escape(name)+':</strong> '+escape(value);fixes.append(line);}else{const term=document.createElement('dt'),definition=document.createElement('dd');term.textContent=({Inputs:'Prepare',Output:'Deliver',Review:'Check'})[name]||name;definition.textContent=value;grid.append(term,definition);}p.remove();}
+  article.append(grid);if(fixes.children.length>1)article.append(fixes);
+ });
+}
+function playbook(){
+ if(document.body.dataset.pageType!=='playbook')return;
+ const spec=window.BMAI_LESSON||(typeof sessionData!=='undefined'?sessionData:null),id=document.body.dataset.sessionId;
+ const primary=document.querySelector('#checklistSection,#checklist');
+ if(primary){const note=document.createElement('p');note.className='bmai-progress-explanation';note.textContent='Self-review checkpoints · Saved on this device. Skill practice and homework submission are separate.';primary.before(note);transfer(primary.parentElement);}
+ const share=document.querySelector('#share');if(share){const info=document.createElement('aside');info.className='bmai-handoff';info.innerHTML='<h3>Before you share</h3><p>Record the required answers and output links in the official Homework Doc. Check that anyone reviewing your work can open those links. Follow the assignment’s submission instructions; browser checkmarks do not submit your work.</p><a href="#'+(primary?.id||'share')+'">Review the assignment checkpoints</a>';share.prepend(info);}
+ if(spec?.checklist?.length&&primary){
+  const aid=document.createElement('details');aid.className='bmai-review-practice';aid.innerHTML='<summary>Practise reviewing your own output</summary><p class="kicker">PRACTICE AID · BASED ON THIS ASSIGNMENT’S CHECKLIST</p><label>Choose a criterion<select aria-label="Choose a review criterion">'+spec.checklist.map((text,index)=>'<option value="'+index+'">'+escape(text)+'</option>').join('')+'</select></label><div class="bmai-review-comparison"><div><h3>Ready to keep</h3><p>Point to evidence in your work that meets this criterion. Save the relevant output or reference link.</p></div><div><h3>Needs a revision</h3><p>If you cannot show that evidence, record the observed gap and the first change to test. Review again before marking it complete.</p></div></div><p role="status" data-review-criterion></p>';
+  const cases=spec.quiz||spec.quizQuestions||[];
+  for(const q of cases.slice(0,2)){const right=q.correct??q.answer,example=document.createElement('article');example.className='bmai-worked-decision';example.innerHTML='<h3>Example decision</h3><p>'+escape(q.question||q.q)+'</p><div class="bmai-review-comparison"><div><h4>Useful decision</h4><p>'+escape(q.options[right])+'</p></div><div><h4>Needs a different approach</h4><p>'+escape(q.options[(right+1)%q.options.length])+'</p></div></div><p>'+escape(q.explanation)+'</p>';aid.append(example);}
+  const choose=()=>aid.querySelector('[data-review-criterion]').textContent='Review criterion: '+spec.checklist[Number(aid.querySelector('select').value)];aid.querySelector('select').addEventListener('change',choose);choose();primary.parentElement.insertBefore(aid,primary.nextSibling);
+ }
+}
+function init(){taskCards();playbook();if(document.body.dataset.pageType==='home')transfer(document.querySelector('.bmai-current-wrap'));if(document.body.dataset.pageType==='prompt-vault'&&!document.querySelector('.prompt-vault-hero .studio-guidance'))document.querySelector('.prompt-vault-hero')?.insertAdjacentHTML('beforeend',window.BMAI.guidance({pose:'reference-board',title:'Keep the original. Test a working copy.',description:'Use the source attribution to revisit the lesson. Fill the fields for your own project, then review the generated result against the assignment checkpoints.'}));}
+window.BMAI_LEARNING={init};
 })();
 
 ;
@@ -379,6 +1061,7 @@ function dateRange(x){const start=dateParts(x.start).replace(/ /g,"\u00a0"),time
 function countdown(iso){let d=new Date(iso).getTime()-now();if(d<=0)return"AVAILABLE NOW";const days=Math.floor(d/86400000);d%=86400000;const h=Math.floor(d/3600000);d%=3600000;const m=Math.floor(d/60000);d%=60000;const s=Math.floor(d/1000);return(days?days+"d ":"")+String(h).padStart(2,"0")+"h "+String(m).padStart(2,"0")+"m "+String(s).padStart(2,"0")+"s"}
 function sessionUrl(x){return x.session?basePath()+x.session:null}
 function lockPage(){
+if(document.body.dataset.pageType&&document.body.dataset.pageType.startsWith('prompt-vault'))return false;
 const x=pageSession();if(!x)return false;
 if(isUnlocked(x))return false;
 const hub=basePath()+"index.html";
@@ -416,6 +1099,24 @@ function enhanceLongText(){
 }
 function applyPageIdentity(){
  document.documentElement.dataset.bmaiPage=document.body.dataset.pageId||"hub";
+}
+function setupHeaderActions(){
+ const icon=(name)=>{
+  const common='aria-hidden="true" class="bmai-header-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"';
+  if(/session|guide/i.test(name))return `<svg ${common}><rect x="3" y="5" width="18" height="15" rx="3"/><path d="M3 10h18M7 5l4 5m3-5 4 5m-8 3 5 3-5 3z"/></svg>`;
+  if(/playbook/i.test(name))return `<svg ${common}><path d="M12 6c-3-2-6-2-9-1v14c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1zM12 6v14"/></svg>`;
+  if(/homework/i.test(name))return `<svg ${common}><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2m-7 8 3 3 5-6"/></svg>`;
+  if(/prompt|vault/i.test(name))return `<svg ${common}><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="12" r="4"/><path d="M12 8v8m-4-4h8"/></svg>`;
+  if(/resource|tool/i.test(name))return `<svg ${common}><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v3M3 12h18m-9 0v3"/></svg>`;
+  return `<svg ${common}><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-5"/></svg>`;
+ };
+ document.querySelectorAll('.bmai-global-header :is(.nav-links,.bmai-session-top-actions) a').forEach(a=>{
+  a.classList.add('bmai-header-action');
+  const label=(a.textContent||'').trim();
+  const existing=a.querySelector('svg');
+  if(existing){existing.classList.add('bmai-header-action-icon');return}
+  a.insertAdjacentHTML('afterbegin',icon(label));
+ });
 }
 function setupMobileHeader(){
 document.querySelectorAll("header .studio-nav,header .nav,.topbar .nav,.top .nav").forEach((nav,index)=>{
@@ -460,13 +1161,14 @@ const mainBoxes=[...document.querySelectorAll('#checklist input[type="checkbox"]
 boxes.forEach(b=>{const text=b.getAttribute('aria-label')||b.closest('label')?.textContent||b.parentElement.textContent;
  if(!b.closest('label')&&!b.hasAttribute('aria-label'))b.setAttribute('aria-label',text.trim());
  const spec=window.BMAI_LESSON||(typeof sessionData!=='undefined'?sessionData:null),index=Number(b.dataset.index);
- b.dataset.taskKey=state.taskKey(b.hasAttribute('data-index')&&spec?.checklist?.[index]?spec.checklist[index]:text);
+ const criterion=b.hasAttribute('data-index')&&spec?.checklist?.[index]?spec.checklist[index]:text;
+ b.dataset.legacyTaskKey=state.legacyFor(session,criterion);b.dataset.taskKey=state.keyFor(session,criterion);
 });
 function update(){const primary=mainBoxes.length?mainBoxes:boxes,done=primary.filter(b=>b.checked).length,pct=Math.round(done/primary.length*100);
 document.querySelectorAll('.bmai-progress-value,#progressNumber').forEach(el=>el.textContent=pct+'%');
 document.querySelectorAll('.bmai-progress-fill,#progressFill').forEach(el=>el.style.width=pct+'%');
-const text=document.getElementById('progressText');if(text)text.textContent=done===primary.length?'All homework checkpoints complete.':'Keep going. '+(primary.length-done)+' checkpoints left.';
-const status=document.getElementById('homeworkStatus');if(status)status.textContent=done===primary.length?'Complete':done+' / '+primary.length+' checkpoints';
+const text=document.getElementById('progressText');if(text)text.textContent=done===primary.length?'All self-review checkpoints complete. Record and share your work using the homework instructions.':(primary.length-done)+' self-review checkpoints left.';
+const status=document.getElementById('homeworkStatus');if(status)status.textContent=done+' / '+primary.length+' checkpoints';
 primary.forEach(b=>b.closest('label')?.classList.toggle('done',b.checked));
 const guideFill=document.getElementById('pb')||document.getElementById('prog'),guideText=document.getElementById('pt');if(guideFill)guideFill.style.width=pct+'%';if(guideText)guideText.textContent=done+' of '+primary.length+' tasks done';
 }
@@ -477,18 +1179,20 @@ const guideKey=({'sessions/week-2-day-1/index.html':'w2d1-session','sessions/wee
 function renderCard(x){
 const cur=current(),unlocked=isUnlocked(x),isCurrent=cur&&cur.id===x.id,isNext=next()&&next().id===x.id;
 let action;
-if(x.session)action='<a class="btn '+(unlocked?"":"secondary")+'" href="'+esc(sessionUrl(x))+'">'+(unlocked?"OPEN SESSION":"VIEW LOCKED PAGE")+'</a>';
+if(x.session){const badge=unlocked?'':'<span class="bmai-availability">Locked · Opens '+esc(dateRange(x))+'</span>';action=badge+'<a class="btn '+(unlocked?"":"secondary")+'" href="'+esc(sessionUrl(x))+'">'+(unlocked?'Session guide':'View locked lesson')+'</a>'+(unlocked&&x.playbook?'<a class="btn secondary" href="'+esc(basePath()+x.playbook)+'">Playbook</a><a class="btn secondary" href="'+esc(basePath()+x.playbook)+'#share">Homework</a>':'');}
 else action='<span class="lock-label">'+(unlocked?"CONTENT COMING SOON":"CONTENT NOT RELEASED")+'</span>';
 const status=isCurrent?"CURRENT SESSION":!x.session?"UNRELEASED":new Date(x.start).getTime()>now()?(unlocked?"REVIEW OPEN":"UPCOMING"):"AVAILABLE NOW";
-const extra=!unlocked?'<span class="countdown" data-unlock="'+esc(x.start)+'">'+countdown(x.start)+'</span>':"";
+const extra='';
 return '<article class="session schedule-row '+(isCurrent?"is-current ":"")+(unlocked?"":"upcoming")+'"><div class="session-rail">'+window.BMAI_VISUALS.html(x,'session')+'<div class="session-number">'+esc(x.week)+'</div><div class="session-date">'+esc(dateRange(x))+'</div></div><div><div class="session-status">'+status+(isNext&&!isCurrent?" · NEXT":"")+'</div><h3>'+esc(x.title)+'</h3><p>'+esc(x.description)+'</p></div><div class="actions">'+action+extra+'</div></article>'
 }
 function homepage(){
 if(document.body.dataset.pageType!=="home")return;
 const reviewBanner=document.getElementById("bmaiReviewBanner");if(reviewBanner)reviewBanner.hidden=true;
 const cur=current(),nxt=next();
+const heroAction=document.querySelector('[data-current-action]');if(heroAction&&cur){heroAction.href=basePath()+cur.playbook;heroAction.textContent='Continue your current work →';}
+const heroNext=document.querySelector('[data-next-date]');if(heroNext)heroNext.textContent=nxt?'Next class: '+dateRange(nxt):'All scheduled lessons are available.';
 try{const last=localStorage.getItem('bmai:lastPath'),session=S.find(x=>[x.session,x.playbook].includes(last));
- if(last&&session&&isUnlocked(session)){const host=document.querySelector('.bmai-studio-card');if(host&&!host.querySelector('.bmai-resume')){const resume=document.createElement('div');resume.className='bmai-resume';const link=document.createElement('a');link.className='btn secondary';link.href=basePath()+last;link.textContent='RESUME YOUR LAST LESSON →';resume.append(link);host.append(resume);}}
+ if(last&&session&&isUnlocked(session)){const host=document.querySelector('.studio-home-actions');if(host&&!host.querySelector('.bmai-resume')){const resume=document.createElement('div');resume.className='bmai-resume';const link=document.createElement('a');link.className='btn secondary';link.href=basePath()+last;link.textContent='Resume your last lesson →';resume.append(link);host.prepend(resume);}}
 }catch{}
 const title=document.querySelector(".bmai-studio-card h2"),desc=document.querySelector(".bmai-studio-card p.muted"),links=document.querySelectorAll(".bmai-studio-card .btn");
 if(cur&&title){
@@ -506,7 +1210,7 @@ if(stageWrap){stageWrap.innerHTML=stages.map((s,i)=>'<div class="stage '+(cur&&c
 const sched=document.getElementById("bmaiSchedule");
 const listed=S.filter(x=>x.session);
 const unreleased=S.filter(x=>!x.session&&x.id!==nxt?.id);
-if(sched)sched.innerHTML=listed.map(renderCard).join("");
+if(sched){const openWeeks=new Set([...sched.querySelectorAll('details[open]')].map(d=>d.dataset.week));const weeks=[...new Set(listed.map(s=>s.id.match(/week-(\d+)/)[1]))];sched.innerHTML=weeks.map(week=>{const lessons=listed.filter(s=>s.id.startsWith('week-'+week+'-'));const open=openWeeks.has(week)||lessons.some(s=>s.id===cur?.id);return '<details class="bmai-week" data-week="'+week+'"'+(open?' open':'')+'><summary><strong>Week '+week+'</strong><span>'+lessons.length+' '+(lessons.length===1?'lesson':'lessons')+' · '+(lessons.every(isUnlocked)?'Available now':'Scheduled lessons')+'</span></summary><div class="bmai-week-lessons">'+lessons.map(renderCard).join('')+'</div></details>'}).join('');}
 const unreleasedList=document.getElementById("bmaiUnreleasedSessions");if(unreleasedList){const weeks=[...new Set(unreleased.map(x=>x.id.match(/week-(\d+)/)[1]))];unreleasedList.innerHTML=weeks.map(week=>'<article class="studio-unreleased-week"><div class="studio-unreleased-week-head"><h3>Week '+week+'</h3><span>Materials coming soon</span></div>'+unreleased.filter(x=>x.id.startsWith('week-'+week+'-')).map(x=>'<div class="studio-unreleased-day"><span>Day '+x.id.match(/day-(\d+)/)[1]+'</span><time datetime="'+esc(x.start)+'">'+esc(new Intl.DateTimeFormat('en-IN',{day:'numeric',month:'short',timeZone:'Asia/Kolkata'}).format(new Date(x.start)))+' · '+esc(timeParts(x.start))+' IST</time></div>').join('')+'</article>').join('');}
 const unreleasedCount=document.getElementById("bmaiUnreleasedCount");if(unreleasedCount)unreleasedCount.textContent=unreleased.length+" sessions";
 const cd=[...document.querySelectorAll(".countdown")];cd.forEach(el=>el.textContent=countdown(el.dataset.unlock));
@@ -612,7 +1316,7 @@ window.addEventListener('hashchange',revealReferenceAnchor);
 function ready(){
 applyBrandMark();
 accessibility();
-if(lockPage()){window.BMAI_VISUALS.intro();applyPageIdentity();setupMobileHeader();guardLockedLinks();return;}
+if(lockPage()){window.BMAI_VISUALS.intro();applyPageIdentity();setupHeaderActions();setupMobileHeader();guardLockedLinks();return;}
 if(document.body.dataset.pageType==="home"){
  homepage();
  homepageStateId=current()?.id||null;
@@ -623,7 +1327,8 @@ if(document.body.dataset.pageType==="home"){
  },1000)
 }
 if(pageSession())try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
-window.BMAI_VISUALS.intro();enhanceLongText();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();enhanceAvatarFallbacks();setupScrollControls();guardLockedLinks();revealReferenceAnchor();
+window.BMAI_VISUALS.intro();enhanceLongText();progress();window.BMAI_LEARNING?.init();enhanceNextButton();applyPageIdentity();siteUtilities();setupHeaderActions();setupMobileHeader();enhanceAvatarFallbacks();setupScrollControls();guardLockedLinks();revealReferenceAnchor();
+document.addEventListener('bmai:library-change',guardLockedLinks);
 document.querySelectorAll("a").forEach(a=>{if(a.href===location.href)a.setAttribute("aria-current","page")})
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ready);else ready();
@@ -798,22 +1503,26 @@ const init=()=>{
  let filter=()=>{};
  if(library){
   const controls=document.createElement('div');controls.className='bmai-resource-filters';
-  controls.innerHTML='<label>Find a resource<input type="search" placeholder="Tool, shot, prompt or task" aria-label="Find a resource"></label><label>Session<select aria-label="Filter resources by session"><option value="">All sessions</option></select></label><p class="bmai-resource-filter-status" role="status"></p>';
-  const search=controls.querySelector('input'),selectSession=controls.querySelector('select'),status=controls.querySelector('p');
+  controls.innerHTML='<label>Availability<select aria-label="Filter resource availability"><option value="available">Available now</option><option value="all">All scheduled resources</option></select></label><label data-kind-filter>Content type<select aria-label="Filter prompt type"><option value="">Full prompts and practice recipes</option><option value="full">Full prompts</option><option value="recipe">Practice recipes</option></select></label><label data-family-filter>Tool family<select aria-label="Filter tool family"><option value="">All tool families</option></select></label><label>Find a resource<input type="search" placeholder="Tool, shot, prompt or task" aria-label="Find a resource"></label><label>Session<select aria-label="Filter resources by session"><option value="">All sessions</option></select></label><p class="bmai-resource-filter-status" role="status"></p>';
+  const search=controls.querySelector('input'),selectSession=controls.querySelector('select[aria-label="Filter resources by session"]'),status=controls.querySelector('p');
   window.BMAI_SESSIONS.filter(s=>s.session).forEach(s=>{const option=document.createElement('option');option.value=s.id;option.textContent=s.week+' · '+s.title;selectSession.append(option)});
   library.insertAdjacentElement('afterend',controls);
-  filter=()=>{const active=document.querySelector('[data-resource-panel]:not([hidden])');if(!active)return;const cards=[...active.querySelectorAll('.studio-resource-card')],query=search.value.toLowerCase().trim();let count=0;
-   cards.forEach(card=>{const session=card.dataset.resourceSessions||card.dataset.resourceSession||'',matches=(!query||card.textContent.toLowerCase().includes(query))&&(!selectSession.value||session.split(' ').includes(selectSession.value));card.hidden=!matches;if(matches)count++;});
+  const availability=controls.querySelector('[aria-label="Filter resource availability"]'),kind=controls.querySelector('[aria-label="Filter prompt type"]'),family=controls.querySelector('[aria-label="Filter tool family"]');
+  [...new Set([...document.querySelectorAll('[data-tool-family]')].map(c=>c.dataset.toolFamily))].sort().forEach(name=>{const o=document.createElement('option');o.value=name;o.textContent=name;family.append(o)});
+  document.querySelectorAll('.studio-resource-card').forEach(c=>c.dataset.searchText=c.textContent.toLowerCase());
+  [availability,kind,family].forEach(c=>c.addEventListener('change',()=>{filter()}));
+  filter=()=>{const active=document.querySelector('[data-resource-panel]:not([hidden])');if(!active)return;controls.querySelector('[data-kind-filter]').hidden=active.dataset.resourcePanel!=='prompts';controls.querySelector('[data-family-filter]').hidden=active.dataset.resourcePanel!=='tools';const cards=[...active.querySelectorAll('.studio-resource-card')],query=search.value.toLowerCase().trim();let count=0;
+   cards.forEach(card=>{const session=card.dataset.resourceSessions||card.dataset.resourceSession||'',matches=(!query||(card.dataset.searchText||card.textContent.toLowerCase()).includes(query))&&(!selectSession.value||session.split(' ').includes(selectSession.value))&&(availability.value==='all'||!card.dataset.resourceRelease||Date.parse(card.dataset.resourceRelease)<=Date.now())&&(active.dataset.resourcePanel!=='prompts'||!kind.value||card.dataset.resourceKind===kind.value)&&(active.dataset.resourcePanel!=='tools'||!family.value||card.dataset.toolFamily===family.value);card.hidden=!matches;if(matches)count++;});
    status.textContent=count?count+' resources shown.':'No resources match. Try another search or session.';
   };search.addEventListener('input',filter);selectSession.addEventListener('change',filter);filter();
  }
  const select=tab=>{tabs.forEach(b=>{const active=b===tab;b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;document.getElementById(b.getAttribute('aria-controls')).hidden=!active;});filter();};
  tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>select(tab));tab.addEventListener('keydown',e=>{let next;if(e.key==='ArrowRight')next=(i+1)%tabs.length;if(e.key==='ArrowLeft')next=(i+tabs.length-1)%tabs.length;if(e.key==='Home')next=0;if(e.key==='End')next=tabs.length-1;if(next!==undefined){e.preventDefault();select(tabs[next]);tabs[next].focus();}});});
- document.querySelectorAll('[data-copy-prompt]').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(b.parentElement.querySelector('pre').textContent);b.textContent='Copied';setTimeout(()=>b.textContent='Copy prompt',1800);}catch{b.textContent='Select the prompt to copy';}}));
+ document.querySelectorAll('[data-copy-prompt]').forEach(b=>{const status=document.createElement('span');status.className='bmai-copy-status';status.setAttribute('role','status');b.after(status);b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(b.parentElement.querySelector('pre').textContent);b.textContent='Copied';status.textContent='Prompt copied to clipboard.';setTimeout(()=>b.textContent='Copy prompt',1800);}catch{status.textContent='Clipboard unavailable. Select the prompt text and copy it.';}})});
  document.querySelectorAll('[data-resource-checklist]').forEach(group=>{
   const boxes=[...group.querySelectorAll('input')],key='bmai-resource-checklist:'+group.dataset.resourceChecklist;
   const state=window.BMAI_PROGRESS;
-  boxes.forEach(box=>box.dataset.taskKey=state.taskKey(box.closest('label').textContent));
+  boxes.forEach(box=>{const text=box.closest('label').textContent;box.dataset.legacyTaskKey=state.legacyFor(group.dataset.resourceChecklist,text);box.dataset.taskKey=state.keyFor(group.dataset.resourceChecklist,text)});
   const update=()=>{group.parentElement.querySelector('.studio-resource-progress').textContent=boxes.filter(b=>b.checked).length+' / '+boxes.length+' complete';};
   state.bind(boxes,{key:'bmai-tasks:'+group.dataset.resourceChecklist,legacyKey:key,update});
  });
@@ -828,10 +1537,87 @@ const init=()=>{
  });
  const tick=()=>locked.forEach(item=>{
   const left=item.release-Date.now();
-  if(left<=0){if(item.note.isConnected){item.note.remove();item.body.append(...item.content);item.card.classList.remove('studio-resource-locked');}return;}
+  if(left<=0){if(item.note.isConnected){item.note.remove();item.body.append(...item.content);item.card.classList.remove('studio-resource-locked');filter();}return;}
   const seconds=Math.ceil(left/1000);item.note.textContent='Locked until '+new Intl.DateTimeFormat('en-IN',{dateStyle:'medium',timeStyle:'short',timeZone:'Asia/Kolkata'}).format(new Date(item.release))+' IST · Opens in '+Math.floor(seconds/86400)+'d '+Math.floor(seconds%86400/3600)+'h '+Math.floor(seconds%3600/60)+'m '+seconds%60+'s';
  });tick();if(locked.length)setInterval(tick,1000);
+ const resourceId=new URL(location.href).searchParams.get('resource');if(resourceId){const card=document.getElementById(resourceId),panel=card?.closest('[data-resource-panel]');if(panel){const controls=document.querySelector('.bmai-resource-filters');controls.querySelector('[aria-label="Filter resource availability"]').value='all';select(tabs.find(t=>t.getAttribute('aria-controls')===panel.id));card.open=true;card.tabIndex=-1;requestAnimationFrame(()=>{card.scrollIntoView({block:'start'});card.focus({preventScroll:true})});}}
+ document.addEventListener('bmai:library-change',()=>filter());
 
 };
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+
+;
+
+/* prompt-vault.js */
+/* Prompt Vault search, release locks, editable fields and one-click copy. */
+(()=>{
+  'use strict';
+  const page=document.querySelector('[data-vault-sessions]');
+  if(!page)return;
+  const groups=[...page.querySelectorAll('[data-vault-session]')];
+  const cards=[...page.querySelectorAll('.prompt-vault-card')];
+  const buttons=[...document.querySelectorAll('[data-vault-session-button]')];
+  const search=document.querySelector('[data-vault-search]');
+  const kind=document.querySelector('[data-vault-kind]');
+  const results=document.querySelector('[data-vault-results]');
+  const decode=value=>String(value||'').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>');
+  const rendered=card=>{let text=decode(card.dataset.promptTemplate||'');card.querySelectorAll('[data-prompt-field]').forEach(input=>{const key=input.dataset.promptField;if(input.value.trim())text=text.split(key).join(input.value.trim());});return text;};
+  const announce=message=>{let live=document.querySelector('.prompt-vault-live');if(!live){live=document.createElement('p');live.className='prompt-vault-live';live.setAttribute('aria-live','polite');document.querySelector('.prompt-vault-page')?.prepend(live);}live.textContent=message;};
+  const dateLabel=iso=>new Intl.DateTimeFormat('en-IN',{dateStyle:'medium',timeStyle:'short',timeZone:'Asia/Kolkata'}).format(new Date(iso))+' IST';
+  const isLocked=group=>Date.parse(group.dataset.vaultRelease)>Date.now();
+  let selected='';
+
+  function syncLocks(){
+    groups.forEach(group=>{
+      const locked=isLocked(group),body=group.querySelector('[data-vault-session-body]'),notice=group.querySelector('[data-vault-locked]');
+      group.classList.toggle('is-locked',locked);body.hidden=locked;notice.hidden=!locked;
+      if(locked)notice.querySelector('[data-vault-lock-date]').textContent='Opens '+dateLabel(group.dataset.vaultRelease)+'.';
+    });
+    buttons.forEach(button=>{const group=groups.find(item=>item.dataset.vaultSession===button.dataset.vaultSessionButton);const locked=group&&isLocked(group);button.classList.toggle('is-locked',!!locked);button.setAttribute('aria-label',(button.textContent.trim()||'Session')+(locked?' — locked':''));});
+  }
+
+  function updateUrl(){
+    const url=new URL(location.href);if(selected)url.searchParams.set('session',selected);else url.searchParams.delete('session');url.hash='';history.replaceState(null,'',url);
+  }
+
+  function filter({updateHistory=false}={}){
+    const query=search.value.trim().toLowerCase(),type=kind.value;
+    let visible=0,lockedCount=0;
+    groups.forEach(group=>{
+      const locked=isLocked(group),sessionMatch=!selected||selected===group.dataset.vaultSession;
+      if(locked)lockedCount++;
+      let matches=0;
+      group.querySelectorAll('.prompt-vault-card').forEach(card=>{
+        const show=sessionMatch&&!locked&&(!query||(card.dataset.promptSearch||'').includes(query))&&(!type||card.dataset.promptKind===type);
+        card.hidden=!show;if(show){matches++;visible++;}
+      });
+      group.querySelectorAll('[data-vault-kind-section]').forEach(section=>{section.hidden=!locked&&![...section.querySelectorAll('.prompt-vault-card')].some(card=>!card.hidden);});
+      const groupSearch=!query||group.querySelector('.prompt-vault-session-head').textContent.toLowerCase().includes(query);
+      group.hidden=!sessionMatch||(!locked&&matches===0)||(locked&&!groupSearch);
+    });
+    buttons.forEach(button=>{const active=button.dataset.vaultSessionButton===selected;button.setAttribute('aria-selected',String(active));button.tabIndex=active?0:-1;});
+    results.textContent=`${visible} prompt${visible===1?'':'s'} shown${selected?' for this session':''}. ${lockedCount} session${lockedCount===1?' is':'s are'} still locked.`;
+    if(updateHistory)updateUrl();
+  }
+
+  cards.forEach(card=>{
+    const pre=card.querySelector('[data-prompt-text]');
+    card.querySelectorAll('[data-prompt-field]').forEach(input=>input.addEventListener('input',()=>{if(pre)pre.textContent=rendered(card);}));
+    card.querySelector('[data-prompt-copy]')?.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(rendered(card));announce('Prompt copied to your clipboard.');}catch{const area=document.createElement('textarea');area.value=rendered(card);document.body.append(area);area.select();document.execCommand('copy');area.remove();announce('Prompt copied to your clipboard.');}});
+    card.querySelector('[data-prompt-reset]')?.addEventListener('click',()=>{card.querySelectorAll('[data-prompt-field]').forEach(input=>input.value='');if(pre)pre.textContent=decode(card.dataset.promptTemplate||'');announce('Prompt fields reset.');});
+  });
+
+  buttons.forEach(button=>button.addEventListener('click',()=>{selected=button.dataset.vaultSessionButton;search.value='';kind.value='';filter({updateHistory:true});document.querySelector(`[data-vault-session="${selected}"]`)?.scrollIntoView({block:'start',behavior:'smooth'});}));
+  search.addEventListener('input',()=>filter());kind.addEventListener('change',()=>filter());
+  document.querySelector('[data-vault-clear]')?.addEventListener('click',()=>{selected='';search.value='';kind.value='';filter({updateHistory:true});search.focus();});
+  document.querySelectorAll('[data-vault-scroll]').forEach(button=>button.addEventListener('click',()=>document.querySelector('[data-vault-session-tabs]').scrollBy({left:Number(button.dataset.vaultScroll)*360,behavior:'smooth'})));
+
+  syncLocks();
+  const target=location.hash?document.getElementById(decodeURIComponent(location.hash.slice(1))):null;
+  const requested=new URL(location.href).searchParams.get('session');
+  selected=target?.closest('[data-vault-session]')?.dataset.vaultSession||((requested&&groups.some(group=>group.dataset.vaultSession===requested))?requested:'');
+  filter();
+  if(target){const group=target.closest('[data-vault-session]');const destination=isLocked(group)?group.querySelector('[data-vault-locked]'):target;if(!isLocked(group))target.querySelector('details')?.setAttribute('open','');requestAnimationFrame(()=>{destination.scrollIntoView({block:'center'});if(!isLocked(group)){target.tabIndex=-1;target.focus({preventScroll:true});}});}
+  setInterval(()=>{const before=groups.map(isLocked).join(',');syncLocks();const after=groups.map(isLocked).join(',');if(before!==after)filter();},1000);
 })();

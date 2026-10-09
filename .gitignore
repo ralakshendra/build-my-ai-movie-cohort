@@ -4,3 +4,5 @@ qa/cohesion-results.json
 qa/qa/
 qa/report/
 test-results/
+qa/.scratch/
+tmp/

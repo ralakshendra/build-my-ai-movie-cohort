@@ -115,8 +115,8 @@
       "question": "Your generated hero looks different in each shot. What should you check first?",
       "options": [
         "Confirm that each video generation has the correct character sheet assigned as its reference",
-        "Add more unrelated visual details to every prompt",
-        "Remove the character reference so the model has more freedom"
+        "Revise the motion prompt while leaving reference assignments unchanged",
+        "Select the most similar take before checking which character sheet was assigned"
       ],
       "correct": 0,
       "explanation": "The lesson stresses assigning the correct character sheet as a reference for consistency."
@@ -124,29 +124,29 @@
     {
       "question": "Your location sheet mostly shows scenery and the building is hard to recognize. What is the useful adjustment?",
       "options": [
-        "Refine the composition so the building is the focus",
-        "Add more background objects",
-        "Use unrelated location photos"
+        "Crop the video later while keeping the same unfocused location sheet",
+        "Increase reference detail before deciding which building should dominate",
+        "Refine the composition so the building is the focus"
       ],
-      "correct": 0,
+      "correct": 2,
       "explanation": "The instructor suggests refining the focus when background content dominates."
     },
     {
       "question": "You want to use the demonstrated reference-led video workflow. Which inputs fit it?",
       "options": [
+        "An unreferenced clip from another film",
         "Text plus assigned character and location references",
-        "A start frame and end frame only",
-        "An unreferenced clip from another film"
+        "A start frame and end frame only"
       ],
-      "correct": 0,
+      "correct": 1,
       "explanation": "The demonstrated method is text-with-reference and does not use start/end frames."
     },
     {
       "question": "The first take is close but not ideal. How can you get editorial choices?",
       "options": [
         "Repeat the same prompt to generate alternate takes",
-        "Force the first take into the final edit",
-        "Change the hero identity for every take"
+        "Rewrite the character description for every alternate take",
+        "Lengthen the generation before testing another take"
       ],
       "correct": 0,
       "explanation": "The lesson demonstrates repeating a prompt to create varied takes for editing."
@@ -154,11 +154,11 @@
     {
       "question": "Your hero title has a solid black rectangle that covers the footage. What step should you take?",
       "options": [
-        "Remove the plain background and prepare a transparent PNG",
-        "Shrink the title until it is unreadable",
-        "Place the title below the footage"
+        "Use an opacity fade on the black rectangle without removing it",
+        "Blend the entire title image into the footage without a transparent export",
+        "Remove the plain background and prepare a transparent PNG"
       ],
-      "correct": 0,
+      "correct": 2,
       "explanation": "The title workflow uses a plain background that is removed to create a transparent overlay."
     }
   ],

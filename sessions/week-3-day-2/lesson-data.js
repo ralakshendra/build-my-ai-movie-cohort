@@ -8,7 +8,36 @@ window.BMAI_LESSON={
   "prerequisites": "Bring several well-lit photos of yourself from different angles and decide on an original hero identity and costume direction. Keep raw personal photos private and do not post them in the cohort group.",
   "estimatedEffort": "The live session is scheduled for 20:00–22:00 IST. The source does not specify additional homework time.",
   "submission": "Submit the finished teaser in the cohort group by the end of the session day. You may also share a finished public version on Instagram or Facebook. Share the finished teaser only, do not post raw personal reference photos. Use audio you own or have permission to publish.",
-  "homework": "https://docs.google.com/document/d/1zj1OojpdpC8YHMYHqF2JPAvrJA78rckstWRN6wxr-MU/edit",
+  "homework": [
+    {
+      "title": "Build the character and costume",
+      "prompt": "Choose an original hero name and personality, gather several clear photos from different angles, then use the demonstrated image workflow to build and refine a stable landscape character sheet. Keep the raw personal references private. Review: The face, costume, emblem, materials, and color palette read consistently across the useful character views."
+    },
+    {
+      "title": "Design the hero base",
+      "prompt": "Collect reference photos of one real building or place from multiple angles. Generate a matching base/location sheet. If the background overwhelms the hero setting, simplify the composition and refocus on the building. Review: The images represent the same recognizable location from coherent angles, with the architecture legible and useful as a teaser setting."
+    },
+    {
+      "title": "Create title artwork",
+      "prompt": "Use the character sheet as a reference to create a hero title/emblem that fits the costume. Start against a plain black background, then remove that background to make a transparent PNG for editing. Review: The hero name is readable, the lettering/emblem suits the costume, and the exported title asset has a clean transparent background."
+    },
+    {
+      "title": "Generate the A-roll",
+      "prompt": "Generate teaser shots with text plus assigned character and location references, following the reference workflow from class. Do not use start/end frames for this method. Try an establishing view, hero reveal, and hero action. Repeat a prompt for alternate takes when useful. Review: The generated takes preserve the assigned hero and location, communicate a clear sequence of teaser moments, and give you usable alternatives for the edit."
+    },
+    {
+      "title": "Add B-roll and sound",
+      "prompt": "Create supporting details such as title animation or a close-up on the hero at the rooftop/base. Keep the shot shape consistent with the rest of the teaser. Review generated sound effects and do not rely on generated music as the background score. Review: Supporting shots add detail without breaking visual continuity. Sound effects are intentional and the edit has a deliberate audio choice."
+    },
+    {
+      "title": "Edit in Filmora",
+      "prompt": "Save your Filmora project. Import and arrange the best A-roll and B-roll in a clear sequence, place the transparent title above the footage, remove black gaps, and align sound effects and publishable music to the picture. Review: The saved timeline has a clear reveal, legible title, intentional cuts, complete picture, and balanced sound."
+    },
+    {
+      "title": "Export, review, and share",
+      "prompt": "Export using the settings available in your workflow. Open the exported file, watch it from first frame to last, correct any issue, then submit the finished teaser to the cohort group by the end of the session day. Review: The exported teaser plays through cleanly and the submitted item is the finished video rather than raw personal references."
+    }
+  ],
   "tools": [
     {
       "name": "Google Flow",
@@ -84,8 +113,8 @@ window.BMAI_LESSON={
       "question": "Your generated hero looks different in each shot. What should you check first?",
       "options": [
         "Confirm that each video generation has the correct character sheet assigned as its reference",
-        "Add more unrelated visual details to every prompt",
-        "Remove the character reference so the model has more freedom"
+        "Revise the motion prompt while leaving reference assignments unchanged",
+        "Select the most similar take before checking which character sheet was assigned"
       ],
       "correct": 0,
       "explanation": "The lesson stresses assigning the correct character sheet as a reference for consistency."
@@ -93,29 +122,29 @@ window.BMAI_LESSON={
     {
       "question": "Your location sheet mostly shows scenery and the building is hard to recognize. What is the useful adjustment?",
       "options": [
-        "Refine the composition so the building is the focus",
-        "Add more background objects",
-        "Use unrelated location photos"
+        "Crop the video later while keeping the same unfocused location sheet",
+        "Increase reference detail before deciding which building should dominate",
+        "Refine the composition so the building is the focus"
       ],
-      "correct": 0,
+      "correct": 2,
       "explanation": "The instructor suggests refining the focus when background content dominates."
     },
     {
       "question": "You want to use the demonstrated reference-led video workflow. Which inputs fit it?",
       "options": [
+        "An unreferenced clip from another film",
         "Text plus assigned character and location references",
-        "A start frame and end frame only",
-        "An unreferenced clip from another film"
+        "A start frame and end frame only"
       ],
-      "correct": 0,
+      "correct": 1,
       "explanation": "The demonstrated method is text-with-reference and does not use start/end frames."
     },
     {
       "question": "The first take is close but not ideal. How can you get editorial choices?",
       "options": [
         "Repeat the same prompt to generate alternate takes",
-        "Force the first take into the final edit",
-        "Change the hero identity for every take"
+        "Rewrite the character description for every alternate take",
+        "Lengthen the generation before testing another take"
       ],
       "correct": 0,
       "explanation": "The lesson demonstrates repeating a prompt to create varied takes for editing."
@@ -123,15 +152,16 @@ window.BMAI_LESSON={
     {
       "question": "Your hero title has a solid black rectangle that covers the footage. What step should you take?",
       "options": [
-        "Remove the plain background and prepare a transparent PNG",
-        "Shrink the title until it is unreadable",
-        "Place the title below the footage"
+        "Use an opacity fade on the black rectangle without removing it",
+        "Blend the entire title image into the footage without a transparent export",
+        "Remove the plain background and prepare a transparent PNG"
       ],
-      "correct": 0,
+      "correct": 2,
       "explanation": "The title workflow uses a plain background that is removed to create a transparent overlay."
     }
   ],
   "hero": "assets/illustrations/short.svg",
   "lessonHero": "assets/week-3-day-2-hero-v2.webp",
-  "projectUrl": "https://canva.link/gw5yg0lc7wdlm87"
+  "projectUrl": "https://canva.link/gw5yg0lc7wdlm87",
+  "homeworkUrl": "https://docs.google.com/document/d/1zj1OojpdpC8YHMYHqF2JPAvrJA78rckstWRN6wxr-MU/edit"
 };

@@ -42,6 +42,7 @@ function dateRange(x){const start=dateParts(x.start).replace(/ /g,"\u00a0"),time
 function countdown(iso){let d=new Date(iso).getTime()-now();if(d<=0)return"AVAILABLE NOW";const days=Math.floor(d/86400000);d%=86400000;const h=Math.floor(d/3600000);d%=3600000;const m=Math.floor(d/60000);d%=60000;const s=Math.floor(d/1000);return(days?days+"d ":"")+String(h).padStart(2,"0")+"h "+String(m).padStart(2,"0")+"m "+String(s).padStart(2,"0")+"s"}
 function sessionUrl(x){return x.session?basePath()+x.session:null}
 function lockPage(){
+if(document.body.dataset.pageType&&document.body.dataset.pageType.startsWith('prompt-vault'))return false;
 const x=pageSession();if(!x)return false;
 if(isUnlocked(x))return false;
 const hub=basePath()+"index.html";
@@ -79,6 +80,24 @@ function enhanceLongText(){
 }
 function applyPageIdentity(){
  document.documentElement.dataset.bmaiPage=document.body.dataset.pageId||"hub";
+}
+function setupHeaderActions(){
+ const icon=(name)=>{
+  const common='aria-hidden="true" class="bmai-header-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"';
+  if(/session|guide/i.test(name))return `<svg ${common}><rect x="3" y="5" width="18" height="15" rx="3"/><path d="M3 10h18M7 5l4 5m3-5 4 5m-8 3 5 3-5 3z"/></svg>`;
+  if(/playbook/i.test(name))return `<svg ${common}><path d="M12 6c-3-2-6-2-9-1v14c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1zM12 6v14"/></svg>`;
+  if(/homework/i.test(name))return `<svg ${common}><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2m-7 8 3 3 5-6"/></svg>`;
+  if(/prompt|vault/i.test(name))return `<svg ${common}><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="12" r="4"/><path d="M12 8v8m-4-4h8"/></svg>`;
+  if(/resource|tool/i.test(name))return `<svg ${common}><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v3M3 12h18m-9 0v3"/></svg>`;
+  return `<svg ${common}><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-5"/></svg>`;
+ };
+ document.querySelectorAll('.bmai-global-header :is(.nav-links,.bmai-session-top-actions) a').forEach(a=>{
+  a.classList.add('bmai-header-action');
+  const label=(a.textContent||'').trim();
+  const existing=a.querySelector('svg');
+  if(existing){existing.classList.add('bmai-header-action-icon');return}
+  a.insertAdjacentHTML('afterbegin',icon(label));
+ });
 }
 function setupMobileHeader(){
 document.querySelectorAll("header .studio-nav,header .nav,.topbar .nav,.top .nav").forEach((nav,index)=>{
@@ -123,13 +142,14 @@ const mainBoxes=[...document.querySelectorAll('#checklist input[type="checkbox"]
 boxes.forEach(b=>{const text=b.getAttribute('aria-label')||b.closest('label')?.textContent||b.parentElement.textContent;
  if(!b.closest('label')&&!b.hasAttribute('aria-label'))b.setAttribute('aria-label',text.trim());
  const spec=window.BMAI_LESSON||(typeof sessionData!=='undefined'?sessionData:null),index=Number(b.dataset.index);
- b.dataset.taskKey=state.taskKey(b.hasAttribute('data-index')&&spec?.checklist?.[index]?spec.checklist[index]:text);
+ const criterion=b.hasAttribute('data-index')&&spec?.checklist?.[index]?spec.checklist[index]:text;
+ b.dataset.legacyTaskKey=state.legacyFor(session,criterion);b.dataset.taskKey=state.keyFor(session,criterion);
 });
 function update(){const primary=mainBoxes.length?mainBoxes:boxes,done=primary.filter(b=>b.checked).length,pct=Math.round(done/primary.length*100);
 document.querySelectorAll('.bmai-progress-value,#progressNumber').forEach(el=>el.textContent=pct+'%');
 document.querySelectorAll('.bmai-progress-fill,#progressFill').forEach(el=>el.style.width=pct+'%');
-const text=document.getElementById('progressText');if(text)text.textContent=done===primary.length?'All homework checkpoints complete.':'Keep going. '+(primary.length-done)+' checkpoints left.';
-const status=document.getElementById('homeworkStatus');if(status)status.textContent=done===primary.length?'Complete':done+' / '+primary.length+' checkpoints';
+const text=document.getElementById('progressText');if(text)text.textContent=done===primary.length?'All self-review checkpoints complete. Record and share your work using the homework instructions.':(primary.length-done)+' self-review checkpoints left.';
+const status=document.getElementById('homeworkStatus');if(status)status.textContent=done+' / '+primary.length+' checkpoints';
 primary.forEach(b=>b.closest('label')?.classList.toggle('done',b.checked));
 const guideFill=document.getElementById('pb')||document.getElementById('prog'),guideText=document.getElementById('pt');if(guideFill)guideFill.style.width=pct+'%';if(guideText)guideText.textContent=done+' of '+primary.length+' tasks done';
 }
@@ -140,18 +160,20 @@ const guideKey=({'sessions/week-2-day-1/index.html':'w2d1-session','sessions/wee
 function renderCard(x){
 const cur=current(),unlocked=isUnlocked(x),isCurrent=cur&&cur.id===x.id,isNext=next()&&next().id===x.id;
 let action;
-if(x.session)action='<a class="btn '+(unlocked?"":"secondary")+'" href="'+esc(sessionUrl(x))+'">'+(unlocked?"OPEN SESSION":"VIEW LOCKED PAGE")+'</a>';
+if(x.session){const badge=unlocked?'':'<span class="bmai-availability">Locked · Opens '+esc(dateRange(x))+'</span>';action=badge+'<a class="btn '+(unlocked?"":"secondary")+'" href="'+esc(sessionUrl(x))+'">'+(unlocked?'Session guide':'View locked lesson')+'</a>'+(unlocked&&x.playbook?'<a class="btn secondary" href="'+esc(basePath()+x.playbook)+'">Playbook</a><a class="btn secondary" href="'+esc(basePath()+x.playbook)+'#share">Homework</a>':'');}
 else action='<span class="lock-label">'+(unlocked?"CONTENT COMING SOON":"CONTENT NOT RELEASED")+'</span>';
 const status=isCurrent?"CURRENT SESSION":!x.session?"UNRELEASED":new Date(x.start).getTime()>now()?(unlocked?"REVIEW OPEN":"UPCOMING"):"AVAILABLE NOW";
-const extra=!unlocked?'<span class="countdown" data-unlock="'+esc(x.start)+'">'+countdown(x.start)+'</span>':"";
+const extra='';
 return '<article class="session schedule-row '+(isCurrent?"is-current ":"")+(unlocked?"":"upcoming")+'"><div class="session-rail">'+window.BMAI_VISUALS.html(x,'session')+'<div class="session-number">'+esc(x.week)+'</div><div class="session-date">'+esc(dateRange(x))+'</div></div><div><div class="session-status">'+status+(isNext&&!isCurrent?" · NEXT":"")+'</div><h3>'+esc(x.title)+'</h3><p>'+esc(x.description)+'</p></div><div class="actions">'+action+extra+'</div></article>'
 }
 function homepage(){
 if(document.body.dataset.pageType!=="home")return;
 const reviewBanner=document.getElementById("bmaiReviewBanner");if(reviewBanner)reviewBanner.hidden=true;
 const cur=current(),nxt=next();
+const heroAction=document.querySelector('[data-current-action]');if(heroAction&&cur){heroAction.href=basePath()+cur.playbook;heroAction.textContent='Continue your current work →';}
+const heroNext=document.querySelector('[data-next-date]');if(heroNext)heroNext.textContent=nxt?'Next class: '+dateRange(nxt):'All scheduled lessons are available.';
 try{const last=localStorage.getItem('bmai:lastPath'),session=S.find(x=>[x.session,x.playbook].includes(last));
- if(last&&session&&isUnlocked(session)){const host=document.querySelector('.bmai-studio-card');if(host&&!host.querySelector('.bmai-resume')){const resume=document.createElement('div');resume.className='bmai-resume';const link=document.createElement('a');link.className='btn secondary';link.href=basePath()+last;link.textContent='RESUME YOUR LAST LESSON →';resume.append(link);host.append(resume);}}
+ if(last&&session&&isUnlocked(session)){const host=document.querySelector('.studio-home-actions');if(host&&!host.querySelector('.bmai-resume')){const resume=document.createElement('div');resume.className='bmai-resume';const link=document.createElement('a');link.className='btn secondary';link.href=basePath()+last;link.textContent='Resume your last lesson →';resume.append(link);host.prepend(resume);}}
 }catch{}
 const title=document.querySelector(".bmai-studio-card h2"),desc=document.querySelector(".bmai-studio-card p.muted"),links=document.querySelectorAll(".bmai-studio-card .btn");
 if(cur&&title){
@@ -169,7 +191,7 @@ if(stageWrap){stageWrap.innerHTML=stages.map((s,i)=>'<div class="stage '+(cur&&c
 const sched=document.getElementById("bmaiSchedule");
 const listed=S.filter(x=>x.session);
 const unreleased=S.filter(x=>!x.session&&x.id!==nxt?.id);
-if(sched)sched.innerHTML=listed.map(renderCard).join("");
+if(sched){const openWeeks=new Set([...sched.querySelectorAll('details[open]')].map(d=>d.dataset.week));const weeks=[...new Set(listed.map(s=>s.id.match(/week-(\d+)/)[1]))];sched.innerHTML=weeks.map(week=>{const lessons=listed.filter(s=>s.id.startsWith('week-'+week+'-'));const open=openWeeks.has(week)||lessons.some(s=>s.id===cur?.id);return '<details class="bmai-week" data-week="'+week+'"'+(open?' open':'')+'><summary><strong>Week '+week+'</strong><span>'+lessons.length+' '+(lessons.length===1?'lesson':'lessons')+' · '+(lessons.every(isUnlocked)?'Available now':'Scheduled lessons')+'</span></summary><div class="bmai-week-lessons">'+lessons.map(renderCard).join('')+'</div></details>'}).join('');}
 const unreleasedList=document.getElementById("bmaiUnreleasedSessions");if(unreleasedList){const weeks=[...new Set(unreleased.map(x=>x.id.match(/week-(\d+)/)[1]))];unreleasedList.innerHTML=weeks.map(week=>'<article class="studio-unreleased-week"><div class="studio-unreleased-week-head"><h3>Week '+week+'</h3><span>Materials coming soon</span></div>'+unreleased.filter(x=>x.id.startsWith('week-'+week+'-')).map(x=>'<div class="studio-unreleased-day"><span>Day '+x.id.match(/day-(\d+)/)[1]+'</span><time datetime="'+esc(x.start)+'">'+esc(new Intl.DateTimeFormat('en-IN',{day:'numeric',month:'short',timeZone:'Asia/Kolkata'}).format(new Date(x.start)))+' · '+esc(timeParts(x.start))+' IST</time></div>').join('')+'</article>').join('');}
 const unreleasedCount=document.getElementById("bmaiUnreleasedCount");if(unreleasedCount)unreleasedCount.textContent=unreleased.length+" sessions";
 const cd=[...document.querySelectorAll(".countdown")];cd.forEach(el=>el.textContent=countdown(el.dataset.unlock));
@@ -275,7 +297,7 @@ window.addEventListener('hashchange',revealReferenceAnchor);
 function ready(){
 applyBrandMark();
 accessibility();
-if(lockPage()){window.BMAI_VISUALS.intro();applyPageIdentity();setupMobileHeader();guardLockedLinks();return;}
+if(lockPage()){window.BMAI_VISUALS.intro();applyPageIdentity();setupHeaderActions();setupMobileHeader();guardLockedLinks();return;}
 if(document.body.dataset.pageType==="home"){
  homepage();
  homepageStateId=current()?.id||null;
@@ -286,7 +308,8 @@ if(document.body.dataset.pageType==="home"){
  },1000)
 }
 if(pageSession())try{localStorage.setItem("bmai:lastPath",page)}catch(e){}
-window.BMAI_VISUALS.intro();enhanceLongText();progress();enhanceNextButton();applyPageIdentity();siteUtilities();setupMobileHeader();enhanceAvatarFallbacks();setupScrollControls();guardLockedLinks();revealReferenceAnchor();
+window.BMAI_VISUALS.intro();enhanceLongText();progress();window.BMAI_LEARNING?.init();enhanceNextButton();applyPageIdentity();siteUtilities();setupHeaderActions();setupMobileHeader();enhanceAvatarFallbacks();setupScrollControls();guardLockedLinks();revealReferenceAnchor();
+document.addEventListener('bmai:library-change',guardLockedLinks);
 document.querySelectorAll("a").forEach(a=>{if(a.href===location.href)a.setAttribute("aria-current","page")})
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ready);else ready();

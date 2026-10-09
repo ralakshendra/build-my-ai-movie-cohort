@@ -29,19 +29,12 @@ function addMissingCards(section,type){
  });
 }
 function library(){
- decorateCards();
- document.querySelectorAll('#playbooks,#homework').forEach(section=>addMissingCards(section,section.id==='homework'?'homework':'playbook'));
- decorateCards();
  document.querySelectorAll('#playbooks,#homework').forEach(section=>{
-  const cards=[...section.querySelectorAll('article.card')],sessions=window.BMAI_SESSIONS.filter(s=>cards.some(c=>c.dataset.sessionId===s.id));if(!sessions.length)return;
-  const controls=document.createElement('div');controls.className='bmai-session-picker';
-  const existing=section.querySelector('.bmai-session-picker');if(existing){const select=existing.querySelector('select');sessions.forEach(s=>{const option=select.querySelector('option[value="'+s.id+'"]');if(option)option.textContent=s.week+' · '+s.title+(Date.parse(s.start)>Date.now()?' (locked)':'');});if(select.value===existing.dataset.defaultSelection){select.value='all';select.dispatchEvent(new Event('change'));}existing.dataset.defaultSelection='all';return;}
-  const label=document.createElement('label'),select=document.createElement('select'),status=document.createElement('p');label.textContent='Choose a session';select.setAttribute('aria-label','Choose '+(section.id==='homework'?'homework':'playbook')+' session');status.setAttribute('role','status');
-  const all=document.createElement('option');all.value='all';all.textContent='All sessions';select.append(all);
-  sessions.forEach(s=>{const option=document.createElement('option');option.value=s.id;option.textContent=s.week+' · '+s.title+(Date.parse(s.start)>Date.now()?' (locked)':'');select.append(option)});
-  select.value='all';controls.dataset.defaultSelection='all';label.append(select);controls.append(label,status);cards[0].parentElement.insertAdjacentElement('beforebegin',controls);
-  const update=()=>{let count=0;cards.forEach(card=>{card.hidden=select.value!=='all'&&card.dataset.sessionId!==select.value;if(!card.hidden)count++;});status.textContent=select.value==='all'?'Showing all '+cards.length+' '+(section.id==='homework'?'homework assignments':'playbooks')+'.':count+' of '+cards.length+' '+(section.id==='homework'?'homework assignments':'playbooks')+' shown. Select All sessions for the full library.';};
-  select.addEventListener('change',update);update();
+  const type=section.id==='homework'?'homework':'playbook',sessions=window.BMAI_SESSIONS.filter(s=>s.session&&s.playbook),grid=section.querySelector('.grid');if(!grid)return;
+  let controls=section.querySelector('.bmai-session-picker');if(!controls){controls=document.createElement('div');controls.className='bmai-session-picker';controls.innerHTML='<label>Choose a session<select aria-label="Choose '+type+' session"></select></label><p role="status"></p>';grid.before(controls);const select=controls.querySelector('select');sessions.forEach(s=>{const o=document.createElement('option');o.value=s.id;select.append(o)});select.value=sessions.filter(s=>Date.parse(s.start)<=Date.now()).at(-1)?.id||sessions[0].id;select.addEventListener('change',update);}
+  const select=controls.querySelector('select');
+  function update(){sessions.forEach(s=>{select.querySelector('option[value="'+s.id+'"]').textContent=s.week+' · '+s.title+(Date.parse(s.start)>Date.now()?' (locked)':'')});const s=sessions.find(s=>s.id===select.value)||sessions[0],locked=Date.parse(s.start)>Date.now(),date=new Intl.DateTimeFormat('en-IN',{dateStyle:'medium',timeStyle:'short',timeZone:'Asia/Kolkata'}).format(new Date(s.start)),href=s.playbook+(type==='homework'?'#share':'');grid.innerHTML='<article class="card bmai-selection-card" data-session-id="'+s.id+'"><div class="tag">'+escape(s.week)+' · '+type.toUpperCase()+'</div><h3>'+escape(s.title)+'</h3><p>'+escape(s.description)+'</p>'+(locked?'<p class="bmai-availability">Locked · Opens '+escape(date)+' IST</p>':'')+'<div class="actions"><a class="btn '+(locked?'secondary':'')+'" href="'+new URL(href,root).href+'">'+(locked?'View locked lesson':type==='homework'?'Open playbook homework':'Open playbook')+'</a></div></article>';controls.querySelector('p').textContent=locked?'This lesson is scheduled and remains locked.':'Available now. '+(type==='homework'?'Homework submission is separate from browser checkpoints.':'Follow the tasks, then review your output.');document.dispatchEvent(new Event('bmai:library-change'));}
+  update();
  });
 }
 function intro(){

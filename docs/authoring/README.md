@@ -1,21 +1,22 @@
 # New session authoring kit
 
-Use this kit whenever a new class is added or an existing class is revised. It covers **two website pages and one native Google Docs homework document**.
+Use this kit whenever a new class is added or an existing class is revised. It covers **a session guide, playbook, Prompt Vault and one native Google Docs homework document**.
 
 | Deliverable | Student purpose | Destination |
 | --- | --- | --- |
 | Session guide | Understand the lesson, demonstrations, decisions and common failures | `sessions/<session-id>/index.html` |
 | Playbook | Do the work, review outputs, practise decisions and track progress | `sessions/<session-id>/playbook.html` |
+| Prompt Vault | Copy, adapt and troubleshoot the session prompts | `sessions/<session-id>/prompt-vault.html` |
 | Homework Google Doc | Record answers, asset links, proof, reflection and submission | The verified official Google Doc |
 
-Student navigation is **Session → Playbook → Homework Google Doc**. Session guides link to the playbook at the beginning and end. Only playbooks link directly to the Homework Doc, near the beginning and the submission area. Homepage assignment cards also lead to the playbook. Do not create an HTML homework worksheet or another student page.
+Student navigation is **Session → Playbook → Prompt Vault → Homework Google Doc**. Session guides and playbooks link to the Prompt Vault. Each Prompt Vault follows the session release lock and provides one-click copying, editable bracket fields, official prompts, practice recipes and a troubleshooting template. The canonical Homework Doc includes its session Prompt Vault link. Do not create an HTML homework worksheet.
 
 ## Start here
 
 1. Read [AGENTS.md](../../AGENTS.md). Current explicit user instructions take precedence; preserve official source facts and links.
 2. Fill [SESSION_BRIEF.md](templates/SESSION_BRIEF.md) with the new lesson's material.
 3. Paste [MASTER_NEW_SESSION_PROMPT.md](MASTER_NEW_SESSION_PROMPT.md) into the authoring task with the completed brief and source files.
-4. Use the supporting specifications below while building all three deliverables.
+4. Use the supporting specifications below while building the four connected deliverables.
 5. Complete [CONTENT_REVIEW_CHECKLIST.md](templates/CONTENT_REVIEW_CHECKLIST.md) and hand over the actual pages and native Doc for review.
 
 For a narrower task, use the relevant prompt in [COPYABLE_PROMPTS.md](COPYABLE_PROMPTS.md). Those prompts also work for a revision without creating a new lesson.
@@ -51,7 +52,7 @@ An older lesson is a design reference. Its dates, task counts, claims, tool sett
 
 ## Standard workflow
 
-**Inspect → extract sources → define one outcome → prepare homework → build the pair → register resources → review → authorized release.**
+**Inspect → extract sources → define one outcome → prepare homework → build the guide/playbook/Prompt Vault → register resources → review → authorized release.**
 
 Use the shared generator for an unregistered lesson ID. An already registered future placeholder requires deliberate handling: the current generator refuses any existing schedule ID. Follow the procedure in [RESOURCE_AND_RELEASE_GUIDE.md](RESOURCE_AND_RELEASE_GUIDE.md), preserving the registered dates and identity.
 

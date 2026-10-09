@@ -1,0 +1,623 @@
+/* Generated from content/task-identities.json. */
+window.BMAI_TASK_IDENTITIES={
+  "week-1-day-2": [
+    {
+      "id": "checkpoint-1vjz12u",
+      "text": "I selected a clear channel category or niche.",
+      "legacyKey": "1vjz12u"
+    },
+    {
+      "id": "checkpoint-h2taje",
+      "text": "I researched viral channels in the category.",
+      "legacyKey": "h2taje"
+    },
+    {
+      "id": "checkpoint-4jy3wa",
+      "text": "I checked proof-of-concept signals such as recently sold channels where relevant.",
+      "legacyKey": "4jy3wa"
+    },
+    {
+      "id": "checkpoint-19mm5aa",
+      "text": "I copied the God prompt into Google Docs and edited its variables.",
+      "legacyKey": "19mm5aa"
+    },
+    {
+      "id": "checkpoint-125lw52",
+      "text": "I ran the research in Kimi.",
+      "legacyKey": "125lw52"
+    },
+    {
+      "id": "checkpoint-g5gjn2",
+      "text": "I reviewed Section A of the research report.",
+      "legacyKey": "g5gjn2"
+    },
+    {
+      "id": "checkpoint-4zxzqi",
+      "text": "I finalized one channel name.",
+      "legacyKey": "4zxzqi"
+    },
+    {
+      "id": "checkpoint-1376dh3",
+      "text": "I captured the unique value proposition, tagline and mission statement.",
+      "legacyKey": "1376dh3"
+    },
+    {
+      "id": "checkpoint-1kokr1o",
+      "text": "I created a channel profile picture using the Section B inputs.",
+      "legacyKey": "1kokr1o"
+    },
+    {
+      "id": "checkpoint-wzr2bv",
+      "text": "I created a YouTube channel banner in Canva.",
+      "legacyKey": "wzr2bv"
+    },
+    {
+      "id": "checkpoint-10hwwpz",
+      "text": "I am ready to move toward launching the channel.",
+      "legacyKey": "10hwwpz"
+    }
+  ],
+  "week-2-day-1": [
+    {
+      "id": "checkpoint-1j77pss",
+      "text": "I completed the Day 1 Shot / Frame Breakdown.",
+      "legacyKey": "1j77pss"
+    },
+    {
+      "id": "checkpoint-1teaygw",
+      "text": "I recorded my Generation Tool(s) and Character / Visual Consistency Notes.",
+      "legacyKey": "1teaygw"
+    },
+    {
+      "id": "checkpoint-1o2osk",
+      "text": "I tracked the clips or frames I generated and updated the Combined Video Status.",
+      "legacyKey": "1o2osk"
+    },
+    {
+      "id": "checkpoint-1vuit2e",
+      "text": "I generated at least one usable shot from a frame and prompt.",
+      "legacyKey": "1vuit2e"
+    },
+    {
+      "id": "checkpoint-aim9ql",
+      "text": "I know how to use the frame workflow in Flow.",
+      "legacyKey": "aim9ql"
+    },
+    {
+      "id": "checkpoint-x1wmx6",
+      "text": "I created or prepared a voiceover for my shot.",
+      "legacyKey": "x1wmx6"
+    },
+    {
+      "id": "checkpoint-1bj5mhk",
+      "text": "I created a first draft of my timeline.",
+      "legacyKey": "1bj5mhk"
+    },
+    {
+      "id": "checkpoint-1eqce4c",
+      "text": "I published my shot for today.",
+      "legacyKey": "1eqce4c"
+    },
+    {
+      "id": "checkpoint-1v0gz4y",
+      "text": "I have a plan to publish one shot every day for the next seven days.",
+      "legacyKey": "1v0gz4y"
+    },
+    {
+      "id": "checkpoint-1fedwny",
+      "text": "I will observe the winners and use them to guide my next shots.",
+      "legacyKey": "1fedwny"
+    }
+  ],
+  "week-2-day-2": [
+    {
+      "id": "checkpoint-19dv6ly",
+      "text": "I completed the remaining image practice from Day 2.",
+      "legacyKey": "19dv6ly"
+    },
+    {
+      "id": "checkpoint-1u3uuls",
+      "text": "I generated the aerial coconut-farm shot.",
+      "legacyKey": "1u3uuls"
+    },
+    {
+      "id": "checkpoint-rbo40v",
+      "text": "I generated the close-up coconut bunch shot.",
+      "legacyKey": "rbo40v"
+    },
+    {
+      "id": "checkpoint-fjwkts",
+      "text": "I generated the coconut falling shot.",
+      "legacyKey": "fjwkts"
+    },
+    {
+      "id": "checkpoint-mxhaxg",
+      "text": "I completed the other required frames and posted them in the group.",
+      "legacyKey": "mxhaxg"
+    },
+    {
+      "id": "checkpoint-gndd6g",
+      "text": "I created at least one image-to-video shot from a strong frame.",
+      "legacyKey": "gndd6g"
+    },
+    {
+      "id": "checkpoint-1njiodj",
+      "text": "I used Start and End Frame Animation only when the frames had a meaningful visual relationship.",
+      "legacyKey": "1njiodj"
+    },
+    {
+      "id": "checkpoint-13qf7r2",
+      "text": "I used start-frame-only when an end frame would create an unrelated transition.",
+      "legacyKey": "13qf7r2"
+    },
+    {
+      "id": "checkpoint-1lfg2vv",
+      "text": "I checked continuity, movement and product consistency in my generated clips.",
+      "legacyKey": "1lfg2vv"
+    },
+    {
+      "id": "checkpoint-1q35tmc",
+      "text": "I selected keepers before spending credits on higher-quality output.",
+      "legacyKey": "1q35tmc"
+    }
+  ],
+  "week-3-day-1": [
+    {
+      "id": "checkpoint-wrvlhm",
+      "text": "I selected and prepared useful character references.",
+      "legacyKey": "wrvlhm"
+    },
+    {
+      "id": "checkpoint-uv6pfw",
+      "text": "I created a character sheet in Flow.",
+      "legacyKey": "uv6pfw"
+    },
+    {
+      "id": "checkpoint-58kjdk",
+      "text": "I fixed or documented any face-consistency issue.",
+      "legacyKey": "58kjdk"
+    },
+    {
+      "id": "checkpoint-zds7xe",
+      "text": "I generated and selected a brand colour palette in Gemini.",
+      "legacyKey": "zds7xe"
+    },
+    {
+      "id": "checkpoint-1r85r9f",
+      "text": "I created a mood board in Flow.",
+      "legacyKey": "1r85r9f"
+    },
+    {
+      "id": "checkpoint-1gbkbw4",
+      "text": "I attached the character sheet and mood board to the screenplay workflow.",
+      "legacyKey": "1gbkbw4"
+    },
+    {
+      "id": "checkpoint-1w4yy3q",
+      "text": "I generated and reviewed the screenplay.",
+      "legacyKey": "1w4yy3q"
+    },
+    {
+      "id": "checkpoint-ysefsd",
+      "text": "I converted the screenplay into a structured shot shortlist.",
+      "legacyKey": "ysefsd"
+    },
+    {
+      "id": "checkpoint-580cp0",
+      "text": "I organized the assets and project documents for continued production.",
+      "legacyKey": "580cp0"
+    },
+    {
+      "id": "checkpoint-1qtlfoh",
+      "text": "I understand the three-failure rule and when to change the generation approach.",
+      "legacyKey": "1qtlfoh"
+    }
+  ],
+  "week-3-day-2": [
+    {
+      "id": "checkpoint-1ejxn5c",
+      "text": "Hero face and costume remain recognizable across the character sheet and chosen shots.",
+      "legacyKey": "1ejxn5c"
+    },
+    {
+      "id": "checkpoint-6vy0qw",
+      "text": "Raw personal reference photos are kept out of cohort-group submissions.",
+      "legacyKey": "6vy0qw"
+    },
+    {
+      "id": "checkpoint-w170ws",
+      "text": "The hero base reads as one coherent, recognizable location.",
+      "legacyKey": "w170ws"
+    },
+    {
+      "id": "checkpoint-utb8no",
+      "text": "Title artwork is legible and has a clean transparent background.",
+      "legacyKey": "utb8no"
+    },
+    {
+      "id": "checkpoint-z5tf9e",
+      "text": "The edit includes a purposeful establishing moment, reveal, and action beat where available.",
+      "legacyKey": "z5tf9e"
+    },
+    {
+      "id": "checkpoint-hb4vc1",
+      "text": "Chosen supporting shots fit the hero and location continuity.",
+      "legacyKey": "hb4vc1"
+    },
+    {
+      "id": "checkpoint-hthn6a",
+      "text": "The project is saved and the exported teaser plays with intentional title and audio choices.",
+      "legacyKey": "hthn6a"
+    },
+    {
+      "id": "checkpoint-1a2l61s",
+      "text": "Only the finished teaser is submitted, and public audio is owned or licensed for use.",
+      "legacyKey": "1a2l61s"
+    }
+  ],
+  "week-4-day-1": [
+    {
+      "id": "checkpoint-1axe724",
+      "text": "Character face, costume and anatomy remain consistent across the approved reference sheet.",
+      "legacyKey": "1axe724"
+    },
+    {
+      "id": "checkpoint-13sdz0d",
+      "text": "Architecture references describe one recognizable location from useful angles.",
+      "legacyKey": "13sdz0d"
+    },
+    {
+      "id": "checkpoint-1uqhz60",
+      "text": "Title asset is readable and exported as a clean transparent PNG.",
+      "legacyKey": "1uqhz60"
+    },
+    {
+      "id": "checkpoint-1uuq1zs",
+      "text": "A-roll keeps the intended hero and location across the selected moments.",
+      "legacyKey": "1uuq1zs"
+    },
+    {
+      "id": "checkpoint-1vt6cl9",
+      "text": "Every B-roll shot supports a specific editing need.",
+      "legacyKey": "1vt6cl9"
+    },
+    {
+      "id": "checkpoint-hmuo62",
+      "text": "The saved 16:9 timeline has a clear reveal, clean cuts and intentional sound.",
+      "legacyKey": "hmuo62"
+    },
+    {
+      "id": "checkpoint-buqu3r",
+      "text": "The exported teaser plays from beginning to end and only finished media is submitted.",
+      "legacyKey": "buqu3r"
+    }
+  ],
+  "week-4-day-2": [
+    {
+      "id": "checkpoint-1d3ukat",
+      "text": "The approved phone references show the correct model, camera geometry, ports and proportions.",
+      "legacyKey": "1d3ukat"
+    },
+    {
+      "id": "checkpoint-pzteha",
+      "text": "The selected still frames preserve the same phone and camera layout across the shot list.",
+      "legacyKey": "pzteha"
+    },
+    {
+      "id": "checkpoint-1gitk9g",
+      "text": "Motion clips use the demonstrated start-frame, end-frame or start-only method for each shot.",
+      "legacyKey": "1gitk9g"
+    },
+    {
+      "id": "checkpoint-1y0m6rv",
+      "text": "The cut uses no more than five core shots and remains ten seconds before any optional outro.",
+      "legacyKey": "1y0m6rv"
+    },
+    {
+      "id": "checkpoint-1nc2pn1",
+      "text": "The edit uses clean cuts and only purposeful speed changes, music and sound effects.",
+      "legacyKey": "1nc2pn1"
+    },
+    {
+      "id": "checkpoint-gksq6z",
+      "text": "The exported file plays from beginning to end with consistent colour, geometry and synchronized sound.",
+      "legacyKey": "gksq6z"
+    },
+    {
+      "id": "checkpoint-4qgxtj",
+      "text": "The saved Homework record contains the final film link and supporting production proof.",
+      "legacyKey": "4qgxtj"
+    }
+  ],
+  "week-5-day-1": [
+    {
+      "id": "checkpoint-8l1gzr",
+      "text": "The team selected and can link the property reference images used.",
+      "legacyKey": "8l1gzr"
+    },
+    {
+      "id": "checkpoint-13xjh5v",
+      "text": "The generated stills and motion clips keep the property recognizable and its architecture stable.",
+      "legacyKey": "13xjh5v"
+    },
+    {
+      "id": "checkpoint-1x19lcb",
+      "text": "Image-to-video movement is purposeful; the team fixed or removed shots with visible warping or unusable transitions.",
+      "legacyKey": "1x19lcb"
+    },
+    {
+      "id": "checkpoint-rs76lb",
+      "text": "The Filmora edit forms one clear walkthrough with music and avoids unnecessary beauty-shot filler.",
+      "legacyKey": "rs76lb"
+    },
+    {
+      "id": "checkpoint-mk8916",
+      "text": "The team produced one final video that is about one minute or less.",
+      "legacyKey": "mk8916"
+    }
+  ],
+  "week-5-day-2": [
+    {
+      "id": "checkpoint-1paus2n",
+      "text": "The screenplay follows the assigned story and is approved before shot listing.",
+      "legacyKey": "1paus2n"
+    },
+    {
+      "id": "checkpoint-171vk87",
+      "text": "Every shot has a clear visual action and camera choice.",
+      "legacyKey": "171vk87"
+    },
+    {
+      "id": "checkpoint-v2t1qc",
+      "text": "Lighting and color stay consistent across the production sheet.",
+      "legacyKey": "v2t1qc"
+    },
+    {
+      "id": "checkpoint-1clmrgv",
+      "text": "Main characters and important props have references where needed.",
+      "legacyKey": "1clmrgv"
+    },
+    {
+      "id": "checkpoint-lzlu0",
+      "text": "Image-generation and video-generation leads reviewed the plan together.",
+      "legacyKey": "lzlu0"
+    },
+    {
+      "id": "checkpoint-1guypyx",
+      "text": "Dialogue and voiceover are planned without relying on long monologues.",
+      "legacyKey": "1guypyx"
+    }
+  ],
+  "week-6-day-1": [
+    {
+      "id": "checkpoint-17wct35",
+      "text": "I confirmed my team and the film/topic assigned to us.",
+      "legacyKey": "17wct35"
+    },
+    {
+      "id": "checkpoint-1le4u2f",
+      "text": "I listed only the characters that appear in our assigned film.",
+      "legacyKey": "1le4u2f"
+    },
+    {
+      "id": "checkpoint-32fp2",
+      "text": "I used the supplied face and costume references when revising character sheets.",
+      "legacyKey": "32fp2"
+    },
+    {
+      "id": "checkpoint-1iaowcd",
+      "text": "The character sheets include consistent views and useful expressions.",
+      "legacyKey": "1iaowcd"
+    },
+    {
+      "id": "checkpoint-cjztvb",
+      "text": "I checked the Mahabharatha Project (BMAM) sheet and shot list for story-critical props.",
+      "legacyKey": "cjztvb"
+    },
+    {
+      "id": "checkpoint-19r1jvo",
+      "text": "Each prop reference is tied to a character or scene, and unknown details are marked for review.",
+      "legacyKey": "19r1jvo"
+    },
+    {
+      "id": "checkpoint-w28sca",
+      "text": "I recorded a visible mismatch before revising an image or clip.",
+      "legacyKey": "w28sca"
+    },
+    {
+      "id": "checkpoint-1kta6ss",
+      "text": "I compared the selected generation with the supplied references.",
+      "legacyKey": "1kta6ss"
+    },
+    {
+      "id": "checkpoint-yj1dw5",
+      "text": "I checked scale, anatomy, movement, and continuity before approving motion.",
+      "legacyKey": "yj1dw5"
+    },
+    {
+      "id": "checkpoint-e65ltz",
+      "text": "I shared the approved sheets, versions, open issues, and next owner with the team.",
+      "legacyKey": "e65ltz"
+    },
+    {
+      "id": "checkpoint-f68c44",
+      "text": "I kept the Mahabharata treatment respectful and avoided spoof framing.",
+      "legacyKey": "f68c44"
+    }
+  ],
+  "week-6-day-2": [
+    {
+      "id": "checkpoint-wsygel",
+      "text": "One named character is saved and selected for reuse.",
+      "legacyKey": "wsygel"
+    },
+    {
+      "id": "checkpoint-1xnuqlj",
+      "text": "The 9:16 product-in-hand frame keeps character, packaging, and label details consistent.",
+      "legacyKey": "1xnuqlj"
+    },
+    {
+      "id": "checkpoint-9pr89",
+      "text": "The A-roll uses the approved dialogue, audio, and product image as its start frame only.",
+      "legacyKey": "9pr89"
+    },
+    {
+      "id": "checkpoint-14g8zp3",
+      "text": "The spoken claims are verified and authorized; face, teeth, hands, and product contact look stable.",
+      "legacyKey": "14g8zp3"
+    },
+    {
+      "id": "checkpoint-zrelup",
+      "text": "B-roll adds useful product detail and keeps the product and lighting consistent.",
+      "legacyKey": "zrelup"
+    },
+    {
+      "id": "checkpoint-7e07kv",
+      "text": "The 9:16 edit has clear dialogue, restrained transitions, useful audio, and a reviewed export.",
+      "legacyKey": "7e07kv"
+    }
+  ],
+  "week-7-day-1": [
+    {
+      "id": "checkpoint-dnli2i",
+      "text": "I prepared a clean portrait from my previous multi-angle photos and checked the likeness.",
+      "legacyKey": "dnli2i"
+    },
+    {
+      "id": "checkpoint-1ejyh81",
+      "text": "I used a new Flow project and selected Nano Banana Pro for the uploaded character image.",
+      "legacyKey": "1ejyh81"
+    },
+    {
+      "id": "checkpoint-1ofjtpi",
+      "text": "I added a template voice to the Flow character and previewed its sample dialogue.",
+      "legacyKey": "1ofjtpi"
+    },
+    {
+      "id": "checkpoint-x24e9",
+      "text": "I tagged the saved character and checked the Agent scene breakdown before generation.",
+      "legacyKey": "x24e9"
+    },
+    {
+      "id": "checkpoint-1l2mkp1",
+      "text": "I reviewed the Agent model, aspect ratio, variation count, approval setting, and credit request.",
+      "legacyKey": "1l2mkp1"
+    },
+    {
+      "id": "checkpoint-17nahs8",
+      "text": "I completed the video avatar consent and identity verification steps for my own likeness.",
+      "legacyKey": "17nahs8"
+    },
+    {
+      "id": "checkpoint-zz1fux",
+      "text": "I reviewed identity, voice, dialogue, lip movement, framing, and generated text in both tests.",
+      "legacyKey": "zz1fux"
+    },
+    {
+      "id": "checkpoint-mz3akf",
+      "text": "I recorded the result links, comparison, first fix, and portfolio next step in the Homework Doc.",
+      "legacyKey": "mz3akf"
+    }
+  ],
+  "week-7-day-2": [
+    {
+      "id": "checkpoint-4jcn4r",
+      "text": "I chose a builder and tailored the master prompt to my actual portfolio.",
+      "legacyKey": "4jcn4r"
+    },
+    {
+      "id": "checkpoint-1ndrbk3",
+      "text": "I reviewed the proposed pages and interactions before generating the site.",
+      "legacyKey": "1ndrbk3"
+    },
+    {
+      "id": "checkpoint-1slb3i",
+      "text": "I replaced the available project, profile, video, and service placeholders with accurate material.",
+      "legacyKey": "1slb3i"
+    },
+    {
+      "id": "checkpoint-obevsz",
+      "text": "I checked navigation, project filtering, video playback, and the requested interactions.",
+      "legacyKey": "obevsz"
+    },
+    {
+      "id": "checkpoint-csq5hn",
+      "text": "I reviewed the desktop and mobile layouts and recorded anything unavailable or broken.",
+      "legacyKey": "csq5hn"
+    },
+    {
+      "id": "checkpoint-id2f2l",
+      "text": "I saved the preview or published link and my first grouped revision priorities in the Homework Doc.",
+      "legacyKey": "id2f2l"
+    }
+  ],
+  "week-8-day-1": [
+    {
+      "id": "checkpoint-99ggq5",
+      "text": "I chose a four-wheel vehicle and gathered same-colour references from useful angles.",
+      "legacyKey": "99ggq5"
+    },
+    {
+      "id": "checkpoint-t3ecya",
+      "text": "I checked that the vehicle's distinguishing body details remain consistent in my generated images.",
+      "legacyKey": "t3ecya"
+    },
+    {
+      "id": "checkpoint-6seqnv",
+      "text": "I planned an ordered set of advertisement shots with a clear camera move for each.",
+      "legacyKey": "6seqnv"
+    },
+    {
+      "id": "checkpoint-lsfavb",
+      "text": "I used start and end frames only when they show a coherent continuation of the same vehicle and scene.",
+      "legacyKey": "lsfavb"
+    },
+    {
+      "id": "checkpoint-1jngz0t",
+      "text": "I reviewed vehicle identity, camera path, wheel rotation, background motion, and road or water behavior in each clip.",
+      "legacyKey": "1jngz0t"
+    },
+    {
+      "id": "checkpoint-1ea5pqm",
+      "text": "I assembled a linked advertisement draft and recorded one issue and the first next fix in the Homework Doc.",
+      "legacyKey": "1ea5pqm"
+    }
+  ],
+  "week-8-day-2": [
+    {
+      "id": "checkpoint-n2ka0p",
+      "text": "I chose one transformation and identified the base clip or frame.",
+      "legacyKey": "n2ka0p"
+    },
+    {
+      "id": "checkpoint-310ty9",
+      "text": "I wrote what must change and what should remain stable in the shot.",
+      "legacyKey": "310ty9"
+    },
+    {
+      "id": "checkpoint-5t7qvd",
+      "text": "I prepared and labelled the reference assets required by the selected workflow.",
+      "legacyKey": "5t7qvd"
+    },
+    {
+      "id": "checkpoint-4fvzad",
+      "text": "I selected a source-backed method and attached the intended video, image, prop, character or background references.",
+      "legacyKey": "4fvzad"
+    },
+    {
+      "id": "checkpoint-4kii65",
+      "text": "I reviewed the generated clip for subject identity, scene continuity, camera, timing, lighting and motion drift.",
+      "legacyKey": "4kii65"
+    },
+    {
+      "id": "checkpoint-w4y3fi",
+      "text": "I saved the selected output and its source/reference links in the official Homework Doc.",
+      "legacyKey": "w4y3fi"
+    },
+    {
+      "id": "checkpoint-hg1a0v",
+      "text": "I recorded one observed problem and a first correction that addresses it.",
+      "legacyKey": "hg1a0v"
+    }
+  ]
+};

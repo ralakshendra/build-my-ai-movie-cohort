@@ -38,7 +38,7 @@ For new scaffold lessons, maintain `content/<id>.json` and the corresponding `wi
 
 Older playbooks use `sessionData.homework[].prompt` and `sessionData.checklist`. Update those existing sources deliberately; do not introduce a second lesson data object or page-specific persistence engine.
 
-Shared checklist identities come from the canonical checklist text. Use matching `data-index` values on the primary checklist. Reordering unchanged tasks should retain their completion; a materially changed criterion may represent a new task. Preserve storage keys and migration behavior, and do not clear a student's saved progress to make a screenshot look clean.
+Shared checklist identities are recorded in `content/task-identities.json`. For a wording-only revision, update the matching record's `text` while preserving its `id` and `legacyKey`. A materially changed criterion needs a new identity. The resource build registers new criteria. Use matching `data-index` values on the primary checklist, preserve storage keys and migration behavior, and do not clear a student's saved progress to make a screenshot look clean.
 
 The main percentage must count the primary production checklist, not optional exercises or quiz radio controls. Each companion should target its real checklist or scope.
 
@@ -92,3 +92,11 @@ Required avatar states: untouched = idea; wrong = caution; correct = thumbs-up; 
 - Keep complete official prompts separate from answers and practice recipes. Provide useful filenames/organization only where supplied or clearly presented as optional advice.
 
 Review restored progress, resource checklist sharing, wrong/correct/complete skill feedback, answer changes, keyboard tips, prompt copying, mobile layout and the actual Homework Doc destination.
+
+## Shared student review aids
+
+The shared learning module organizes existing task facts into Prepare, Goal, Deliver and Check fields and puts First fix / Next in a disclosure. Keep the complete facts in authored source for extraction and attribution. Essential actions and deliverables remain visible.
+
+Worked decisions reuse existing quiz questions, options and explanations and are labelled as practice aids. They do not imply an instructor-approved generated example exists. Distinguish official examples from editorial practice.
+
+Browser checkpoints and skill practice are self-review; they do not confirm submission. The shared backup controls export and restore local checkpoint state, not Google Doc answers. Preserve the device-only explanation and canonical homework handoff.

@@ -52,7 +52,7 @@ def page_label(relative):
 
 
 def review_page():
-    excluded = {'qa', 'templates', 'node_modules', 'test-results', 'dist'}
+    excluded = {'qa', 'templates', 'node_modules', 'test-results', 'dist', 'tmp'}
     pages = []
     for file in root.rglob('*.html'):
         relative = file.relative_to(root)

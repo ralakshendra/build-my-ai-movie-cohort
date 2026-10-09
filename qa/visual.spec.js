@@ -2,28 +2,7 @@ const { test, devices, expect } = require('playwright/test');
 
 const BASE = process.env.BMAI_BASE_URL || 'https://build-my-ai-movie-cohort.pages.dev/';
 
-const pages = [
-  ['not-found', '404.html'],
-  ['home', 'index.html'],
-  ['playbook', 'playbook.html'],
-  ['resource', 'resources/ai-faceless-youtube-masterclass.html'],
-  ['w2d1', 'sessions/week-2-day-1/index.html'],
-  ['w2d1-playbook', 'sessions/week-2-day-1/playbook.html'],
-  ['w2d2', 'sessions/week-2-day-2/index.html'],
-  ['w2d2-playbook', 'sessions/week-2-day-2/playbook.html'],
-  ['w3d1', 'sessions/week-3-day-1/index.html'],
-  ['w3d1-playbook', 'sessions/week-3-day-1/playbook.html'],
-  ['w3d2', 'sessions/week-3-day-2/index.html'],
-  ['w3d2-playbook', 'sessions/week-3-day-2/playbook.html'],
-  ['w4d1', 'sessions/week-4-day-1/index.html'],
-  ['w4d1-playbook', 'sessions/week-4-day-1/playbook.html'],
-  ['w4d2', 'sessions/week-4-day-2/index.html'],
-  ['w4d2-playbook', 'sessions/week-4-day-2/playbook.html'],
-  ['w5d1', 'sessions/week-5-day-1/index.html'],
-  ['w5d1-playbook', 'sessions/week-5-day-1/playbook.html'],
-  ['w7d1', 'sessions/week-7-day-1/index.html'],
-  ['w7d1-playbook', 'sessions/week-7-day-1/playbook.html'],
-];
+const pages = require('../scripts/public-pages.cjs')().map(file=>[file.replaceAll('/','-').replace('.html',''),file]);
 
 async function auditPage(page, label, viewportWidth) {
   await page.waitForLoadState('networkidle');
@@ -114,25 +93,25 @@ for (const [label, path] of pages) {
   test(label + ' narrow mobile 320px', async ({browser}) => {
     const context = await browser.newContext({...devices['iPhone 13'], viewport:{width:320,height:740}});
     const page = await context.newPage();
-    await page.goto(new URL(path, BASE).href, {waitUntil:'domcontentloaded'});
+    await page.goto(new URL('__review__/'+path, BASE).href, {waitUntil:'domcontentloaded'});
     await auditPage(page, label + '-320', 320);
     await context.close();
   });
   test(label + ' mobile 390px', async ({browser}) => {
     const context = await browser.newContext({...devices['iPhone 13'], viewport:{width:390,height:844}});
     const page = await context.newPage();
-    await page.goto(new URL(path, BASE).href, {waitUntil:'domcontentloaded'});
+    await page.goto(new URL('__review__/'+path, BASE).href, {waitUntil:'domcontentloaded'});
     await auditPage(page, label, 390);
     await context.close();
   });
   test(label + ' tablet 820px', async ({page}) => {
     await page.setViewportSize({width:820,height:1180});
-    await page.goto(new URL(path, BASE).href, {waitUntil:'domcontentloaded'});
+    await page.goto(new URL('__review__/'+path, BASE).href, {waitUntil:'domcontentloaded'});
     await auditPage(page, label, 820);
   });
   test(label + ' desktop 1440px', async ({page}) => {
     await page.setViewportSize({width:1440,height:900});
-    await page.goto(new URL(path, BASE).href, {waitUntil:'domcontentloaded'});
+    await page.goto(new URL('__review__/'+path, BASE).href, {waitUntil:'domcontentloaded'});
     await auditPage(page, label, 1440);
   });
 }

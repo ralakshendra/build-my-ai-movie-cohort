@@ -1,16 +1,17 @@
 # Future lesson creation: maintained entry point
 
-Read [AGENTS.md](../AGENTS.md), then use the [new session authoring kit](authoring/README.md). The kit governs **two website pages and one native Google Docs homework document**:
+Read [AGENTS.md](../AGENTS.md), then use the [new session authoring kit](authoring/README.md). The kit governs **a session guide, playbook, Prompt Vault and one native Google Docs homework document**:
 
 1. Session guide: teach the workflow and link to the playbook.
-2. Playbook: support practice, skill checks and progress; link to the official Homework Doc.
-3. Native Homework Doc: capture answers, assets, review and submission.
+2. Playbook: support practice, skill checks and progress; link to the official Homework Doc and Prompt Vault.
+3. Prompt Vault: provide source-backed prompts, practice recipes and troubleshooting prompts with editable fields and one-click copying.
+4. Native Homework Doc: capture answers, assets, review and submission, with a link to the session Prompt Vault.
 
 ## Create the next lesson
 
 - Fill the [current session brief](authoring/templates/SESSION_BRIEF.md) from official source material.
 - Copy the [master new-session prompt](authoring/MASTER_NEW_SESSION_PROMPT.md) with the completed brief and sources.
-- Follow the brand, guide, playbook, homework, avatar and resource/release specifications in the kit.
+- Follow the brand, guide, playbook, Prompt Vault, homework, avatar and resource/release specifications in the kit.
 - Use [focused prompts](authoring/COPYABLE_PROMPTS.md) for a narrower task or revision.
 - Complete the [content review checklist](authoring/templates/CONTENT_REVIEW_CHECKLIST.md) for the actual revision.
 

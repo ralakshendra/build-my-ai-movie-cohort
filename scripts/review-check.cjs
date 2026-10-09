@@ -6,7 +6,7 @@ const url=new URL(base);
 assert(['127.0.0.1','localhost'].includes(url.hostname),'Review QA must use the local preview server');
 const review=new URL('__review__/',base).href;
 const walk=dir=>fs.readdirSync(dir,{withFileTypes:true}).flatMap(entry=>entry.isDirectory()?walk(path.join(dir,entry.name)):[path.join(dir,entry.name)]);
-const pages=walk(root).filter(file=>file.endsWith('.html')&&!/(^|[\\/])(qa|templates|node_modules|test-results|dist)[\\/]/.test(path.relative(root,file))&&!file.endsWith('hero-approval.html')).map(file=>path.relative(root,file).replaceAll('\\','/'));
+const pages=require('./public-pages.cjs')();
 const schedule=vm.runInNewContext(fs.readFileSync(path.join(root,'library/schedule.js'),'utf8')+';window.BMAI_SESSIONS',{window:{}},{timeout:1000});
 const earliest=Math.min(...schedule.filter(session=>session.session).map(session=>Date.parse(session.start)));
 

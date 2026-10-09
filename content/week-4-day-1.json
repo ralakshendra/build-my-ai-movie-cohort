@@ -122,8 +122,8 @@
       "question": "The character sheet has a distorted face, but you are ready to generate video. What should you do?",
       "options": [
         "Fix the still reference first, then continue to video",
-        "Generate more video variations to hide the distortion",
-        "Add more unrelated references to the video prompt"
+        "Try a wider motion shot using the same distorted face reference",
+        "Choose a short moving take before repairing the reference sheet"
       ],
       "correct": 0,
       "explanation": "The class workflow checks and repairs the reference sheet before spending motion credits."
@@ -131,29 +131,29 @@
     {
       "question": "Which setup matches the demonstrated A-roll workflow?",
       "options": [
-        "OpenArt Video with Text with reference, Seedance 2.0, and the correct hero and location references",
         "Flow text-to-video without references",
-        "A still-image workflow with unrelated visual anchors"
+        "A still-image workflow with unrelated visual anchors",
+        "OpenArt Video with Text with reference, Seedance 2.0, and the correct hero and location references"
       ],
-      "correct": 0,
+      "correct": 2,
       "explanation": "The guide identifies OpenArt Text with reference and Seedance 2.0 for A-roll."
     },
     {
       "question": "A generated B-roll clip includes sound that fights the edit. What is the useful move?",
       "options": [
+        "Keep the generated audio and reduce the music throughout the teaser",
         "Turn generated audio off unless the shot benefits from it",
-        "Keep it because every generated clip needs audio",
-        "Raise the clip volume to match the music"
+        "Lower all generated audio equally without reviewing its purpose"
       ],
-      "correct": 0,
+      "correct": 1,
       "explanation": "The lesson says to keep B-roll audio off when it is not useful."
     },
     {
       "question": "The teaser feels like a stack of full generations rather than a reveal. What should you change?",
       "options": [
         "Cut inside the generations, keep convincing seconds, and shape a rising sequence",
-        "Place every full generation back to back",
-        "Add more unrelated shots before the title"
+        "Preserve the entire best generation before building the reveal",
+        "Order full clips by generation time and smooth the joins with dissolves"
       ],
       "correct": 0,
       "explanation": "The editing lesson treats generations as raw material and the edit as the place where the reveal is shaped."

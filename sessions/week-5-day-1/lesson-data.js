@@ -112,8 +112,8 @@ window.BMAI_LESSON={
       "question": "A selected property image downloads as WebP and your next tool will not accept it. What should you do first?",
       "options": [
         "Convert it to PNG or JPEG and verify the saved file opens",
-        "Take a low-resolution screenshot and continue",
-        "Replace the property with an unrelated image"
+        "Rename the WebP extension to PNG without converting the image",
+        "Compress the WebP further before testing the supported formats"
       ],
       "correct": 0,
       "explanation": "The instructor demonstrated using a Chrome image-conversion extension so the reference can be saved as a supported PNG or JPEG before generation."
@@ -121,21 +121,21 @@ window.BMAI_LESSON={
     {
       "question": "When is a start frame by itself enough for image-to-video?",
       "options": [
-        "When the planned camera move does not need a specific destination frame",
         "Only when the image is a rough sketch",
-        "Never; every shot requires a start and end frame"
+        "Never; every shot requires a start and end frame",
+        "When the planned camera move does not need a specific destination frame"
       ],
-      "correct": 0,
+      "correct": 2,
       "explanation": "The class allowed both start-only and start-plus-end-frame animation. The shot’s intended movement determines which setup is useful."
     },
     {
       "question": "A generated camera move passes through a solid wall. What is the best first response?",
       "options": [
+        "Crop the current clip first without checking the architectural path",
         "Simplify or redirect the move through open space, then test again",
-        "Hide the mistake under more music",
-        "Add more beauty shots so viewers notice it less"
+        "Slow the same path while retaining the wall crossing"
       ],
-      "correct": 0,
+      "correct": 1,
       "explanation": "The supplied FPV structure explicitly keeps the camera in open spaces. Fixing the path protects architectural continuity before more credits are spent."
     },
     {
