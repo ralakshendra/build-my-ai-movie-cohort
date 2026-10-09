@@ -44,8 +44,8 @@ Every public HTML page must contain the following statically, even before runtim
 - `lang="en"`, character encoding and responsive viewport metadata.
 - A descriptive title, description, canonical URL, sharing metadata and brand favicon.
 - Unique `data-page-id`, `data-page-key`, correct `data-page-type`, and `data-session-id` on lesson pages.
-- The shared `.bmai-global-header`, `.bmai-session-brand`, brand mark and `.bmai-header-home` control with a home SVG and `aria-label="Back to Home"`.
-- Header actions use bold, high-contrast labels with one small descriptive icon. Keep Home first, then preserve the page's existing action destinations. The homepage order is Home, Sessions, Playbooks, Homework, Prompt Vault and Resources. The universal Prompt Vault uses Home, Sessions, Playbooks, Homework and Resources, omitting its current-page Prompt Vault action.
+- The shared `.bmai-global-header`, `.bmai-session-brand`, brand mark and `.bmai-header-home` control with a home SVG and an accessible Home label.
+- Header actions use bold, high-contrast labels with one small descriptive icon. Place Home inside the action group immediately before its first text action. The homepage order is Home, Sessions, Playbooks, Homework, Prompt Vault and Resources. The universal Prompt Vault uses Home, Sessions, Playbooks, Homework and Resources, omitting its current-page Prompt Vault action.
 - A `.bmai-skip-link` targeting the single `main#main-content`.
 - One clear H1, orderly heading levels, and the shared footer with the exact credit above.
 - `brand.css`, `library/components.css` and deferred `library/site.js`.
