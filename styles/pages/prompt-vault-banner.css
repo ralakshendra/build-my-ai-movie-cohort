@@ -27,12 +27,14 @@
   inset: 0;
   z-index: -1;
   border-radius: inherit;
-  background: linear-gradient(90deg, rgba(5,5,5,.94), rgba(5,5,5,.78) 33%, rgba(5,5,5,.25) 58%, transparent 76%);
+  background: linear-gradient(90deg, rgba(5,5,5,.97), rgba(5,5,5,.91) 33%, rgba(5,5,5,.65) 45%, rgba(5,5,5,.18) 60%, transparent 76%);
 }
-.prompt-vault-banner-copy { max-width: 480px; }
+.prompt-vault-banner-copy { max-width: 500px; }
 .prompt-vault-banner .kicker { color: var(--bm-orange-light); }
 .prompt-vault-banner h1 { font-size: clamp(50px,6.7vw,88px); max-width: 7ch; margin: 18px 0 24px; }
-.prompt-vault-banner .lead { font-size: 19px; line-height: 1.6; color: var(--bm-text); max-width: 34ch; }
+.prompt-vault-banner .lead { font-size: 19px; line-height: 1.55; color: var(--bm-text) !important; max-width: 40ch; text-shadow: 0 2px 10px #000; }
+.prompt-vault-banner .lead .prompt-vault-tagline { display: block; margin-top: 12px; }
+.prompt-vault-banner .lead .prompt-vault-phrase { white-space: nowrap; }
 .prompt-vault-banner .prompt-vault-summary { gap: 10px 16px; margin: 28px 0 0; }
 .prompt-vault-banner .prompt-vault-summary span { padding: 0; border: 0; border-radius: 0; background: none; font-size: 12px; color: var(--bm-text); }
 .prompt-vault-banner .prompt-vault-summary strong { display: block; font-size: 27px; color: var(--bm-orange-light); }
@@ -40,7 +42,7 @@
 @media (max-width: 1000px) and (min-width: 701px) {
   .prompt-vault-banner { min-height: 580px; padding: 40px 28px; }
   .prompt-vault-banner-copy { max-width: 370px; }
-  .prompt-vault-banner .lead { font-size: 17px; max-width: 28ch; }
+  .prompt-vault-banner .lead { font-size: 17px; max-width: none; }
 }
 @media (max-width: 700px) {
   .prompt-vault-banner { display: flex; flex-direction: column; align-items: stretch; min-height: 0; padding: 0; margin-top: 22px; }
