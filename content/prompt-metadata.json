@@ -1,0 +1,42 @@
+{
+  "prompt-vault-week-1-day-2-01-keep-the-spoken-story-natural": {
+    "title": "YouTube channel research — God Prompt",
+    "fields": [
+      {
+        "token": "{NICHE}",
+        "label": "Niche"
+      },
+      {
+        "token": "{PRIMARY_AUDIENCE}",
+        "label": "Primary audience"
+      },
+      {
+        "token": "{LANGUAGE}",
+        "label": "Language"
+      },
+      {
+        "token": "{BRAND_NAME}",
+        "label": "Brand name"
+      },
+      {
+        "token": "{CONSTRAINTS}",
+        "label": "Constraints"
+      },
+      {
+        "token": "{LAUNCH_DATE}",
+        "label": "Launch date"
+      }
+    ]
+  },
+  "prompt-vault-week-1-day-2-02-keep-the-spoken-story-natural": {
+    "title": "Viral Short → scene-by-scene JSON prompt",
+    "fields": [
+      {
+        "token": "[character action]",
+        "label": "Character action",
+        "format": "json-string",
+        "multiline": true
+      }
+    ]
+  }
+}

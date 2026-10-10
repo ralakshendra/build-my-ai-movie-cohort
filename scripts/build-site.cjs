@@ -2,7 +2,7 @@ const identityFs=require('fs');identityFs.writeFileSync(require('path').join(__d
 const fs=require('fs'),path=require('path');const root=path.resolve(__dirname,'..');
 const read=p=>fs.readFileSync(path.join(root,p),'utf8').replace(/\r\n/g,'\n');
 fs.writeFileSync(path.join(root,'library/components.css'),'/* Generated shared component library. */\n'+(read('studio.css')+'\n'+read('avatar-motion.css')+'\n'+read('library/visuals.css')+'\n'+read('library/learning.css')).replace(/url\(['"]?assets\//g,"url('../assets/"));
-fs.writeFileSync(path.join(root,'library/site.js'),['library/schedule.js','library/task-identities.js','library/page-contract.js','library/visuals.js','library/lesson-engine.js','library/progress.js','library/learning.js','app.js','session-ui.js','avatar-motion.js','resource-library.js','prompt-vault.js'].map(p=>'\n/* '+p+' */\n'+read(p)).join('\n;\n'));
+fs.writeFileSync(path.join(root,'library/site.js'),['library/schedule.js','library/task-identities.js','library/learning-paths.js','library/page-contract.js','library/visuals.js','library/lesson-engine.js','library/progress.js','library/learning.js','app.js','session-ui.js','avatar-motion.js','resource-library.js','prompt-vault.js'].map(p=>'\n/* '+p+' */\n'+read(p)).join('\n;\n'));
 console.log('Shared library built: schedule, page contract, navigation, release gates, avatars, resources.');
 
 // Version every local style and script, including scoped pages and lesson data.

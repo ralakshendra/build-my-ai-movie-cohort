@@ -58,7 +58,8 @@ async function auditPage(page, label, viewportWidth) {
   if (audit.pageOverflow > 2) throw new Error(label + ': horizontal page overflow ' + audit.pageOverflow + 'px; nearest elements ' + JSON.stringify(audit.offenders));
   if (!audit.pageType || !audit.pageId) throw new Error(label + ': missing static page metadata');
   if (audit.pageIdentity !== audit.pageId) throw new Error(label + ': page identity metadata is inconsistent');
-  if (!['home','system'].includes(audit.pageType) && !audit.sessionId) throw new Error(label + ': session page has no static session id');
+  if (!['home','system','prompt-vault'].includes(audit.pageType) && !audit.sessionId) throw new Error(label + ': session page has no static session id');
+  if (audit.pageType === 'prompt-vault' && await page.locator('[data-vault-session]').count() !== await page.evaluate(()=>window.BMAI_SESSIONS.length)) throw new Error(label + ': central Vault lacks its registered session groups');
   if (!audit.hasMain) throw new Error(label + ': missing main landmark');
   if (!audit.hasSkipLink) throw new Error(label + ': missing skip link');
   if (label !== 'home') {

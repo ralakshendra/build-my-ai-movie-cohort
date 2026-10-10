@@ -9,6 +9,11 @@ const decode = value => cleanText(String(value).replace(/<[^>]*>/g, '').replace(
 const normalize = value => decode(value).replace(/\s+/g, ' ').trim();
 const slug = value => String(value || 'prompt').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 70) || 'prompt';
 const schedule = vm.runInNewContext(fs.readFileSync(path.join(root, 'library/schedule.js'), 'utf8') + ';window.BMAI_SESSIONS', { window: {} });
+const {fieldsFor} = require('./prompt-fields.cjs');
+const metadata = JSON.parse(fs.readFileSync(path.join(root,'content/prompt-metadata.json'),'utf8'));
+const manifestPath = path.join(root,'content/prompt-vault-manifest.json');
+const previous = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath,'utf8')) : [];
+const stableId = (session,kind,item,fallback) => previous.find(old => old.sessionId===session.id && old.kind===kind && (normalize(old.text)===normalize(item.text)||old.title===item.title))?.id || item.id || fallback;
 
 function loadLesson(session) {
   const file = path.join(root, 'content', `${session.id}.json`);
@@ -33,17 +38,17 @@ function sourcePrompts(session) {
       if (text.length < 40 || found.some(item => normalize(item.text) === normalize(text))) continue;
       const heading = [...html.slice(0, match.index).matchAll(/<(?:h[234]|summary)\b[^>]*>([\s\S]*?)<\/(?:h[234]|summary)>/gi)].at(-1);
       const anchor = match[1].match(/\bid="([^"]+)"/)?.[1];
-      found.push({ title: normalize(heading?.[1] || 'Production prompt'), text, source: rel + (anchor ? `#${anchor}` : '') });
+      const title = match[1].match(/data-prompt-title="([^"]+)"/)?.[1] || heading?.[1] || 'Production prompt';
+      found.push({ title: normalize(title), text, source: rel + (anchor ? `#${anchor}` : '') });
     }
   }
   return found;
 }
 
 const promptId = (sessionId, title, index) => `prompt-vault-${sessionId}-${String(index + 1).padStart(2, '0')}-${slug(title)}`;
-const templateFields = text => [...new Set((String(text).match(/\[[^\]]+\]/g) || []))];
 
 function troubleshootingPrompt(session, lesson) {
-  const focus = (lesson.checklist || []).slice(0, 3).join('; ') || 'identity, continuity, framing, lighting, motion, audio, or export';
+  const focus = (lesson.checklist || []).join('; ') || 'identity, continuity, framing, lighting, motion, audio, or export';
   return {
     title: `Diagnose and repair a ${session.title} failure`,
     text: `I am working on ${session.title}. The visible problem is: [describe the exact failure]. The reference, shot, product, character, or scene that must remain stable is: [reference or constraint]. Check these priorities: ${focus}. Identify the smallest useful change to the prompt, reference, setting, or edit. Explain what evidence I should inspect after the next test, and tell me when to stop repeating the same approach and choose a different route.`,
@@ -54,17 +59,23 @@ function troubleshootingPrompt(session, lesson) {
 function sessionItems(session) {
   const lesson = loadLesson(session);
   const supplied = lesson.prompts?.length ? lesson.prompts : sourcePrompts(session);
-  const official = supplied.map((item, index) => ({ ...item, text: cleanText(item.text), kind: 'official', id: promptId(session.id, item.title, index) }));
-  const practice = (lesson.homework || []).filter(item => item.prompt).map((item, index) => ({ title: item.title, text: cleanText(item.prompt), source: 'Practice recipe from the session homework workflow.', kind: 'practice', id: `practice-${session.id}-${String(index + 1).padStart(2, '0')}-${slug(item.title)}` }));
+  const sourceItems = sourcePrompts(session);
+  const official = supplied.map((item, index) => {
+    const id=stableId(session,'official',item,promptId(session.id,item.title,index));
+    const sourceUrl=sourceItems.find(source=>normalize(source.text)===normalize(item.text))?.source || session.session;
+    return {...item,...metadata[id],text:cleanText(item.text),kind:'official',id,sourceUrl};
+  });
+  const practice = (lesson.homework || []).filter(item => item.prompt).map((item, index) => ({ title: item.title, text: cleanText(item.prompt), source: 'Practice recipe from the session homework workflow.', sourceUrl:session.playbook, kind: 'practice', id: stableId(session,'practice',{title:item.title,text:item.prompt},`practice-${session.id}-${String(index + 1).padStart(2, '0')}-${slug(item.title)}`) }));
   const troubleshooting = [{ ...troubleshootingPrompt(session, lesson), kind: 'troubleshooting', id: `troubleshooting-${session.id}` }];
   return { official, practice, troubleshooting, all: [...official, ...practice, ...troubleshooting] };
 }
 
 function renderCard(session, item) {
-  const fields = templateFields(item.text);
+  const fields = fieldsFor(item.text,item.fields);
   const labels = { official: 'OFFICIAL PROMPT', practice: 'PRACTICE RECIPE', troubleshooting: 'TROUBLESHOOTING PROMPT' };
   const search = [item.title, session.title, session.stage, item.kind, item.text].join(' ').toLowerCase();
-  return `<article class="prompt-vault-card" id="${esc(item.id)}" data-prompt-template="${esc(item.text)}" data-prompt-kind="${esc(item.kind)}" data-prompt-search="${esc(search)}"><div class="prompt-vault-card-head"><div><div class="kicker">${labels[item.kind]}</div><h3>${esc(item.title)}</h3></div><span class="prompt-vault-type">${item.kind === 'official' ? 'SOURCE-BACKED' : 'ADAPTABLE'}</span></div><p class="prompt-vault-source">${esc(item.source || 'Source attribution recorded in the lesson materials.')}</p>${fields.length ? `<div class="prompt-vault-fields"><strong>Customize before copying</strong>${fields.map(field => `<label>${esc(field)}<input type="text" data-prompt-field="${esc(field)}" placeholder="Replace this field"></label>`).join('')}</div>` : ''}<details class="prompt-vault-expand"><summary>Open full prompt</summary><pre data-prompt-text>${esc(item.text)}</pre></details><div class="prompt-vault-actions"><button type="button" class="btn" data-prompt-copy>Copy prompt</button>${fields.length ? '<button type="button" class="btn secondary" data-prompt-reset>Reset fields</button>' : ''}</div></article>`;
+  const attribution=item.source===item.sourceUrl ? session.week+' session guide' : item.source || 'Source attribution recorded in the lesson materials.';
+  return `<article class="prompt-vault-card" id="${esc(item.id)}" data-prompt-template="${esc(item.text)}" data-prompt-kind="${esc(item.kind)}" data-prompt-search="${esc(search)}"><div class="prompt-vault-card-head"><div><div class="kicker">${labels[item.kind]}</div><h3>${esc(item.title)}</h3></div><span class="prompt-vault-type">${item.kind === 'official' ? 'SOURCE-BACKED' : 'ADAPTABLE'}</span></div><p class="prompt-vault-source">${esc(attribution)}${item.sourceUrl ? ` · <a href="${esc(item.sourceUrl)}">Return to the source lesson</a>` : ` · <a href="${esc(session.playbook)}">Review the assignment</a>`}</p>${fields.length ? `<div class="prompt-vault-fields"><strong>Customize your working copy</strong>${fields.map(field => `<label>${esc(field.label)}${field.multiline ? `<textarea rows="2" data-prompt-field="${esc(field.token)}" data-prompt-format="${esc(field.format)}" placeholder="Replace this field"></textarea>` : `<input type="text" data-prompt-field="${esc(field.token)}" data-prompt-format="${esc(field.format)}" placeholder="Replace this field">`}</label>`).join('')}<p data-prompt-field-status role="status"></p></div>` : ''}<details class="prompt-vault-expand"><summary>Open full prompt</summary><pre data-prompt-text>${esc(item.text)}</pre></details><div class="prompt-vault-actions"><button type="button" class="btn" data-prompt-copy>${fields.length?'Copy working prompt':'Copy prompt'}</button>${fields.length ? '<button type="button" class="btn secondary" data-prompt-original>Copy original template</button><button type="button" class="btn secondary" data-prompt-reset>Reset fields</button>' : ''}</div></article>`;
 }
 
 const collections = schedule.map(session => ({ session, ...sessionItems(session) }));
@@ -83,7 +94,7 @@ const page = `<!doctype html><html lang="en" data-bmai-page="prompt-vault"><head
 const vaultHeader = `<header class="bmai-global-header"><div class="studio-nav"><a class="bmai-session-brand" href="index.html"><img src="assets/brand/build-my-ai-movie-mark.svg" alt=""><span>BUILD MY <b>AI MOVIE STUDIO</b></span></a><nav class="nav-links" aria-label="Prompt Vault navigation"><a class="bmai-header-home" href="index.html" aria-label="Back to Home" title="Home"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" width="20"><path d="M3 10 12 3l9 7M5 9v12h5v-7h4v7h5V9"></path></svg></a><a href="index.html#sessions">Sessions</a><a href="index.html#playbooks">Playbooks</a><a href="index.html#homework">Homework</a><a href="index.html#resources">Resources</a></nav></div></header>`;
 const hero = require('./prompt-vault-hero.cjs')({ official: totalOfficial, practice: totalPractice, sessions: schedule.length });
 fs.writeFileSync(path.join(root, 'prompt-vault.html'), page.replace(/<header class="bmai-global-header">[\s\S]*?<\/header>/, vaultHeader).replace(/<section class="prompt-vault-hero">[\s\S]*?<\/section>/, hero).replace('<script defer src="library/site.js">', '<link rel="stylesheet" href="styles/pages/prompt-vault-banner.css"><script defer src="library/site.js">'));
-const manifest = collections.flatMap(group => group.all.map(item => ({ sessionId: group.session.id, kind: item.kind, id: item.id, title: item.title, text: item.text })));
+const manifest = collections.flatMap(group => group.all.map(item => ({ sessionId: group.session.id, kind: item.kind, id: item.id, title: item.title, text: item.text, source:item.source, sourceUrl:item.sourceUrl, fields:fieldsFor(item.text,item.fields) })));
 fs.writeFileSync(path.join(root, 'content', 'prompt-vault-manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
 
 for (const session of schedule) {

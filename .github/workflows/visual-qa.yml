@@ -1,6 +1,8 @@
 name: Build My AI Movie Visual QA
 
 on:
+  pull_request:
+    branches: [main]
   push:
     branches: [main, 'fix/**']
   workflow_dispatch:
@@ -10,6 +12,9 @@ on:
         type: boolean
         default: false
 
+permissions:
+  contents: read
+
 concurrency:
   group: visual-qa-${{ github.ref }}
   cancel-in-progress: true
@@ -17,7 +22,7 @@ concurrency:
 jobs:
   visual-qa:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,12 +33,12 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Verify resource library is current
         run: |
           npm run build
-          git diff --exit-code -- index.html resources/catalog.json library/site.js library/components.css
+          npm run qa:generated
 
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
@@ -52,7 +57,7 @@ jobs:
       - name: Check all public pages and viewports
         env:
           BMAI_BASE_URL: http://127.0.0.1:4173/
-        run: npm run qa:cohesion && npm run qa:release && npm run qa:review && npm run qa:student
+        run: npm run qa:cohesion && npm run qa:release && npm run qa:review && npm run qa:student && npm run qa:audit && npm run qa:resource-links
 
       - name: Upload screenshots and report
         if: failure() && github.event_name == 'workflow_dispatch' && inputs.upload_artifacts

@@ -132,8 +132,27 @@ A pushed source commit is not proof of a live deployment. After an authorized re
 
 ## Student hub and complete review coverage
 
+### Audit improvements (10 October 2026)
+
+Keep prompt display metadata in `content/prompt-metadata.json` or the lesson's explicit prompt fields. An editable field is a named token, not an arbitrary square-bracket region. Structured JSON examples require explicit fields with `format: "json-string"`; multiline fields may use `multiline: true`. The field parser supports named uppercase curly-brace tokens and conservative single-line bracket tokens, and excludes JSON array/object structure. Original templates remain separately copyable. Do not alter the complete official prompt to accommodate a form.
+
+Prompt and resource generation preserve existing identities when their display titles change. Source links return to authored lesson material. Keep the prior manifest and generated source inventory in version control rather than deleting them before a rebuild.
+
+`content/learning-paths.json` owns catch-up preparation and existing guide anchors. `npm run build` validates those anchors and produces `library/learning-paths.js`. The hub offers released lessons; a guide's catch-up path follows the same release as the guide. It supplements the complete playbook and does not reduce assignment requirements. Homework search/results always reach playbook `#share`; scheduled search results must display release status and use the same link guards as authored navigation.
+
+Optional `recording` metadata requires a real HTTPS `url` and `verifiedAccess: true` after student viewing access is checked. An optional `embedUrl` must use a supported HTTPS player host (`www.youtube-nocookie.com`, `player.vimeo.com`, `fast.wistia.net`, or `www.loom.com`). The embedded player loads only after the student chooses to watch. Optional `transcriptUrl` and `chapters: [{title, url}]` must point to actual HTTPS resources. Omit the whole recording object until those inputs exist; do not invent recording URLs, timestamps or viewing-policy claims. Website membership does not grant third-party recording permission automatically.
+
+Run `npm run qa:audit` for source-prompt preservation, original/working copy controls, structured JSON substitution, named research fields, Vault keyboard tabs, dynamic search locks, catch-up links, expanded homework help and storage-failure recovery. `qa:release` pauses its test clock before navigation so release boundaries are independent of machine load, then advances it explicitly for countdown/auto-unlock checks.
+
+CI now checks pull requests, uses `npm ci` with `package-lock.json`, and runs `npm run qa:generated` after building. The generated-output check compares every public HTML page plus manifest, identities, schedule and shared outputs against Git, and rejects untracked generated files. A deliberate uncommitted working revision will fail that Git comparison until its changes are included in an authorized commit. For local review, compare generated-file hashes across two builds; do not commit merely to satisfy the CI comparison.
+
 The hub groups scheduled lessons by week and provides one selected playbook/homework shortcut instead of repeating complete libraries. Future actions display locked status and the schedule-derived start time. Homework continues to route through playbook `#share`.
 
 Generated resources have stable resource IDs, an availability filter, distinct full-prompt/practice-recipe types and version-preserving tool-family filters. Full prompt cards use one disclosure. Known tool source selection prefers the earliest scheduled supporting lesson so an existing resource is not locked by a later reference. Do not manually patch generated blocks.
 
 Use `npm run qa:student` for backup round trips, invalid-file preservation, task-identity migration, resource deep links, exact copying, keyboard menus and expanded 320-pixel layouts. Public-page QA inventories share `scripts/public-pages.cjs`, exclude working artifacts under `tmp/`, and discover authored pages automatically. Cohesion covers 320, 390, 820 and 1440 pixels. Visual fixtures open content in the local review namespace; release tests exercise ordinary preview separately.
+
+
+### Resource Library card destinations
+
+Owner feedback on 2026-10-11 removes all links from tool cards: the tool name and description are enough. Keep source annotations and release metadata in the source lessons; do not turn the title into a hidden alternative link. Prompt, practice recipe and checklist cards retain one visible Open link to the exact Vault item or source checklist. Preserve stable resource IDs when correcting source attribution. Run `npm run qa:resource-links` against the preview to verify tool cards have zero links, other cards retain exact destinations and expanded cards fit mobile widths.

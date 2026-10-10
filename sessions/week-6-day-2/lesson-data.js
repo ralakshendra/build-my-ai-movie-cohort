@@ -11,27 +11,52 @@ window.BMAI_LESSON={
     {
       "title": "Build a reusable character",
       "instruction": "Create an original creator character for the intended audience. Describe the appearance, wardrobe, setting, and camera framing; generate a small set of variations; choose one and save it as a reusable character. Use only references you have permission to use.",
-      "review": "One saved character has a clear identity, fits the audience, and can be reused consistently."
+      "review": "One saved character has a clear identity, fits the audience, and can be reused consistently.",
+      "goal": "Build one reusable creator identity.",
+      "inputs": "Your intended audience and character description; any reference images you are authorized to use.",
+      "output": "One named saved character selected for reuse.",
+      "firstFix": "Compare the chosen face and appearance with your brief or authorized reference. Revise the mismatched trait before creating more variations.",
+      "next": "Use this saved character with the product reference in Task 2."
     },
     {
       "title": "Create the product-in-hand image",
       "instruction": "Create a 9:16 product hero frame with the saved character and an approved product reference. Keep the product shape and printed label faithful to the supplied reference, then review face, hands, framing, and lighting before selecting a frame.",
-      "review": "The chosen frame shows the same creator holding or using the product, with accurate packaging and readable supplied label details."
+      "review": "The chosen frame shows the same creator holding or using the product, with accurate packaging and readable supplied label details.",
+      "goal": "Put the saved character and product into one usable frame.",
+      "inputs": "The saved character from Task 1, a clear authorized product image, and the exact approved label text.",
+      "output": "One selected 9:16 product-in-hand hero frame.",
+      "firstFix": "Compare the image against the references. Identify the visible face, packaging, hand or label mismatch and change one relevant input before the next test.",
+      "next": "Use the selected hero frame as Task 3’s start frame."
     },
     {
       "title": "Generate the talking A-roll",
       "instruction": "Use the selected product frame as the starting image for a short talking clip. Add the approved dialogue and enable audio when available. Keep claims truthful and authorized. If the line is cut off or unclear, shorten it or split it before spending credits on another generation.",
-      "review": "The creator delivers the approved message with clear audio, stable face and hands, and continuity with the start frame."
+      "review": "The creator delivers the approved message with clear audio, stable face and hands, and continuity with the start frame.",
+      "goal": "Turn the hero frame into a clear talking message.",
+      "inputs": "The selected product-in-hand frame from Task 2 and approved dialogue with verified product claims.",
+      "output": "One selected talking A-roll clip with understandable audio.",
+      "firstFix": "If dialogue is clipped, shorten or split the line. If identity or hands drift, compare the clip with the start frame before another test.",
+      "next": "Keep this A-roll for the base layer of Task 5; prepare the product references for Task 4."
     },
     {
       "title": "Create supporting B-roll",
       "instruction": "Create a product close-up from the selected frame. Add a short use-case insert only when it helps explain the product. Choose a video mode supported by the current tool, test a brief clip, and check that the action and product remain accurate.",
-      "review": "Each insert adds a useful product detail or truthful demonstration with consistent packaging and lighting."
+      "review": "Each insert adds a useful product detail or truthful demonstration with consistent packaging and lighting.",
+      "goal": "Add useful product coverage to support the message.",
+      "inputs": "The selected product-in-hand frame, product reference images, and the message established in Task 3.",
+      "output": "A selected product close-up and any useful product-use insert.",
+      "firstFix": "Check the product and lighting against the reference. If a mode is unavailable, use an available supported route and test a short clip before making more inserts.",
+      "next": "Bring the useful inserts and talking A-roll into Task 5’s edit."
     },
     {
       "title": "Edit, review, and export",
       "instruction": "Assemble the vertical edit in a suitable video editor. Keep the talking clip as the base, add useful product footage above it, keep transitions restrained, and use music or Foley only when it improves clarity. Export the final 9:16 advertisement and share it using current cohort instructions.",
-      "review": "The exported ad has clear dialogue, useful product coverage, truthful claims, consistent visuals, and no distracting effects."
+      "review": "The exported ad has clear dialogue, useful product coverage, truthful claims, consistent visuals, and no distracting effects.",
+      "goal": "Assemble and review the final vertical advertisement.",
+      "inputs": "The selected talking A-roll, useful B-roll, and any audio you have permission to publish.",
+      "output": "One reviewed 9:16 advertisement export and its production evidence links.",
+      "firstFix": "If audio and picture disagree, inspect the relevant timeline section. Recheck the exported file from beginning to end after adjusting the edit.",
+      "next": "Record the final export and review notes in the official Homework Doc, then follow its current submission instructions."
     }
   ],
   "homework": [

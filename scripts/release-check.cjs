@@ -3,7 +3,7 @@ const base=process.env.BMAI_BASE_URL||'http://127.0.0.1:8766/';
 const schedule=vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../library/schedule.js'),'utf8')+';window.BMAI_SESSIONS',{window:{}});
 (async()=>{const browser=await chromium.launch({...(process.platform==='win32'?{channel:'chrome'}:{}),headless:true});try{
  const page=await browser.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
- const first=schedule[0],second=schedule[1];await page.clock.install({time:new Date(Date.parse(second.start)-2000)});await page.goto(new URL('index.html',base).href);
+ const first=schedule[0],second=schedule[1];await page.clock.install({time:new Date(Date.parse(second.start)-2000)});await page.clock.pauseAt(new Date(Date.parse(second.start)-2000));await page.goto(new URL('index.html',base).href);
  assert.equal(await page.locator('#bmaiSchedule .schedule-row').count(),schedule.length);assert.equal(await page.locator('.bmai-week').count(),new Set(schedule.map(s=>s.id.match(/week-(\d+)/)[1])).size);
  for(const section of ['playbooks','homework']){assert.equal(await page.locator('#'+section+' article.card').count(),1);assert.equal(await page.locator('#'+section+' select option').count(),schedule.length);}
  assert(await page.locator('a[data-bmai-lock-guard]').count()>0);await page.clock.runFor(2500);assert((await page.locator('.bmai-studio-card h2').textContent()).includes(second.title));
